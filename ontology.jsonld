@@ -80,7 +80,7 @@
     "@id" : "http://www.w3.org/ns/prov#Entity"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#",
+  "@id" : "https://w3id.org/SemTS/ontology#",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/abstract" : [ {
     "@language" : "en",
@@ -103,7 +103,7 @@
     "@value" : "SemTS: Semantic Time Series Ontology"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#Algorithm",
+  "@id" : "https://w3id.org/SemTS/ontology#Algorithm",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -116,10 +116,10 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/mls#Algorithm"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#MethodKnowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#MethodKnowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#ArtificialTimeSeriesSegment",
+  "@id" : "https://w3id.org/SemTS/ontology#ArtificialTimeSeriesSegment",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -130,10 +130,10 @@
     "@value" : "Artificial Time Series Segment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+    "@id" : "https://w3id.org/SemTS/ontology#TimeSeriesSegment"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#Condition",
+  "@id" : "https://w3id.org/SemTS/ontology#Condition",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -144,10 +144,10 @@
     "@value" : "Condition"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#MathExpression"
+    "@id" : "https://w3id.org/SemTS/ontology#MathExpression"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#DataDimension",
+  "@id" : "https://w3id.org/SemTS/ontology#DataDimension",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -158,7 +158,7 @@
     "@value" : "Data Dimension"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#DataKnowledge",
+  "@id" : "https://w3id.org/SemTS/ontology#DataKnowledge",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -169,10 +169,10 @@
     "@value" : "Data Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#EmbeddedValue",
+  "@id" : "https://w3id.org/SemTS/ontology#EmbeddedValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -183,10 +183,10 @@
     "@value" : "Embedded Value"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Value"
+    "@id" : "https://w3id.org/SemTS/ontology#Value"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#Hyperparameter",
+  "@id" : "https://w3id.org/SemTS/ontology#Hyperparameter",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -199,10 +199,10 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/mls#Hyperparameter"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#MethodKnowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#MethodKnowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#Knowledge",
+  "@id" : "https://w3id.org/SemTS/ontology#Knowledge",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -213,7 +213,7 @@
     "@value" : "Knowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#KnowledgeComparisonMeasure",
+  "@id" : "https://w3id.org/SemTS/ontology#KnowledgeComparisonMeasure",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -224,10 +224,10 @@
     "@value" : "Knowledge Dissimilarity Measure"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationEntity"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#KnowledgeConcept",
+  "@id" : "https://w3id.org/SemTS/ontology#KnowledgeConcept",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -241,7 +241,7 @@
     "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationConcept",
+  "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationConcept",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -255,7 +255,7 @@
     "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity",
+  "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationEntity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -269,7 +269,7 @@
     "@id" : "http://www.w3.org/ns/prov#Activity"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationIO",
+  "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationIO",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -283,7 +283,7 @@
     "@id" : "http://www.w3.org/ns/prov#Entity"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationInput",
+  "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationInput",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -294,10 +294,10 @@
     "@value" : "Knowledge Generation Input"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationIO"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationIO"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationMethod",
+  "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationMethod",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -310,10 +310,10 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/mls#Algorithm"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationEntity"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationOutput",
+  "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationOutput",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -324,10 +324,10 @@
     "@value" : "Knowledge Generation Output"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationIO"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationIO"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#KnowledgeGroup",
+  "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGroup",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -338,10 +338,10 @@
     "@value" : "Knowledge Group"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#KnowledgeQualityMeasure",
+  "@id" : "https://w3id.org/SemTS/ontology#KnowledgeQualityMeasure",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -355,7 +355,7 @@
     "@id" : "http://www.w3.org/ns/mls#EvaluationMeasure"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#KnowledgeReasoning",
+  "@id" : "https://w3id.org/SemTS/ontology#KnowledgeReasoning",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -366,10 +366,10 @@
     "@value" : "Knowledge Reasoning"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationEntity"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#Label",
+  "@id" : "https://w3id.org/SemTS/ontology#Label",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -380,10 +380,10 @@
     "@value" : "Label"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#ScenarioKnowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#ScenarioKnowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#MathExpression",
+  "@id" : "https://w3id.org/SemTS/ontology#MathExpression",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -394,10 +394,10 @@
     "@value" : "Math Expression"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#ScenarioKnowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#ScenarioKnowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#MethodKnowledge",
+  "@id" : "https://w3id.org/SemTS/ontology#MethodKnowledge",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -408,10 +408,10 @@
     "@value" : "Method Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#Note",
+  "@id" : "https://w3id.org/SemTS/ontology#Note",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -422,10 +422,10 @@
     "@value" : "Note"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#ScenarioKnowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#ScenarioKnowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#QualityMeasureConcept",
+  "@id" : "https://w3id.org/SemTS/ontology#QualityMeasureConcept",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -439,7 +439,7 @@
     "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#ReferencedValue",
+  "@id" : "https://w3id.org/SemTS/ontology#ReferencedValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -452,10 +452,10 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/dcat#Dataset"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#Value"
+    "@id" : "https://w3id.org/SemTS/ontology#Value"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#ScenarioKnowledge",
+  "@id" : "https://w3id.org/SemTS/ontology#ScenarioKnowledge",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -466,10 +466,10 @@
     "@value" : "Scenario Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#ScenarioParameter",
+  "@id" : "https://w3id.org/SemTS/ontology#ScenarioParameter",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -480,10 +480,10 @@
     "@value" : "Scenario Parameter"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#ScenarioKnowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#ScenarioKnowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#SegmentDataCharacteristic",
+  "@id" : "https://w3id.org/SemTS/ontology#SegmentDataCharacteristic",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -494,10 +494,10 @@
     "@value" : "Segment Data Characteristic"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#DataKnowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#DataKnowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#SegmentPrediction",
+  "@id" : "https://w3id.org/SemTS/ontology#SegmentPrediction",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -508,10 +508,10 @@
     "@value" : "Segment Prediction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/semts/ontology#DataKnowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#DataKnowledge"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment",
+  "@id" : "https://w3id.org/SemTS/ontology#TimeSeriesSegment",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -525,19 +525,19 @@
     "@id" : "http://www.w3.org/ns/dcat#Dataset"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#Value",
+  "@id" : "https://w3id.org/SemTS/ontology#Value",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#dType",
+  "@id" : "https://w3id.org/SemTS/ontology#dType",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Defines the data type of a Data Dimension or an Embedded Value. Referenced values are defined via properties from dcat."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#DataDimension"
+    "@id" : "https://w3id.org/SemTS/ontology#DataDimension"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#EmbeddedValue"
+    "@id" : "https://w3id.org/SemTS/ontology#EmbeddedValue"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -547,22 +547,22 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#description",
+  "@id" : "https://w3id.org/SemTS/ontology#description",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Inherits from dc:description and can be used to optionally add a description to an entity of the domain."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#DataDimension"
+    "@id" : "https://w3id.org/SemTS/ontology#DataDimension"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationEntity"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationIO"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationIO"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeQualityMeasure"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeQualityMeasure"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -575,14 +575,14 @@
     "@id" : "http://purl.org/dc/elements/1.1/description"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#dimensionPosition",
+  "@id" : "https://w3id.org/SemTS/ontology#dimensionPosition",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Specifies the position of the associated dimension within a dataframe or similar ordered data structures."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#DataDimension"
+    "@id" : "https://w3id.org/SemTS/ontology#DataDimension"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -595,14 +595,14 @@
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#dimensionUnit",
+  "@id" : "https://w3id.org/SemTS/ontology#dimensionUnit",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Defines the unit of a Data Dimension."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#DataDimension"
+    "@id" : "https://w3id.org/SemTS/ontology#DataDimension"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -615,193 +615,193 @@
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#groupKnowledge",
+  "@id" : "https://w3id.org/SemTS/ontology#groupKnowledge",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "References any knowledge within a particular knowledge group."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGroup"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGroup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Group Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#hasValue",
+  "@id" : "https://w3id.org/SemTS/ontology#hasValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Relationship to the Value class and thus to allow for a reference to stored data."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeQualityMeasure"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeQualityMeasure"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Has Value"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Value"
+    "@id" : "https://w3id.org/SemTS/ontology#Value"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#inputDataReference",
+  "@id" : "https://w3id.org/SemTS/ontology#inputDataReference",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Defines the relation from a Knowledge Generation Input to a Time Series Segment and thus to metadata which specifies the underlying data."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationInput"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationInput"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Input Data Reference"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+    "@id" : "https://w3id.org/SemTS/ontology#TimeSeriesSegment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#inputKnowledge",
+  "@id" : "https://w3id.org/SemTS/ontology#inputKnowledge",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Similar to the Input Data Reference, this relation defines all the knowledge associated with the input of a Knowledge Generation Entity."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationInput"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationInput"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Input Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#isPartOf",
+  "@id" : "https://w3id.org/SemTS/ontology#isPartOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Defines a hierarchic relationship between time series segments. The intuition of this property is to differentiate between complete time series, in a sense that it includes the data from start to end and subsegments which are reduced in time or dimensionality and thus can be considered a slice of this original data."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+    "@id" : "https://w3id.org/SemTS/ontology#TimeSeriesSegment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Is Part Of"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+    "@id" : "https://w3id.org/SemTS/ontology#TimeSeriesSegment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://purl.org/dc/terms/isPartOf"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#knowledgeConcept",
+  "@id" : "https://w3id.org/SemTS/ontology#knowledgeConcept",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Relates a concept for a Knowledge instance. Can be used to assign concrete instances from the SemTS taxonomy."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Knowledge Concept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeConcept"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeConcept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#knowledgeGenerationConcept",
+  "@id" : "https://w3id.org/SemTS/ontology#knowledgeGenerationConcept",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Relates a concept for a Knowledge Generation instance."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationEntity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Knowledge Generation Concept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationConcept"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationConcept"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#knowledgeGenerationEntity",
+  "@id" : "https://w3id.org/SemTS/ontology#knowledgeGenerationEntity",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Relates the Knowledge Generation Entity, which produced this Knowledge instance."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Knowledge Generation Entity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationEntity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#knowledgeQualityMeasure",
+  "@id" : "https://w3id.org/SemTS/ontology#knowledgeQualityMeasure",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Allows to assign a quality measure to instantiated knowledge."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Knowledge Quality Measure"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeQualityMeasure"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeQualityMeasure"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#mathExpressionFormat",
+  "@id" : "https://w3id.org/SemTS/ontology#mathExpressionFormat",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "This property can be used to define the format of a mathematical expression. One example could be \"tex\" to define mathematical expressions defined via Latex."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#MathExpression"
+    "@id" : "https://w3id.org/SemTS/ontology#MathExpression"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -814,14 +814,14 @@
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#mathExpressionParser",
+  "@id" : "https://w3id.org/SemTS/ontology#mathExpressionParser",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "In case a mathematical expression can be parsed for evaluation, this property allows to specify a suitable parser solution."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#MathExpression"
+    "@id" : "https://w3id.org/SemTS/ontology#MathExpression"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -834,94 +834,94 @@
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#outputKnowledge",
+  "@id" : "https://w3id.org/SemTS/ontology#outputKnowledge",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Opposed to Input Knowledge, this property defines the knowledge included in the output of a Knowledge generation Entity."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationOutput"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationOutput"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Output Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#qualityMeasureConcept",
+  "@id" : "https://w3id.org/SemTS/ontology#qualityMeasureConcept",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Defines the concept of a particular Knowledge Quality Measure."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeQualityMeasure"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeQualityMeasure"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Quality Measure Concept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#QualityMeasureConcept"
+    "@id" : "https://w3id.org/SemTS/ontology#QualityMeasureConcept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#segmentDimension",
+  "@id" : "https://w3id.org/SemTS/ontology#segmentDimension",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Defines the dimensions associated with a Time Series Segment. Multiple dimensions indicate that the segment corresponds to a multivariate time series."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+    "@id" : "https://w3id.org/SemTS/ontology#TimeSeriesSegment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Segment Dimension"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#DataDimension"
+    "@id" : "https://w3id.org/SemTS/ontology#DataDimension"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#segmentGroupKnowledge",
+  "@id" : "https://w3id.org/SemTS/ontology#segmentGroupKnowledge",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Relates any shared Knowledge available for a set of instances from the class Time Series Segment. One example is the generation of Knowledge that is not specific to a single, but to a group of time series segments."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+    "@id" : "https://w3id.org/SemTS/ontology#TimeSeriesSegment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Segment Group Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#segmentIndex",
+  "@id" : "https://w3id.org/SemTS/ontology#segmentIndex",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Defines the index associated with a Time Series Segment. Inherits from the time:TemporalEntity."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+    "@id" : "https://w3id.org/SemTS/ontology#TimeSeriesSegment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -934,42 +934,42 @@
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#segmentKnowledge",
+  "@id" : "https://w3id.org/SemTS/ontology#segmentKnowledge",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Relates any Knowledge available for a particular Time Series Segment."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+    "@id" : "https://w3id.org/SemTS/ontology#TimeSeriesSegment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Segment Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#title",
+  "@id" : "https://w3id.org/SemTS/ontology#title",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Inherits from dc:title and can be used to optionally add a title to an entity of the domain."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#DataDimension"
+    "@id" : "https://w3id.org/SemTS/ontology#DataDimension"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    "@id" : "https://w3id.org/SemTS/ontology#Knowledge"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationEntity"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationIO"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeGenerationIO"
   }, {
-    "@id" : "https://w3id.org/semts/ontology#KnowledgeQualityMeasure"
+    "@id" : "https://w3id.org/SemTS/ontology#KnowledgeQualityMeasure"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -982,14 +982,14 @@
     "@id" : "http://purl.org/dc/elements/1.1/title"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#valueString",
+  "@id" : "https://w3id.org/SemTS/ontology#valueString",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The string representation for a concrete value of an Embedded Value. Complementary, the actual data type is defined via the dType property."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/semts/ontology#EmbeddedValue"
+    "@id" : "https://w3id.org/SemTS/ontology#EmbeddedValue"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",

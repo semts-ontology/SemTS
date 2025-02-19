@@ -1,4 +1,4 @@
-@prefix semts:        <https://w3id.org/semts/ontology#> .
+@prefix SemTS:        <https://w3id.org/SemTS/ontology#> .
 @prefix owl:          <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml:          <http://www.w3.org/XML/1998/namespace> .
@@ -12,7 +12,7 @@
 @prefix dcat:         <http://www.w3.org/ns/dcat#> .
 @prefix prov:         <http://www.w3.org/ns/prov#> .
 
-semts:
+SemTS:
     rdf:type                      owl:Ontology ;
     owl:imports                   <http://w3id.org/mlso> ;
 
@@ -24,8 +24,8 @@ semts:
     owl:versionInfo               "0.1.0"^^xsd:string ;     # Using Semantic Versioning 2.0 Format: Major.Minor.Patch
 
     # Namespace Information
-    vann:preferredNamespacePrefix "semts" ;
-    vann:preferredNamespaceUri    "https://w3id.org/semts/ontology#" ;
+    vann:preferredNamespacePrefix "SemTS" ;
+    vann:preferredNamespaceUri    "https://w3id.org/SemTS/ontology#" ;
 
     # Additional Metadata
     dcterms:subject               "Time Series"@en, "Data Analytics"@en, "Knowledge Graph"@en ;
@@ -36,192 +36,192 @@ semts:
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/semts/ontology#dataReferenceIndex
-semts:dataReferenceIndex
+###  https://w3id.org/SemTS/ontology#dataReferenceIndex
+SemTS:dataReferenceIndex
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:RawDataReference ;
-    rdfs:range   semts:TimeIndex ;
+    rdfs:domain  SemTS:RawDataReference ;
+    rdfs:range   SemTS:TimeIndex ;
     rdfs:label   "Data Reference Index"@en ;
     rdfs:comment "Index associated with the raw data of a segment descriptor"@en .
 
 
-###  https://w3id.org/semts/ontology#dataReferenceSource
-semts:dataReferenceSource
+###  https://w3id.org/SemTS/ontology#dataReferenceSource
+SemTS:dataReferenceSource
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:RawDataReference ;
+    rdfs:domain  SemTS:RawDataReference ;
     rdfs:range   dcat:Resource ;
     rdfs:label   "Data Reference Source"@en ;
     rdfs:comment "Data source associated with the raw data of a segment descriptor"@en .
 
 
-###  https://w3id.org/semts/ontology#dataReferenceStructure
-semts:dataReferenceStructure
+###  https://w3id.org/SemTS/ontology#dataReferenceStructure
+SemTS:dataReferenceStructure
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:RawDataReference ;
-    rdfs:range   semts:DataStructure ;
+    rdfs:domain  SemTS:RawDataReference ;
+    rdfs:range   SemTS:DataStructure ;
     rdfs:label   "Data Reference Structure"@en ;
     rdfs:comment "Set of dimensions associated with the raw data of a segment descriptor"@en .
 
 
-###  https://w3id.org/semts/ontology#dataStructure
-semts:dataStructure
+###  https://w3id.org/SemTS/ontology#dataStructure
+SemTS:dataStructure
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:SegmentDescriptor ;
-    rdfs:range   semts:DataStructure ;
+    rdfs:domain  SemTS:SegmentDescriptor ;
+    rdfs:range   SemTS:DataStructure ;
     rdfs:label   "Data Structure"@en ;
     rdfs:comment "Set of dimensions associated with a segment descriptor"@en .
 
 
-###  https://w3id.org/semts/ontology#generationInputKnowledge
-semts:generationInputKnowledge
+###  https://w3id.org/SemTS/ontology#generationInputKnowledge
+SemTS:generationInputKnowledge
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:KnowledgeGenerationEntity ;
-    rdfs:range   semts:Knowledge ;
+    rdfs:domain  SemTS:KnowledgeGenerationEntity ;
+    rdfs:range   SemTS:Knowledge ;
     rdfs:label   "Generation Input Knowledge"@en ;
     rdfs:comment "Knowledge that is used to derive further knowledge via knowledge generation"@en .
 
 
-###  https://w3id.org/semts/ontology#generationMethodRun
-semts:generationMethodRun
+###  https://w3id.org/SemTS/ontology#generationMethodRun
+SemTS:generationMethodRun
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:KnowledgeGenerationMethod ;
+    rdfs:domain  SemTS:KnowledgeGenerationMethod ;
     rdfs:range   mls:Run ;
     rdfs:label   "Generation Method Run"@en ;
     rdfs:comment "Connection to metadata describing specific information of the knowledge generation process"@en .
 
 
-###  https://w3id.org/semts/ontology#groupKnowledge
-semts:groupKnowledge
+###  https://w3id.org/SemTS/ontology#groupKnowledge
+SemTS:groupKnowledge
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:KnowledgeGroup, semts:SegmentDescriptorGroup ;
-    rdfs:range   semts:Knowledge ;
+    rdfs:domain  SemTS:KnowledgeGroup, SemTS:SegmentDescriptorGroup ;
+    rdfs:range   SemTS:Knowledge ;
     rdfs:label   "Group Knowledge"@en ;
     rdfs:comment "Knowledge belonging to a group of semantically connected instances"@en .
 
 
-###  https://w3id.org/semts/ontology#groupSegments
-semts:groupSegments
+###  https://w3id.org/SemTS/ontology#groupSegments
+SemTS:groupSegments
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:SegmentDescriptorGroup ;
-    rdfs:range   semts:SegmentDescriptor ;
+    rdfs:domain  SemTS:SegmentDescriptorGroup ;
+    rdfs:range   SemTS:SegmentDescriptor ;
     rdfs:label   "Group Segments"@en ;
     rdfs:comment "Segments belonging to a group in order to create segment collections"@en .
 
 
-###  https://w3id.org/semts/ontology#knowledgeConcept
-semts:knowledgeConcept
+###  https://w3id.org/SemTS/ontology#knowledgeConcept
+SemTS:knowledgeConcept
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:Knowledge ;
-    rdfs:range   semts:KnowledgeConcept ;
+    rdfs:domain  SemTS:Knowledge ;
+    rdfs:range   SemTS:KnowledgeConcept ;
     rdfs:label   "Knowledge Concept"@en ;
     rdfs:comment "The concept to semantically structure time series knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#knowledgeGenerationEntity
-semts:knowledgeGenerationEntity
+###  https://w3id.org/SemTS/ontology#knowledgeGenerationEntity
+SemTS:knowledgeGenerationEntity
     rdf:type     owl:ObjectProperty, owl:FunctionalProperty ;
-    rdfs:domain  semts:Knowledge ;
-    rdfs:range   semts:KnowledgeGenerationEntity ;
+    rdfs:domain  SemTS:Knowledge ;
+    rdfs:range   SemTS:KnowledgeGenerationEntity ;
     rdfs:label   "Knowledge Generation Entity"@en ;
     rdfs:comment "The generation entity, which led to the creation of particular knowledge instances"@en .
 
 
-###  https://w3id.org/semts/ontology#knowledgeOrigin
-semts:knowledgeOrigin
+###  https://w3id.org/SemTS/ontology#knowledgeOrigin
+SemTS:knowledgeOrigin
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:MethodKnowledge, semts:ScenarioKnowledge ;
+    rdfs:domain  SemTS:MethodKnowledge, SemTS:ScenarioKnowledge ;
     rdfs:range   prov:Agent ;
     rdfs:label   "Knowledge Origin"@en ;
     rdfs:comment "The traceable origin of generated knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#knowledgeQualityMeasure
-semts:knowledgeQualityMeasure
+###  https://w3id.org/SemTS/ontology#knowledgeQualityMeasure
+SemTS:knowledgeQualityMeasure
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:Knowledge ;
-    rdfs:range   semts:KnowledgeQualityMeasure ;
+    rdfs:domain  SemTS:Knowledge ;
+    rdfs:range   SemTS:KnowledgeQualityMeasure ;
     rdfs:label   "Knowledge Quality Measure"@en ;
     rdfs:comment "The quality measure associated with a knowledge instance"@en .
 
 
-###  https://w3id.org/semts/ontology#mathFieldConcept
-semts:mathFieldConcept
+###  https://w3id.org/SemTS/ontology#mathFieldConcept
+SemTS:mathFieldConcept
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:MathExpression ;
-    rdfs:range   semts:MathFieldConcept ;
+    rdfs:domain  SemTS:MathExpression ;
+    rdfs:range   SemTS:MathFieldConcept ;
     rdfs:label   "Math Field Concept"@en ;
     rdfs:comment "The mathematical field associated with a mathematical expressions"@en .
 
 
-###  https://w3id.org/semts/ontology#presetMethod
-semts:presetMethod
+###  https://w3id.org/SemTS/ontology#presetMethod
+SemTS:presetMethod
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:MethodKnowledge ;
+    rdfs:domain  SemTS:MethodKnowledge ;
     rdfs:range   mls:Algorithm ;
     rdfs:label   "Preset Method"@en ;
     rdfs:comment "A particular algorithm that was used for the generation of knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#presetParameters
-semts:presetParameters
+###  https://w3id.org/SemTS/ontology#presetParameters
+SemTS:presetParameters
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:MethodKnowledge ;
+    rdfs:domain  SemTS:MethodKnowledge ;
     rdfs:range   mls:HyperParameterSetting ;
     rdfs:label   "Preset Parameters"@en ;
     rdfs:comment "A particular hyperparameter setting that was used for the generation of knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#qualityMeasureConcept
-semts:qualityMeasureConcept
+###  https://w3id.org/SemTS/ontology#qualityMeasureConcept
+SemTS:qualityMeasureConcept
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:KnowledgeQualityMeasure ;
-    rdfs:range   semts:QualityMeasureConcept ;
+    rdfs:domain  SemTS:KnowledgeQualityMeasure ;
+    rdfs:range   SemTS:QualityMeasureConcept ;
     rdfs:label   "Quality Measure Concept"@en ;
     rdfs:comment "Concept describing the used quality measure during knowledge generation"@en .
 
 
-###  https://w3id.org/semts/ontology#segmentIndex
-semts:segmentIndex
+###  https://w3id.org/SemTS/ontology#segmentIndex
+SemTS:segmentIndex
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:SegmentDescriptor ;
-    rdfs:range   semts:TimeIndex ;
+    rdfs:domain  SemTS:SegmentDescriptor ;
+    rdfs:range   SemTS:TimeIndex ;
     rdfs:label   "Segment Index"@en ;
     rdfs:comment "Index associated with a segment descriptor"@en .
 
 
-###  https://w3id.org/semts/ontology#segmentKnowledge
-semts:segmentKnowledge
+###  https://w3id.org/SemTS/ontology#segmentKnowledge
+SemTS:segmentKnowledge
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:SegmentDescriptor ;
-    rdfs:range   semts:Knowledge ;
+    rdfs:domain  SemTS:SegmentDescriptor ;
+    rdfs:range   SemTS:Knowledge ;
     rdfs:label   "Segment Knowledge"@en ;
     rdfs:comment "Knowledge associated with a segment descriptor"@en .
 
 
-###  https://w3id.org/semts/ontology#segmentSeries
-semts:segmentSeries
+###  https://w3id.org/SemTS/ontology#segmentSeries
+SemTS:segmentSeries
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:SegmentDescriptor ;
-    rdfs:range   semts:SeriesData ;
+    rdfs:domain  SemTS:SegmentDescriptor ;
+    rdfs:range   SemTS:SeriesData ;
     rdfs:label   "Segment Series"@en ;
     rdfs:comment "Series associated with a segment descriptor"@en .
 
 
-###  https://w3id.org/semts/ontology#seriesComponentType
-semts:seriesComponentType
+###  https://w3id.org/SemTS/ontology#seriesComponentType
+SemTS:seriesComponentType
     rdf:type     owl:ObjectProperty, owl:FunctionalProperty ;
-    rdfs:domain  semts:SeriesComponentGroup, semts:SeriesComponentProperty ;
-    rdfs:range   semts:DispersionComponentConcept, semts:LocationComponentConcept, semts:StructuralComponentConcept,
-                 semts:TrendComponentConcept ;
+    rdfs:domain  SemTS:SeriesComponentGroup, SemTS:SeriesComponentProperty ;
+    rdfs:range   SemTS:DispersionComponentConcept, SemTS:LocationComponentConcept, SemTS:StructuralComponentConcept,
+                 SemTS:TrendComponentConcept ;
     rdfs:label   "Series Component Type"@en ;
     rdfs:comment "Concept to define the type of time series knowledge. Each type can be of: Dispersion, Location, Trend or Structural"@en .
 
 
-###  https://w3id.org/semts/ontology#structureDimension
-semts:structureDimension
+###  https://w3id.org/SemTS/ontology#structureDimension
+SemTS:structureDimension
     rdf:type     owl:ObjectProperty ;
-    rdfs:domain  semts:DataStructure ;
-    rdfs:range   semts:SeriesDimension ;
+    rdfs:domain  SemTS:DataStructure ;
+    rdfs:range   SemTS:SeriesDimension ;
     rdfs:label   "Structure Dimension"@en ;
     rdfs:comment "Dimensions belonging to a data set. This can be the set of dimensions describing a multivariate time series"@en .
 
@@ -230,75 +230,75 @@ semts:structureDimension
 #    Data properties
 #################################################################
 
-###  https://w3id.org/semts/ontology#dimensionPosition
-semts:dimensionPosition
+###  https://w3id.org/SemTS/ontology#dimensionPosition
+SemTS:dimensionPosition
     rdf:type     owl:DatatypeProperty ;
-    rdfs:domain  semts:SeriesDimension ;
+    rdfs:domain  SemTS:SeriesDimension ;
     rdfs:range   xsd:integer ;
     rdfs:label   "Dimension Position"@en ;
     rdfs:comment "Index position of a dimension in an ordered set of dimensions (e.g. index position in a dataframe)"@en .
 
 
-###  https://w3id.org/semts/ontology#dimensionUnit
-semts:dimensionUnit
+###  https://w3id.org/SemTS/ontology#dimensionUnit
+SemTS:dimensionUnit
     rdf:type     owl:DatatypeProperty ;
-    rdfs:domain  semts:SeriesDimension ;
+    rdfs:domain  SemTS:SeriesDimension ;
     rdfs:range   xsd:string ;
     rdfs:label   "Dimension Unit"@en ;
     rdfs:comment "Unit of the data"@en .
 
 # todo: why not reuse rdfs:comment or dcterms:description instead?
-###  https://w3id.org/semts/ontology#hasDescription
-semts:hasDescription
+###  https://w3id.org/SemTS/ontology#hasDescription
+SemTS:hasDescription
     rdf:type     owl:DatatypeProperty ;
-    rdfs:domain  semts:Knowledge, semts:KnowledgeGenerationEntity, semts:KnowledgeQualityMeasure,
-                 semts:SeriesDimension ;
+    rdfs:domain  SemTS:Knowledge, SemTS:KnowledgeGenerationEntity, SemTS:KnowledgeQualityMeasure,
+                 SemTS:SeriesDimension ;
     rdfs:range   xsd:string ;
     rdfs:label   "Has Description"@en ;
     rdfs:comment "Description property associated with multiple classes"@en .
 
-###  https://w3id.org/semts/ontology#hasDtype
-semts:hasDtype
+###  https://w3id.org/SemTS/ontology#hasDtype
+SemTS:hasDtype
     rdf:type     owl:DatatypeProperty ;
-    rdfs:domain  semts:KnowledgeQualityMeasure, semts:ScenarioParameter, semts:SegmentProperty, semts:SeriesDimension ;
+    rdfs:domain  SemTS:KnowledgeQualityMeasure, SemTS:ScenarioParameter, SemTS:SegmentProperty, SemTS:SeriesDimension ;
     rdfs:range   xsd:string ;
     rdfs:label   "Has Data Type"@en ;
     rdfs:comment "Data type of linked values"@en .
 
 # todo: why not reuse rdfs:label or dcterms:title instead?
-###  https://w3id.org/semts/ontology#hasName
-semts:hasName
+###  https://w3id.org/SemTS/ontology#hasName
+SemTS:hasName
     rdf:type     owl:DatatypeProperty ;
-    rdfs:domain  semts:Knowledge, semts:KnowledgeGenerationEntity, semts:KnowledgeQualityMeasure,
-                 semts:SeriesDimension ;
+    rdfs:domain  SemTS:Knowledge, SemTS:KnowledgeGenerationEntity, SemTS:KnowledgeQualityMeasure,
+                 SemTS:SeriesDimension ;
     rdfs:range   xsd:string ;
     rdfs:label   "Has Name"@en ;
     rdfs:comment "Name of a specific instance"@en .
 
 
-###  https://w3id.org/semts/ontology#hasValue
-semts:hasValue
+###  https://w3id.org/SemTS/ontology#hasValue
+SemTS:hasValue
     rdf:type     owl:DatatypeProperty ;
-    rdfs:domain  semts:KnowledgeQualityMeasure, semts:Label, semts:MathExpression, semts:Note, semts:ScenarioParameter,
-                 semts:SegmentProperty ;
+    rdfs:domain  SemTS:KnowledgeQualityMeasure, SemTS:Label, SemTS:MathExpression, SemTS:Note, SemTS:ScenarioParameter,
+                 SemTS:SegmentProperty ;
     rdfs:range   xsd:string ;
     rdfs:label   "Has Value"@en ;
     rdfs:comment "Value associated with multiple classes such as different knowledge classes"@en .
 
 
-###  https://w3id.org/semts/ontology#mathExpressionFormat
-semts:mathExpressionFormat
+###  https://w3id.org/SemTS/ontology#mathExpressionFormat
+SemTS:mathExpressionFormat
     rdf:type     owl:DatatypeProperty ;
-    rdfs:domain  semts:MathExpression ;
+    rdfs:domain  SemTS:MathExpression ;
     rdfs:range   xsd:string ;
     rdfs:label   "Math Expression Format"@en ;
     rdfs:comment "The format of a defined math expression"@en .
 
 
-###  https://w3id.org/semts/ontology#mathExpressionParser
-semts:mathExpressionParser
+###  https://w3id.org/SemTS/ontology#mathExpressionParser
+SemTS:mathExpressionParser
     rdf:type     owl:DatatypeProperty ;
-    rdfs:domain  semts:MathExpression ;
+    rdfs:domain  SemTS:MathExpression ;
     rdfs:range   xsd:string ;
     rdfs:label   "Math Expression Parser"@en ;
     rdfs:comment "A translator or parser to evaluate the syntax of mathematical expressions"@en .
@@ -353,290 +353,290 @@ prov:Agent
     rdf:type owl:Class .
 
 
-###  https://w3id.org/semts/ontology#Condition
-semts:Condition
+###  https://w3id.org/SemTS/ontology#Condition
+SemTS:Condition
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:MathExpression ;
+    rdfs:subClassOf SemTS:MathExpression ;
     rdfs:label      "Condition"@en ;
     rdfs:comment    "Knowledge to describe a conditional statement"@en .
 
 
-###  https://w3id.org/semts/ontology#DataInformationProperty
-semts:DataInformationProperty
+###  https://w3id.org/SemTS/ontology#DataInformationProperty
+SemTS:DataInformationProperty
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:SegmentProperty ;
+    rdfs:subClassOf SemTS:SegmentProperty ;
     rdfs:label      "Data Information Property"@en ;
     rdfs:comment    "Knowledge to describe general information associated with the time series such as the number of missing points"@en .
 
 
-###  https://w3id.org/semts/ontology#DataKnowledge
-semts:DataKnowledge
+###  https://w3id.org/SemTS/ontology#DataKnowledge
+SemTS:DataKnowledge
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:Knowledge ;
+    rdfs:subClassOf SemTS:Knowledge ;
     rdfs:label      "Data Knowledge"@en ;
     rdfs:comment    "Defines knowledge derived from the time series data"@en .
 
 
-###  https://w3id.org/semts/ontology#DataStructure
-semts:DataStructure
+###  https://w3id.org/SemTS/ontology#DataStructure
+SemTS:DataStructure
     rdf:type        owl:Class ;
     rdfs:subClassOf owl:Thing ;
     rdfs:label      "Data Structure"@en ;
     rdfs:comment    "Definition of the data structure of a time series segment. Especially defines the set of dimensions"@en .
 
 
-###  https://w3id.org/semts/ontology#DispersionComponentConcept
-semts:DispersionComponentConcept
+###  https://w3id.org/SemTS/ontology#DispersionComponentConcept
+SemTS:DispersionComponentConcept
     rdf:type        owl:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label      "Dispersion Component Concept"@en ;
     rdfs:comment    "Concept to describe knowledge of type dispersion"@en .
 
 
-###  https://w3id.org/semts/ontology#Knowledge
-semts:Knowledge
+###  https://w3id.org/SemTS/ontology#Knowledge
+SemTS:Knowledge
     rdf:type        owl:Class ;
     rdfs:subClassOf owl:Thing ;
     rdfs:label      "Knowledge"@en ;
     rdfs:comment    "Most generic class to define knowledge entities"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeConcept
-semts:KnowledgeConcept
+###  https://w3id.org/SemTS/ontology#KnowledgeConcept
+SemTS:KnowledgeConcept
     rdf:type        owl:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label      "Knowledge Concept"@en ;
     rdfs:comment    "Parental class of all knowledge concepts"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeDissimilarityMeasure
-semts:KnowledgeDissimilarityMeasure
+###  https://w3id.org/SemTS/ontology#KnowledgeDissimilarityMeasure
+SemTS:KnowledgeDissimilarityMeasure
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:KnowledgeGenerationEntity ;
+    rdfs:subClassOf SemTS:KnowledgeGenerationEntity ;
     rdfs:label      "Knowledge Dissimilarity Measure"@en ;
     rdfs:comment    "Defines a similarity measure applied to knowledge in order to derive further knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeGenerationEntity
-semts:KnowledgeGenerationEntity
+###  https://w3id.org/SemTS/ontology#KnowledgeGenerationEntity
+SemTS:KnowledgeGenerationEntity
     rdf:type     owl:Class ;
     rdfs:label   "Knowledge Generation Entity"@en ;
     rdfs:comment "Most generic class to define knowledge generation instances"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeGenerationMethod
-semts:KnowledgeGenerationMethod
+###  https://w3id.org/SemTS/ontology#KnowledgeGenerationMethod
+SemTS:KnowledgeGenerationMethod
     rdf:type        owl:Class ;
-    rdfs:subClassOf mls:Algorithm, semts:KnowledgeGenerationEntity ;
+    rdfs:subClassOf mls:Algorithm, SemTS:KnowledgeGenerationEntity ;
     rdfs:label      "Knowledge Generation Method"@en ;
     rdfs:comment    "Defines knowledge that was produced by a method"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeGroup
-semts:KnowledgeGroup
+###  https://w3id.org/SemTS/ontology#KnowledgeGroup
+SemTS:KnowledgeGroup
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:Knowledge ;
+    rdfs:subClassOf SemTS:Knowledge ;
     rdfs:label      "Knowledge Group"@en ;
     rdfs:comment    "Group to allow for knowledge hierarchies or to cluster semantically aligned knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeQualityMeasure
-semts:KnowledgeQualityMeasure
+###  https://w3id.org/SemTS/ontology#KnowledgeQualityMeasure
+SemTS:KnowledgeQualityMeasure
     rdf:type        owl:Class ;
     rdfs:subClassOf owl:Thing ;
     rdfs:label      "Knowledge Quality Measure"@en ;
     rdfs:comment    "A measure to define the goodness of knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeReasoning
-semts:KnowledgeReasoning
+###  https://w3id.org/SemTS/ontology#KnowledgeReasoning
+SemTS:KnowledgeReasoning
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:KnowledgeGenerationEntity ;
+    rdfs:subClassOf SemTS:KnowledgeGenerationEntity ;
     rdfs:label      "Knowledge Reasoning"@en ;
     rdfs:comment    "Defines the generation of knowledge that was derived via a semantic reasoning"@en .
 
 
-###  https://w3id.org/semts/ontology#Label
-semts:Label
+###  https://w3id.org/SemTS/ontology#Label
+SemTS:Label
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:ScenarioKnowledge ;
+    rdfs:subClassOf SemTS:ScenarioKnowledge ;
     rdfs:label      "Label"@en ;
     rdfs:comment    "Defines knowledge which is linked to a specific scenario rather than the data itself. For instance knowledge from domain experts"@en .
 
 
-###  https://w3id.org/semts/ontology#LocationComponentConcept
-semts:LocationComponentConcept
+###  https://w3id.org/SemTS/ontology#LocationComponentConcept
+SemTS:LocationComponentConcept
     rdf:type        owl:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label      "Location Component Concept"@en ;
     rdfs:comment    "Concept to describe knowledge of type location"@en .
 
 
-###  https://w3id.org/semts/ontology#MathExpression
-semts:MathExpression
+###  https://w3id.org/SemTS/ontology#MathExpression
+SemTS:MathExpression
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:ScenarioKnowledge ;
+    rdfs:subClassOf SemTS:ScenarioKnowledge ;
     rdfs:label      "Math Expression"@en ;
     rdfs:comment    "Knowledge defining mathematical expressions"@en .
 
 
-###  https://w3id.org/semts/ontology#MathFieldConcept
-semts:MathFieldConcept
+###  https://w3id.org/SemTS/ontology#MathFieldConcept
+SemTS:MathFieldConcept
     rdf:type        owl:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label      "Math Field Concept"@en ;
     rdfs:comment    "Concepts to semantically structure mathematical knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#MethodKnowledge
-semts:MethodKnowledge
+###  https://w3id.org/SemTS/ontology#MethodKnowledge
+SemTS:MethodKnowledge
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:Knowledge ;
+    rdfs:subClassOf SemTS:Knowledge ;
     rdfs:label      "Method Knowledge"@en ;
     rdfs:comment    "Knowledge that defines methodical presets"@en .
 
 
-###  https://w3id.org/semts/ontology#Note
-semts:Note
+###  https://w3id.org/SemTS/ontology#Note
+SemTS:Note
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:ScenarioKnowledge ;
+    rdfs:subClassOf SemTS:ScenarioKnowledge ;
     rdfs:label      "Note"@en ;
     rdfs:comment    "Knowledge to classify purely textual annotations"@en .
 
 
-###  https://w3id.org/semts/ontology#PredictionProperty
-semts:PredictionProperty
+###  https://w3id.org/SemTS/ontology#PredictionProperty
+SemTS:PredictionProperty
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:SegmentProperty ;
+    rdfs:subClassOf SemTS:SegmentProperty ;
     rdfs:label      "Prediction Property"@en ;
     rdfs:comment    "Knowledge to define resultant predictions from an exploitation of other knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#QualityMeasureConcept
-semts:QualityMeasureConcept
+###  https://w3id.org/SemTS/ontology#QualityMeasureConcept
+SemTS:QualityMeasureConcept
     rdf:type        owl:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label      "Quality Measure Concept"@en ;
     rdfs:comment    "Concept to specify the category of a knowledge quality measure"@en .
 
 
-###  https://w3id.org/semts/ontology#RawDataReference
-semts:RawDataReference
+###  https://w3id.org/SemTS/ontology#RawDataReference
+SemTS:RawDataReference
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:DataKnowledge ;
+    rdfs:subClassOf SemTS:DataKnowledge ;
     rdfs:label      "Raw Data Reference"@en ;
     rdfs:comment    "Reference to concrete data which is considered the most complete yet unprocessed type of knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#RootSegmentDescriptor
-semts:RootSegmentDescriptor
+###  https://w3id.org/SemTS/ontology#RootSegmentDescriptor
+SemTS:RootSegmentDescriptor
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:SegmentDescriptor ;
+    rdfs:subClassOf SemTS:SegmentDescriptor ;
     rdfs:label      "Root Segment Descriptor"@en ;
     rdfs:comment    "A class to link all the information associated with a complete time series. The interface between data information and associated or generated knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#ScenarioKnowledge
-semts:ScenarioKnowledge
+###  https://w3id.org/SemTS/ontology#ScenarioKnowledge
+SemTS:ScenarioKnowledge
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:Knowledge ;
+    rdfs:subClassOf SemTS:Knowledge ;
     rdfs:label      "Scenario Knowledge"@en ;
     rdfs:comment    "todo: update"@en .
 
 
-###  https://w3id.org/semts/ontology#ScenarioParameter
-semts:ScenarioParameter
+###  https://w3id.org/SemTS/ontology#ScenarioParameter
+SemTS:ScenarioParameter
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:ScenarioKnowledge ;
+    rdfs:subClassOf SemTS:ScenarioKnowledge ;
     rdfs:label      "Scenario Parameter"@en ;
     rdfs:comment    "todo: update"@en .
 
 
-###  https://w3id.org/semts/ontology#SegmentDescriptor
-semts:SegmentDescriptor
+###  https://w3id.org/SemTS/ontology#SegmentDescriptor
+SemTS:SegmentDescriptor
     rdf:type        owl:Class ;
     rdfs:subClassOf owl:Thing ;
     rdfs:label      "Segment Descriptor"@en ;
     rdfs:comment    "A class to link all the information associated with a partial time series regarding dimensionality or index interval. The interface between data information and associated or generated knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#SegmentDescriptorGroup
-semts:SegmentDescriptorGroup
+###  https://w3id.org/SemTS/ontology#SegmentDescriptorGroup
+SemTS:SegmentDescriptorGroup
     rdf:type     owl:Class ;
     rdfs:label   "Segment Descriptor Group"@en ;
     rdfs:comment "A group to define segment descriptor collections"@en .
 
 
-###  https://w3id.org/semts/ontology#SegmentProperty
-semts:SegmentProperty
+###  https://w3id.org/SemTS/ontology#SegmentProperty
+SemTS:SegmentProperty
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:DataKnowledge ;
+    rdfs:subClassOf SemTS:DataKnowledge ;
     rdfs:label      "Segment Property"@en ;
     rdfs:comment    "Generic class to specify characteristical information directly derived or generated from the time series data"@en .
 
 
-###  https://w3id.org/semts/ontology#SeriesComponentGroup
-semts:SeriesComponentGroup
+###  https://w3id.org/SemTS/ontology#SeriesComponentGroup
+SemTS:SeriesComponentGroup
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:DataKnowledge, semts:KnowledgeGroup, [ rdf:type          owl:Restriction ;
-                                                                 owl:onProperty    semts:groupKnowledge ;
-                                                                 owl:allValuesFrom semts:SegmentProperty ] ;
+    rdfs:subClassOf SemTS:DataKnowledge, SemTS:KnowledgeGroup, [ rdf:type          owl:Restriction ;
+                                                                 owl:onProperty    SemTS:groupKnowledge ;
+                                                                 owl:allValuesFrom SemTS:SegmentProperty ] ;
     rdfs:label      "Series Component Group"@en ;
     rdfs:comment    "Groups extracted time series features"@en .
 
 
-###  https://w3id.org/semts/ontology#SeriesComponentProperty
-semts:SeriesComponentProperty
+###  https://w3id.org/SemTS/ontology#SeriesComponentProperty
+SemTS:SeriesComponentProperty
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:SegmentProperty ;
+    rdfs:subClassOf SemTS:SegmentProperty ;
     rdfs:label      "Series Component Property"@en ;
     rdfs:comment    "Characterises all properties, which describe extracted time series features"@en .
 
 
-###  https://w3id.org/semts/ontology#SeriesData
-semts:SeriesData
+###  https://w3id.org/SemTS/ontology#SeriesData
+SemTS:SeriesData
     rdf:type        owl:Class ;
     rdfs:subClassOf mls:Dataset ;
     rdfs:label      "Series Data"@en ;
     rdfs:comment    "References and defines time series metadata"@en .
 
 
-###  https://w3id.org/semts/ontology#SeriesDimension
-semts:SeriesDimension
+###  https://w3id.org/SemTS/ontology#SeriesDimension
+SemTS:SeriesDimension
     rdf:type        owl:Class ;
     rdfs:subClassOf mls:Feature ;
     rdfs:label      "Series Dimension"@en ;
     rdfs:comment    "Defines metadata of a time series dimension"@en .
 
 
-###  https://w3id.org/semts/ontology#Settings
-semts:Settings
+###  https://w3id.org/SemTS/ontology#Settings
+SemTS:Settings
     rdf:type        owl:Class ;
-    rdfs:subClassOf semts:KnowledgeGroup, semts:ScenarioKnowledge, [ rdf:type          owl:Restriction ;
-                                                                     owl:onProperty    semts:groupKnowledge ;
-                                                                     owl:allValuesFrom semts:ScenarioParameter ] ;
+    rdfs:subClassOf SemTS:KnowledgeGroup, SemTS:ScenarioKnowledge, [ rdf:type          owl:Restriction ;
+                                                                     owl:onProperty    SemTS:groupKnowledge ;
+                                                                     owl:allValuesFrom SemTS:ScenarioParameter ] ;
     rdfs:label      "Settings"@en ;
     rdfs:comment    "A particular knowledge group to define scenario parameters"@en .
 
 
-###  https://w3id.org/semts/ontology#StructuralComponentConcept
-semts:StructuralComponentConcept
+###  https://w3id.org/SemTS/ontology#StructuralComponentConcept
+SemTS:StructuralComponentConcept
     rdf:type        owl:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label      "Structural Component Concept"@en ;
     rdfs:comment    "Concept to describe knowledge of type structure"@en .
 
 
-###  https://w3id.org/semts/ontology#TimeIndex
-semts:TimeIndex
+###  https://w3id.org/SemTS/ontology#TimeIndex
+SemTS:TimeIndex
     rdf:type        owl:Class ;
     rdfs:subClassOf time:TemporalEntity ;
     rdfs:label      "Time Index"@en ;
     rdfs:comment    "Defines the index of a time series segment"@en .
 
 
-###  https://w3id.org/semts/ontology#TrendComponentConcept
-semts:TrendComponentConcept
+###  https://w3id.org/SemTS/ontology#TrendComponentConcept
+SemTS:TrendComponentConcept
     rdf:type        owl:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label      "Trend Component Concept"@en ;

@@ -1,12 +1,12 @@
-@prefix : <https://w3id.org/semts/ontology#> .
+@prefix : <https://w3id.org/SemTS/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/semts/ontology#> .
+@base <https://w3id.org/SemTS/ontology#> .
 
-<https://w3id.org/semts/ontology#> rdf:type owl:Ontology ;
+<https://w3id.org/SemTS/ontology#> rdf:type owl:Ontology ;
                                     <http://purl.org/dc/terms/abstract> """SemTS is an ontology to semantically structure insights gained from multivariate
 time series analyses combined with domain-specific information. The main
 concept constitutes a specification of informative data points or intervals within
@@ -63,7 +63,7 @@ enables organized reusability and effective propagation."""@en ;
                                            rdfs:range <http://www.w3.org/ns/prov#Entity> .
 
 
-###  https://w3id.org/semts/ontology#groupKnowledge
+###  https://w3id.org/SemTS/ontology#groupKnowledge
 :groupKnowledge rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
                 rdfs:domain :KnowledgeGroup ;
@@ -72,7 +72,7 @@ enables organized reusability and effective propagation."""@en ;
                 rdfs:label "Group Knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#hasValue
+###  https://w3id.org/SemTS/ontology#hasValue
 :hasValue rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf owl:topObjectProperty ;
           rdf:type owl:FunctionalProperty ;
@@ -83,7 +83,7 @@ enables organized reusability and effective propagation."""@en ;
           rdfs:label "Has Value"@en .
 
 
-###  https://w3id.org/semts/ontology#inputDataReference
+###  https://w3id.org/SemTS/ontology#inputDataReference
 :inputDataReference rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf owl:topObjectProperty ;
                     rdf:type owl:FunctionalProperty ;
@@ -93,7 +93,7 @@ enables organized reusability and effective propagation."""@en ;
                     rdfs:label "Input Data Reference"@en .
 
 
-###  https://w3id.org/semts/ontology#inputKnowledge
+###  https://w3id.org/SemTS/ontology#inputKnowledge
 :inputKnowledge rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
                 rdfs:domain :KnowledgeGenerationInput ;
@@ -102,7 +102,7 @@ enables organized reusability and effective propagation."""@en ;
                 rdfs:label "Input Knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#isPartOf
+###  https://w3id.org/SemTS/ontology#isPartOf
 :isPartOf rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
           rdfs:domain :TimeSeriesSegment ;
@@ -111,7 +111,7 @@ enables organized reusability and effective propagation."""@en ;
           rdfs:label "Is Part Of"@en .
 
 
-###  https://w3id.org/semts/ontology#knowledgeConcept
+###  https://w3id.org/SemTS/ontology#knowledgeConcept
 :knowledgeConcept rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf owl:topObjectProperty ;
                   rdf:type owl:FunctionalProperty ;
@@ -121,7 +121,7 @@ enables organized reusability and effective propagation."""@en ;
                   rdfs:label "Knowledge Concept"@en .
 
 
-###  https://w3id.org/semts/ontology#knowledgeGenerationConcept
+###  https://w3id.org/SemTS/ontology#knowledgeGenerationConcept
 :knowledgeGenerationConcept rdf:type owl:ObjectProperty ,
                                      owl:FunctionalProperty ;
                             rdfs:domain :KnowledgeGenerationEntity ;
@@ -130,7 +130,7 @@ enables organized reusability and effective propagation."""@en ;
                             rdfs:label "Knowledge Generation Concept"@en .
 
 
-###  https://w3id.org/semts/ontology#knowledgeGenerationEntity
+###  https://w3id.org/SemTS/ontology#knowledgeGenerationEntity
 :knowledgeGenerationEntity rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf owl:topObjectProperty ;
                            rdf:type owl:FunctionalProperty ;
@@ -140,7 +140,7 @@ enables organized reusability and effective propagation."""@en ;
                            rdfs:label "Knowledge Generation Entity"@en .
 
 
-###  https://w3id.org/semts/ontology#knowledgeQualityMeasure
+###  https://w3id.org/SemTS/ontology#knowledgeQualityMeasure
 :knowledgeQualityMeasure rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf owl:topObjectProperty ;
                          rdfs:domain :Knowledge ;
@@ -149,7 +149,7 @@ enables organized reusability and effective propagation."""@en ;
                          rdfs:label "Knowledge Quality Measure"@en .
 
 
-###  https://w3id.org/semts/ontology#outputKnowledge
+###  https://w3id.org/SemTS/ontology#outputKnowledge
 :outputKnowledge rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf owl:topObjectProperty ;
                  rdfs:domain :KnowledgeGenerationOutput ;
@@ -158,7 +158,7 @@ enables organized reusability and effective propagation."""@en ;
                  rdfs:label "Output Knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#qualityMeasureConcept
+###  https://w3id.org/SemTS/ontology#qualityMeasureConcept
 :qualityMeasureConcept rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf owl:topObjectProperty ;
                        rdf:type owl:FunctionalProperty ;
@@ -168,7 +168,7 @@ enables organized reusability and effective propagation."""@en ;
                        rdfs:label "Quality Measure Concept"@en .
 
 
-###  https://w3id.org/semts/ontology#segmentDimension
+###  https://w3id.org/SemTS/ontology#segmentDimension
 :segmentDimension rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf owl:topObjectProperty ;
                   rdfs:domain :TimeSeriesSegment ;
@@ -177,7 +177,7 @@ enables organized reusability and effective propagation."""@en ;
                   rdfs:label "Segment Dimension"@en .
 
 
-###  https://w3id.org/semts/ontology#segmentGroupKnowledge
+###  https://w3id.org/SemTS/ontology#segmentGroupKnowledge
 :segmentGroupKnowledge rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf owl:topObjectProperty ;
                        rdfs:domain :TimeSeriesSegment ;
@@ -186,7 +186,7 @@ enables organized reusability and effective propagation."""@en ;
                        rdfs:label "Segment Group Knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#segmentIndex
+###  https://w3id.org/SemTS/ontology#segmentIndex
 :segmentIndex rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdf:type owl:FunctionalProperty ;
@@ -196,7 +196,7 @@ enables organized reusability and effective propagation."""@en ;
               rdfs:label "Segment Index"@en .
 
 
-###  https://w3id.org/semts/ontology#segmentKnowledge
+###  https://w3id.org/SemTS/ontology#segmentKnowledge
 :segmentKnowledge rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf owl:topObjectProperty ;
                   rdfs:domain :TimeSeriesSegment ;
@@ -217,7 +217,7 @@ enables organized reusability and effective propagation."""@en ;
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:DatatypeProperty .
 
 
-###  https://w3id.org/semts/ontology#dType
+###  https://w3id.org/SemTS/ontology#dType
 :dType rdf:type owl:DatatypeProperty ,
                 owl:FunctionalProperty ;
        rdfs:domain :DataDimension ,
@@ -227,7 +227,7 @@ enables organized reusability and effective propagation."""@en ;
        rdfs:label "Data Type"@en .
 
 
-###  https://w3id.org/semts/ontology#description
+###  https://w3id.org/SemTS/ontology#description
 :description rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description> ;
              rdfs:domain :DataDimension ,
@@ -240,7 +240,7 @@ enables organized reusability and effective propagation."""@en ;
              rdfs:label "Description"@en .
 
 
-###  https://w3id.org/semts/ontology#dimensionPosition
+###  https://w3id.org/SemTS/ontology#dimensionPosition
 :dimensionPosition rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf owl:topDataProperty ;
                    rdf:type owl:FunctionalProperty ;
@@ -250,7 +250,7 @@ enables organized reusability and effective propagation."""@en ;
                    rdfs:label "Dimension Position"@en .
 
 
-###  https://w3id.org/semts/ontology#dimensionUnit
+###  https://w3id.org/SemTS/ontology#dimensionUnit
 :dimensionUnit rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf owl:topDataProperty ;
                rdf:type owl:FunctionalProperty ;
@@ -260,7 +260,7 @@ enables organized reusability and effective propagation."""@en ;
                rdfs:label "Dimension Unit"@en .
 
 
-###  https://w3id.org/semts/ontology#mathExpressionFormat
+###  https://w3id.org/SemTS/ontology#mathExpressionFormat
 :mathExpressionFormat rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf owl:topDataProperty ;
                       rdfs:domain :MathExpression ;
@@ -269,7 +269,7 @@ enables organized reusability and effective propagation."""@en ;
                       rdfs:label "Math Expression Format"@en .
 
 
-###  https://w3id.org/semts/ontology#mathExpressionParser
+###  https://w3id.org/SemTS/ontology#mathExpressionParser
 :mathExpressionParser rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf owl:topDataProperty ;
                       rdfs:domain :MathExpression ;
@@ -278,7 +278,7 @@ enables organized reusability and effective propagation."""@en ;
                       rdfs:label "Math Expression Parser"@en .
 
 
-###  https://w3id.org/semts/ontology#title
+###  https://w3id.org/SemTS/ontology#title
 :title rdf:type owl:DatatypeProperty ;
        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> ;
        rdf:type owl:FunctionalProperty ;
@@ -292,7 +292,7 @@ enables organized reusability and effective propagation."""@en ;
        rdfs:label "Title"@en .
 
 
-###  https://w3id.org/semts/ontology#valueString
+###  https://w3id.org/SemTS/ontology#valueString
 :valueString rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf owl:topDataProperty ;
              rdf:type owl:FunctionalProperty ;
@@ -348,7 +348,7 @@ enables organized reusability and effective propagation."""@en ;
 <http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
 
 
-###  https://w3id.org/semts/ontology#Algorithm
+###  https://w3id.org/SemTS/ontology#Algorithm
 :Algorithm rdf:type owl:Class ;
            rdfs:subClassOf <http://www.w3.org/ns/mls#Algorithm> ,
                            :MethodKnowledge ;
@@ -356,34 +356,34 @@ enables organized reusability and effective propagation."""@en ;
            rdfs:label "Algorithm"@en .
 
 
-###  https://w3id.org/semts/ontology#ArtificialTimeSeriesSegment
+###  https://w3id.org/SemTS/ontology#ArtificialTimeSeriesSegment
 :ArtificialTimeSeriesSegment rdf:type owl:Class ;
                              rdfs:subClassOf :TimeSeriesSegment ;
                              rdfs:comment "A time series segment that does not, or only partially refer to concrete time series data. It represents an artificially generated time series segment that might for instance describe the result of a forecast with a time index not being in the range of the original time series data."@en ;
                              rdfs:label "Artificial Time Series Segment"@en .
 
 
-###  https://w3id.org/semts/ontology#Condition
+###  https://w3id.org/SemTS/ontology#Condition
 :Condition rdf:type owl:Class ;
            rdfs:subClassOf :MathExpression ;
            rdfs:comment "Defines a mathematical condition. Allows for a validation of a particular time series segment given a concrete, predefined condition."@en ;
            rdfs:label "Condition"@en .
 
 
-###  https://w3id.org/semts/ontology#DataDimension
+###  https://w3id.org/SemTS/ontology#DataDimension
 :DataDimension rdf:type owl:Class ;
                rdfs:comment "Defines a data dimension (or also referred to as feature or attribute) in a time series segment."@en ;
                rdfs:label "Data Dimension"@en .
 
 
-###  https://w3id.org/semts/ontology#DataKnowledge
+###  https://w3id.org/SemTS/ontology#DataKnowledge
 :DataKnowledge rdf:type owl:Class ;
                rdfs:subClassOf :Knowledge ;
                rdfs:comment "Defines any knowledge that is derived from the data. This includes statistics, other signal characteristics or knowledge generated thorugh data analysis methods. Examples for the latter case are predictions, anomalies or cluster group memberships."@en ;
                rdfs:label "Data Knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#EmbeddedValue
+###  https://w3id.org/SemTS/ontology#EmbeddedValue
 :EmbeddedValue rdf:type owl:Class ;
                rdfs:subClassOf :Value ;
                rdfs:comment """Refers to a value that is directly stored in the knowledge graph. Compared to referenced values, these values are rather single, non-complex values having a primitive type.
@@ -391,7 +391,7 @@ One example could be the mean value of a univariate time series."""@en ;
                rdfs:label "Embedded Value"@en .
 
 
-###  https://w3id.org/semts/ontology#Hyperparameter
+###  https://w3id.org/SemTS/ontology#Hyperparameter
 :Hyperparameter rdf:type owl:Class ;
                 rdfs:subClassOf <http://www.w3.org/ns/mls#Hyperparameter> ,
                                 :MethodKnowledge ;
@@ -399,55 +399,55 @@ One example could be the mean value of a univariate time series."""@en ;
                 rdfs:label "Hyperparameter"@en .
 
 
-###  https://w3id.org/semts/ontology#Knowledge
+###  https://w3id.org/SemTS/ontology#Knowledge
 :Knowledge rdf:type owl:Class ;
            rdfs:comment "Represents the highest level of any knowledge associated with time series data. Knowledge can be made more specific via subclasses or associated concepts."@en ;
            rdfs:label "Knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeComparisonMeasure
+###  https://w3id.org/SemTS/ontology#KnowledgeComparisonMeasure
 :KnowledgeComparisonMeasure rdf:type owl:Class ;
                             rdfs:subClassOf :KnowledgeGenerationEntity ;
                             rdfs:comment "Any knowledge that is generated by a comparison of compatible inputs. This might either be raw data or already defined knowledge. A simple example might be the result of a Euclidean distance."@en ;
                             rdfs:label "Knowledge Dissimilarity Measure"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeConcept
+###  https://w3id.org/SemTS/ontology#KnowledgeConcept
 :KnowledgeConcept rdf:type owl:Class ;
                   rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
                   rdfs:comment "An SKOS concept associated with the knowledge class or any corresponding subclass"@en ;
                   rdfs:label "Knowledge Concept"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeGenerationConcept
+###  https://w3id.org/SemTS/ontology#KnowledgeGenerationConcept
 :KnowledgeGenerationConcept rdf:type owl:Class ;
                             rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
                             rdfs:comment "An SKOS concept associated with the knowledge generation entity class or any corresponding subclass"@en ;
                             rdfs:label "Knowledge Generation Concept"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeGenerationEntity
+###  https://w3id.org/SemTS/ontology#KnowledgeGenerationEntity
 :KnowledgeGenerationEntity rdf:type owl:Class ;
                            rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
                            rdfs:comment "Represents the highest entity to define the process of knowledge generation. A more specific description can be provided by subclasses or assigned concepts. This class inherits from prov:Agent and thus allows for provenance during knowledge propagation."@en ;
                            rdfs:label "Knowledge Generation Entity"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeGenerationIO
+###  https://w3id.org/SemTS/ontology#KnowledgeGenerationIO
 :KnowledgeGenerationIO rdf:type owl:Class ;
                        rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                        rdfs:comment "Defines any input and output of a knowledge generation entity. It inherits from prov:Entity to define instances that are used by or generated by a prov:Activity, which in turn is the parental class of a knowledge generation entity."@en ;
                        rdfs:label "Knowledge Generation IO"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeGenerationInput
+###  https://w3id.org/SemTS/ontology#KnowledgeGenerationInput
 :KnowledgeGenerationInput rdf:type owl:Class ;
                           rdfs:subClassOf :KnowledgeGenerationIO ;
                           rdfs:comment "Defines the input of a knowledge generation entity. While outputs can only contain produced knowledge, inputs might either reference knowledge or raw data."@en ;
                           rdfs:label "Knowledge Generation Input"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeGenerationMethod
+###  https://w3id.org/SemTS/ontology#KnowledgeGenerationMethod
 :KnowledgeGenerationMethod rdf:type owl:Class ;
                            rdfs:subClassOf <http://www.w3.org/ns/mls#Algorithm> ,
                                            :KnowledgeGenerationEntity ;
@@ -455,28 +455,28 @@ One example could be the mean value of a univariate time series."""@en ;
                            rdfs:label "Knowledge Generation Method"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeGenerationOutput
+###  https://w3id.org/SemTS/ontology#KnowledgeGenerationOutput
 :KnowledgeGenerationOutput rdf:type owl:Class ;
                            rdfs:subClassOf :KnowledgeGenerationIO ;
                            rdfs:comment "Defines the output of a knowledge generation entity. Compared to inputs, outputs only allow for a reference to generated knowledge and not to raw data. This, on purpose, excludes data transformations from the overall ontology concept by only focusing on a propagation of knowledge."@en ;
                            rdfs:label "Knowledge Generation Output"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeGroup
+###  https://w3id.org/SemTS/ontology#KnowledgeGroup
 :KnowledgeGroup rdf:type owl:Class ;
                 rdfs:subClassOf :Knowledge ;
                 rdfs:comment "A grouping of knowledge which itself is again considered knowledge. Can be used to structure knowledge and create hierarchies."@en ;
                 rdfs:label "Knowledge Group"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeQualityMeasure
+###  https://w3id.org/SemTS/ontology#KnowledgeQualityMeasure
 :KnowledgeQualityMeasure rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.w3.org/ns/mls#EvaluationMeasure> ;
                          rdfs:comment "Defines the goodness or confidence of time series knowledge associated with one or multiple segments. For knowledge produced by a knowledge generation method the quality measure is often equal to the evaluation metric of the generation method, which is why this class inherits from mls:EvaluationMeasure."@en ;
                          rdfs:label "Knowledge Quality Measure"@en .
 
 
-###  https://w3id.org/semts/ontology#KnowledgeReasoning
+###  https://w3id.org/SemTS/ontology#KnowledgeReasoning
 :KnowledgeReasoning rdf:type owl:Class ;
                     rdfs:subClassOf :KnowledgeGenerationEntity ;
                     rdfs:comment """To complement any knowledge that is generated via analytical methods, this class represents knowledge generated from reasoning processes. This also includes validation processes from human experts or results from reasoning tools.
@@ -484,42 +484,42 @@ While many analysis results can be regarded unvalidated predictions, this class 
                     rdfs:label "Knowledge Reasoning"@en .
 
 
-###  https://w3id.org/semts/ontology#Label
+###  https://w3id.org/SemTS/ontology#Label
 :Label rdf:type owl:Class ;
        rdfs:subClassOf :ScenarioKnowledge ;
        rdfs:comment "Defines any type of validated label. This might be the indication of an event or a complex annotation for machine learning."@en ;
        rdfs:label "Label"@en .
 
 
-###  https://w3id.org/semts/ontology#MathExpression
+###  https://w3id.org/SemTS/ontology#MathExpression
 :MathExpression rdf:type owl:Class ;
                 rdfs:subClassOf :ScenarioKnowledge ;
                 rdfs:comment "A mathematical term describing knowledge associated with a time series segment. One example is a differential equation from physics which describe the underlying series data."@en ;
                 rdfs:label "Math Expression"@en .
 
 
-###  https://w3id.org/semts/ontology#MethodKnowledge
+###  https://w3id.org/SemTS/ontology#MethodKnowledge
 :MethodKnowledge rdf:type owl:Class ;
                  rdfs:subClassOf :Knowledge ;
                  rdfs:comment "Any knowledge that defines an appropriate setting, regarding a particular method that is beneficial or even optimal when analyzing a segment given a particular task."@en ;
                  rdfs:label "Method Knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#Note
+###  https://w3id.org/SemTS/ontology#Note
 :Note rdf:type owl:Class ;
       rdfs:subClassOf :ScenarioKnowledge ;
       rdfs:comment "Defines a simple note representing arbitrary text. This might be a short informal note from a human process expert or any not particularly structured system message."@en ;
       rdfs:label "Note"@en .
 
 
-###  https://w3id.org/semts/ontology#QualityMeasureConcept
+###  https://w3id.org/SemTS/ontology#QualityMeasureConcept
 :QualityMeasureConcept rdf:type owl:Class ;
                        rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
                        rdfs:comment "An SKOS concept associated with the quality measure class"@en ;
                        rdfs:label "Quality Measure Concept"@en .
 
 
-###  https://w3id.org/semts/ontology#ReferencedValue
+###  https://w3id.org/SemTS/ontology#ReferencedValue
 :ReferencedValue rdf:type owl:Class ;
                  rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ,
                                  :Value ;
@@ -527,42 +527,42 @@ While many analysis results can be regarded unvalidated predictions, this class 
                  rdfs:label "Referenced Value"@en .
 
 
-###  https://w3id.org/semts/ontology#ScenarioKnowledge
+###  https://w3id.org/SemTS/ontology#ScenarioKnowledge
 :ScenarioKnowledge rdf:type owl:Class ;
                    rdfs:subClassOf :Knowledge ;
                    rdfs:comment "Defines any knowledge that is associated with a particular scenario or domain. Scenario knowledge corresponds to validated expert knowledge or scenario-specific facts. It includes simple notes, predefined labels or mathematical expressions describing the underlying time series data."@en ;
                    rdfs:label "Scenario Knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#ScenarioParameter
+###  https://w3id.org/SemTS/ontology#ScenarioParameter
 :ScenarioParameter rdf:type owl:Class ;
                    rdfs:subClassOf :ScenarioKnowledge ;
                    rdfs:comment "A scenario parameter equals knowledge that can be regarded a predefined constant to enrich the description of a scenario with respect to time series data. Knowledge of this type for instance comprises machine information or environmental details, which can be assigned to a particular interval of a time series."@en ;
                    rdfs:label "Scenario Parameter"@en .
 
 
-###  https://w3id.org/semts/ontology#SegmentDataCharacteristic
+###  https://w3id.org/SemTS/ontology#SegmentDataCharacteristic
 :SegmentDataCharacteristic rdf:type owl:Class ;
                            rdfs:subClassOf :DataKnowledge ;
                            rdfs:comment "Defines analytical, data-specific insights including derived statistics or other structural characteristics such as representative kernel expressions. Knowledge of this class mostly equals extracted data features."@en ;
                            rdfs:label "Segment Data Characteristic"@en .
 
 
-###  https://w3id.org/semts/ontology#SegmentPrediction
+###  https://w3id.org/SemTS/ontology#SegmentPrediction
 :SegmentPrediction rdf:type owl:Class ;
                    rdfs:subClassOf :DataKnowledge ;
                    rdfs:comment "Defines knowledge derived from data-driven analyses. This for instance includes anomalies and predictions."@en ;
                    rdfs:label "Segment Prediction"@en .
 
 
-###  https://w3id.org/semts/ontology#TimeSeriesSegment
+###  https://w3id.org/SemTS/ontology#TimeSeriesSegment
 :TimeSeriesSegment rdf:type owl:Class ;
                    rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ;
                    rdfs:comment "Represents a segment (also referred to as slice) of a uni- or multivariate time series. Any segment can correspond to the whole time series, a subintervall potentially further limited to a subset of dimensions or only to a single data point. This class inherits from dcat:Dataset and is enriched by an additional time index, information about represented data dimensions and information about associated time series knowledge."@en ;
                    rdfs:label "Time Series Segment"@en .
 
 
-###  https://w3id.org/semts/ontology#Value
+###  https://w3id.org/SemTS/ontology#Value
 :Value rdf:type owl:Class .
 
 
