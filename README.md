@@ -18,5 +18,5 @@ https://semts-ontology.github.io/SemTS/
 - Versioning: SemTS releases will follow the Semantic Versioning Specification 2.0.0 (SemVer - Major.Minor.Patch)
 
 # Changelog
-02/14/25: Initial version of a documentation added
-02/20/25: Ontology UML diagram added
+- 02/14/25: Initial version of a documentation added
+- 02/20/25: Ontology UML diagram added
