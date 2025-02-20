@@ -19,4 +19,4 @@ https://semts-ontology.github.io/SemTS/
 
 # Changelog
 - 02/14/25: Initial version of a documentation added
-- 02/20/25: Ontology UML diagram added
+- 02/20/25: Ontology UML diagram added (Draft of an outdated version. New version is under development)
