@@ -1,6 +1,8 @@
 # SemTS
 Ontology for the Semantic Classification of Time Series Knowledge
 
+![Architecture](assets/images/semts_visual_model.drawio.svg)
+
 # Documentation
 https://semts-ontology.github.io/SemTS/
 
