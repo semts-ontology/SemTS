@@ -18,6 +18,9 @@ by domain experts. A classification and semantic representation of this knowledg
 enables organized reusability and effective propagation."""@en ;
                                     <http://purl.org/dc/terms/creator> "Alexander Graß"@en ;
                                     <http://purl.org/dc/terms/description> "Following soon (see abstract)"@en ;
+                                    # Version Information
+                                    owl:versionInfo               "0.5.1"^^xsd:string ;
+                                    <http://purl.org/dc/terms/hasVersion>            "0.5.1"^^xsd:string ;
                                     rdfs:comment "Following soon (see abstract)"@en ;
                                     rdfs:label "SemTS: Semantic Time Series Ontology"@en .
 
