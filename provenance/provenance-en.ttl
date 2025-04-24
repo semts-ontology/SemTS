@@ -2,8 +2,11 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
-<..\index-en.html> a prov:Entity;
+<https://w3id.org/semts//051#> a prov:Entity;
+	 dc:title "The Semantic Time Series Ontology";
 	 prov:wasAttributedTo :agent0;
+	 prov:wasAttributedTo :agent1;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 .
 :agent0 a prov:Agent; foaf:name "Alexander Graß".
+:agent1 a prov:Agent; foaf:name "Rohit A. Deshmukh".
