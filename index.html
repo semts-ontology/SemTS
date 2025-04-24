@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/semts","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/semts","name":"The Semantic Time Series Ontology", "headline":"SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information. The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation.", "dateReleased":"Thu Apr 24 17:13:49 UTC 2025", "version":"0.5.1", "license":"https://opensource.org/licenses/MIT", "author":[{"@type":"Person","name":"Alexander Graß"}], "contributor":[{"@type":"Person","name":"Rohit A. Deshmukh"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/semts","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/semts","name":"The Semantic Time Series Ontology", "headline":"SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information. The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation.", "dateReleased":"December 13th, 2024", "version":"0.5.1", "license":"https://opensource.org/licenses/MIT", "author":[{"@type":"Person","name":"Alexander Graß"}], "contributor":[{"@type":"Person","name":"Rohit A. Deshmukh"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -67,6 +67,7 @@ $(function(){
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
 <h1>The Semantic Time Series Ontology</h1>
 <img src="https://raw.githubusercontent.com/semts-ontology/SemTS/78047e27e691f5ac7878d93bec2f25ab514bd06d/assets/images/logo.png" width="50/">
+<h2>Release: December 13th, 2024</h2>
 
 
 <dl>
@@ -83,7 +84,7 @@ $(function(){
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/License-https://opensource.org/licenses/MIT-blue.svg" alt="https://opensource.org/licenses/MIT" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd><dt>Cite as:</dt>
-<dd>Alexander Graß. The Semantic Time Series Ontology. Revision: 0.5.1. Retrieved from: https://w3id.org/semts/ontology/051#</dd>
+<dd>Alexander Graß, Rohit A. Deshmukh. The Semantic Time Series Ontology. https://github.com/semts-ontology/SemTS</dd>
 </dl>
 
 <a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
@@ -221,13 +222,14 @@ This ontology has the following classes and properties.</span>
       <a href="#/ontology#TimeSeriesSegment"
          title="https://w3id.org/semts/ontology#TimeSeriesSegment">Time Series Segment</a>
    </li>
+   <li>
+      <a href="#/ontology#Value" title="https://w3id.org/semts/ontology#Value">Value</a>
+   </li>
 </ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#/ontology#dimensionUnit" title="https://w3id.org/semts/ontology#dimensionUnit">
-         <span>dimension Unit</span>
-      </a>
+      <a href="#/ontology#dimensionUnit" title="https://w3id.org/semts/ontology#dimensionUnit">Dimension Unit</a>
    </li>
    <li>
       <a href="#http://www.w3.org/ns/prov#generated" title="http://www.w3.org/ns/prov#generated">
@@ -291,9 +293,7 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#/ontology#valueDataType" title="https://w3id.org/semts/ontology#valueDataType">
-         <span>value Data Type</span>
-      </a>
+      <a href="#/ontology#valueDatatype" title="https://w3id.org/semts/ontology#valueDatatype">Value Datatype</a>
    </li>
    <li>
       <a href="#http://www.w3.org/ns/prov#wasDerivedFrom" title="http://www.w3.org/ns/prov#wasDerivedFrom">
@@ -364,6 +364,7 @@ This section provides details for each class and property defined by Semantic Ti
   <li><a href="#/ontology#SegmentPrediction" title="https://w3id.org/semts/ontology#SegmentPrediction">Segment Prediction</a></li>
   <li><a href="#/ontology#SegmentRelation" title="https://w3id.org/semts/ontology#SegmentRelation">Segment Relation</a></li>
   <li><a href="#/ontology#TimeSeriesSegment" title="https://w3id.org/semts/ontology#TimeSeriesSegment">Time Series Segment</a></li>
+  <li><a href="#/ontology#Value" title="https://w3id.org/semts/ontology#Value">Value</a></li>
  </ul>
  <div class="entity" id="/ontology#Algorithm">
   <h3>Algorithm Recommendation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
@@ -436,7 +437,7 @@ This section provides details for each class and property defined by Semantic Ti
     is in domain of
    </dt>
    <dd>
-    <a href="#/ontology#description" title="https://w3id.org/semts/ontology#description">Description</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/ontology#dimensionPosition" title="https://w3id.org/semts/ontology#dimensionPosition">Dimension Position</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/ontology#title" title="https://w3id.org/semts/ontology#title">Title</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/ontology#dimensionUnit" title="https://w3id.org/semts/ontology#dimensionUnit">dimension Unit</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#/ontology#description" title="https://w3id.org/semts/ontology#description">Description</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/ontology#dimensionPosition" title="https://w3id.org/semts/ontology#dimensionPosition">Dimension Position</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/ontology#dimensionUnit" title="https://w3id.org/semts/ontology#dimensionUnit">Dimension Unit</a> <sup class="type-op" title="object property">op</sup>, <a href="#/ontology#title" title="https://w3id.org/semts/ontology#title">Title</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
@@ -490,7 +491,7 @@ This section provides details for each class and property defined by Semantic Ti
     has super-classes
    </dt>
    <dd>
-    <a href="https://w3id.org/semts/ontology#Value" target="_blank" title="https://w3id.org/semts/ontology#Value">Value</a> <sup class="type-c" title="class">c</sup>
+    <a href="#/ontology#Value" title="https://w3id.org/semts/ontology#Value">Value</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -868,7 +869,7 @@ This section provides details for each class and property defined by Semantic Ti
     has super-classes
    </dt>
    <dd>
-    <a href="http://www.w3.org/ns/dcat#Dataset" target="_blank" title="http://www.w3.org/ns/dcat#Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>, <a href="https://w3id.org/semts/ontology#Value" target="_blank" title="https://w3id.org/semts/ontology#Value">Value</a> <sup class="type-c" title="class">c</sup>
+    <a href="http://www.w3.org/ns/dcat#Dataset" target="_blank" title="http://www.w3.org/ns/dcat#Dataset">Dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#/ontology#Value" title="https://w3id.org/semts/ontology#Value">Value</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -968,10 +969,34 @@ This section provides details for each class and property defined by Semantic Ti
    </dd>
   </dl>
  </div>
+ <div class="entity" id="/ontology#Value">
+  <h3>Value<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/semts/ontology#Value</p>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/ontology#EmbeddedValue" title="https://w3id.org/semts/ontology#EmbeddedValue">Embedded Value</a> <sup class="type-c" title="class">c</sup>, <a href="#/ontology#ReferencedValue" title="https://w3id.org/semts/ontology#ReferencedValue">Referenced Value</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/ontology#valueDatatype" title="https://w3id.org/semts/ontology#valueDatatype">Value Datatype</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/ontology#hasValue" title="https://w3id.org/semts/ontology#hasValue">Has Value</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
  <h3 id="properties" class="list">Object Properties</h3>
  <ul class="hlist">
-  <li><a href="#/ontology#dimensionUnit" title="https://w3id.org/semts/ontology#dimensionUnit"> <span>dimension Unit</span> </a></li>
+  <li><a href="#/ontology#dimensionUnit" title="https://w3id.org/semts/ontology#dimensionUnit">Dimension Unit</a></li>
   <li><a href="#http://www.w3.org/ns/prov#generated" title="http://www.w3.org/ns/prov#generated"> <span>generated</span> </a></li>
   <li><a href="#/ontology#groupKnowledge" title="https://w3id.org/semts/ontology#groupKnowledge">Group Knowledge</a></li>
   <li><a href="#/ontology#hasValue" title="https://w3id.org/semts/ontology#hasValue">Has Value</a></li>
@@ -989,11 +1014,11 @@ This section provides details for each class and property defined by Semantic Ti
   <li><a href="#/ontology#segmentKnowledge" title="https://w3id.org/semts/ontology#segmentKnowledge">Segment Knowledge</a></li>
   <li><a href="#/ontology#segmentOf" title="https://w3id.org/semts/ontology#segmentOf">Segment Of</a></li>
   <li><a href="#http://www.w3.org/ns/prov#used" title="http://www.w3.org/ns/prov#used"> <span>used</span> </a></li>
-  <li><a href="#/ontology#valueDataType" title="https://w3id.org/semts/ontology#valueDataType"> <span>value Data Type</span> </a></li>
+  <li><a href="#/ontology#valueDatatype" title="https://w3id.org/semts/ontology#valueDatatype">Value Datatype</a></li>
   <li><a href="#http://www.w3.org/ns/prov#wasDerivedFrom" title="http://www.w3.org/ns/prov#wasDerivedFrom"> <span>was Derived From</span> </a></li>
  </ul>
  <div class="entity" id="/ontology#dimensionUnit">
-  <h3>dimension Unit<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>Dimension Unit<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/semts/ontology#dimensionUnit</p>
   <div class="description">
    <dl>
@@ -1089,7 +1114,7 @@ This section provides details for each class and property defined by Semantic Ti
      has range
     </dt>
     <dd>
-     <a href="https://w3id.org/semts/ontology#Value" target="_blank" title="https://w3id.org/semts/ontology#Value">Value</a> <sup class="type-c" title="class">c</sup>
+     <a href="#/ontology#Value" title="https://w3id.org/semts/ontology#Value">Value</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -1491,16 +1516,16 @@ This section provides details for each class and property defined by Semantic Ti
    </dl>
   </div>
  </div>
- <div class="entity" id="/ontology#valueDataType">
-  <h3>value Data Type<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/semts/ontology#valueDataType</p>
+ <div class="entity" id="/ontology#valueDatatype">
+  <h3>Value Datatype<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/semts/ontology#valueDatatype</p>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="https://w3id.org/semts/ontology#Value" target="_blank" title="https://w3id.org/semts/ontology#Value">Value</a> <sup class="type-c" title="class">c</sup>
+     <a href="#/ontology#Value" title="https://w3id.org/semts/ontology#Value">Value</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range

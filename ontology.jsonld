@@ -11,6 +11,9 @@
   "@id" : "http://purl.org/dc/terms/contributor",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://purl.org/dc/terms/creator",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -131,6 +134,9 @@
   "@id" : "http://xmlns.com/foaf/0.1/maker",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "https://schema.org/citation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "https://w3id.org/semts/ontology#",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/abstract" : [ {
@@ -140,6 +146,10 @@
   "http://purl.org/dc/terms/contributor" : [ {
     "@language" : "en",
     "@value" : "Rohit A. Deshmukh"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@language" : "en",
+    "@value" : "December 13th, 2024"
   } ],
   "http://purl.org/dc/terms/creator" : [ {
     "@language" : "en",
@@ -170,9 +180,9 @@
     "@value" : "Semantic Time Series"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/semts//051#"
+    "@id" : "https://w3id.org/semts/ontology/051#"
   }, {
-    "@value" : "https://w3id.org/semts//051#"
+    "@value" : "https://w3id.org/semts/ontology/051#"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@value" : "0.5.1"
@@ -185,6 +195,10 @@
   } ],
   "http://xmlns.com/foaf/0.1/maker" : [ {
     "@id" : "https://w3id.org/semts/grass.alexan@gmail.com"
+  } ],
+  "https://schema.org/citation" : [ {
+    "@language" : "en",
+    "@value" : "Alexander Graß, Rohit A. Deshmukh. The Semantic Time Series Ontology. https://github.com/semts-ontology/SemTS"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#Algorithm",
@@ -588,7 +602,11 @@
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#Value",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Value"
+  } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#description",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
@@ -642,6 +660,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#DataDimension"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Dimension Unit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://qudt.org/3.0.0/schema/qudt#Unit"
@@ -974,10 +996,14 @@
     "@id" : "http://purl.org/dc/elements/1.1/title"
   } ]
 }, {
-  "@id" : "https://w3id.org/semts/ontology#valueDataType",
+  "@id" : "https://w3id.org/semts/ontology#valueDatatype",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#Value"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Value Datatype"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://qudt.org/3.0.0/schema/qudt#Datatype"

@@ -19,7 +19,7 @@
       "versionIRI" : [ {
         "identifier" : "versionIRI",
         "language" : "undefined",
-        "value" : "https://w3id.org/semts//051#",
+        "value" : "https://w3id.org/semts/ontology/051#",
         "type" : "label"
       } ],
       "creator" : [ {
@@ -28,22 +28,34 @@
         "value" : "Alexander Graß",
         "type" : "label"
       } ],
+      "citation" : [ {
+        "identifier" : "citation",
+        "language" : "en",
+        "value" : "Alexander Graß, Rohit A. Deshmukh. The Semantic Time Series Ontology. https://github.com/semts-ontology/SemTS",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "en",
+        "value" : "December 13th, 2024",
+        "type" : "label"
+      } ],
       "maker" : [ {
         "identifier" : "maker",
         "language" : "undefined",
         "value" : "https://w3id.org/semts/grass.alexan@gmail.com",
         "type" : "iri"
       } ],
-      "abstract" : [ {
-        "identifier" : "abstract",
-        "language" : "en",
-        "value" : "SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information. The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation.",
-        "type" : "label"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
         "value" : "0.5.1",
+        "type" : "label"
+      } ],
+      "abstract" : [ {
+        "identifier" : "abstract",
+        "language" : "en",
+        "value" : "SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information. The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation.",
         "type" : "label"
       } ],
       "title" : [ {
@@ -116,19 +128,19 @@
     "id" : "18",
     "type" : "owl:Class"
   }, {
-    "id" : "50",
+    "id" : "51",
     "type" : "owl:Class"
   }, {
-    "id" : "56",
+    "id" : "50",
     "type" : "owl:Class"
   }, {
     "id" : "61",
     "type" : "owl:Class"
   }, {
-    "id" : "55",
+    "id" : "49",
     "type" : "owl:Class"
   }, {
-    "id" : "73",
+    "id" : "71",
     "type" : "owl:Class"
   }, {
     "id" : "5",
@@ -149,19 +161,19 @@
     "id" : "28",
     "type" : "owl:Class"
   }, {
-    "id" : "64",
+    "id" : "93",
     "type" : "owl:Class"
   }, {
     "id" : "31",
     "type" : "owl:Class"
   }, {
-    "id" : "94",
+    "id" : "92",
     "type" : "owl:Class"
   }, {
-    "id" : "86",
+    "id" : "84",
     "type" : "owl:Class"
   }, {
-    "id" : "93",
+    "id" : "91",
     "type" : "owl:Class"
   }, {
     "id" : "23",
@@ -170,7 +182,7 @@
     "id" : "9",
     "type" : "owl:Class"
   }, {
-    "id" : "49",
+    "id" : "47",
     "type" : "owl:Class"
   }, {
     "id" : "2",
@@ -182,22 +194,22 @@
     "id" : "19",
     "type" : "owl:Class"
   }, {
-    "id" : "53",
+    "id" : "54",
     "type" : "owl:Class"
   }, {
-    "id" : "47",
+    "id" : "56",
+    "type" : "owl:Class"
+  }, {
+    "id" : "110",
     "type" : "owl:Class"
   }, {
     "id" : "30",
     "type" : "owl:Class"
   }, {
-    "id" : "111",
-    "type" : "owl:Class"
-  }, {
     "id" : "17",
     "type" : "owl:Class"
   }, {
-    "id" : "106",
+    "id" : "105",
     "type" : "owl:Class"
   }, {
     "id" : "11",
@@ -209,13 +221,13 @@
     "id" : "7",
     "type" : "owl:Class"
   }, {
-    "id" : "88",
+    "id" : "86",
     "type" : "owl:Class"
   }, {
-    "id" : "78",
+    "id" : "76",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "80",
+    "id" : "78",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "13",
@@ -227,37 +239,37 @@
     "id" : "45",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "98",
+    "id" : "97",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "77",
+    "id" : "75",
     "type" : "owl:Class"
   }, {
-    "id" : "82",
+    "id" : "80",
     "type" : "owl:Class"
   }, {
-    "id" : "108",
+    "id" : "107",
     "type" : "owl:Class"
   }, {
-    "id" : "83",
+    "id" : "81",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "115",
+    "id" : "114",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "52",
+    "id" : "53",
     "type" : "owl:Class"
   }, {
-    "id" : "95",
+    "id" : "94",
     "type" : "owl:Class"
   }, {
     "id" : "25",
     "type" : "owl:Class"
   }, {
-    "id" : "91",
+    "id" : "89",
     "type" : "owl:Class"
   }, {
-    "id" : "84",
+    "id" : "82",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
@@ -338,7 +350,7 @@
     "comment" : {
       "en" : "Defines the output of a knowledge generation entity. Compared to inputs, outputs only allow for a reference to generated knowledge and not to raw data. This, on purpose, excludes data transformations from the overall ontology concept by only focusing on a propagation of knowledge."
     },
-    "id" : "50",
+    "id" : "51",
     "superClasses" : [ "23" ]
   }, {
     "iri" : "http://www.w3.org/ns/mls#Hyperparameter",
@@ -347,9 +359,9 @@
     "label" : {
       "IRI-based" : "Hyperparameter"
     },
-    "subClasses" : [ "55" ],
+    "subClasses" : [ "49" ],
     "attributes" : [ "external" ],
-    "id" : "56"
+    "id" : "50"
   }, {
     "iri" : "https://w3id.org/semts/ontology#EmbeddedValue",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -374,13 +386,13 @@
     "comment" : {
       "en" : "A hyperparameter is considered method knowledge as this class can be used to define knowledge about an appropriate or optimal hyperparameter setting associated with the analysis of a time series segment for a concrete task."
     },
-    "id" : "55",
-    "superClasses" : [ "16", "56" ]
+    "id" : "49",
+    "superClasses" : [ "16", "50" ]
   }, {
     "instances" : 0,
-    "union" : [ "52", "15" ],
+    "union" : [ "15", "53" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "73"
+    "id" : "71"
   }, {
     "iri" : "https://w3id.org/semts/ontology#ArtificialTimeSeriesSegment",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -412,7 +424,7 @@
       "IRI-based" : "MethodKnowledge",
       "en" : "Method Knowledge"
     },
-    "subClasses" : [ "28", "55" ],
+    "subClasses" : [ "28", "49" ],
     "comment" : {
       "en" : "Any knowledge that defines an appropriate setting, regarding a particular method that is beneficial or even optimal when analyzing a segment given a particular task."
     },
@@ -436,9 +448,10 @@
     "baseIri" : "https://w3id.org/semts/ontology",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "Value"
+      "IRI-based" : "Value",
+      "en" : "Value"
     },
-    "subClasses" : [ "94", "61" ],
+    "subClasses" : [ "92", "61" ],
     "id" : "62"
   }, {
     "iri" : "https://w3id.org/semts/ontology#Algorithm",
@@ -461,7 +474,7 @@
       "IRI-based" : "Datatype"
     },
     "attributes" : [ "external" ],
-    "id" : "64"
+    "id" : "93"
   }, {
     "iri" : "https://w3id.org/semts/ontology#SegmentDataCharacteristic",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -486,8 +499,8 @@
     "comment" : {
       "en" : "Refers to a value that is of arbitrary complexity and not directly stored in the knowledge graph. This class inherits from dcat:Dataset and can be retrieved by the associated metainformation. One example could be a set of generated shapelets defining representative segments of a time series."
     },
-    "id" : "94",
-    "superClasses" : [ "62", "95" ]
+    "id" : "92",
+    "superClasses" : [ "62", "94" ]
   }, {
     "iri" : "https://w3id.org/semts/ontology#KnowledgeGenerationInput",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -499,7 +512,7 @@
     "comment" : {
       "en" : "Defines the input of a knowledge generation entity. While outputs can only contain produced knowledge, inputs might either reference knowledge or raw data."
     },
-    "id" : "86",
+    "id" : "84",
     "superClasses" : [ "23" ]
   }, {
     "iri" : "http://www.w3.org/ns/mls#Model",
@@ -510,7 +523,7 @@
     },
     "subClasses" : [ "30" ],
     "attributes" : [ "external" ],
-    "id" : "93"
+    "id" : "91"
   }, {
     "iri" : "https://w3id.org/semts/ontology#KnowledgeGenerationIO",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -519,7 +532,7 @@
       "IRI-based" : "KnowledgeGenerationIO",
       "en" : "Knowledge Generation IO"
     },
-    "subClasses" : [ "86", "50" ],
+    "subClasses" : [ "84", "51" ],
     "comment" : {
       "en" : "Defines any input and output of a knowledge generation entity. It inherits from prov:Entity to define instances that are used by or generated by a prov:Activity, which in turn is the parental class of a knowledge generation entity."
     },
@@ -549,7 +562,7 @@
     "comment" : {
       "en" : "Context Information equal predefined knowledge to enrich the description of a scenario with context-specific information. Knowledge of this type for instance comprises concrete settings, expected machine behaviors or environmental details, which can be assigned to a particular interval of a time series."
     },
-    "id" : "49",
+    "id" : "47",
     "superClasses" : [ "19" ]
   }, {
     "iri" : "https://w3id.org/semts/ontology#DataDimension",
@@ -584,7 +597,7 @@
       "IRI-based" : "ScenarioKnowledge",
       "en" : "Scenario Knowledge"
     },
-    "subClasses" : [ "49", "47" ],
+    "subClasses" : [ "47", "56" ],
     "comment" : {
       "en" : "Defines any knowledge that is associated with a particular scenario or domain. Scenario knowledge corresponds to validated expert knowledge or scenario-specific facts. It includes simple notes, predefined labels or mathematical expressions describing the underlying time series data."
     },
@@ -598,9 +611,9 @@
       "IRI-based" : "EvaluationMeasure",
       "undefined" : "Evaluation Measure"
     },
-    "subClasses" : [ "52" ],
+    "subClasses" : [ "53" ],
     "attributes" : [ "external" ],
-    "id" : "53"
+    "id" : "54"
   }, {
     "iri" : "https://w3id.org/semts/ontology#Annotation",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -612,8 +625,17 @@
     "comment" : {
       "en" : "Defines any type of validated annotation including notes and labels. This might be a short informal note from a human process expert, any not particularly structured system message, the indication of an event or a complex annotation for machine learning."
     },
-    "id" : "47",
+    "id" : "56",
     "superClasses" : [ "19" ]
+  }, {
+    "iri" : "http://qudt.org/3.0.0/schema/qudt#Unit",
+    "baseIri" : "http://qudt.org/3.0.0/schema/qudt",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Unit"
+    },
+    "attributes" : [ "external" ],
+    "id" : "110"
   }, {
     "iri" : "https://w3id.org/semts/ontology#ModelInstance",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -623,16 +645,7 @@
       "undefined" : "Model Instance"
     },
     "id" : "30",
-    "superClasses" : [ "93", "18" ]
-  }, {
-    "iri" : "http://qudt.org/3.0.0/schema/qudt#Unit",
-    "baseIri" : "http://qudt.org/3.0.0/schema/qudt",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Unit"
-    },
-    "attributes" : [ "external" ],
-    "id" : "111"
+    "superClasses" : [ "91", "18" ]
   }, {
     "iri" : "https://w3id.org/semts/ontology#KnowledgeGroup",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -657,7 +670,7 @@
     "comment" : {
       "en" : "Any knowledge that is generated by a comparison of compatible inputs. This might either be raw data or already defined knowledge. A simple example might be the result of a Euclidean distance."
     },
-    "id" : "106",
+    "id" : "105",
     "superClasses" : [ "7" ]
   }, {
     "iri" : "https://w3id.org/semts/ontology#KnowledgeConcept",
@@ -685,7 +698,7 @@
       "en" : "Represents a segment (also referred to as slice) of a uni- or multivariate time series. Any segment can correspond to the whole time series, a subintervall potentially further limited to a subset of dimensions or only to a single data point. This class inherits from dcat:Dataset and is enriched by an additional time index, information about represented data dimensions and information about associated time series knowledge."
     },
     "id" : "1",
-    "superClasses" : [ "95" ]
+    "superClasses" : [ "94" ]
   }, {
     "iri" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -694,7 +707,7 @@
       "IRI-based" : "KnowledgeGenerationEntity",
       "en" : "Knowledge Generation Entity"
     },
-    "subClasses" : [ "108", "106", "25" ],
+    "subClasses" : [ "107", "105", "25" ],
     "comment" : {
       "en" : "Represents the highest entity to define the process of knowledge generation. A more specific description can be provided by subclasses or assigned concepts. This class inherits from prov:Agent and thus allows for provenance during knowledge propagation."
     },
@@ -708,19 +721,19 @@
       "IRI-based" : "DateTimeInterval"
     },
     "attributes" : [ "external" ],
-    "id" : "88",
-    "superClasses" : [ "84" ]
+    "id" : "86",
+    "superClasses" : [ "82" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "78",
+    "id" : "76",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "80",
+    "id" : "78",
     "label" : {
       "IRI-based" : "string"
     }
@@ -747,21 +760,21 @@
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "98",
+    "id" : "97",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
     }
   }, {
     "instances" : 0,
-    "union" : [ "7", "2", "23", "52", "15" ],
+    "union" : [ "7", "2", "23", "53", "15" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "77"
+    "id" : "75"
   }, {
     "instances" : 0,
-    "union" : [ "7", "2", "23", "15", "52" ],
+    "union" : [ "7", "2", "23", "15", "53" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "82"
+    "id" : "80"
   }, {
     "iri" : "https://w3id.org/semts/ontology#KnowledgeReasoning",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -773,19 +786,19 @@
     "comment" : {
       "en" : "To complement any knowledge that is generated via analytical methods, this class represents knowledge generated from reasoning processes. This also includes validation processes from human experts or results from reasoning tools.\nWhile many analysis results can be regarded unvalidated predictions, this class defines subsequent evaluations to further derive concrete facts or confirmations."
     },
-    "id" : "108",
+    "id" : "107",
     "superClasses" : [ "7" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "83",
+    "id" : "81",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#int",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "115",
+    "id" : "114",
     "label" : {
       "IRI-based" : "int"
     }
@@ -800,8 +813,8 @@
     "comment" : {
       "en" : "Defines the goodness or confidence of time series knowledge associated with one or multiple segments. For knowledge produced by a knowledge generation method the quality measure is often equal to the evaluation metric of the generation method, which is why this class inherits from mls:EvaluationMeasure."
     },
-    "id" : "52",
-    "superClasses" : [ "53" ]
+    "id" : "53",
+    "superClasses" : [ "54" ]
   }, {
     "iri" : "http://www.w3.org/ns/dcat#Dataset",
     "baseIri" : "http://www.w3.org/ns/dcat",
@@ -809,9 +822,9 @@
     "label" : {
       "IRI-based" : "Dataset"
     },
-    "subClasses" : [ "1", "94" ],
+    "subClasses" : [ "1", "92" ],
     "attributes" : [ "external" ],
-    "id" : "95"
+    "id" : "94"
   }, {
     "iri" : "https://w3id.org/semts/ontology#KnowledgeGenerationMethod",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -833,8 +846,8 @@
       "IRI-based" : "Instant"
     },
     "attributes" : [ "external" ],
-    "id" : "91",
-    "superClasses" : [ "84" ]
+    "id" : "89",
+    "superClasses" : [ "82" ]
   }, {
     "iri" : "http://www.w3.org/2006/time#TemporalEntity",
     "baseIri" : "http://www.w3.org/2006/time",
@@ -842,9 +855,9 @@
     "label" : {
       "IRI-based" : "TemporalEntity"
     },
-    "subClasses" : [ "91", "88" ],
+    "subClasses" : [ "89", "86" ],
     "attributes" : [ "external" ],
-    "id" : "84"
+    "id" : "82"
   } ],
   "property" : [ {
     "id" : "0",
@@ -877,10 +890,10 @@
     "id" : "48",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "51",
+    "id" : "52",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "54",
+    "id" : "55",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "57",
@@ -899,16 +912,19 @@
     "type" : "owl:objectProperty"
   }, {
     "id" : "63",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "64",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "65",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "66",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "67",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "68",
     "type" : "rdfs:SubClassOf"
@@ -919,35 +935,32 @@
     "id" : "70",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "71",
-    "type" : "rdfs:SubClassOf"
+    "id" : "43",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "72",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "43",
-    "type" : "owl:objectProperty"
+    "id" : "73",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "74",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "75",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "76",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "34",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "79",
+    "id" : "77",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "81",
+    "id" : "79",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "42",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "83",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "85",
     "type" : "rdfs:SubClassOf"
@@ -955,23 +968,23 @@
     "id" : "87",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "89",
+    "id" : "88",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "90",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "92",
-    "type" : "rdfs:SubClassOf"
-  }, {
     "id" : "38",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "96",
+    "id" : "95",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "97",
+    "id" : "96",
     "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "98",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "99",
     "type" : "rdfs:SubClassOf"
@@ -991,19 +1004,16 @@
     "id" : "104",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "105",
+    "id" : "106",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "107",
-    "type" : "rdfs:SubClassOf"
+    "id" : "108",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "109",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "110",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "112",
+    "id" : "111",
     "type" : "owl:objectProperty"
   }, {
     "id" : "41",
@@ -1015,19 +1025,22 @@
     "id" : "36",
     "type" : "owl:objectProperty"
   }, {
+    "id" : "112",
+    "type" : "owl:objectProperty"
+  }, {
     "id" : "40",
     "type" : "owl:objectProperty"
   }, {
     "id" : "113",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "114",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "32",
     "type" : "owl:objectProperty"
   }, {
     "id" : "37",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "115",
     "type" : "owl:objectProperty"
   }, {
     "id" : "39",
@@ -1061,7 +1074,7 @@
       "IRI-based" : "title"
     },
     "domain" : "13",
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "12"
   }, {
     "iri" : "https://w3id.org/semts/ontology#knowledgeConcept",
@@ -1076,7 +1089,7 @@
     "comment" : {
       "en" : "Relates a concept for a Knowledge instance. Can be used to assign concrete instances from the SemTS taxonomy."
     },
-    "attributes" : [ "object", "functional" ],
+    "attributes" : [ "functional", "object" ],
     "id" : "20"
   }, {
     "range" : "26",
@@ -1107,7 +1120,7 @@
       "IRI-based" : "description"
     },
     "domain" : "13",
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "44"
   }, {
     "range" : "19",
@@ -1115,20 +1128,20 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "46"
   }, {
-    "range" : "19",
+    "range" : "50",
     "domain" : "49",
     "attributes" : [ "anonymous", "object" ],
     "id" : "48"
   }, {
-    "range" : "53",
-    "domain" : "52",
+    "range" : "54",
+    "domain" : "53",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "51"
+    "id" : "52"
   }, {
-    "range" : "56",
-    "domain" : "55",
+    "range" : "19",
+    "domain" : "56",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "54"
+    "id" : "55"
   }, {
     "range" : "18",
     "domain" : "29",
@@ -1165,25 +1178,15 @@
     "attributes" : [ "object" ],
     "id" : "35"
   }, {
-    "iri" : "https://w3id.org/semts/ontology#valueDataType",
-    "baseIri" : "https://w3id.org/semts/ontology",
-    "range" : "64",
-    "label" : {
-      "IRI-based" : "valueDataType"
-    },
-    "domain" : "62",
-    "attributes" : [ "object" ],
-    "id" : "63"
-  }, {
     "range" : "15",
     "domain" : "19",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "65"
+    "id" : "63"
   }, {
     "range" : "15",
     "domain" : "18",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "66"
+    "id" : "64"
   }, {
     "iri" : "https://w3id.org/semts/ontology#knowledgeGenerationConcept",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -1196,33 +1199,33 @@
     "comment" : {
       "en" : "Relates a concept for a Knowledge Generation instance."
     },
-    "attributes" : [ "object", "functional" ],
-    "id" : "67"
+    "attributes" : [ "functional", "object" ],
+    "id" : "65"
   }, {
     "range" : "22",
     "domain" : "23",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "68"
+    "id" : "66"
   }, {
     "range" : "8",
     "domain" : "11",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "69"
+    "id" : "67"
   }, {
     "range" : "8",
     "domain" : "10",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "70"
+    "id" : "68"
   }, {
     "range" : "15",
     "domain" : "17",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "71"
+    "id" : "69"
   }, {
     "range" : "15",
     "domain" : "16",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "72"
+    "id" : "70"
   }, {
     "iri" : "https://w3id.org/semts/ontology#segmentOf",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -1242,26 +1245,26 @@
     "range" : "8",
     "domain" : "9",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "74"
+    "id" : "72"
   }, {
     "range" : "6",
     "domain" : "7",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "75"
+    "id" : "73"
   }, {
     "iri" : "https://w3id.org/semts/ontology#title",
     "baseIri" : "https://w3id.org/semts/ontology",
-    "range" : "78",
+    "range" : "76",
     "label" : {
       "IRI-based" : "title",
       "en" : "Title"
     },
-    "domain" : "77",
+    "domain" : "75",
     "comment" : {
       "en" : "Inherits from dc:title and can be used to optionally add a title to an entity of the domain."
     },
     "attributes" : [ "datatype", "functional" ],
-    "id" : "76"
+    "id" : "74"
   }, {
     "iri" : "https://w3id.org/semts/ontology#qualityMeasureConcept",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -1271,16 +1274,16 @@
       "en" : "Quality Measure Concept"
     },
     "superproperty" : [ "3" ],
-    "domain" : "52",
+    "domain" : "53",
     "comment" : {
       "en" : "Defines the concept of a particular Knowledge Quality Measure."
     },
-    "attributes" : [ "object", "functional" ],
+    "attributes" : [ "functional", "object" ],
     "id" : "34"
   }, {
     "iri" : "https://w3id.org/semts/ontology#valueString",
     "baseIri" : "https://w3id.org/semts/ontology",
-    "range" : "80",
+    "range" : "78",
     "label" : {
       "IRI-based" : "valueString",
       "en" : "Value String"
@@ -1290,25 +1293,25 @@
       "en" : "The string representation for a concrete value of an Embedded Value. Complementary, the actual data type is defined via the dType property."
     },
     "attributes" : [ "datatype", "functional" ],
-    "id" : "79"
+    "id" : "77"
   }, {
     "iri" : "https://w3id.org/semts/ontology#description",
     "baseIri" : "https://w3id.org/semts/ontology",
-    "range" : "83",
+    "range" : "81",
     "label" : {
       "IRI-based" : "description",
       "en" : "Description"
     },
-    "domain" : "82",
+    "domain" : "80",
     "comment" : {
       "en" : "Inherits from dc:description and can be used to optionally add a description to an entity of the domain."
     },
     "attributes" : [ "datatype" ],
-    "id" : "81"
+    "id" : "79"
   }, {
     "iri" : "https://w3id.org/semts/ontology#segmentIndex",
     "baseIri" : "https://w3id.org/semts/ontology",
-    "range" : "84",
+    "range" : "82",
     "label" : {
       "IRI-based" : "segmentIndex",
       "en" : "Segment Index"
@@ -1318,33 +1321,33 @@
     "comment" : {
       "en" : "Defines the index associated with a Time Series Segment. Inherits from the time:TemporalEntity."
     },
-    "attributes" : [ "object", "functional" ],
+    "attributes" : [ "functional", "object" ],
     "id" : "42"
   }, {
     "range" : "23",
+    "domain" : "84",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "83"
+  }, {
+    "range" : "82",
     "domain" : "86",
     "attributes" : [ "anonymous", "object" ],
     "id" : "85"
   }, {
-    "range" : "84",
-    "domain" : "88",
+    "range" : "23",
+    "domain" : "51",
     "attributes" : [ "anonymous", "object" ],
     "id" : "87"
   }, {
-    "range" : "23",
-    "domain" : "50",
+    "range" : "82",
+    "domain" : "89",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "89"
+    "id" : "88"
   }, {
-    "range" : "84",
-    "domain" : "91",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "90"
-  }, {
-    "range" : "93",
+    "range" : "91",
     "domain" : "30",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "92"
+    "id" : "90"
   }, {
     "iri" : "https://w3id.org/semts/ontology#segmentKnowledge",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -1361,60 +1364,60 @@
     "attributes" : [ "object" ],
     "id" : "38"
   }, {
-    "range" : "95",
-    "domain" : "94",
+    "range" : "94",
+    "domain" : "92",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "96"
+    "id" : "95"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#topDataProperty",
     "baseIri" : "http://www.w3.org/2002/07/owl",
-    "range" : "98",
+    "range" : "97",
     "label" : {
       "IRI-based" : "topDataProperty"
     },
     "domain" : "13",
-    "attributes" : [ "datatype", "external" ],
-    "id" : "97"
+    "attributes" : [ "external", "datatype" ],
+    "id" : "96"
   }, {
     "range" : "62",
-    "domain" : "94",
+    "domain" : "92",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "99"
+    "id" : "98"
   }, {
     "range" : "7",
     "domain" : "25",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "100"
+    "id" : "99"
   }, {
-    "range" : "95",
+    "range" : "94",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "101"
+    "id" : "100"
   }, {
     "range" : "62",
     "domain" : "61",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "102"
+    "id" : "101"
   }, {
     "range" : "16",
-    "domain" : "55",
+    "domain" : "49",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "103"
+    "id" : "102"
   }, {
     "range" : "16",
     "domain" : "28",
     "attributes" : [ "anonymous", "object" ],
+    "id" : "103"
+  }, {
+    "range" : "7",
+    "domain" : "105",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "104"
   }, {
     "range" : "7",
-    "domain" : "106",
+    "domain" : "107",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "105"
-  }, {
-    "range" : "7",
-    "domain" : "108",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "107"
+    "id" : "106"
   }, {
     "iri" : "http://www.w3.org/ns/prov#wasDerivedFrom",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -1424,17 +1427,18 @@
     },
     "domain" : "22",
     "attributes" : [ "external", "object" ],
-    "id" : "109"
+    "id" : "108"
   }, {
     "iri" : "https://w3id.org/semts/ontology#dimensionUnit",
     "baseIri" : "https://w3id.org/semts/ontology",
-    "range" : "111",
+    "range" : "110",
     "label" : {
-      "IRI-based" : "dimensionUnit"
+      "IRI-based" : "dimensionUnit",
+      "en" : "Dimension Unit"
     },
     "domain" : "2",
     "attributes" : [ "object" ],
-    "id" : "110"
+    "id" : "109"
   }, {
     "iri" : "http://www.w3.org/ns/prov#used",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -1444,7 +1448,7 @@
     },
     "domain" : "6",
     "attributes" : [ "external", "object" ],
-    "id" : "112"
+    "id" : "111"
   }, {
     "iri" : "https://w3id.org/semts/ontology#segmentGroupKnowledge",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -1463,7 +1467,7 @@
   }, {
     "iri" : "https://w3id.org/semts/ontology#knowledgeQualityMeasure",
     "baseIri" : "https://w3id.org/semts/ontology",
-    "range" : "52",
+    "range" : "53",
     "label" : {
       "IRI-based" : "knowledgeQualityMeasure",
       "en" : "Knowledge Quality Measure"
@@ -1484,27 +1488,12 @@
       "en" : "Has Value"
     },
     "superproperty" : [ "3" ],
-    "domain" : "73",
+    "domain" : "71",
     "comment" : {
       "en" : "Relationship to the Value class and thus to allow for a reference to stored data."
     },
-    "attributes" : [ "object", "functional" ],
+    "attributes" : [ "functional", "object" ],
     "id" : "36"
-  }, {
-    "iri" : "https://w3id.org/semts/ontology#inputDataReference",
-    "baseIri" : "https://w3id.org/semts/ontology",
-    "range" : "1",
-    "label" : {
-      "IRI-based" : "inputDataReference",
-      "en" : "Input Data Reference"
-    },
-    "superproperty" : [ "3" ],
-    "domain" : "86",
-    "comment" : {
-      "en" : "Defines the relation from a Knowledge Generation Input to a Time Series Segment and thus to metadata which specifies the underlying data."
-    },
-    "attributes" : [ "object", "functional" ],
-    "id" : "40"
   }, {
     "iri" : "http://www.w3.org/ns/prov#generated",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -1514,11 +1503,26 @@
     },
     "domain" : "6",
     "attributes" : [ "external", "object" ],
-    "id" : "113"
+    "id" : "112"
+  }, {
+    "iri" : "https://w3id.org/semts/ontology#inputDataReference",
+    "baseIri" : "https://w3id.org/semts/ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "inputDataReference",
+      "en" : "Input Data Reference"
+    },
+    "superproperty" : [ "3" ],
+    "domain" : "84",
+    "comment" : {
+      "en" : "Defines the relation from a Knowledge Generation Input to a Time Series Segment and thus to metadata which specifies the underlying data."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "40"
   }, {
     "iri" : "https://w3id.org/semts/ontology#dimensionPosition",
     "baseIri" : "https://w3id.org/semts/ontology",
-    "range" : "115",
+    "range" : "114",
     "label" : {
       "IRI-based" : "dimensionPosition",
       "en" : "Dimension Position"
@@ -1528,7 +1532,7 @@
       "en" : "Specifies the position of the associated dimension within a dataframe or similar ordered data structures."
     },
     "attributes" : [ "datatype", "functional" ],
-    "id" : "114"
+    "id" : "113"
   }, {
     "iri" : "https://w3id.org/semts/ontology#outputKnowledge",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -1538,7 +1542,7 @@
       "en" : "Output Knowledge"
     },
     "superproperty" : [ "3" ],
-    "domain" : "50",
+    "domain" : "51",
     "comment" : {
       "en" : "Opposed to Input Knowledge, this property defines the knowledge included in the output of a Knowledge generation Entity."
     },
@@ -1553,12 +1557,23 @@
       "en" : "Input Knowledge"
     },
     "superproperty" : [ "3" ],
-    "domain" : "86",
+    "domain" : "84",
     "comment" : {
       "en" : "Similar to the Input Data Reference, this relation defines all the knowledge associated with the input of a Knowledge Generation Entity."
     },
     "attributes" : [ "object" ],
     "id" : "37"
+  }, {
+    "iri" : "https://w3id.org/semts/ontology#valueDatatype",
+    "baseIri" : "https://w3id.org/semts/ontology",
+    "range" : "93",
+    "label" : {
+      "IRI-based" : "valueDatatype",
+      "en" : "Value Datatype"
+    },
+    "domain" : "62",
+    "attributes" : [ "object" ],
+    "id" : "115"
   }, {
     "iri" : "https://w3id.org/semts/ontology#knowledgeGenerationEntity",
     "baseIri" : "https://w3id.org/semts/ontology",
@@ -1572,7 +1587,7 @@
     "comment" : {
       "en" : "Relates the Knowledge Generation Entity, which produced this Knowledge instance."
     },
-    "attributes" : [ "object", "functional" ],
+    "attributes" : [ "functional", "object" ],
     "id" : "39"
   } ]
 }

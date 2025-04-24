@@ -7,9 +7,10 @@
 @base <https://w3id.org/semts/ontology#> .
 
 <https://w3id.org/semts/ontology#> rdf:type owl:Ontology ;
-                                    owl:versionIRI <https://w3id.org/semts//051#> ;
+                                    owl:versionIRI <https://w3id.org/semts/ontology/051#> ;
                                     <http://purl.org/dc/terms/abstract> "SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information. The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation."@en ;
                                     <http://purl.org/dc/terms/contributor> "Rohit A. Deshmukh"@en ;
+                                    <http://purl.org/dc/terms/created> "December 13th, 2024"@en ;
                                     <http://purl.org/dc/terms/creator> "Alexander Graß"@en ;
                                     <http://purl.org/dc/terms/description> "SemTS is an ontology designed to identify and describe segments within time series data, which are specific data points or intervals that can overlap. These segments encompass characteristic knowledge about the time interval they cover, including common time series features, structural anomalies, motifs, or information provided by domain experts. By classifying and semantically representing this knowledge, SemTS promotes organized reusability and efficient propagation, potentially reducing resource expenditure while enhancing future analyses. It employs established semantic approaches. Examples are DCAT to reference associated time series data, OWL-Time to define the index structure of time series data and segments or ML-Schema to expand the expressiveness regarding data analysis task information. SemTS's design involves categorizing time series knowledge and mapping it to specific intervals and dimensions of time series data. It introduces a class called TimeSeriesSegment to model these segments, extending the DCAT Dataset class to enable segments to be part of other segments. This structure allows for the association of knowledge, such as anomalies, with particular intervals or data points. TimeIndex specifications extend OWL-Time classes, while dimensional details are represented by DataDimension. The segment-wise consideration of knowledge indirectly serves as an index structure, linking meaningful time series data with categorized knowledge. At the highest level of abstraction, time series knowledge is divided into three categories: DataKnowledge, ScenarioKnowledge, and MethodKnowledge. DataKnowledge refers to insights extracted directly from the data or through analytical methods, such as class membership from time series clustering. ScenarioKnowledge describes verified contexts, including data annotations or domain-specific process knowledge, often equating to expert-provided a priori information and can also define facts derived from inferred knowledge. MethodKnowledge encompasses effective analytical method presets or mathematical/logical equivalents of established process information."@en ;
                                     <http://purl.org/dc/terms/license> <https://opensource.org/licenses/MIT> ;
@@ -18,11 +19,12 @@
                                     <http://purl.org/vocab/vann/preferredNamespacePrefix> "semts" ;
                                     <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/semts" ;
                                     rdfs:label "Semantic Time Series"@en ;
-                                    owl:versionIRI "https://w3id.org/semts//051#" ;
+                                    owl:versionIRI "https://w3id.org/semts/ontology/051#" ;
                                     owl:versionInfo "0.5.1" ;
                                     <http://xmlns.com/foaf/0.1/depiction> "https://raw.githubusercontent.com/semts-ontology/SemTS/3b3cd5059cc3939465b208cbc5d3464516034fda/assets/images/semts_visual_model.drawio.svg" ;
                                     <http://xmlns.com/foaf/0.1/logo> "https://raw.githubusercontent.com/semts-ontology/SemTS/78047e27e691f5ac7878d93bec2f25ab514bd06d/assets/images/logo.png" ;
-                                    <http://xmlns.com/foaf/0.1/maker> <https://w3id.org/semts/grass.alexan@gmail.com> .
+                                    <http://xmlns.com/foaf/0.1/maker> <https://w3id.org/semts/grass.alexan@gmail.com> ;
+                                    <https://schema.org/citation> "Alexander Graß, Rohit A. Deshmukh. The Semantic Time Series Ontology. https://github.com/semts-ontology/SemTS"@en .
 
 #################################################################
 #    Annotation properties
@@ -34,6 +36,10 @@
 
 ###  http://purl.org/dc/terms/contributor
 <http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/creator
@@ -96,6 +102,10 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
 <http://xmlns.com/foaf/0.1/maker> rdf:type owl:AnnotationProperty .
 
 
+###  https://schema.org/citation
+<https://schema.org/citation> rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -121,7 +131,8 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/semts/ontology#dimensionUnit
 :dimensionUnit rdf:type owl:ObjectProperty ;
                rdfs:domain :DataDimension ;
-               rdfs:range <http://qudt.org/3.0.0/schema/qudt#Unit> .
+               rdfs:range <http://qudt.org/3.0.0/schema/qudt#Unit> ;
+               rdfs:label "Dimension Unit"@en .
 
 
 ###  https://w3id.org/semts/ontology#groupKnowledge
@@ -266,10 +277,11 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
            rdfs:label "Segment Of"@en .
 
 
-###  https://w3id.org/semts/ontology#valueDataType
-:valueDataType rdf:type owl:ObjectProperty ;
+###  https://w3id.org/semts/ontology#valueDatatype
+:valueDatatype rdf:type owl:ObjectProperty ;
                rdfs:domain :Value ;
-               rdfs:range <http://qudt.org/3.0.0/schema/qudt#Datatype> .
+               rdfs:range <http://qudt.org/3.0.0/schema/qudt#Datatype> ;
+               rdfs:label "Value Datatype"@en .
 
 
 #################################################################
@@ -597,7 +609,8 @@ While many analysis results can be regarded unvalidated predictions, this class 
 
 
 ###  https://w3id.org/semts/ontology#Value
-:Value rdf:type owl:Class .
+:Value rdf:type owl:Class ;
+       rdfs:label "Value"@en .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
