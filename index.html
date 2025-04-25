@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/semts","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/semts","name":"The Semantic Time Series Ontology", "headline":"SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information. The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation.", "dateReleased":"December 13th, 2024", "version":"0.5.1", "license":"https://opensource.org/licenses/MIT", "author":[{"@type":"Person","name":"Alexander Graß"}], "contributor":[{"@type":"Person","name":"Rohit A. Deshmukh"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/semts","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/semts","name":"The Semantic Time Series Ontology", "headline":"SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information. The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation.", "dateReleased":"December 13th, 2024", "version":"0.5.1", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Alexander Graß"}], "contributor":[{"@type":"Person","name":"Rohit A. Deshmukh"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -81,7 +81,7 @@ $(function(){
 <dt>Contributors:</dt>
 <dd>Rohit A. Deshmukh</dd>
 
-<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/License-https://opensource.org/licenses/MIT-blue.svg" alt="https://opensource.org/licenses/MIT" /></a>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd><dt>Cite as:</dt>
 <dd>Alexander Graß, Rohit A. Deshmukh. The Semantic Time Series Ontology. https://github.com/semts-ontology/SemTS</dd>
@@ -813,6 +813,9 @@ This section provides details for each class and property defined by Semantic Ti
  <div class="entity" id="/ontology#ModelInstance">
   <h3>Model Instance<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/semts/ontology#ModelInstance</p>
+  <div class="comment">
+   <span class="markdown">This class describes a trained model in the traditional machine learning sense. It inherits from mls:Model and serves as a knowledge entity for subsequent predictions.</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -927,6 +930,9 @@ This section provides details for each class and property defined by Semantic Ti
  <div class="entity" id="/ontology#SegmentRelation">
   <h3>Segment Relation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/semts/ontology#SegmentRelation</p>
+  <div class="comment">
+   <span class="markdown">SegmentRelation defines relations between multiple segment. Such a relation could for instance be a cross-correlation or the result of a distance metric.</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -972,6 +978,9 @@ This section provides details for each class and property defined by Semantic Ti
  <div class="entity" id="/ontology#Value">
   <h3>Value<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/semts/ontology#Value</p>
+  <div class="comment">
+   <span class="markdown">This abstract class serves as parental class of EmbeddedValue and ReferencedValue.</span>
+  </div>
   <dl class="description">
    <dt>
     has sub-classes
@@ -1020,6 +1029,9 @@ This section provides details for each class and property defined by Semantic Ti
  <div class="entity" id="/ontology#dimensionUnit">
   <h3>Dimension Unit<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/semts/ontology#dimensionUnit</p>
+  <div class="comment">
+   <span class="markdown">dimensionUnit is the relation, which assigns a qudt:Unit instance to a DataDimension</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
@@ -1105,10 +1117,7 @@ This section provides details for each class and property defined by Semantic Ti
      has domain
     </dt>
     <dd>
-     <a href="#/ontology#Knowledge" title="https://w3id.org/semts/ontology#Knowledge">Knowledge</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dd>
-     <a href="#/ontology#KnowledgeQualityMeasure" title="https://w3id.org/semts/ontology#KnowledgeQualityMeasure">Knowledge Quality Measure</a> <sup class="type-c" title="class">c</sup>
+     <a href="#/ontology#Knowledge" title="https://w3id.org/semts/ontology#Knowledge">Knowledge</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/ontology#KnowledgeQualityMeasure" title="https://w3id.org/semts/ontology#KnowledgeQualityMeasure">Knowledge Quality Measure</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -1519,6 +1528,9 @@ This section provides details for each class and property defined by Semantic Ti
  <div class="entity" id="/ontology#valueDatatype">
   <h3>Value Datatype<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/semts/ontology#valueDatatype</p>
+  <div class="comment">
+   <span class="markdown">Assigns a qudt:Datatype instance to an instance of a Value subclass</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
@@ -1576,25 +1588,13 @@ This section provides details for each class and property defined by Semantic Ti
      has super-properties
     </dt>
     <dd>
-     <a href="http://purl.org/dc/elements/1.1/description" target="_blank" title="http://purl.org/dc/elements/1.1/description">description</a> <sup class="type-dp" title="data property">dp</sup>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
     </dd>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#/ontology#DataDimension" title="https://w3id.org/semts/ontology#DataDimension">Data Dimension</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dd>
-     <a href="#/ontology#Knowledge" title="https://w3id.org/semts/ontology#Knowledge">Knowledge</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dd>
-     <a href="#/ontology#KnowledgeGenerationEntity" title="https://w3id.org/semts/ontology#KnowledgeGenerationEntity">Knowledge Generation Entity</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dd>
-     <a href="#/ontology#KnowledgeGenerationIO" title="https://w3id.org/semts/ontology#KnowledgeGenerationIO">Knowledge Generation IO</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dd>
-     <a href="#/ontology#KnowledgeQualityMeasure" title="https://w3id.org/semts/ontology#KnowledgeQualityMeasure">Knowledge Quality Measure</a> <sup class="type-c" title="class">c</sup>
+     <a href="#/ontology#DataDimension" title="https://w3id.org/semts/ontology#DataDimension">Data Dimension</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/ontology#Knowledge" title="https://w3id.org/semts/ontology#Knowledge">Knowledge</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/ontology#KnowledgeGenerationEntity" title="https://w3id.org/semts/ontology#KnowledgeGenerationEntity">Knowledge Generation Entity</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/ontology#KnowledgeGenerationIO" title="https://w3id.org/semts/ontology#KnowledgeGenerationIO">Knowledge Generation IO</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/ontology#KnowledgeQualityMeasure" title="https://w3id.org/semts/ontology#KnowledgeQualityMeasure">Knowledge Quality Measure</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -1648,25 +1648,13 @@ This section provides details for each class and property defined by Semantic Ti
      has super-properties
     </dt>
     <dd>
-     <a href="http://purl.org/dc/elements/1.1/title" target="_blank" title="http://purl.org/dc/elements/1.1/title">title</a> <sup class="type-dp" title="data property">dp</sup>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
     </dd>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#/ontology#DataDimension" title="https://w3id.org/semts/ontology#DataDimension">Data Dimension</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dd>
-     <a href="#/ontology#Knowledge" title="https://w3id.org/semts/ontology#Knowledge">Knowledge</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dd>
-     <a href="#/ontology#KnowledgeGenerationEntity" title="https://w3id.org/semts/ontology#KnowledgeGenerationEntity">Knowledge Generation Entity</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dd>
-     <a href="#/ontology#KnowledgeGenerationIO" title="https://w3id.org/semts/ontology#KnowledgeGenerationIO">Knowledge Generation IO</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dd>
-     <a href="#/ontology#KnowledgeQualityMeasure" title="https://w3id.org/semts/ontology#KnowledgeQualityMeasure">Knowledge Quality Measure</a> <sup class="type-c" title="class">c</sup>
+     <a href="#/ontology#DataDimension" title="https://w3id.org/semts/ontology#DataDimension">Data Dimension</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/ontology#Knowledge" title="https://w3id.org/semts/ontology#Knowledge">Knowledge</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/ontology#KnowledgeGenerationEntity" title="https://w3id.org/semts/ontology#KnowledgeGenerationEntity">Knowledge Generation Entity</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/ontology#KnowledgeGenerationIO" title="https://w3id.org/semts/ontology#KnowledgeGenerationIO">Knowledge Generation IO</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/ontology#KnowledgeQualityMeasure" title="https://w3id.org/semts/ontology#KnowledgeQualityMeasure">Knowledge Quality Measure</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
