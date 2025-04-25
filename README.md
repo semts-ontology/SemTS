@@ -8,10 +8,21 @@ The concept of SemTS constitutes a specification of informative data points or i
 ![Architecture](assets/images/semts_visual_model.drawio.svg)
 
 # Namespace
-https://w3id.org/semts
+[https://w3id.org/semts](https://w3id.org/semts)
+
+# Ontology
+- [Current Version](https://w3id.org/semts/ontology)
+- Previous Versions: `https://w3id.org/semts/ontology/{version}`
+
+# Vocabularies
+- [Data Knowledge Vocabulary](https://w3id.org/semts/vocabulary/data-knowledge/)
+- [Scenario Knowledge Vocabulary](https://w3id.org/semts/vocabulary/scenario-knowledge/)
+
+# Code Repository
+[Git Repository](https://github.com/semts-ontology/SemTS/)
 
 # Documentation
-https://semts-ontology.github.io/SemTS/
+[Widoco Documentation](https://semts-ontology.github.io/SemTS/)
 
 # Naming Conventions
 - Directories and files: All small letters, separated by underscores (_). Example: `ontology.ttl`
