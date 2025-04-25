@@ -1,0 +1,570 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/semts/vocabulary/data-knowledge#"
+     xml:base="https://w3id.org/semts/vocabulary/data-knowledge#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:semts="https://w3id.org/semts/ontology#">
+    <owl:Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#member -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#member"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Collection -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Collection"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#KnowledgeConcept -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#KnowledgeConcept">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Anomaly -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Anomaly">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction"/>
+        <skos:prefLabel>Anomaly</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Changepoint -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Changepoint">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction"/>
+        <skos:prefLabel>Changepoint</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Cluster -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Cluster">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:definition xml:lang="en">A cluster represents one group from a clustering</skos:definition>
+        <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#InferredClassID"/>
+        <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroupRepresentative"/>
+        <skos:prefLabel xml:lang="en">Cluster</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Clustering -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Clustering">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:definition xml:lang="en">The result of a clustering</skos:definition>
+        <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Cluster"/>
+        <skos:prefLabel xml:lang="en">Clustering</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Correlation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Correlation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
+        <skos:prefLabel>Correlation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic"/>
+        <skos:prefLabel>Data Information Property</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#DataKnowledge -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#DataKnowledge">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Knowledge"/>
+        <skos:prefLabel>Data Knowledge</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentPrediction"/>
+        <skos:prefLabel>Discriminative Prediction</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic"/>
+        <skos:prefLabel>Dispersion Property</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Distance -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Distance">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
+        <skos:prefLabel>Distance</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#FFTCentroid -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FFTCentroid">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <skos:definition>The centroid of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
+        <skos:prefLabel>FFT centroid</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#FFTKurtosis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FFTKurtosis">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <skos:definition>The kurtosis of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
+        <skos:prefLabel>FFT kurtosis</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#FFTSkew -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FFTSkew">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <skos:definition>The skewness of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
+        <skos:prefLabel>FFT skew</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#FFTVariance -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FFTVariance">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <skos:definition>The variance of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
+        <skos:prefLabel>FFT variance</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Forecast -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Forecast">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#GenerativePrediction"/>
+        <skos:prefLabel>Forecast</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#GenerativePrediction -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#GenerativePrediction">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentPrediction"/>
+        <skos:prefLabel>Generative Prediction</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#InferredAnnotation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#InferredAnnotation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction"/>
+        <skos:prefLabel>Inferred Annotation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#InferredClassID -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#InferredClassID">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#InferredClassID"/>
+        <skos:prefLabel>Inferred Class ID</skos:prefLabel>
+    </owl:NamedIndividual>
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Knowledge -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Knowledge"/>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Kurtosis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Kurtosis">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <skos:definition>A measure of the &apos;tailedness&apos; of the probability distribution.</skos:definition>
+        <skos:prefLabel>kurtosis</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#LinearIntercept -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LinearIntercept">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
+        <skos:definition>The intercept of the linear regression line that best fits the data.</skos:definition>
+        <skos:prefLabel>linear intercept</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#LinearSlope -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LinearSlope">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#TrendProperty"/>
+        <skos:definition>The slope of the linear regression line that best fits the data.</skos:definition>
+        <skos:prefLabel>Linear Slope</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic"/>
+        <skos:prefLabel>Location Property</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MaxValue -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MaxValue">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <skos:definition>The highest value in the dataset.</skos:definition>
+        <skos:prefLabel>max value</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MeanValue -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MeanValue">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
+        <skos:definition>The average of all data points in the dataset.</skos:definition>
+        <skos:prefLabel>mean value</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MedianValue -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MedianValue">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
+        <skos:definition>The middle value of the dataset when ordered.</skos:definition>
+        <skos:prefLabel>median value</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MinValue -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MinValue">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <skos:definition>The lowest value in the dataset.</skos:definition>
+        <skos:prefLabel>min value</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MissingValues -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MissingValues">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <skos:definition>Count of missing or null entries in the dataset.</skos:definition>
+        <skos:prefLabel>missing values</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Mode -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Mode">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
+        <skos:definition>The most frequently occurring value in the dataset.</skos:definition>
+        <skos:prefLabel>mode</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#NumberOfDistinctValues -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#NumberOfDistinctValues">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <skos:definition>The count of unique values in the dataset.</skos:definition>
+        <skos:prefLabel>number of distinct values</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#NumberOfInstances -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#NumberOfInstances">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <skos:definition>The total count of data entries or records in the dataset.</skos:definition>
+        <skos:prefLabel>number of instances</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataKnowledge"/>
+        <skos:prefLabel>Segment Data Characteristic</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroup -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroup">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
+        <skos:prefLabel>Segment Group</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroupRepresentative -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroupRepresentative">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
+        <skos:prefLabel>Segment Group Representative</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SegmentPrediction -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SegmentPrediction">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataKnowledge"/>
+        <skos:prefLabel>Segment Prediction</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataKnowledge"/>
+        <skos:prefLabel>Segment Relation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Shapelet -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Shapelet">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <skos:prefLabel>Shapelet</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Similarity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Similarity">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
+        <skos:prefLabel>Similarity</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Skewness -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Skewness">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <skos:definition>A measure of the asymmetry of the probability distribution.</skos:definition>
+        <skos:prefLabel>skewness</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#StandardDeviation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#StandardDeviation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <skos:definition>A measure of the amount of variation in the dataset.</skos:definition>
+        <skos:prefLabel>standard deviation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic"/>
+        <skos:prefLabel>Structural Property</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#TrendProperty -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#TrendProperty">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic"/>
+        <skos:prefLabel>Trend Property</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#ValueRange -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ValueRange">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <skos:definition>The difference between the maximum and minimum values in the dataset.</skos:definition>
+        <skos:prefLabel>value range</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Variance -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Variance">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <skos:definition>Variance of the attribute values.</skos:definition>
+        <skos:prefLabel>variance</skos:prefLabel>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

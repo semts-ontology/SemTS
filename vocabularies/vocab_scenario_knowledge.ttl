@@ -1,0 +1,133 @@
+@prefix : <https://w3id.org/semts/taxonomy#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix semts: <https://w3id.org/semts/ontology#> .
+@base <https://w3id.org/semts/taxonomy/scenario-knowledge#> .
+
+#################################################################
+#    Properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+###  http://www.w3.org/2004/02/skos/core#member
+skos:member rdf:type owl:AnnotationProperty .
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+###  http://www.w3.org/2004/02/skos/core#broader
+skos:broader rdf:type owl:ObjectProperty .
+
+###  http://www.w3.org/2004/02/skos/core#narrower
+skos:narrower rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#Collection
+skos:Collection rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
+
+
+###  https://w3id.org/semts/ontology#KnowledgeConcept
+semts:KnowledgeConcept rdf:type owl:Class ; rdfs:subClassOf skos:Concept .
+
+
+#################################################################
+#    Scenario Knowledge
+#################################################################
+
+
+###  https://w3id.org/semts/taxonomy#ScenarioKnowledge
+:ScenarioKnowledge rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                   skos:prefLabel "Scenario Knowledge" ;
+                   skos:broader :Knowledge .
+
+###  https://w3id.org/semts/taxonomy#Annotation
+:Annotation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+            skos:prefLabel "Annotation" ;
+            skos:broader :ScenarioKnowledge .
+
+###  https://w3id.org/semts/taxonomy#Note
+:Note rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+      skos:prefLabel "Note" ;
+      skos:broader :ScenarioKnowledge .
+
+###  https://w3id.org/semts/taxonomy#ContextualInformation
+:ContextualInformation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                       skos:prefLabel "Contextual Information" ;
+                       skos:broader :Note .
+
+###  https://w3id.org/semts/taxonomy#ContextualObservation
+:ContextualObservation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                       skos:prefLabel "Contextual Observation" ;
+                       skos:broader :Note .
+
+###  https://w3id.org/semts/taxonomy#ContextualAssumption
+:ContextualAssumption rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                      skos:prefLabel "Contextual Assumption" ;
+                      skos:broader :Note .
+
+###  https://w3id.org/semts/taxonomy#ScenarioParameter
+:ScenarioParameter rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                   skos:prefLabel "Scenario Parameter" ;
+                   skos:broader :ScenarioKnowledge .
+
+###  https://w3id.org/semts/taxonomy#MathExpression
+:MathExpression rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                skos:prefLabel "Math Expression" ;
+                skos:broader :ScenarioKnowledge .
+
+###  https://w3id.org/semts/taxonomy#BooleanEquation
+:BooleanEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                 skos:prefLabel "Boolean Equation" ;
+                 skos:broader :MathExpression .
+
+###  https://w3id.org/semts/taxonomy#AlgebraicEquation
+:AlgebraicEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                   skos:prefLabel "Algebraic Equation" ;
+                   skos:broader :MathExpression .
+
+###  https://w3id.org/semts/taxonomy#DifferentialEquation
+:DifferentialEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                      skos:prefLabel "Differential Equation" ;
+                      skos:broader :MathExpression .
+
+###  https://w3id.org/semts/taxonomy#PolynomialEquation
+:PolynomialEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                    skos:prefLabel "Polynomial Equation" ;
+                    skos:broader :MathExpression .
+
+###  https://w3id.org/semts/taxonomy#ExponentialEquation
+:ExponentialEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                     skos:prefLabel "Exponential Equation" ;
+                     skos:broader :MathExpression .
+
+###  https://w3id.org/semts/taxonomy#LogarithmicEquation
+:LogarithmicEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                     skos:prefLabel "Logarithmic Equation" ;
+                     skos:broader :MathExpression .
+
+###  https://w3id.org/semts/taxonomy#TrigonometricEquation
+:TrigonometricEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                       skos:prefLabel "Trigonometric Equation" ;
+                       skos:broader :MathExpression .
+
+###  https://w3id.org/semts/taxonomy#IntegralEquation
+:IntegralEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+                  skos:prefLabel "Integral Equation" ;
+                  skos:broader :MathExpression .
+
+###  https://w3id.org/semts/taxonomy#Label
+:Label rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+       skos:prefLabel "Label" ;
+       skos:broader :Annotation .

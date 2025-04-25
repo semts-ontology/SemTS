@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/semts/vocabulary/scenario-knowledge#"
+     xml:base="https://w3id.org/semts/vocabulary/scenario-knowledge#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:semts="https://w3id.org/semts/ontology#">
+    <owl:Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#member -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#member"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Collection -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Collection"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#KnowledgeConcept -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#KnowledgeConcept">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#AlgebraicEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#AlgebraicEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:prefLabel>Algebraic Equation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#Annotation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#Annotation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#ScenarioKnowledge"/>
+        <skos:prefLabel>Annotation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#BooleanEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#BooleanEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:prefLabel>Boolean Equation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#ContextualAssumption -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#ContextualAssumption">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#Note"/>
+        <skos:prefLabel>Contextual Assumption</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#ContextualInformation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#ContextualInformation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#Note"/>
+        <skos:prefLabel>Contextual Information</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#ContextualObservation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#ContextualObservation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#Note"/>
+        <skos:prefLabel>Contextual Observation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#DifferentialEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#DifferentialEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:prefLabel>Differential Equation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#ExponentialEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#ExponentialEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:prefLabel>Exponential Equation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#IntegralEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#IntegralEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:prefLabel>Integral Equation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#Knowledge -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#Knowledge"/>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#Label -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#Label">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#Annotation"/>
+        <skos:prefLabel>Label</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#LogarithmicEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#LogarithmicEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:prefLabel>Logarithmic Equation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#MathExpression -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#MathExpression">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#ScenarioKnowledge"/>
+        <skos:prefLabel>Math Expression</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#Note -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#Note">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#ScenarioKnowledge"/>
+        <skos:prefLabel>Note</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#PolynomialEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#PolynomialEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:prefLabel>Polynomial Equation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#ScenarioKnowledge -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#ScenarioKnowledge">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#Knowledge"/>
+        <skos:prefLabel>Scenario Knowledge</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#ScenarioParameter -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#ScenarioParameter">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#ScenarioKnowledge"/>
+        <skos:prefLabel>Scenario Parameter</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/taxonomy#TrigonometricEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#TrigonometricEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:prefLabel>Trigonometric Equation</skos:prefLabel>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
