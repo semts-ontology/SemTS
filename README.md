@@ -7,8 +7,8 @@ The concept of SemTS constitutes a specification of informative data points or i
 # Architecture
 ![Architecture](assets/images/semts_visual_model.drawio.svg)
 
-# Namespace
-[https://w3id.org/semts](https://w3id.org/semts)
+# Prefix and Namespace
+semts: [https://w3id.org/semts](https://w3id.org/semts)
 
 # Ontology
 - [Current Version](https://w3id.org/semts/ontology)
@@ -22,7 +22,7 @@ The concept of SemTS constitutes a specification of informative data points or i
 [Git Repository](https://github.com/semts-ontology/SemTS/)
 
 # Documentation
-[Widoco Documentation](https://semts-ontology.github.io/SemTS/)
+[Widoco Documentation](https://w3id.org/semts/ontology)
 
 # Naming Conventions
 - Directories and files: All small letters, separated by underscores (_). Example: `ontology.ttl`
