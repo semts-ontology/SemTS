@@ -47,8 +47,7 @@ semts:KnowledgeConcept rdf:type owl:Class ; rdfs:subClassOf skos:Concept .
 ###  https://w3id.org/semts/vocabulary/data-knowledge#DataKnowledge
 :DataKnowledge rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
     skos:prefLabel "Data Knowledge"@en ;
-    skos:definition "A comprehensive category encompassing various forms of knowledge derived from data analysis."@en ;
-    skos:broader :Knowledge .
+    skos:definition "A comprehensive category encompassing various forms of knowledge derived from data analysis."@en .
 
 ###  https://w3id.org/semts/vocabulary/data-knowledge#SegmentPrediction
 :SegmentPrediction rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;

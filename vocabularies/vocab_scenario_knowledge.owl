@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/semts/vocabulary/scenario-knowledge#"
-     xml:base="https://w3id.org/semts/vocabulary/scenario-knowledge#"
+     xml:base="https://w3id.org/semts/vocabulary/scenario-knowledge"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:semts="https://w3id.org/semts/ontology#">
+     xmlns:semts="https://w3id.org/semts/ontology#"
+     xmlns:semts-dev="https://w3id.org/semts/vocabulary/data-knowledge#">
     <owl:Ontology/>
     
 
@@ -106,178 +107,288 @@
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#AlgebraicEquation -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#Action -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#AlgebraicEquation">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#Action">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#CategorizedEvent"/>
+        <skos:definition>An action that equals a predefined event. Commonly performed to change or correct a certain process behavior.</skos:definition>
+        <skos:prefLabel>Action</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#AlgebraicEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#AlgebraicEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#MathExpression"/>
+        <skos:definition>Algebraic Equations are mathematical statements consisting of algebraic expressions used in the analysis of time series data.</skos:definition>
         <skos:prefLabel>Algebraic Equation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#Annotation -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#Annotation -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#Annotation">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#Annotation">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#ScenarioKnowledge"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioKnowledge"/>
+        <skos:definition>Annotations are notes or labels added to time series data to provide additional context or information for better understanding.</skos:definition>
         <skos:prefLabel>Annotation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#BooleanEquation -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#Assumption -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#BooleanEquation">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#Assumption">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#ContextualInformation"/>
+        <skos:definition>Assumptions are hypotheses or premises considered within the context of analyzing time series data.</skos:definition>
+        <skos:prefLabel>Assumption</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#BooleanEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#BooleanEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#MathExpression"/>
+        <skos:definition>Boolean Equations involve logical operators and logical expressions.</skos:definition>
         <skos:prefLabel>Boolean Equation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#ContextualAssumption -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#CategorizedEvent -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#ContextualAssumption">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#CategorizedEvent">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#Note"/>
-        <skos:prefLabel>Contextual Assumption</skos:prefLabel>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Annotation"/>
+        <skos:definition>An event that is predefined and not an unexpected observation.</skos:definition>
+        <skos:prefLabel>Categorized Event</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#ContextualInformation -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#Condition -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#ContextualInformation">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#Condition">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#Note"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#BooleanEquation"/>
+        <skos:definition>Boolean expressions used to evaluate conditions within time series data.</skos:definition>
+        <skos:prefLabel>Condition</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#ContextualInformation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#ContextualInformation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Note"/>
+        <skos:definition>Contextual Information provides background or situational details that enhance the understanding of time series data.</skos:definition>
         <skos:prefLabel>Contextual Information</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#ContextualObservation -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#DifferentialEquation -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#ContextualObservation">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#DifferentialEquation">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#Note"/>
-        <skos:prefLabel>Contextual Observation</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/semts/taxonomy#DifferentialEquation -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#DifferentialEquation">
-        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#MathExpression"/>
+        <skos:definition>Differential Equations involve derivatives and are used to model dynamic changes and trends in time series data.</skos:definition>
         <skos:prefLabel>Differential Equation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#ExponentialEquation -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#ExponentialEquation -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#ExponentialEquation">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#ExponentialEquation">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#MathExpression"/>
+        <skos:definition>Exponential Equations model growth or decay processes in time series data using exponential functions.</skos:definition>
         <skos:prefLabel>Exponential Equation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#IntegralEquation -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#Fact -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#IntegralEquation">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#Fact">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#ContextualInformation"/>
+        <skos:definition>Evaluated statement that holds true and equals ground truth information.</skos:definition>
+        <skos:prefLabel>Fact</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#InformalComment -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#InformalComment">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Note"/>
+        <skos:definition>An informal note which can literally be any arbitrary message that is not covered by a predefined category.</skos:definition>
+        <skos:prefLabel>Informal Comment</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#IntegralEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#IntegralEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#MathExpression"/>
+        <skos:definition>Integral Equations involve integrals and are used to analyze cumulative effects and total values in time series data.</skos:definition>
         <skos:prefLabel>Integral Equation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#Knowledge -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#Keyword -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#Knowledge"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#Keyword">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Annotation"/>
+        <skos:definition>Tags that are used for categorization, organization and indexing.</skos:definition>
+        <skos:prefLabel>Keyword</skos:prefLabel>
+    </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#Label -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#Label -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#Label">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#Label">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#Annotation"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Annotation"/>
+        <skos:definition>Labels are identifiers or markers added to time series data to categorize or highlight specific elements or features.</skos:definition>
         <skos:prefLabel>Label</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#LogarithmicEquation -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#LogarithmicEquation -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#LogarithmicEquation">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#LogarithmicEquation">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#MathExpression"/>
+        <skos:definition>Logarithmic Equations involve logarithms and are used to model multiplicative relationships in time series data.</skos:definition>
         <skos:prefLabel>Logarithmic Equation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#MathExpression -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#MathExpression -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#MathExpression">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#MathExpression">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#ScenarioKnowledge"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioKnowledge"/>
+        <skos:definition>Math Expressions are mathematical formulas or equations used to model or analyze time series data.</skos:definition>
         <skos:prefLabel>Math Expression</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#Note -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#Note -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#Note">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#Note">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#ScenarioKnowledge"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioKnowledge"/>
+        <skos:definition>Notes are brief pieces of information that are added to time series data to highlight important aspects or observations.</skos:definition>
         <skos:prefLabel>Note</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#PolynomialEquation -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#Observation -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#PolynomialEquation">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#Observation">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Note"/>
+        <skos:definition>Observations are specific insights derived from time series data that are influenced by the surrounding context.</skos:definition>
+        <skos:prefLabel>Observation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#PolynomialEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#PolynomialEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#MathExpression"/>
+        <skos:definition>Polynomial Equations consist of terms raised to powers, representing relationships and patterns within time series data.</skos:definition>
         <skos:prefLabel>Polynomial Equation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#ScenarioKnowledge -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#Rule -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#ScenarioKnowledge">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#Rule">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#Knowledge"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#ContextualInformation"/>
+        <skos:definition>Information which can be regarded a guideline, restriction or instruction.</skos:definition>
+        <skos:prefLabel>Rule</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioKnowledge -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioKnowledge">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:definition>Scenario Knowledge encompasses structured information and insights relevant to understanding and analyzing specific situations in time series data.</skos:definition>
         <skos:prefLabel>Scenario Knowledge</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#ScenarioParameter -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioParameter -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#ScenarioParameter">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioParameter">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#ScenarioKnowledge"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioKnowledge"/>
+        <skos:definition>Scenario Parameters are variables related to specific scenarios.</skos:definition>
         <skos:prefLabel>Scenario Parameter</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/taxonomy#TrigonometricEquation -->
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#Setting -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/taxonomy#TrigonometricEquation">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#Setting">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/taxonomy#MathExpression"/>
+        <skos:definition xml:lang="en">A collection of scenario parameters which together represent a setting.</skos:definition>
+        <skos:member rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioParameter"/>
+        <skos:prefLabel xml:lang="en">Setting</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#TrigonometricEquation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#TrigonometricEquation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#MathExpression"/>
+        <skos:definition>Trigonometric Equations use trigonometric functions to represent periodic patterns and cycles in time series data.</skos:definition>
         <skos:prefLabel>Trigonometric Equation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/scenario-knowledge#UncategorizedEvent -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge#UncategorizedEvent">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Observation"/>
+        <skos:definition>An event that is not predefined and thus an unexpected observation or action.</skos:definition>
+        <skos:prefLabel>Uncategorized Event</skos:prefLabel>
     </owl:NamedIndividual>
 </rdf:RDF>
 

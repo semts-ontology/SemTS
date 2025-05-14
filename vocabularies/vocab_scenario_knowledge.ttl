@@ -1,10 +1,11 @@
-@prefix : <https://w3id.org/semts/taxonomy#> .
+@prefix : <https://w3id.org/semts/vocabulary/scenario-knowledge#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix semts: <https://w3id.org/semts/ontology#> .
-@base <https://w3id.org/semts/taxonomy/scenario-knowledge#> .
+@prefix semts-dev: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+@base <https://w3id.org/semts/vocabulary/scenario-knowledge#> .
 
 #################################################################
 #    Properties
@@ -25,7 +26,6 @@ skos:broader rdf:type owl:ObjectProperty .
 ###  http://www.w3.org/2004/02/skos/core#narrower
 skos:narrower rdf:type owl:ObjectProperty .
 
-
 #################################################################
 #    Classes
 #################################################################
@@ -33,101 +33,172 @@ skos:narrower rdf:type owl:ObjectProperty .
 ###  http://www.w3.org/2004/02/skos/core#Collection
 skos:Collection rdf:type owl:Class .
 
-
 ###  http://www.w3.org/2004/02/skos/core#Concept
 skos:Concept rdf:type owl:Class .
 
-
 ###  https://w3id.org/semts/ontology#KnowledgeConcept
-semts:KnowledgeConcept rdf:type owl:Class ; rdfs:subClassOf skos:Concept .
-
+semts:KnowledgeConcept rdf:type owl:Class ; 
+  rdfs:subClassOf skos:Concept .
 
 #################################################################
-#    Scenario Knowledge
+#    Scenario Knowledge Concepts
 #################################################################
 
-
-###  https://w3id.org/semts/taxonomy#ScenarioKnowledge
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioKnowledge
 :ScenarioKnowledge rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                   skos:prefLabel "Scenario Knowledge" ;
-                   skos:broader :Knowledge .
+  skos:prefLabel "Scenario Knowledge" ;
+  skos:definition "Scenario Knowledge encompasses structured information and insights relevant to understanding and analyzing specific situations in time series data." .
 
-###  https://w3id.org/semts/taxonomy#Annotation
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Annotation
 :Annotation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-            skos:prefLabel "Annotation" ;
-            skos:broader :ScenarioKnowledge .
+  skos:prefLabel "Annotation" ;
+  skos:broader :ScenarioKnowledge ;
+  skos:definition "Annotations are notes or labels added to time series data to provide additional context or information for better understanding." .
 
-###  https://w3id.org/semts/taxonomy#Note
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Note
 :Note rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-      skos:prefLabel "Note" ;
-      skos:broader :ScenarioKnowledge .
+  skos:prefLabel "Note" ;
+  skos:broader :ScenarioKnowledge ;
+  skos:definition "Notes are brief pieces of information that are added to time series data to highlight important aspects or observations." .
 
-###  https://w3id.org/semts/taxonomy#ContextualInformation
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ContextualInformation
 :ContextualInformation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                       skos:prefLabel "Contextual Information" ;
-                       skos:broader :Note .
+  skos:prefLabel "Contextual Information" ;
+  skos:broader :Note ;
+  skos:definition "Contextual Information provides background or situational details that enhance the understanding of time series data." .
 
-###  https://w3id.org/semts/taxonomy#ContextualObservation
-:ContextualObservation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                       skos:prefLabel "Contextual Observation" ;
-                       skos:broader :Note .
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Fact
+:Fact rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Fact" ;
+  skos:broader :ContextualInformation ;
+  skos:definition "Evaluated statement that holds true and equals ground truth information." .
 
-###  https://w3id.org/semts/taxonomy#ContextualAssumption
-:ContextualAssumption rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                      skos:prefLabel "Contextual Assumption" ;
-                      skos:broader :Note .
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#InformalComment
+:InformalComment rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Informal Comment" ;
+  skos:broader :Note ;
+  skos:definition "An informal note which can literally be any arbitrary message that is not covered by a predefined category." .
 
-###  https://w3id.org/semts/taxonomy#ScenarioParameter
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Rule
+:Rule rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Rule" ;
+  skos:broader :ContextualInformation ;
+  skos:definition "Information which can be regarded a guideline, restriction or instruction." .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Observation
+:Observation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Observation" ;
+  skos:broader :Note ;
+  skos:definition "Observations are specific insights derived from time series data that are influenced by the surrounding context." .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Assumption
+:Assumption rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Assumption" ;
+  skos:broader :ContextualInformation ;
+  skos:definition "Assumptions are hypotheses or premises considered within the context of analyzing time series data." .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioParameter
 :ScenarioParameter rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                   skos:prefLabel "Scenario Parameter" ;
-                   skos:broader :ScenarioKnowledge .
+  skos:prefLabel "Scenario Parameter" ;
+  skos:broader :ScenarioKnowledge ;
+  skos:definition "Scenario Parameters are variables related to specific scenarios." .
 
-###  https://w3id.org/semts/taxonomy#MathExpression
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#MathExpression
 :MathExpression rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                skos:prefLabel "Math Expression" ;
-                skos:broader :ScenarioKnowledge .
+  skos:prefLabel "Math Expression" ;
+  skos:broader :ScenarioKnowledge ;
+  skos:definition "Math Expressions are mathematical formulas or equations used to model or analyze time series data." .
 
-###  https://w3id.org/semts/taxonomy#BooleanEquation
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#BooleanEquation
 :BooleanEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                 skos:prefLabel "Boolean Equation" ;
-                 skos:broader :MathExpression .
+  skos:prefLabel "Boolean Equation" ;
+  skos:broader :MathExpression ;
+  skos:definition "Boolean Equations involve logical operators and logical expressions." .
 
-###  https://w3id.org/semts/taxonomy#AlgebraicEquation
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Condition
+:Condition rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Condition" ;
+  skos:broader :BooleanEquation ;
+  skos:definition "Boolean expressions used to evaluate conditions within time series data." .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#AlgebraicEquation
 :AlgebraicEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                   skos:prefLabel "Algebraic Equation" ;
-                   skos:broader :MathExpression .
+  skos:prefLabel "Algebraic Equation" ;
+  skos:broader :MathExpression ;
+  skos:definition "Algebraic Equations are mathematical statements consisting of algebraic expressions used in the analysis of time series data." .
 
-###  https://w3id.org/semts/taxonomy#DifferentialEquation
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#DifferentialEquation
 :DifferentialEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                      skos:prefLabel "Differential Equation" ;
-                      skos:broader :MathExpression .
+  skos:prefLabel "Differential Equation" ;
+  skos:broader :MathExpression ;
+  skos:definition "Differential Equations involve derivatives and are used to model dynamic changes and trends in time series data." .
 
-###  https://w3id.org/semts/taxonomy#PolynomialEquation
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#PolynomialEquation
 :PolynomialEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                    skos:prefLabel "Polynomial Equation" ;
-                    skos:broader :MathExpression .
+  skos:prefLabel "Polynomial Equation" ;
+  skos:broader :MathExpression ;
+  skos:definition "Polynomial Equations consist of terms raised to powers, representing relationships and patterns within time series data." .
 
-###  https://w3id.org/semts/taxonomy#ExponentialEquation
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ExponentialEquation
 :ExponentialEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                     skos:prefLabel "Exponential Equation" ;
-                     skos:broader :MathExpression .
+  skos:prefLabel "Exponential Equation" ;
+  skos:broader :MathExpression ;
+  skos:definition "Exponential Equations model growth or decay processes in time series data using exponential functions." .
 
-###  https://w3id.org/semts/taxonomy#LogarithmicEquation
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#LogarithmicEquation
 :LogarithmicEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                     skos:prefLabel "Logarithmic Equation" ;
-                     skos:broader :MathExpression .
+  skos:prefLabel "Logarithmic Equation" ;
+  skos:broader :MathExpression ;
+  skos:definition "Logarithmic Equations involve logarithms and are used to model multiplicative relationships in time series data." .
 
-###  https://w3id.org/semts/taxonomy#TrigonometricEquation
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#TrigonometricEquation
 :TrigonometricEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                       skos:prefLabel "Trigonometric Equation" ;
-                       skos:broader :MathExpression .
+  skos:prefLabel "Trigonometric Equation" ;
+  skos:broader :MathExpression ;
+  skos:definition "Trigonometric Equations use trigonometric functions to represent periodic patterns and cycles in time series data." .
 
-###  https://w3id.org/semts/taxonomy#IntegralEquation
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#IntegralEquation
 :IntegralEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                  skos:prefLabel "Integral Equation" ;
-                  skos:broader :MathExpression .
+  skos:prefLabel "Integral Equation" ;
+  skos:broader :MathExpression ;
+  skos:definition "Integral Equations involve integrals and are used to analyze cumulative effects and total values in time series data." .
 
-###  https://w3id.org/semts/taxonomy#Label
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Label
 :Label rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-       skos:prefLabel "Label" ;
-       skos:broader :Annotation .
+  skos:prefLabel "Label" ;
+  skos:broader :Annotation ;
+  skos:definition "Labels are identifiers or markers added to time series data to categorize or highlight specific elements or features." .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Keyword
+:Keyword rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Keyword" ;
+  skos:broader :Annotation ;
+  skos:definition "Tags that are used for categorization, organization and indexing." .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#CategorizedEvent
+:CategorizedEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Categorized Event" ;
+  skos:broader :Annotation ;
+  skos:definition "An event that is predefined and not an unexpected observation." .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Action
+:Action rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Action" ;
+  skos:broader :CategorizedEvent ;
+  skos:definition "An action that equals a predefined event. Commonly performed to change or correct a certain process behavior." .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#UncategorizedEvent
+:UncategorizedEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Uncategorized Event" ;
+  skos:broader :Observation ;
+  skos:definition "An event that is not predefined and thus an unexpected observation or action." .
+
+#################################################################
+#    Scenario Knowledge Collections
+#################################################################
+
+### https://w3id.org/semts/vocabulary/data-knowledge#Settings
+:Setting rdf:type owl:NamedIndividual, skos:Collection, semts:KnowledgeConcept ;
+    skos:prefLabel "Setting"@en ;
+    skos:definition "A collection of scenario parameters which together represent a setting."@en ;
+    skos:member :ScenarioParameter .

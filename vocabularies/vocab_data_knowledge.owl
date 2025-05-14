@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/semts/vocabulary/data-knowledge#"
-     xml:base="https://w3id.org/semts/vocabulary/data-knowledge#"
+     xml:base="https://w3id.org/semts/vocabulary/data-knowledge"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -111,7 +111,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Anomaly">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction"/>
-        <skos:prefLabel>Anomaly</skos:prefLabel>
+        <skos:definition xml:lang="en">Identification of data points that deviate significantly from established patterns.</skos:definition>
+        <skos:prefLabel xml:lang="en">Anomaly</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -121,7 +122,20 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Changepoint">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction"/>
-        <skos:prefLabel>Changepoint</skos:prefLabel>
+        <skos:definition xml:lang="en">Detection of shifts or changes in the underlying dynamics of data.</skos:definition>
+        <skos:prefLabel xml:lang="en">Changepoint</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Classification -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Classification">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:definition xml:lang="en">The process of organizing data into categories or classes based on shared characteristics or criteria.</skos:definition>
+        <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#InferredClassID"/>
+        <skos:prefLabel xml:lang="en">Classification</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -131,7 +145,7 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Cluster">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:definition xml:lang="en">A cluster represents one group from a clustering</skos:definition>
+        <skos:definition xml:lang="en">A cluster represents one group from a clustering, characterized by shared properties.</skos:definition>
         <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#InferredClassID"/>
         <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroupRepresentative"/>
         <skos:prefLabel xml:lang="en">Cluster</skos:prefLabel>
@@ -144,7 +158,7 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Clustering">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:definition xml:lang="en">The result of a clustering</skos:definition>
+        <skos:definition xml:lang="en">The result of a clustering process, where data points are grouped based on similarity.</skos:definition>
         <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Cluster"/>
         <skos:prefLabel xml:lang="en">Clustering</skos:prefLabel>
     </owl:NamedIndividual>
@@ -156,7 +170,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Correlation">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
-        <skos:prefLabel>Correlation</skos:prefLabel>
+        <skos:definition xml:lang="en">A statistical measure of the degree to which two variables are related.</skos:definition>
+        <skos:prefLabel xml:lang="en">Correlation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -166,7 +181,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic"/>
-        <skos:prefLabel>Data Information Property</skos:prefLabel>
+        <skos:definition xml:lang="en">General informational attributes of data segments.</skos:definition>
+        <skos:prefLabel xml:lang="en">Data Information Property</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -175,8 +191,8 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#DataKnowledge">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Knowledge"/>
-        <skos:prefLabel>Data Knowledge</skos:prefLabel>
+        <skos:definition xml:lang="en">A comprehensive category encompassing various forms of knowledge derived from data analysis.</skos:definition>
+        <skos:prefLabel xml:lang="en">Data Knowledge</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -186,7 +202,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentPrediction"/>
-        <skos:prefLabel>Discriminative Prediction</skos:prefLabel>
+        <skos:definition xml:lang="en">Knowledge focusing on distinguishing between possible outcomes based on data.</skos:definition>
+        <skos:prefLabel xml:lang="en">Discriminative Prediction</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -196,7 +213,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic"/>
-        <skos:prefLabel>Dispersion Property</skos:prefLabel>
+        <skos:definition xml:lang="en">Measures of the spread or variability within data segments.</skos:definition>
+        <skos:prefLabel xml:lang="en">Dispersion Property</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -206,7 +224,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Distance">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
-        <skos:prefLabel>Distance</skos:prefLabel>
+        <skos:definition xml:lang="en">A measure of dissimilarity between data points or segments.</skos:definition>
+        <skos:prefLabel xml:lang="en">Distance</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -216,8 +235,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FFTCentroid">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
-        <skos:definition>The centroid of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
-        <skos:prefLabel>FFT centroid</skos:prefLabel>
+        <skos:definition xml:lang="en">The centroid of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
+        <skos:prefLabel xml:lang="en">FFT centroid</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -227,8 +246,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FFTKurtosis">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
-        <skos:definition>The kurtosis of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
-        <skos:prefLabel>FFT kurtosis</skos:prefLabel>
+        <skos:definition xml:lang="en">The kurtosis of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
+        <skos:prefLabel xml:lang="en">FFT kurtosis</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -238,8 +257,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FFTSkew">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
-        <skos:definition>The skewness of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
-        <skos:prefLabel>FFT skew</skos:prefLabel>
+        <skos:definition xml:lang="en">The skewness of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
+        <skos:prefLabel xml:lang="en">FFT skew</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -249,8 +268,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FFTVariance">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
-        <skos:definition>The variance of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
-        <skos:prefLabel>FFT variance</skos:prefLabel>
+        <skos:definition xml:lang="en">The variance of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
+        <skos:prefLabel xml:lang="en">FFT variance</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -260,7 +279,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Forecast">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#GenerativePrediction"/>
-        <skos:prefLabel>Forecast</skos:prefLabel>
+        <skos:definition xml:lang="en">The process of predicting future values or trends based on historical data.</skos:definition>
+        <skos:prefLabel xml:lang="en">Forecast</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -270,7 +290,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#GenerativePrediction">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentPrediction"/>
-        <skos:prefLabel>Generative Prediction</skos:prefLabel>
+        <skos:definition xml:lang="en">Knowledge involving the generation of potential future outcomes based on existing data.</skos:definition>
+        <skos:prefLabel xml:lang="en">Generative Prediction</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -280,7 +301,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#InferredAnnotation">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction"/>
-        <skos:prefLabel>Inferred Annotation</skos:prefLabel>
+        <skos:definition xml:lang="en">Annotations derived from analysis that highlight inferred knowledge or insights.</skos:definition>
+        <skos:prefLabel xml:lang="en">Inferred Annotation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -289,14 +311,10 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#InferredClassID">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#InferredClassID"/>
-        <skos:prefLabel>Inferred Class ID</skos:prefLabel>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#InferredAnnotation"/>
+        <skos:definition xml:lang="en">A classification identifier derived from analysis and inference.</skos:definition>
+        <skos:prefLabel xml:lang="en">Inferred Class ID</skos:prefLabel>
     </owl:NamedIndividual>
-
-
-    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Knowledge -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Knowledge"/>
     
 
 
@@ -305,8 +323,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Kurtosis">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
-        <skos:definition>A measure of the &apos;tailedness&apos; of the probability distribution.</skos:definition>
-        <skos:prefLabel>kurtosis</skos:prefLabel>
+        <skos:definition xml:lang="en">A measure of the &apos;tailedness&apos; of the probability distribution.</skos:definition>
+        <skos:prefLabel xml:lang="en">Kurtosis</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -316,8 +334,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LinearIntercept">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
-        <skos:definition>The intercept of the linear regression line that best fits the data.</skos:definition>
-        <skos:prefLabel>linear intercept</skos:prefLabel>
+        <skos:definition xml:lang="en">The intercept of the linear regression line that best fits the data.</skos:definition>
+        <skos:prefLabel xml:lang="en">Linear intercept</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -327,8 +345,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LinearSlope">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#TrendProperty"/>
-        <skos:definition>The slope of the linear regression line that best fits the data.</skos:definition>
-        <skos:prefLabel>Linear Slope</skos:prefLabel>
+        <skos:definition xml:lang="en">The slope of the linear regression line that best fits the data.</skos:definition>
+        <skos:prefLabel xml:lang="en">Linear Slope</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -338,7 +356,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic"/>
-        <skos:prefLabel>Location Property</skos:prefLabel>
+        <skos:definition xml:lang="en">Properties that define the position or location within data segments.</skos:definition>
+        <skos:prefLabel xml:lang="en">Location Property</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -348,8 +367,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MaxValue">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
-        <skos:definition>The highest value in the dataset.</skos:definition>
-        <skos:prefLabel>max value</skos:prefLabel>
+        <skos:definition xml:lang="en">The highest value in the segment.</skos:definition>
+        <skos:prefLabel xml:lang="en">Max value</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -359,8 +378,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MeanValue">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
-        <skos:definition>The average of all data points in the dataset.</skos:definition>
-        <skos:prefLabel>mean value</skos:prefLabel>
+        <skos:definition xml:lang="en">The average of all data points in the segment.</skos:definition>
+        <skos:prefLabel xml:lang="en">Mean value</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -370,8 +389,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MedianValue">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
-        <skos:definition>The middle value of the dataset when ordered.</skos:definition>
-        <skos:prefLabel>median value</skos:prefLabel>
+        <skos:definition xml:lang="en">The middle value of the segment when ordered.</skos:definition>
+        <skos:prefLabel xml:lang="en">Median value</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -381,8 +400,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MinValue">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
-        <skos:definition>The lowest value in the dataset.</skos:definition>
-        <skos:prefLabel>min value</skos:prefLabel>
+        <skos:definition xml:lang="en">The lowest value in the segment.</skos:definition>
+        <skos:prefLabel xml:lang="en">Min value</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -392,8 +411,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MissingValues">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
-        <skos:definition>Count of missing or null entries in the dataset.</skos:definition>
-        <skos:prefLabel>missing values</skos:prefLabel>
+        <skos:definition xml:lang="en">Count of missing or null entries in the segment.</skos:definition>
+        <skos:prefLabel xml:lang="en">Missing values</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -403,8 +422,42 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Mode">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
-        <skos:definition>The most frequently occurring value in the dataset.</skos:definition>
-        <skos:prefLabel>mode</skos:prefLabel>
+        <skos:definition xml:lang="en">The most frequently occurring value in the segment.</skos:definition>
+        <skos:prefLabel xml:lang="en">Mode</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#ModelInstance -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ModelInstance">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataKnowledge"/>
+        <skos:definition xml:lang="en">A model generated via machine learning.</skos:definition>
+        <skos:prefLabel xml:lang="en">Model Instance</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Motif -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Motif">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:definition xml:lang="en">A recurring pattern or subsequence in time series data that helps identify similar behaviors or events across different segments.</skos:definition>
+        <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Distance"/>
+        <skos:prefLabel xml:lang="en">Motif</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MotifCollection -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MotifCollection">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:definition xml:lang="en">A collection of motifs within time series data, representing frequently occurring patterns that provide insights into underlying processes.</skos:definition>
+        <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Motif"/>
+        <skos:prefLabel xml:lang="en">Motif Collection</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -414,8 +467,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#NumberOfDistinctValues">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
-        <skos:definition>The count of unique values in the dataset.</skos:definition>
-        <skos:prefLabel>number of distinct values</skos:prefLabel>
+        <skos:definition xml:lang="en">The count of unique values in the segment.</skos:definition>
+        <skos:prefLabel xml:lang="en">Number of distinct values</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -425,8 +478,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#NumberOfInstances">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
-        <skos:definition>The total count of data entries or records in the dataset.</skos:definition>
-        <skos:prefLabel>number of instances</skos:prefLabel>
+        <skos:definition xml:lang="en">The total count of data entries or records in the segment.</skos:definition>
+        <skos:prefLabel xml:lang="en">Number of instances</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -436,7 +489,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataKnowledge"/>
-        <skos:prefLabel>Segment Data Characteristic</skos:prefLabel>
+        <skos:definition xml:lang="en">Attributes and features that define specific data segments.</skos:definition>
+        <skos:prefLabel xml:lang="en">Segment Data Characteristic</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -446,7 +500,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroup">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
-        <skos:prefLabel>Segment Group</skos:prefLabel>
+        <skos:definition xml:lang="en">A collection of related segments within time series data.</skos:definition>
+        <skos:prefLabel xml:lang="en">Segment Group</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -456,7 +511,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroupRepresentative">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
-        <skos:prefLabel>Segment Group Representative</skos:prefLabel>
+        <skos:definition xml:lang="en">An entity that acts as a typical example or reference for a group of segments.</skos:definition>
+        <skos:prefLabel xml:lang="en">Segment Group Representative</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -466,7 +522,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SegmentPrediction">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataKnowledge"/>
-        <skos:prefLabel>Segment Prediction</skos:prefLabel>
+        <skos:definition xml:lang="en">Knowledge related to predicting outcomes or future trends within data segments.</skos:definition>
+        <skos:prefLabel xml:lang="en">Segment Prediction</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -476,7 +533,20 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataKnowledge"/>
-        <skos:prefLabel>Segment Relation</skos:prefLabel>
+        <skos:definition xml:lang="en">Relationships and connections between different data segments.</skos:definition>
+        <skos:prefLabel xml:lang="en">Segment Relation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Segmentation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Segmentation">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:definition xml:lang="en">Dividing time series data into meaningful segments for detailed analysis, enabling focused insights.</skos:definition>
+        <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroupRepresentative"/>
+        <skos:prefLabel xml:lang="en">Segmentation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -485,8 +555,9 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Shapelet">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
-        <skos:prefLabel>Shapelet</skos:prefLabel>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroupRepresentative"/>
+        <skos:definition xml:lang="en">A characteristic subseries or pattern within a time series that is useful for classification.</skos:definition>
+        <skos:prefLabel xml:lang="en">Shapelet</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -496,7 +567,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Similarity">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
-        <skos:prefLabel>Similarity</skos:prefLabel>
+        <skos:definition xml:lang="en">A measure of resemblance or closeness between data points or segments.</skos:definition>
+        <skos:prefLabel xml:lang="en">Similarity</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -506,8 +578,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Skewness">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
-        <skos:definition>A measure of the asymmetry of the probability distribution.</skos:definition>
-        <skos:prefLabel>skewness</skos:prefLabel>
+        <skos:definition xml:lang="en">A measure of the asymmetry of the probability distribution.</skos:definition>
+        <skos:prefLabel xml:lang="en">Skewness</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -517,8 +589,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#StandardDeviation">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
-        <skos:definition>A measure of the amount of variation in the dataset.</skos:definition>
-        <skos:prefLabel>standard deviation</skos:prefLabel>
+        <skos:definition xml:lang="en">A measure of the amount of variation in the segment.</skos:definition>
+        <skos:prefLabel xml:lang="en">Standard deviation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -528,7 +600,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic"/>
-        <skos:prefLabel>Structural Property</skos:prefLabel>
+        <skos:definition xml:lang="en">Attributes related to the composition or arrangement of data segments.</skos:definition>
+        <skos:prefLabel xml:lang="en">Structural Property</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -538,7 +611,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#TrendProperty">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic"/>
-        <skos:prefLabel>Trend Property</skos:prefLabel>
+        <skos:definition xml:lang="en">Indicators of directionality or movement within data segments over time.</skos:definition>
+        <skos:prefLabel xml:lang="en">Trend Property</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -548,8 +622,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ValueRange">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
-        <skos:definition>The difference between the maximum and minimum values in the dataset.</skos:definition>
-        <skos:prefLabel>value range</skos:prefLabel>
+        <skos:definition xml:lang="en">The difference between the maximum and minimum values in the segment.</skos:definition>
+        <skos:prefLabel xml:lang="en">Value range</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -559,8 +633,8 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Variance">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
-        <skos:definition>Variance of the attribute values.</skos:definition>
-        <skos:prefLabel>variance</skos:prefLabel>
+        <skos:definition xml:lang="en">Variance of the attribute values.</skos:definition>
+        <skos:prefLabel xml:lang="en">Variance</skos:prefLabel>
     </owl:NamedIndividual>
 </rdf:RDF>
 
