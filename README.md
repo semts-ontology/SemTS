@@ -2,7 +2,7 @@
 <table style="border: none;">
   <tr style="border: none;">
     <td style="border: none; padding-right: 20px;">
-      <img src="https://github.com/semts-ontology/SemTS/blob/main/assets/images/logo.png" alt="SemTS Logo" width="800px" style="vertical-align: middle;"/>
+      <img src="https://raw.githubusercontent.com/semts-ontology/SemTS/refs/heads/main/assets/images/logo.png" alt="SemTS Logo" width="800px" style="vertical-align: middle;"/>  
     </td>
     <td style="border: none; vertical-align: top;">
       <p><b>Ontology for the Semantic Classification of Time Series Knowledge</b></p>
