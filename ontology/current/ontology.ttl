@@ -1,77 +1,86 @@
 @prefix : <https://w3id.org/semts/ontology#> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#.> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> .
 @base <https://w3id.org/semts/ontology#> .
 
 <https://w3id.org/semts/ontology#> rdf:type owl:Ontology ;
-                                    owl:versionIRI <https://w3id.org/semts/ontology/051#> ;
-                                    <http://purl.org/dc/terms/abstract> "SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information. The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation."@en ;
-                                    <http://purl.org/dc/terms/contributor> "Rohit A. Deshmukh"@en ;
-                                    <http://purl.org/dc/terms/created> "December 13th, 2024"@en ;
-                                    <http://purl.org/dc/terms/creator> "Alexander Graß"@en ;
-                                    <http://purl.org/dc/terms/description> "SemTS is an ontology designed to identify and describe segments within time series data, which are specific data points or intervals that can overlap. These segments encompass characteristic knowledge about the time interval they cover, including common time series features, structural anomalies, motifs, or information provided by domain experts. By classifying and semantically representing this knowledge, SemTS promotes organized reusability and efficient propagation, potentially reducing resource expenditure while enhancing future analyses. It employs established semantic approaches. Examples are DCAT to reference associated time series data, OWL-Time to define the index structure of time series data and segments or ML-Schema to expand the expressiveness regarding data analysis task information. SemTS's design involves categorizing time series knowledge and mapping it to specific intervals and dimensions of time series data. It introduces a class called TimeSeriesSegment to model these segments, extending the DCAT Dataset class to enable segments to be part of other segments. This structure allows for the association of knowledge, such as anomalies, with particular intervals or data points. TimeIndex specifications extend OWL-Time classes, while dimensional details are represented by DataDimension. The segment-wise consideration of knowledge indirectly serves as an index structure, linking meaningful time series data with categorized knowledge. At the highest level of abstraction, time series knowledge is divided into three categories: DataKnowledge, ScenarioKnowledge, and MethodKnowledge. DataKnowledge refers to insights extracted directly from the data or through analytical methods, such as class membership from time series clustering. ScenarioKnowledge describes verified contexts, including data annotations or domain-specific process knowledge, often equating to expert-provided a priori information and can also define facts derived from inferred knowledge. MethodKnowledge encompasses effective analytical method presets or mathematical/logical equivalents of established process information."@en ;
-                                    <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
-                                    <http://purl.org/dc/terms/rights> "CC BY 4.0"@en ;
-                                    <http://purl.org/dc/terms/title> "The Semantic Time Series Ontology" ;
-                                    <http://purl.org/vocab/vann/preferredNamespacePrefix> "semts" ;
-                                    <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/semts" ;
+                                    owl:versionIRI <https://w3id.org/semts/ontology/061#> ;
+                                    terms:abstract "SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information. The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation."@en ;
+                                    terms:contributor "Rohit A. Deshmukh"@en ;
+                                    terms:created "December 13th, 2024"@en ;
+                                    terms:creator "Alexander Graß"@en ;
+                                    terms:description "SemTS is an ontology designed to identify and describe segments within time series data, which are specific data points or intervals that can overlap. These segments encompass characteristic knowledge about the time interval they cover, including common time series features, structural anomalies, motifs, or information provided by domain experts. By classifying and semantically representing this knowledge, SemTS promotes organized reusability and efficient propagation, potentially reducing resource expenditure while enhancing future analyses. It employs established semantic approaches. Examples are DCAT to reference associated time series data, OWL-Time to define the index structure of time series data and segments or ML-Schema to expand the expressiveness regarding data analysis task information. SemTS's design involves categorizing time series knowledge and mapping it to specific intervals and dimensions of time series data. It introduces a class called TimeSeriesSegment to model these segments, extending the DCAT Dataset class to enable segments to be part of other segments. This structure allows for the association of knowledge, such as anomalies, with particular intervals or data points. TimeIndex specifications extend OWL-Time classes, while dimensional details are represented by DataDimension. The segment-wise consideration of knowledge indirectly serves as an index structure, linking meaningful time series data with categorized knowledge. At the highest level of abstraction, time series knowledge is divided into three categories: DataKnowledge, ScenarioKnowledge, and MethodKnowledge. DataKnowledge refers to insights extracted directly from the data or through analytical methods, such as class membership from time series clustering. ScenarioKnowledge describes verified contexts, including data annotations or domain-specific process knowledge, often equating to expert-provided a priori information and can also define facts derived from inferred knowledge. MethodKnowledge encompasses effective analytical method presets or mathematical/logical equivalents of established process information."@en ;
+                                    terms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                    terms:rights "CC BY 4.0"@en ;
+                                    terms:title "The Semantic Time Series Ontology" ;
+                                    vann:preferredNamespacePrefix "semts" ;
+                                    vann:preferredNamespaceUri "https://w3id.org/semts" ;
                                     rdfs:label "Semantic Time Series"@en ;
                                     owl:versionIRI "https://w3id.org/semts/ontology/051#" ;
                                     owl:versionInfo "0.5.1" ;
-                                    <http://xmlns.com/foaf/0.1/depiction> "https://raw.githubusercontent.com/semts-ontology/SemTS/3b3cd5059cc3939465b208cbc5d3464516034fda/assets/images/semts_visual_model.drawio.svg" ;
-                                    <http://xmlns.com/foaf/0.1/logo> "https://raw.githubusercontent.com/semts-ontology/SemTS/78047e27e691f5ac7878d93bec2f25ab514bd06d/assets/images/logo.png" ;
-                                    <http://xmlns.com/foaf/0.1/maker> <https://w3id.org/semts/grass.alexan@gmail.com> ;
-                                    <https://schema.org/citation> "Alexander Graß, Rohit A. Deshmukh. The Semantic Time Series Ontology. https://github.com/semts-ontology/SemTS"@en .
+                                    foaf:depiction "https://raw.githubusercontent.com/semts-ontology/SemTS/3b3cd5059cc3939465b208cbc5d3464516034fda/assets/images/semts_visual_model.drawio.svg" ;
+                                    foaf:logo "https://raw.githubusercontent.com/semts-ontology/SemTS/78047e27e691f5ac7878d93bec2f25ab514bd06d/assets/images/logo.png" ;
+                                    foaf:maker <grass.alexan@gmail.com> ;
+                                    schema:citation "Alexander Graß, Rohit A. Deshmukh. The Semantic Time Series Ontology. https://github.com/semts-ontology/SemTS"@en .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
 ###  http://purl.org/dc/terms/abstract
-<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty .
+terms:abstract rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/contributor
-<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+terms:contributor rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/created
-<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+terms:created rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/creator
-<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+terms:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/description
-<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+terms:description rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
-<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+terms:license rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/rights
-<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty .
+terms:rights rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+terms:title rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/example
-<http://purl.org/vocab/vann/example> rdf:type owl:AnnotationProperty .
+vann:example rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
-<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespaceUri
-<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2002/07/owl#imports
@@ -87,23 +96,23 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
 
 
 ###  http://xmlns.com/foaf/0.1/depiction
-<http://xmlns.com/foaf/0.1/depiction> rdf:type owl:AnnotationProperty .
+foaf:depiction rdf:type owl:AnnotationProperty .
 
 
 ###  http://xmlns.com/foaf/0.1/image
-<http://xmlns.com/foaf/0.1/image> rdf:type owl:AnnotationProperty .
+foaf:image rdf:type owl:AnnotationProperty .
 
 
 ###  http://xmlns.com/foaf/0.1/logo
-<http://xmlns.com/foaf/0.1/logo> rdf:type owl:AnnotationProperty .
+foaf:logo rdf:type owl:AnnotationProperty .
 
 
 ###  http://xmlns.com/foaf/0.1/maker
-<http://xmlns.com/foaf/0.1/maker> rdf:type owl:AnnotationProperty .
+foaf:maker rdf:type owl:AnnotationProperty .
 
 
 ###  https://schema.org/citation
-<https://schema.org/citation> rdf:type owl:AnnotationProperty .
+schema:citation rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -111,29 +120,28 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  http://www.w3.org/ns/prov#generated
-<http://www.w3.org/ns/prov#generated> rdf:type owl:ObjectProperty ;
-                                      rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
-                                      rdfs:range <http://www.w3.org/ns/prov#Entity> .
+prov:generated rdf:type owl:ObjectProperty ;
+               rdfs:domain prov:Activity ;
+               rdfs:range prov:Entity .
 
 
 ###  http://www.w3.org/ns/prov#used
-<http://www.w3.org/ns/prov#used> rdf:type owl:ObjectProperty ;
-                                 rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
-                                 rdfs:range <http://www.w3.org/ns/prov#Entity> .
+prov:used rdf:type owl:ObjectProperty ;
+          rdfs:domain prov:Activity ;
+          rdfs:range prov:Entity .
 
 
 ###  http://www.w3.org/ns/prov#wasDerivedFrom
-<http://www.w3.org/ns/prov#wasDerivedFrom> rdf:type owl:ObjectProperty ;
-                                           rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
-                                           rdfs:range <http://www.w3.org/ns/prov#Entity> .
+prov:wasDerivedFrom rdf:type owl:ObjectProperty ;
+                    rdfs:domain prov:Entity ;
+                    rdfs:range prov:Entity .
 
 
-###  https://w3id.org/semts/ontology#dimensionUnit
-:dimensionUnit rdf:type owl:ObjectProperty ;
-               rdfs:domain :DataDimension ;
-               rdfs:range <http://qudt.org/3.0.0/schema/qudt#Unit> ;
-               rdfs:comment "dimensionUnit is the relation, which assigns a qudt:Unit instance to a DataDimension"@en ;
-               rdfs:label "Dimension Unit"@en .
+###  https://w3id.org/semts/ontology#generated
+:generated rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf prov:generated ;
+           rdfs:domain :KnowledgeGenerationEntity ;
+           rdfs:range :KnowledgeGenerationOutput .
 
 
 ###  https://w3id.org/semts/ontology#groupKnowledge
@@ -142,7 +150,31 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                 rdfs:domain :KnowledgeGroup ;
                 rdfs:range :Knowledge ;
                 rdfs:comment "References any knowledge within a particular knowledge group."@en ;
-                rdfs:label "Group Knowledge"@en .
+                rdfs:label "group knowledge"@en .
+
+
+###  https://w3id.org/semts/ontology#hasDatatype
+:hasDatatype rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :DataDimension
+                                         :Value
+                                       )
+                         ] ;
+             rdfs:range <http://qudt.org/3.0.0/schema/qudt#Datatype> ;
+             rdfs:comment "Assigns a qudt:Datatype instance to an instance of a Value subclass"@en ;
+             rdfs:label "Value Datatype"@en .
+
+
+###  https://w3id.org/semts/ontology#hasUnit
+:hasUnit rdf:type owl:ObjectProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :DataDimension
+                                     :Value
+                                   )
+                     ] ;
+         rdfs:range <http://qudt.org/3.0.0/schema/qudt#Unit> ;
+         rdfs:comment "dimensionUnit is the relation, which assigns a qudt:Unit instance to a DataDimension"@en ;
+         rdfs:label "dimension unit"@en .
 
 
 ###  https://w3id.org/semts/ontology#hasValue
@@ -156,7 +188,7 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                       ] ;
           rdfs:range :Value ;
           rdfs:comment "Relationship to the Value class and thus to allow for a reference to stored data."@en ;
-          rdfs:label "Has Value"@en .
+          rdfs:label "has value"@en .
 
 
 ###  https://w3id.org/semts/ontology#inputDataReference
@@ -166,7 +198,7 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                     rdfs:domain :KnowledgeGenerationInput ;
                     rdfs:range :TimeSeriesSegment ;
                     rdfs:comment "Defines the relation from a Knowledge Generation Input to a Time Series Segment and thus to metadata which specifies the underlying data."@en ;
-                    rdfs:label "Input Data Reference"@en .
+                    rdfs:label "input data reference"@en .
 
 
 ###  https://w3id.org/semts/ontology#inputKnowledge
@@ -175,7 +207,16 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                 rdfs:domain :KnowledgeGenerationInput ;
                 rdfs:range :Knowledge ;
                 rdfs:comment "Similar to the Input Data Reference, this relation defines all the knowledge associated with the input of a Knowledge Generation Entity."@en ;
-                rdfs:label "Input Knowledge"@en .
+                rdfs:label "input knowledge"@en .
+
+
+###  https://w3id.org/semts/ontology#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :TimeSeriesSegment ;
+          rdfs:range :TimeSeriesSegment ;
+          rdfs:comment "Defines a hierarchic relationship between time series segments. The intuition of this property is to differentiate between complete time series, in a sense that it includes the data from start to end and subsegments which are reduced in time or dimensionality and thus can be considered a slice of this original data."@en ;
+          rdfs:label "Segment Of"@en .
 
 
 ###  https://w3id.org/semts/ontology#knowledgeConcept
@@ -185,7 +226,7 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                   rdfs:domain :Knowledge ;
                   rdfs:range :KnowledgeConcept ;
                   rdfs:comment "Relates a concept for a Knowledge instance. Can be used to assign concrete instances from the SemTS taxonomy."@en ;
-                  rdfs:label "Knowledge Concept"@en .
+                  rdfs:label "knowledge concept"@en .
 
 
 ###  https://w3id.org/semts/ontology#knowledgeGenerationConcept
@@ -194,7 +235,7 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                             rdfs:domain :KnowledgeGenerationEntity ;
                             rdfs:range :KnowledgeGenerationConcept ;
                             rdfs:comment "Relates a concept for a Knowledge Generation instance."@en ;
-                            rdfs:label "Knowledge Generation Concept"@en .
+                            rdfs:label "knowledge generation concept"@en .
 
 
 ###  https://w3id.org/semts/ontology#knowledgeGenerationEntity
@@ -204,7 +245,7 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                            rdfs:domain :Knowledge ;
                            rdfs:range :KnowledgeGenerationEntity ;
                            rdfs:comment "Relates the Knowledge Generation Entity, which produced this Knowledge instance."@en ;
-                           rdfs:label "Knowledge Generation Entity"@en .
+                           rdfs:label "knowledge generation entity"@en .
 
 
 ###  https://w3id.org/semts/ontology#knowledgeQualityMeasure
@@ -258,7 +299,7 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdf:type owl:FunctionalProperty ;
               rdfs:domain :TimeSeriesSegment ;
-              rdfs:range <http://www.w3.org/2006/time#TemporalEntity> ;
+              rdfs:range time:TemporalEntity ;
               rdfs:comment "Defines the index associated with a Time Series Segment. Inherits from the time:TemporalEntity."@en ;
               rdfs:label "Segment Index"@en .
 
@@ -272,21 +313,18 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                   rdfs:label "Segment Knowledge"@en .
 
 
-###  https://w3id.org/semts/ontology#segmentOf
-:segmentOf rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty ;
-           rdfs:domain :TimeSeriesSegment ;
-           rdfs:range :TimeSeriesSegment ;
-           rdfs:comment "Defines a hierarchic relationship between time series segments. The intuition of this property is to differentiate between complete time series, in a sense that it includes the data from start to end and subsegments which are reduced in time or dimensionality and thus can be considered a slice of this original data."@en ;
-           rdfs:label "Segment Of"@en .
+###  https://w3id.org/semts/ontology#used
+:used rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf prov:used ;
+      rdfs:domain :KnowledgeGenerationEntity ;
+      rdfs:range :KnowledgeGenerationInput .
 
 
-###  https://w3id.org/semts/ontology#valueDatatype
-:valueDatatype rdf:type owl:ObjectProperty ;
-               rdfs:domain :Value ;
-               rdfs:range <http://qudt.org/3.0.0/schema/qudt#Datatype> ;
-               rdfs:comment "Assigns a qudt:Datatype instance to an instance of a Value subclass"@en ;
-               rdfs:label "Value Datatype"@en .
+###  https://w3id.org/semts/ontology#wasDerivedFrom
+:wasDerivedFrom rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf prov:wasDerivedFrom ;
+                rdfs:domain :KnowledgeGenerationOutput ;
+                rdfs:range :KnowledgeGenerationInput .
 
 
 #################################################################
@@ -363,17 +401,17 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2006/time#DateTimeInterval
-<http://www.w3.org/2006/time#DateTimeInterval> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> .
+time:DateTimeInterval rdf:type owl:Class ;
+                      rdfs:subClassOf time:TemporalEntity .
 
 
 ###  http://www.w3.org/2006/time#Instant
-<http://www.w3.org/2006/time#Instant> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> .
+time:Instant rdf:type owl:Class ;
+             rdfs:subClassOf time:TemporalEntity .
 
 
 ###  http://www.w3.org/2006/time#TemporalEntity
-<http://www.w3.org/2006/time#TemporalEntity> rdf:type owl:Class .
+time:TemporalEntity rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/dcat#Dataset
@@ -381,43 +419,37 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/ns/mls#Algorithm
-<http://www.w3.org/ns/mls#Algorithm> rdf:type owl:Class .
+mls:Algorithm rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/mls#EvaluationMeasure
-<http://www.w3.org/ns/mls#EvaluationMeasure> rdf:type owl:Class ;
-                                             rdfs:label "Evaluation Measure" .
+mls:EvaluationMeasure rdf:type owl:Class ;
+                      rdfs:label "Evaluation Measure" .
 
 
 ###  http://www.w3.org/ns/mls#Hyperparameter
-<http://www.w3.org/ns/mls#Hyperparameter> rdf:type owl:Class .
+mls:Hyperparameter rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/mls#Model
-<http://www.w3.org/ns/mls#Model> rdf:type owl:Class .
+mls:Model rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/prov#Activity
-<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class .
+prov:Activity rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/prov#Entity
-<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
+prov:Entity rdf:type owl:Class .
 
 
 ###  https://w3id.org/semts/ontology#Algorithm
 :Algorithm rdf:type owl:Class ;
-           rdfs:subClassOf <http://www.w3.org/ns/mls#Algorithm> ,
+           rdfs:subClassOf mls:Algorithm ,
                            :MethodKnowledge ;
+           owl:disjointWith :Hyperparameter ;
            rdfs:comment "Refers to any algorithmic solution in the context of time series analysis. While this class extends the mls:Algorithm class, it enables a reference to further details on specific task specifics and experiments. It is considered method knowledge as this class can be used to define knowledge about an appropriate or optimal algorithmic solution associated with a time series segment."@en ;
            rdfs:label "Algorithm Recommendation"@en .
-
-
-###  https://w3id.org/semts/ontology#Annotation
-:Annotation rdf:type owl:Class ;
-            rdfs:subClassOf :ScenarioKnowledge ;
-            rdfs:comment "Defines any type of validated annotation including notes and labels. This might be a short informal note from a human process expert, any not particularly structured system message, the indication of an event or a complex annotation for machine learning."@en ;
-            rdfs:label "Annotation"@en .
 
 
 ###  https://w3id.org/semts/ontology#ArtificialTimeSeriesSegment
@@ -425,13 +457,6 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                              rdfs:subClassOf :TimeSeriesSegment ;
                              rdfs:comment "A time series segment that does not, or only partially refer to concrete time series data. It represents an artificially generated time series segment that might for instance describe the result of a forecast with a time index not being in the range of the original time series data."@en ;
                              rdfs:label "Artificial Time Series Segment"@en .
-
-
-###  https://w3id.org/semts/ontology#ContextInformation
-:ContextInformation rdf:type owl:Class ;
-                    rdfs:subClassOf :ScenarioKnowledge ;
-                    rdfs:comment "Context Information equal predefined knowledge to enrich the description of a scenario with context-specific information. Knowledge of this type for instance comprises concrete settings, expected machine behaviors or environmental details, which can be assigned to a particular interval of a time series."@en ;
-                    rdfs:label "Context Information"@en .
 
 
 ###  https://w3id.org/semts/ontology#DataDimension
@@ -443,6 +468,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/semts/ontology#DataKnowledge
 :DataKnowledge rdf:type owl:Class ;
                rdfs:subClassOf :Knowledge ;
+               owl:disjointWith :KnowledgeGroup ,
+                                :MethodKnowledge ,
+                                :ScenarioKnowledge ;
                rdfs:comment "Defines any knowledge that is derived from the data. This includes statistics, other signal characteristics or knowledge generated thorugh data analysis methods. Examples for the latter case are predictions, anomalies or cluster group memberships."@en ;
                rdfs:label "Data Knowledge"@en .
 
@@ -457,7 +485,7 @@ One example could be the mean value of a univariate time series."""@en ;
 
 ###  https://w3id.org/semts/ontology#Hyperparameter
 :Hyperparameter rdf:type owl:Class ;
-                rdfs:subClassOf <http://www.w3.org/ns/mls#Hyperparameter> ,
+                rdfs:subClassOf mls:Hyperparameter ,
                                 :MethodKnowledge ;
                 rdfs:comment "A hyperparameter is considered method knowledge as this class can be used to define knowledge about an appropriate or optimal hyperparameter setting associated with the analysis of a time series segment for a concrete task."@en ;
                 rdfs:label "Parameter Recommendation"@en .
@@ -465,6 +493,10 @@ One example could be the mean value of a univariate time series."""@en ;
 
 ###  https://w3id.org/semts/ontology#Knowledge
 :Knowledge rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :knowledgeConcept ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
            rdfs:comment "Represents the highest level of any knowledge associated with time series data. Knowledge can be made more specific via subclasses or associated concepts."@en ;
            rdfs:label "Knowledge"@en .
 
@@ -492,14 +524,14 @@ One example could be the mean value of a univariate time series."""@en ;
 
 ###  https://w3id.org/semts/ontology#KnowledgeGenerationEntity
 :KnowledgeGenerationEntity rdf:type owl:Class ;
-                           rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+                           rdfs:subClassOf prov:Activity ;
                            rdfs:comment "Represents the highest entity to define the process of knowledge generation. A more specific description can be provided by subclasses or assigned concepts. This class inherits from prov:Agent and thus allows for provenance during knowledge propagation."@en ;
                            rdfs:label "Knowledge Generation Entity"@en .
 
 
 ###  https://w3id.org/semts/ontology#KnowledgeGenerationIO
 :KnowledgeGenerationIO rdf:type owl:Class ;
-                       rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                       rdfs:subClassOf prov:Entity ;
                        rdfs:comment "Defines any input and output of a knowledge generation entity. It inherits from prov:Entity to define instances that are used by or generated by a prov:Activity, which in turn is the parental class of a knowledge generation entity."@en ;
                        rdfs:label "Knowledge Generation IO"@en .
 
@@ -507,13 +539,14 @@ One example could be the mean value of a univariate time series."""@en ;
 ###  https://w3id.org/semts/ontology#KnowledgeGenerationInput
 :KnowledgeGenerationInput rdf:type owl:Class ;
                           rdfs:subClassOf :KnowledgeGenerationIO ;
+                          owl:disjointWith :KnowledgeGenerationOutput ;
                           rdfs:comment "Defines the input of a knowledge generation entity. While outputs can only contain produced knowledge, inputs might either reference knowledge or raw data."@en ;
                           rdfs:label "Knowledge Generation Input"@en .
 
 
 ###  https://w3id.org/semts/ontology#KnowledgeGenerationMethod
 :KnowledgeGenerationMethod rdf:type owl:Class ;
-                           rdfs:subClassOf <http://www.w3.org/ns/mls#Algorithm> ,
+                           rdfs:subClassOf mls:Algorithm ,
                                            :KnowledgeGenerationEntity ;
                            rdfs:comment "Defines a knowledge generation entity, which corresponds to method-based solution. Compared to other knowledge generation entities this class is a subclass of Algorithm and thus can be linked to algorithmic details."@en ;
                            rdfs:label "Knowledge Generation Method"@en .
@@ -528,14 +561,20 @@ One example could be the mean value of a univariate time series."""@en ;
 
 ###  https://w3id.org/semts/ontology#KnowledgeGroup
 :KnowledgeGroup rdf:type owl:Class ;
-                rdfs:subClassOf :Knowledge ;
+                rdfs:subClassOf :Knowledge ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :groupKnowledge ;
+                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                owl:disjointWith :MethodKnowledge ,
+                                 :ScenarioKnowledge ;
                 rdfs:comment "A grouping of knowledge which itself is again considered knowledge. Can be used to structure knowledge and create hierarchies."@en ;
                 rdfs:label "Knowledge Group"@en .
 
 
 ###  https://w3id.org/semts/ontology#KnowledgeQualityMeasure
 :KnowledgeQualityMeasure rdf:type owl:Class ;
-                         rdfs:subClassOf <http://www.w3.org/ns/mls#EvaluationMeasure> ;
+                         rdfs:subClassOf mls:EvaluationMeasure ;
                          rdfs:comment "Defines the goodness or confidence of time series knowledge associated with one or multiple segments. For knowledge produced by a knowledge generation method the quality measure is often equal to the evaluation metric of the generation method, which is why this class inherits from mls:EvaluationMeasure."@en ;
                          rdfs:label "Knowledge Quality Measure"@en .
 
@@ -551,14 +590,18 @@ While many analysis results can be regarded unvalidated predictions, this class 
 ###  https://w3id.org/semts/ontology#MethodKnowledge
 :MethodKnowledge rdf:type owl:Class ;
                  rdfs:subClassOf :Knowledge ;
+                 owl:disjointWith :ScenarioKnowledge ;
                  rdfs:comment "Any knowledge that defines an appropriate setting, regarding a particular method that is beneficial or even optimal when analyzing a segment given a particular task."@en ;
                  rdfs:label "Method Knowledge"@en .
 
 
 ###  https://w3id.org/semts/ontology#ModelInstance
 :ModelInstance rdf:type owl:Class ;
-               rdfs:subClassOf <http://www.w3.org/ns/mls#Model> ,
+               rdfs:subClassOf mls:Model ,
                                :DataKnowledge ;
+               owl:disjointWith :SegmentDataCharacteristic ,
+                                :SegmentPrediction ,
+                                :SegmentRelation ;
                rdfs:comment "This class describes a trained model in the traditional machine learning sense. It inherits from mls:Model and serves as a knowledge entity for subsequent predictions."@en ;
                rdfs:label "Model Instance" .
 
@@ -588,20 +631,32 @@ While many analysis results can be regarded unvalidated predictions, this class 
 ###  https://w3id.org/semts/ontology#SegmentDataCharacteristic
 :SegmentDataCharacteristic rdf:type owl:Class ;
                            rdfs:subClassOf :DataKnowledge ;
+                           owl:disjointWith :SegmentPrediction ,
+                                            :SegmentRelation ;
                            rdfs:comment "Defines analytical, data-specific insights including derived statistics or other structural characteristics such as representative kernel expressions. Knowledge of this class mostly equals extracted data features."@en ;
                            rdfs:label "Segment Data Characteristic"@en .
 
 
 ###  https://w3id.org/semts/ontology#SegmentPrediction
 :SegmentPrediction rdf:type owl:Class ;
-                   rdfs:subClassOf :DataKnowledge ;
+                   rdfs:subClassOf :DataKnowledge ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasValue ;
+                                     owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                                   ] ;
+                   owl:disjointWith :SegmentRelation ;
                    rdfs:comment "Defines knowledge derived from data-driven analyses. This for instance includes anomalies and predictions."@en ;
                    rdfs:label "Segment Prediction"@en .
 
 
 ###  https://w3id.org/semts/ontology#SegmentRelation
 :SegmentRelation rdf:type owl:Class ;
-                 rdfs:subClassOf :DataKnowledge ;
+                 rdfs:subClassOf :DataKnowledge ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty [ owl:inverseOf :segmentGroupKnowledge
+                                                  ] ;
+                                   owl:someValuesFrom :TimeSeriesSegment
+                                 ] ;
                  rdfs:comment "SegmentRelation defines relations between multiple segment. Such a relation could for instance be a cross-correlation or the result of a distance metric."@en ;
                  rdfs:label "Segment Relation" .
 
@@ -619,4 +674,16 @@ While many analysis results can be regarded unvalidated predictions, this class 
        rdfs:label "Value"@en .
 
 
-###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :KnowledgeComparisonMeasure
+                :KnowledgeGenerationMethod
+                :KnowledgeReasoning
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

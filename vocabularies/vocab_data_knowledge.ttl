@@ -1,10 +1,10 @@
-@prefix : <https://w3id.org/semts/taxonomy#> .
+@prefix : <https://w3id.org/semts/vocabulary/data-knowledge#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix semts: <https://w3id.org/semts/ontology#> .
-@base <https://w3id.org/semts/taxonomy/data-knowledge#> .
+@base <https://w3id.org/semts/vocabulary/data-knowledge#> .
 
 #################################################################
 #    Properties
@@ -33,273 +33,306 @@ skos:narrower rdf:type owl:ObjectProperty .
 ###  http://www.w3.org/2004/02/skos/core#Collection
 skos:Collection rdf:type owl:Class .
 
-
 ###  http://www.w3.org/2004/02/skos/core#Concept
 skos:Concept rdf:type owl:Class .
-
 
 ###  https://w3id.org/semts/ontology#KnowledgeConcept
 semts:KnowledgeConcept rdf:type owl:Class ; rdfs:subClassOf skos:Concept .
 
 
 #################################################################
-#    Data Knowledge
+#    Data Knowledge Concepts
 #################################################################
 
-###  https://w3id.org/semts/taxonomy#DataKnowledge
+###  https://w3id.org/semts/vocabulary/data-knowledge#DataKnowledge
 :DataKnowledge rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-               skos:prefLabel "Data Knowledge" ;
-               skos:broader :Knowledge .
+    skos:prefLabel "Data Knowledge"@en ;
+    skos:definition "A comprehensive category encompassing various forms of knowledge derived from data analysis."@en ;
+    skos:broader :Knowledge .
 
-###  https://w3id.org/semts/taxonomy#SegmentPrediction
+###  https://w3id.org/semts/vocabulary/data-knowledge#SegmentPrediction
 :SegmentPrediction rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                   skos:prefLabel "Segment Prediction" ;
-                   skos:broader :DataKnowledge .
+    skos:prefLabel "Segment Prediction"@en ;
+    skos:definition "Knowledge related to predicting outcomes or future trends within data segments."@en ;
+    skos:broader :DataKnowledge .
 
-###  https://w3id.org/semts/taxonomy#SegmentDataCharacteristic
+###  https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic
 :SegmentDataCharacteristic rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                           skos:prefLabel "Segment Data Characteristic" ;
-                           skos:broader :DataKnowledge .
-					
-###  https://w3id.org/semts/taxonomy#SegmentRelation
+    skos:prefLabel "Segment Data Characteristic"@en ;
+    skos:definition "Attributes and features that define specific data segments."@en ;
+    skos:broader :DataKnowledge .
+
+###  https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation
 :SegmentRelation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                           skos:prefLabel "Segment Relation" ;
-                           skos:broader :DataKnowledge .
+    skos:prefLabel "Segment Relation"@en ;
+    skos:definition "Relationships and connections between different data segments."@en ;
+    skos:broader :DataKnowledge .
 
-###  https://w3id.org/semts/taxonomy#LocationProperty
+###  https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty
 :LocationProperty rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                  skos:prefLabel "Location Property" ;
-                  skos:broader :SegmentDataCharacteristic .
+    skos:prefLabel "Location Property"@en ;
+    skos:definition "Properties that define the position or location within data segments."@en ;
+    skos:broader :SegmentDataCharacteristic .
 
-###  https://w3id.org/semts/taxonomy#DispersionProperty
+###  https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty
 :DispersionProperty rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                    skos:prefLabel "Dispersion Property" ;
-                    skos:broader :SegmentDataCharacteristic .
+    skos:prefLabel "Dispersion Property"@en ;
+    skos:definition "Measures of the spread or variability within data segments."@en ;
+    skos:broader :SegmentDataCharacteristic .
 
-###  https://w3id.org/semts/taxonomy#TrendProperty
+###  https://w3id.org/semts/vocabulary/data-knowledge#TrendProperty
 :TrendProperty rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-               skos:prefLabel "Trend Property" ;
-               skos:broader :SegmentDataCharacteristic .
+    skos:prefLabel "Trend Property"@en ;
+    skos:definition "Indicators of directionality or movement within data segments over time."@en ;
+    skos:broader :SegmentDataCharacteristic .
 
-###  https://w3id.org/semts/taxonomy#StructuralProperty
+###  https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty
 :StructuralProperty rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                    skos:prefLabel "Structural Property" ;
-                    skos:broader :SegmentDataCharacteristic .
+    skos:prefLabel "Structural Property"@en ;
+    skos:definition "Attributes related to the composition or arrangement of data segments."@en ;
+    skos:broader :SegmentDataCharacteristic .
 
-###  https://w3id.org/semts/taxonomy#DataInformationProperty
+###  https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty
 :DataInformationProperty rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                   skos:prefLabel "Data Information Property" ;
-                   skos:broader :SegmentDataCharacteristic .
+    skos:prefLabel "Data Information Property"@en ;
+    skos:definition "General informational attributes of data segments."@en ;
+    skos:broader :SegmentDataCharacteristic .
 
-###  https://w3id.org/semts/taxonomy#GenerativePrediction
+###  https://w3id.org/semts/vocabulary/data-knowledge#GenerativePrediction
 :GenerativePrediction rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                      skos:prefLabel "Generative Prediction" ;
-                      skos:broader :SegmentPrediction .
+    skos:prefLabel "Generative Prediction"@en ;
+    skos:definition "Knowledge involving the generation of potential future outcomes based on existing data."@en ;
+    skos:broader :SegmentPrediction .
 
-###  https://w3id.org/semts/taxonomy#DiscriminativePrediction
+###  https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction
 :DiscriminativePrediction rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                          skos:prefLabel "Discriminative Prediction" ;
-                          skos:broader :SegmentPrediction .
+    skos:prefLabel "Discriminative Prediction"@en ;
+    skos:definition "Knowledge focusing on distinguishing between possible outcomes based on data."@en ;
+    skos:broader :SegmentPrediction .
 
-###  https://w3id.org/semts/taxonomy#Forecast
+###  https://w3id.org/semts/vocabulary/data-knowledge#Forecast
 :Forecast rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-          skos:prefLabel "Forecast" ;
-          skos:broader :GenerativePrediction .
+    skos:prefLabel "Forecast"@en ;
+    skos:definition "The process of predicting future values or trends based on historical data."@en ;
+    skos:broader :GenerativePrediction .
 
-###  https://w3id.org/semts/taxonomy#Anomaly
+###  https://w3id.org/semts/vocabulary/data-knowledge#Anomaly
 :Anomaly rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-         skos:prefLabel "Anomaly" ;
-         skos:broader :DiscriminativePrediction .
+    skos:prefLabel "Anomaly"@en ;
+    skos:definition "Identification of data points that deviate significantly from established patterns."@en ;
+    skos:broader :DiscriminativePrediction .
 
-###  https://w3id.org/semts/taxonomy#Changepoint
+###  https://w3id.org/semts/vocabulary/data-knowledge#Changepoint
 :Changepoint rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-             skos:prefLabel "Changepoint" ;
-             skos:broader :DiscriminativePrediction .
+    skos:prefLabel "Changepoint"@en ;
+    skos:definition "Detection of shifts or changes in the underlying dynamics of data."@en ;
+    skos:broader :DiscriminativePrediction .
 
-###  https://w3id.org/semts/taxonomy#InferredAnnotation
+###  https://w3id.org/semts/vocabulary/data-knowledge#InferredAnnotation
 :InferredAnnotation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                    skos:prefLabel "Inferred Annotation" ;
-                    skos:broader :DiscriminativePrediction .
+    skos:prefLabel "Inferred Annotation"@en ;
+    skos:definition "Annotations derived from analysis that highlight inferred knowledge or insights."@en ;
+    skos:broader :DiscriminativePrediction .
 
-###  https://w3id.org/semts/taxonomy#InferredClassID
+###  https://w3id.org/semts/vocabulary/data-knowledge#InferredClassID
 :InferredClassID rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                 skos:prefLabel "Inferred Class ID" ;
-                 skos:broader :InferredClassID .
+    skos:prefLabel "Inferred Class ID"@en ;
+    skos:definition "A classification identifier derived from analysis and inference."@en ;
+    skos:broader :InferredAnnotation .
 
-###  https://w3id.org/semts/taxonomy#Shapelet
+###  https://w3id.org/semts/vocabulary/data-knowledge#Shapelet
 :Shapelet rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-          skos:prefLabel "Shapelet" ;
-          skos:broader :StructuralProperty .
-		  
-###  https://w3id.org/semts/taxonomy#Distance
+    skos:prefLabel "Shapelet"@en ;
+    skos:definition "A characteristic subseries or pattern within a time series that is useful for classification."@en ;
+    skos:broader :SegmentGroupRepresentative .
+
+###  https://w3id.org/semts/vocabulary/data-knowledge#Distance
 :Distance rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                           skos:prefLabel "Distance" ;
-                           skos:broader :SegmentRelation .
-						   
-###  https://w3id.org/semts/taxonomy#Similarity
+    skos:prefLabel "Distance"@en ;
+    skos:definition "A measure of dissimilarity between data points or segments."@en ;
+    skos:broader :SegmentRelation .
+
+###  https://w3id.org/semts/vocabulary/data-knowledge#Similarity
 :Similarity rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                           skos:prefLabel "Similarity" ;
-                           skos:broader :SegmentRelation .
-						   
-###  https://w3id.org/semts/taxonomy#Correlation
+    skos:prefLabel "Similarity"@en ;
+    skos:definition "A measure of resemblance or closeness between data points or segments."@en ;
+    skos:broader :SegmentRelation .
+
+###  https://w3id.org/semts/vocabulary/data-knowledge#Correlation
 :Correlation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                           skos:prefLabel "Correlation" ;
-                           skos:broader :SegmentRelation .
-						   
-###  https://w3id.org/semts/taxonomy#SegmentGroup
+    skos:prefLabel "Correlation"@en ;
+    skos:definition "A statistical measure of the degree to which two variables are related."@en ;
+    skos:broader :SegmentRelation .
+
+###  https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroup
 :SegmentGroup rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                           skos:prefLabel "Segment Group" ;
-                           skos:broader :SegmentRelation .
-						   
-###  https://w3id.org/semts/taxonomy#SegmentGroupRepresentative
+    skos:prefLabel "Segment Group"@en ;
+    skos:definition "A collection of related segments within time series data."@en ;
+    skos:broader :SegmentRelation .
+
+###  https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroupRepresentative
 :SegmentGroupRepresentative rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-                           skos:prefLabel "Segment Group Representative" ;
-                           skos:broader :SegmentRelation .
+    skos:prefLabel "Segment Group Representative"@en ;
+    skos:definition "An entity that acts as a typical example or reference for a group of segments."@en ;
+    skos:broader :SegmentRelation .
 
-###  https://w3id.org/semts/taxonomy#Kurtosis
-:Kurtosis rdf:type owl:NamedIndividual ,
-                   semts:KnowledgeConcept ;
-          skos:definition "A measure of the 'tailedness' of the probability distribution." ;
-          skos:prefLabel "kurtosis" ;
-          skos:broader :DispersionProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#Kurtosis
+:Kurtosis rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Kurtosis"@en ;
+    skos:definition "A measure of the 'tailedness' of the probability distribution."@en ;
+    skos:broader :DispersionProperty .
 
-###  https://w3id.org/semts/taxonomy#LinearSlope
-:LinearSlope rdf:type owl:NamedIndividual ,
-                      semts:KnowledgeConcept ;
-             skos:definition "The slope of the linear regression line that best fits the data." ;
-             skos:prefLabel "Linear Slope" ;
-             skos:broader :TrendProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#LinearSlope
+:LinearSlope rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Linear Slope"@en ;
+    skos:definition "The slope of the linear regression line that best fits the data."@en ;
+    skos:broader :TrendProperty .
 
-### https://w3id.org/semts/taxonomy#FFTCentroid
-:FFTCentroid rdf:type owl:NamedIndividual ,
-                      semts:KnowledgeConcept ;
-             skos:definition "The centroid of the aggregated Fast Fourier Transform (FFT) of the data." ;
-             skos:prefLabel "FFT centroid" ;
-			 skos:broader :StructuralProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#FFTCentroid
+:FFTCentroid rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "FFT centroid"@en ;
+    skos:definition "The centroid of the aggregated Fast Fourier Transform (FFT) of the data."@en ;
+    skos:broader :StructuralProperty .
 
-### https://w3id.org/semts/taxonomy#FFTVariance
-:FFTVariance rdf:type owl:NamedIndividual ,
-                      semts:KnowledgeConcept ;
-             skos:definition "The variance of the aggregated Fast Fourier Transform (FFT) of the data." ;
-             skos:prefLabel "FFT variance" ;
-			 skos:broader :StructuralProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#FFTVariance
+:FFTVariance rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "FFT variance"@en ;
+    skos:definition "The variance of the aggregated Fast Fourier Transform (FFT) of the data."@en ;
+    skos:broader :StructuralProperty .
 
-### https://w3id.org/semts/taxonomy#FFTSkew
-:FFTSkew rdf:type owl:NamedIndividual ,
-                  semts:KnowledgeConcept ;
-             skos:definition "The skewness of the aggregated Fast Fourier Transform (FFT) of the data." ;
-             skos:prefLabel "FFT skew" ;
-			 skos:broader :StructuralProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#FFTSkew
+:FFTSkew rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "FFT skew"@en ;
+    skos:definition "The skewness of the aggregated Fast Fourier Transform (FFT) of the data."@en ;
+    skos:broader :StructuralProperty .
 
-### https://w3id.org/semts/taxonomy#FFTKurtosis
-:FFTKurtosis rdf:type owl:NamedIndividual ,
-                      semts:KnowledgeConcept ;
-             skos:definition "The kurtosis of the aggregated Fast Fourier Transform (FFT) of the data." ;
-             skos:prefLabel "FFT kurtosis" ;
-			 skos:broader :StructuralProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#FFTKurtosis
+:FFTKurtosis rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "FFT kurtosis"@en ;
+    skos:definition "The kurtosis of the aggregated Fast Fourier Transform (FFT) of the data."@en ;
+    skos:broader :StructuralProperty .
 
-### https://w3id.org/semts/taxonomy#LinearIntercept
-:LinearIntercept rdf:type owl:NamedIndividual ,
-                      semts:KnowledgeConcept ;
-             skos:definition "The intercept of the linear regression line that best fits the data." ;
-             skos:prefLabel "linear intercept" ;
-			 skos:broader :LocationProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#LinearIntercept
+:LinearIntercept rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Linear intercept"@en ;
+    skos:definition "The intercept of the linear regression line that best fits the data."@en ;
+    skos:broader :LocationProperty .
 
-###  https://w3id.org/semts/taxonomy#MaxValue
-:MaxValue rdf:type owl:NamedIndividual ,
-                   semts:KnowledgeConcept ;
-          skos:definition "The highest value in the dataset." ;
-          skos:prefLabel "max value" ;
-		  skos:broader :DispersionProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#MaxValue
+:MaxValue rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Max value"@en ;
+    skos:definition "The highest value in the segment."@en ;
+    skos:broader :DispersionProperty .
 
-###  https://w3id.org/semts/taxonomy#MeanValue
-:MeanValue rdf:type owl:NamedIndividual ,
-                    semts:KnowledgeConcept ;
-           skos:definition "The average of all data points in the dataset." ;
-           skos:prefLabel "mean value" ;
-           skos:broader :LocationProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#MeanValue
+:MeanValue rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Mean value"@en ;
+    skos:definition "The average of all data points in the segment."@en ;
+    skos:broader :LocationProperty .
 
-###  https://w3id.org/semts/taxonomy#MedianValue
-:MedianValue rdf:type owl:NamedIndividual ,
-                      semts:KnowledgeConcept ;
-             skos:definition "The middle value of the dataset when ordered." ;
-             skos:prefLabel "median value" ;
-             skos:broader :LocationProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#MedianValue
+:MedianValue rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Median value"@en ;
+    skos:definition "The middle value of the segment when ordered."@en ;
+    skos:broader :LocationProperty .
 
-###  https://w3id.org/semts/taxonomy#MinValue
-:MinValue rdf:type owl:NamedIndividual ,
-                   semts:KnowledgeConcept ;
-          skos:definition "The lowest value in the dataset." ;
-          skos:prefLabel "min value" ;
-          skos:broader :DispersionProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#MinValue
+:MinValue rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Min value"@en ;
+    skos:definition "The lowest value in the segment."@en ;
+    skos:broader :DispersionProperty .
 
-###  https://w3id.org/semts/taxonomy#MissingValues
-:MissingValues rdf:type owl:NamedIndividual ,
-                        semts:KnowledgeConcept ;
-               skos:definition "Count of missing or null entries in the dataset." ;
-               skos:prefLabel "missing values" ;
-               skos:broader :DataInformationProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#MissingValues
+:MissingValues rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Missing values"@en ;
+    skos:definition "Count of missing or null entries in the segment."@en ;
+    skos:broader :DataInformationProperty .
 
-###  https://w3id.org/semts/taxonomy#Mode
-:Mode rdf:type owl:NamedIndividual ,
-               semts:KnowledgeConcept ;
-      skos:definition "The most frequently occurring value in the dataset." ;
-      skos:prefLabel "mode" ;
-      skos:broader :LocationProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#Mode
+:Mode rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Mode"@en ;
+    skos:definition "The most frequently occurring value in the segment."@en ;
+    skos:broader :LocationProperty .
 
-###  https://w3id.org/semts/taxonomy#NumberOfDistinctValues
-:NumberOfDistinctValues rdf:type owl:NamedIndividual ,
-                                 semts:KnowledgeConcept ;
-                        skos:definition "The count of unique values in the dataset." ;
-                        skos:prefLabel "number of distinct values" ;
-                        skos:broader :DataInformationProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#NumberOfDistinctValues
+:NumberOfDistinctValues rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Number of distinct values"@en ;
+    skos:definition "The count of unique values in the segment."@en ;
+    skos:broader :DataInformationProperty .
 
-###  https://w3id.org/semts/taxonomy#NumberOfInstances
-:NumberOfInstances rdf:type owl:NamedIndividual ,
-                            semts:KnowledgeConcept ;
-                   skos:definition "The total count of data entries or records in the dataset." ;
-                   skos:prefLabel "number of instances" ;
-                   skos:broader :DataInformationProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#NumberOfInstances
+:NumberOfInstances rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Number of instances"@en ;
+    skos:definition "The total count of data entries or records in the segment."@en ;
+    skos:broader :DataInformationProperty .
 
-###  https://w3id.org/semts/taxonomy#Skewness
-:Skewness rdf:type owl:NamedIndividual ,
-                   semts:KnowledgeConcept ;
-          skos:definition "A measure of the asymmetry of the probability distribution." ;
-          skos:prefLabel "skewness" ;
-          skos:broader :DispersionProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#Skewness
+:Skewness rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Skewness"@en ;
+    skos:definition "A measure of the asymmetry of the probability distribution."@en ;
+    skos:broader :DispersionProperty .
 
-###  https://w3id.org/semts/taxonomy#StandardDeviation
-:StandardDeviation rdf:type owl:NamedIndividual ,
-                            semts:KnowledgeConcept ;
-                   skos:definition "A measure of the amount of variation in the dataset." ;
-                   skos:prefLabel "standard deviation" ;
-                   skos:broader :DispersionProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#StandardDeviation
+:StandardDeviation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Standard deviation"@en ;
+    skos:definition "A measure of the amount of variation in the segment."@en ;
+    skos:broader :DispersionProperty .
 
-###  https://w3id.org/semts/taxonomy#ValueRange
-:ValueRange rdf:type owl:NamedIndividual ,
-                     semts:KnowledgeConcept ;
-            skos:definition "The difference between the maximum and minimum values in the dataset." ;
-            skos:prefLabel "value range" ;
-            skos:broader :DispersionProperty .
+###  https://w3id.org/semts/vocabulary/data-knowledge#ValueRange
+:ValueRange rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Value range"@en ;
+    skos:definition "The difference between the maximum and minimum values in the segment."@en ;
+    skos:broader :DispersionProperty .
 
-###  https://w3id.org/semts/taxonomy#Variance
-:Variance rdf:type owl:NamedIndividual ,
-                   semts:KnowledgeConcept ;
-          skos:definition "Variance of the attribute values." ;
-          skos:prefLabel "variance" ;
-          skos:broader :DispersionProperty .
-		  
+###  https://w3id.org/semts/vocabulary/data-knowledge#Variance
+:Variance rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Variance"@en ;
+    skos:definition "Variance of the attribute values."@en ;
+    skos:broader :DispersionProperty .
+
+###  https://w3id.org/semts/vocabulary/data-knowledge#ModelInstance
+:ModelInstance rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Model Instance"@en ;
+    skos:definition "A model generated via machine learning."@en ;
+    skos:broader :DataKnowledge .
+
 #################################################################
 #    Data Knowledge Collections
 #################################################################
 
+### https://w3id.org/semts/vocabulary/data-knowledge#Clustering
 :Clustering rdf:type owl:NamedIndividual, skos:Collection, semts:KnowledgeConcept ;
     skos:prefLabel "Clustering"@en ;
-    skos:definition "The result of a clustering"@en ;
+    skos:definition "The result of a clustering process, where data points are grouped based on similarity."@en ;
     skos:member :Cluster .
-	
+
+### https://w3id.org/semts/vocabulary/data-knowledge#Cluster
 :Cluster rdf:type owl:NamedIndividual, skos:Collection, semts:KnowledgeConcept ;
     skos:prefLabel "Cluster"@en ;
-    skos:definition "A cluster represents one group from a clustering"@en ;
+    skos:definition "A cluster represents one group from a clustering, characterized by shared properties."@en ;
     skos:member :InferredClassID ;
-	skos:member :SegmentGroupRepresentative .
+    skos:member :SegmentGroupRepresentative .
+
+### https://w3id.org/semts/vocabulary/data-knowledge#Classification
+:Classification rdf:type owl:NamedIndividual, skos:Collection, semts:KnowledgeConcept ;
+    skos:prefLabel "Classification"@en ;
+    skos:definition "The process of organizing data into categories or classes based on shared characteristics or criteria."@en ;
+    skos:member :InferredClassID .
+
+### https://w3id.org/semts/vocabulary/data-knowledge#Segmentation
+:Segmentation rdf:type owl:NamedIndividual, skos:Collection, semts:KnowledgeConcept ;
+    skos:prefLabel "Segmentation"@en ;
+    skos:definition "Dividing time series data into meaningful segments for detailed analysis, enabling focused insights."@en ;
+    skos:member :SegmentGroupRepresentative .
+
+### https://w3id.org/semts/vocabulary/data-knowledge#MotifSet
+:MotifCollection rdf:type owl:NamedIndividual, skos:Collection, semts:KnowledgeConcept ;
+    skos:prefLabel "Motif Collection"@en ;
+    skos:definition "A collection of motifs within time series data, representing frequently occurring patterns that provide insights into underlying processes."@en ;
+    skos:member :Motif .
+
+### https://w3id.org/semts/vocabulary/data-knowledge#Motif
+:Motif rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+    skos:prefLabel "Motif"@en ;
+    skos:definition "A recurring pattern or subsequence in time series data that helps identify similar behaviors or events across different segments."@en ;
+    skos:member :Distance .
