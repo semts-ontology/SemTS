@@ -13,8 +13,8 @@
 </table>
 
 # Architecture
-**Deprecated (v0.5.1)**. New version will be added soon. <br>
-A temporary visualization of the current version (v1.0.1) was added to the corresponding documentation. <br><br>
+**Deprecated (v0.5.1)** <br>
+A temporary visualization of the current version (v1.0.1) was added to the corresponding documentation ([Image](assets/images/semts.svg)). <br><br>
 ![Architecture](assets/images/semts_visual_model.drawio.svg)
 
 # Prefix and Namespace
