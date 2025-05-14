@@ -1,12 +1,20 @@
 # Semantic Time Series Ontology - SemTS
-Ontology for the Semantic Classification of Time Series Knowledge
-
-SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information. 
-The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation.
+<table style="border: none;">
+  <tr style="border: none;">
+    <td style="border: none; padding-right: 20px;">
+      <img src="https://github.com/semts-ontology/SemTS/blob/main/assets/images/logo.png" alt="SemTS Logo" width="800px" style="vertical-align: middle;"/>
+    </td>
+    <td style="border: none; vertical-align: top;">
+      <p><b>Ontology for the Semantic Classification of Time Series Knowledge</b></p>
+      <p>SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information.
+      The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation.</p>
+    </td>
+  </tr>
+</table>
 
 # Architecture
-Deprecated (v0.5.1). New version will be added soon. <br>
-A temporary visualization of the current version (v1.0.1) was added to the documentation. <br>
+**Deprecated (v0.5.1)**. New version will be added soon. <br>
+A temporary visualization of the current version (v1.0.1) was added to the corresponding documentation. <br><br>
 ![Architecture](assets/images/semts_visual_model.drawio.svg)
 
 # Prefix and Namespace
