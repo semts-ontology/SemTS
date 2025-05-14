@@ -7,8 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:semts="https://w3id.org/semts/ontology#"
-     xmlns:semts-dev="https://w3id.org/semts/vocabulary/data-knowledge#">
+     xmlns:semts="https://w3id.org/semts/ontology#">
     <owl:Ontology/>
     
 
