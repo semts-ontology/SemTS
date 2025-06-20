@@ -1,0 +1,213 @@
+@prefix : <https://w3id.org/semts/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix qudtUnit: <http://qudt.org/vocab/qudtUnit/> .
+@prefix qudtDtype: <http://qudt.org/vocab/datatype/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix bm: <https://w3id.org/semts/examples/blowmolding/> .
+@prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+@prefix semts-sv: <https://w3id.org/semts/vocabulary/scenario-knowledge#> .
+@prefix mlso-em: <http://w3id.org/mlso/vocab/evaluation_measure#> .
+@prefix mlso-algo: <http://w3id.org/mlso/vocab/ml_algorithm#> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+
+bm:BlowMoldingTimeSeries rdf:type :TimeSeriesSegment ;
+    :title "Complete Blow Molding Process Dataset" ;
+    :description "Process data from a blow molding machine over 30 days with 1-second sampling rate" ;
+    :segmentIndex [
+        rdf:type time:DateTimeInterval ;
+        time:hasBeginning [
+            rdf:type time:Instant ;
+            time:inXSDDateTime "2023-01-01T00:00:00Z"^^xsd:dateTime
+        ] ;
+        time:hasEnd [
+            rdf:type time:Instant ;
+            time:inXSDDateTime "2023-01-30T23:59:59Z"^^xsd:dateTime
+        ]
+    ] ;
+    dcat:distribution [
+        rdf:type dcat:Distribution ;
+        dcat:downloadURL "localhost/data/blow_molding_data_2023.csv" ;
+        dcat:mediaType "text/csv"
+    ] .
+
+bm:DailySegment_20230115 rdf:type :TimeSeriesSegment ;
+    :title "Daily Segment from January 15, 2023" ;
+    :isPartOf bm:BlowMoldingTimeSeries ;
+    :segmentIndex [
+        rdf:type time:DateTimeInterval ;
+        time:hasBeginning [
+            rdf:type time:Instant ;
+            time:inXSDDateTime "2023-01-15T00:00:00Z"^^xsd:dateTime
+        ] ;
+        time:hasEnd [
+            rdf:type time:Instant ;
+            time:inXSDDateTime "2023-01-15T23:59:59Z"^^xsd:dateTime
+        ]
+    ] ;
+    dcat:distribution [
+        rdf:type dcat:Distribution ;
+        dcat:downloadURL "localhost/data/blow_molding_data_20230115.csv" ;
+        dcat:mediaType "text/csv"
+    ] .
+
+bm:TemperatureDimension rdf:type :DataDimension ;
+    :title "Temperature" ;
+    :description "Temperature in the blow molding machine" ;
+    :dimensionPosition 0 ;
+    :hasqudtUnit qudtUnit:DEG_C ;
+    :hasDatatype qudt:Float .
+
+bm:PressureDimension rdf:type :DataDimension ;
+    :title "Pressure" ;
+    :description "Pressure in the blow molding chamber" ;
+    :dimensionPosition 1 ;
+    :hasqudtUnit qudtUnit:BAR ;
+    :hasDatatype qudt:Float .
+
+bm:CycleDimension rdf:type :DataDimension ;
+    :title "Cycle Duration" ;
+    :description "Duration of a blow molding cycle" ;
+    :dimensionPosition 2 ;
+    :hasqudtUnit qudtUnit:SEC ;
+    :hasDatatype qudt:Float .
+
+bm:VibrationDimension rdf:type :DataDimension ;
+    :title "Vibration" ;
+    :description "Vibration intensity in the machine" ;
+    :dimensionPosition 3 ;
+    :hasqudtUnit qudtUnit:MM-PER-SEC ;
+    :hasDatatype qudt:Float .
+
+bm:BlowMoldingTimeSeries :segmentDimension bm:TemperatureDimension ;
+    :segmentDimension bm:PressureDimension ;
+    :segmentDimension bm:CycleDimension ;
+    :segmentDimension bm:VibrationDimension .
+
+bm:DailySegment_20230115 :segmentDimension bm:TemperatureDimension ;
+    :segmentDimension bm:PressureDimension ;
+    :segmentDimension bm:CycleDimension ;
+    :segmentDimension bm:VibrationDimension .
+
+bm:DefaultCycleTime rdf:type :ScenarioKnowledge ;
+    :title "Default Cycle Time" ;
+    :description "Standard production cycle time for the blow molding machine" ;
+    :knowledgeConcept semts-sv:ScenarioParameter ;
+    :hasValue [
+        rdf:type :EmbeddedValue ;
+        :valueString "42" ;
+        :hasqudtUnit qudtUnit:SEC ;
+        :hasDatatype qudt:Float
+    ] .
+
+bm:BlowMoldingTimeSeries :segmentKnowledge bm:DefaultCycleTime .
+
+bm:AutoencoderAnalysis rdf:type :KnowledgeGenerationMethod ;
+    :title "Autoencoder for Anomaly Detection" ;
+    :description "Unsupervised anomaly detection using autoencoder reconstruction error" ;
+    :knowledgeGenerationConcept mlso-algo:AutoEncoder .
+
+bm:AutoencoderInput rdf:type :KnowledgeGenerationInput ;
+    :title "Input Data for Autoencoder" ;
+    :inputDataReference bm:BlowMoldingTimeSeries .
+
+bm:AutoencoderOutput rdf:type :KnowledgeGenerationOutput ;
+    :title "Results of Autoencoder Analysis" ;
+    :wasDerivedFrom bm:AutoencoderInput .
+
+bm:AutoencoderAnalysis :used bm:AutoencoderInput ;
+    :generated bm:AutoencoderOutput .
+
+bm:AutoencoderModel rdf:type :ModelInstance ;
+    :title "Trained Autoencoder Model" ;
+    :description "Trained autoencoder model for anomaly detection in blow molding process data" ;
+    :knowledgeConcept semts-dv:ModelInstance ;
+    :knowledgeGenerationEntity bm:AutoencoderAnalysis .
+
+bm:AutoencoderOutput :outputKnowledge bm:AutoencoderModel .
+
+bm:AutoencoderRun rdf:type mls:Run ;
+    mls:realizes bm:AutoencoderAnalysis .
+
+bm:PressureAnomaly rdf:type :SegmentPrediction ;
+    :title "Pressure Anomaly" ;
+    :description "Anomalies in the pressure dimension detected through high reconstruction error" ;
+    :knowledgeConcept semts-dv:Anomaly ;
+    :knowledgeGenerationEntity bm:AutoencoderAnalysis .
+
+bm:AutoencoderOutput :outputKnowledge bm:PressureAnomaly .
+
+bm:BlowMoldingTimeSeries :segmentKnowledge bm:PressureAnomaly .
+
+bm:ReconstructionErrorMeasure rdf:type :KnowledgeQualityMeasure ;
+    :title "Reconstruction Error" ;
+    :description "RMSE-based reconstruction error for the detected anomalies" ;
+    :qualityMeasureConcept mlso-algo:root_mean_squared_error ;
+    :hasValue [
+        rdf:type :EmbeddedValue ;
+        :valueString "0.0342" ;
+        :hasDatatype qudt:Float
+    ] .
+
+bm:PressureAnomaly :knowledgeQualityMeasure bm:ReconstructionErrorMeasure .
+
+bm:AnomalySegment_20230115_0842 rdf:type :TimeSeriesSegment ;
+    :title "Anomaly Segment at 2023-01-15 08:42" ;
+    :isPartOf bm:DailySegment_20230115 ;
+    :segmentIndex [
+        rdf:type time:DateTimeInterval ;
+        time:hasBeginning [
+            rdf:type time:Instant ;
+            time:inXSDDateTime "2023-01-15T08:42:00Z"^^xsd:dateTime
+        ] ;
+        time:hasEnd [
+            rdf:type time:Instant ;
+            time:inXSDDateTime "2023-01-15T08:47:30Z"^^xsd:dateTime
+        ]
+    ] ;
+    :segmentDimension bm:PressureDimension ;
+    :segmentKnowledge bm:PressureAnomaly ;
+    dcat:distribution [
+        rdf:type dcat:Distribution ;
+        dcat:downloadURL "localhost/data/anomaly_20230115_0842.csv" ;
+        dcat:mediaType "text/csv"
+    ] .
+
+bm:AnomalySegment_20230115_1435 rdf:type :TimeSeriesSegment ;
+    :title "Anomaly Segment at 2023-01-15 14:35" ;
+    :isPartOf bm:DailySegment_20230115 ;
+    :segmentIndex [
+        rdf:type time:DateTimeInterval ;
+        time:hasBeginning [
+            rdf:type time:Instant ;
+            time:inXSDDateTime "2023-01-15T14:35:00Z"^^xsd:dateTime
+        ] ;
+        time:hasEnd [
+            rdf:type time:Instant ;
+            time:inXSDDateTime "2023-01-15T14:38:45Z"^^xsd:dateTime
+        ]
+    ] ;
+    :segmentDimension bm:PressureDimension ;
+    :segmentKnowledge bm:PressureAnomaly ;
+    dcat:distribution [
+        rdf:type dcat:Distribution ;
+        dcat:downloadURL "localhost/data/anomaly_20230115_1435.csv" ;
+        dcat:mediaType "text/csv"
+    ] .
+
+bm:TempSpikeCharacteristic rdf:type :ScenarioKnowledge ;
+    :title "Temperature Spike Characteristic" ;
+    :description "Unallowed operating range" ;
+    :knowledgeConcept semts-sv:Observation ;
+    :hasValue [
+        rdf:type :EmbeddedValue ;
+        :valueString "24.7" ;
+        :hasqudtUnit qudtUnit:DEG_C ;
+        :hasDatatype qudt:Float
+    ] .
+
+bm:AnomalySegment_20230115_0842 :segmentKnowledge bm:TempSpikeCharacteristic .

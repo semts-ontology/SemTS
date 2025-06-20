@@ -28,7 +28,8 @@ semts: [https://w3id.org/semts](https://w3id.org/semts)
 - [Data Knowledge Vocabulary](https://w3id.org/semts/vocabulary/data-knowledge/)
 - [Scenario Knowledge Vocabulary](https://w3id.org/semts/vocabulary/scenario-knowledge/)
 
-# Code Repository
+# Repository
+[Website](https://semts-ontology.github.io/SemTS/index.html)
 [Git Repository](https://github.com/semts-ontology/SemTS/)
 
 # Documentation
@@ -44,3 +45,6 @@ semts: [https://w3id.org/semts](https://w3id.org/semts)
 - 02/21/25: New version of ontology UML diagram added
 - 04/25/25: Updated version (0.5.1) of ontology and documentation. First version of vocabularies added
 - 05/13/25: Updated version (1.0.1). Detailed changes are tracked in the documentation
+
+#License
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
