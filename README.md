@@ -29,7 +29,7 @@ semts: [https://w3id.org/semts](https://w3id.org/semts)
 - [Scenario Knowledge Vocabulary](https://w3id.org/semts/vocabulary/scenario-knowledge/)
 
 # Repository
-[Website](https://semts-ontology.github.io/SemTS/index.html)
+[Website](https://semts-ontology.github.io/SemTS/index.html)  
 [Git Repository](https://github.com/semts-ontology/SemTS/)
 
 # Documentation
