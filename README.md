@@ -46,5 +46,5 @@ semts: [https://w3id.org/semts](https://w3id.org/semts)
 - 04/25/25: Updated version (0.5.1) of ontology and documentation. First version of vocabularies added
 - 05/13/25: Updated version (1.0.1). Detailed changes are tracked in the documentation
 
-#License
+# License
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
