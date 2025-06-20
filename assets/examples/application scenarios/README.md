@@ -16,7 +16,7 @@ Grinding Beads Wear (German Industry Project)
 **Description:** The project aims to predict the wear behavior of ceramic grinding beads during application processes using artificial intelligence.  
 **Related References:** https://digitalzentrum-lr.de/projekt-datenraeume-gaia-x/, https://www.mittelstand-digital-wertnetzwerke.de/praxisprojekte/projektsteckbriefe/runder-ki-einsatz/  
 **Use Case:** Forecasting of grinding bead wear.  
-**Example available:** yes  
+**Code Example available:** yes  
 
 # Scenario 3
 AI for Animal Welfare (German Industry Project)  
