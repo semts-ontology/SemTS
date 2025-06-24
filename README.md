@@ -47,4 +47,9 @@ semts: [https://w3id.org/semts](https://w3id.org/semts)
 - 05/13/25: Updated version (1.0.1). Detailed changes are tracked in the documentation
 
 # License
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+Ontology files and documentation:  
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)  
+Source code and other software components:  
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)  
+
+[Further details](https://github.com/semts-ontology/SemTS/tree/main?tab=License-1-ov-file#License-1-ov-file)
