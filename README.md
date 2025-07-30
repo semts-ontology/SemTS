@@ -43,7 +43,7 @@ semts: [https://w3id.org/semts](https://w3id.org/semts)
 # Changelog
 - 02/14/25: Initial version of the documentation added
 - 02/21/25: New version of ontology UML diagram added
-- 04/25/25: Updated version (0.5.1) of ontology and documentation. First version of vocabulary added
+- 04/25/25: Updated version (0.5.1) of ontology and documentation. First version of vocabularies added
 - 05/13/25: Updated version (1.0.1). Detailed changes are tracked in the documentation
 
 # License
