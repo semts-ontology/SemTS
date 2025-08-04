@@ -38,8 +38,8 @@ Use the provided `requirements.txt` file to install the necessary libraries: pip
    Valid values for `instance_index` are:  
    - `0`: `evaluation/competency_questions/sample_instances.rdf`  
    - `1`: `application_scenarios/scenario1.rdf`  
-   - `2`: `application_scenarios/scenario2.rdf` 
-   Example usage: python evaluation_runner.py 0
+   - `2`: `application_scenarios/scenario2.rdf`<br>
+     Example usage: python evaluation_runner.py 0
 
 2. **Output**:  
 The script will print the competency questions and their corresponding SPARQL query results to the console.
