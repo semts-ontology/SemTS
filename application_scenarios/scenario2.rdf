@@ -1,0 +1,728 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/semts/ontology#"
+     xml:base="https://w3id.org/semts/ontology"
+     xmlns:gb="https://w3id.org/semts/examples/grindingbeads/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:qudt="http://qudt.org/schema/qudt#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:mlso-em="http://w3id.org/mlso/vocab/evaluation_measure#"
+     xmlns:qudtUnit="http://qudt.org/vocab/unit/"
+     xmlns:semts-dv="https://w3id.org/semts/vocabulary/data-knowledge#"
+     xmlns:semts-sv="https://w3id.org/semts/vocabulary/scenario-knowledge#"
+     xmlns:mlso-algo="http://w3id.org/mlso/vocab/ml_algorithm#"
+     xmlns:qudtDtype="http://qudt.org/vocab/datatype/">
+    <owl:Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasBeginning -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2006/time#hasBeginning"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasEnd -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2006/time#hasEnd"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inXSDDateTime -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2006/time#inXSDDateTime"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#description -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#description"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#dimensionPosition -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#dimensionPosition"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#generated -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#generated"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#hasDatatype -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#hasDatatype"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#hasUnit -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#hasUnit"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#hasValue -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#hasValue"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#inputDataReference -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#inputDataReference"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#inputKnowledge -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#inputKnowledge"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#isPartOf -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#isPartOf"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#knowledgeConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#knowledgeConcept"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#knowledgeGenerationConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#knowledgeGenerationConcept"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#knowledgeGenerationEntity -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#knowledgeGenerationEntity"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#knowledgeQualityMeasure -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#knowledgeQualityMeasure"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#outputKnowledge -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#outputKnowledge"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#qualityMeasureConcept -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#qualityMeasureConcept"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#segmentDimension -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#segmentDimension"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#segmentIndex -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#segmentIndex"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#segmentKnowledge -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#segmentKnowledge"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#title -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#title"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#used -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#used"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#valueString -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#valueString"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#wasDerivedFrom -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#wasDerivedFrom"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2006/time#DateTimeInterval -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#DateTimeInterval"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Instant"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#ArtificialTimeSeriesSegment -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#ArtificialTimeSeriesSegment"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#DataDimension -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#DataDimension"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#EmbeddedValue -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#EmbeddedValue"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#KnowledgeGenerationConcept -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#KnowledgeGenerationInput -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#KnowledgeGenerationInput"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#KnowledgeGenerationMethod -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#KnowledgeGenerationMethod"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#KnowledgeGenerationOutput -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#KnowledgeGenerationOutput"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#KnowledgeQualityMeasure -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#KnowledgeQualityMeasure"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#ScenarioKnowledge -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#ScenarioKnowledge"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#SegmentDataCharacteristic -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#SegmentDataCharacteristic"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#SegmentPrediction -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#SegmentPrediction"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#SegmentRelation -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#SegmentRelation"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#TimeSeriesSegment -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/AnalysisInput -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/AnalysisInput">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationInput"/>
+        <description>Raw wear rate data for statistical analysis</description>
+        <inputDataReference rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearTimeSeries"/>
+        <title>Input for Statistical Analysis</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/AnalysisOutput -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/AnalysisOutput">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationOutput"/>
+        <description>Statistical measures derived from wear rate data</description>
+        <outputKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/AverageWearRate"/>
+        <outputKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearRateVariability"/>
+        <title>Statistical Analysis Results</title>
+        <wasDerivedFrom rdf:resource="https://w3id.org/semts/examples/grindingbeads/AnalysisInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/AverageWearRate -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/AverageWearRate">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#SegmentDataCharacteristic"/>
+        <description>Average wear rate of grinding beads over the entire period</description>
+        <hasValue rdf:resource="https://w3id.org/semts/examples/grindingbeads/AverageWearRateValue"/>
+        <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#MeanValue"/>
+        <knowledgeGenerationEntity rdf:resource="https://w3id.org/semts/examples/grindingbeads/StatisticalAnalysis"/>
+        <title>Average Wear Rate</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/AverageWearRateValue -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/AverageWearRateValue">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
+        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <hasUnit rdf:resource="http://qudt.org/vocab/unit/MilliM-PER-HR"/>
+        <valueString>0.042</valueString>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/CorrelationAnalysis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/CorrelationAnalysis">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationMethod"/>
+        <description>Method for calculating correlation between time series dimensions</description>
+        <generated rdf:resource="https://w3id.org/semts/examples/grindingbeads/CorrelationOutput"/>
+        <knowledgeGenerationConcept>
+            <rdf:Description>
+                <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+                <skos:prefLabel>CorrelationAnalysis</skos:prefLabel>
+            </rdf:Description>
+        </knowledgeGenerationConcept>
+        <title>Correlation Analysis Method</title>
+        <used rdf:resource="https://w3id.org/semts/examples/grindingbeads/CorrelationInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/CorrelationConcept -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/CorrelationConcept">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+        <skos:prefLabel>Correlation Analysis</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/CorrelationInput -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/CorrelationInput">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationInput"/>
+        <description>Temperature and wear rate data for correlation analysis</description>
+        <inputDataReference rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearTimeSeries"/>
+        <title>Input for Correlation Analysis</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/CorrelationOutput -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/CorrelationOutput">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationOutput"/>
+        <description>Calculated correlation between temperature and wear rate</description>
+        <outputKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/TempWearCorrelation"/>
+        <title>Correlation Analysis Results</title>
+        <wasDerivedFrom rdf:resource="https://w3id.org/semts/examples/grindingbeads/CorrelationInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/CorrelationValue -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/CorrelationValue">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
+        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <valueString>0.72</valueString>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/EndInstant -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/EndInstant">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-31T23:59:59Z</time:inXSDDateTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/ExpertObservation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ExpertObservation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#ScenarioKnowledge"/>
+        <description>Observation from domain expert on grinding bead wear patterns</description>
+        <hasValue rdf:resource="https://w3id.org/semts/examples/grindingbeads/ExpertObservationValue"/>
+        <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Observation"/>
+        <title>Expert Observation on Wear Patterns</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/ExpertObservationValue -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ExpertObservationValue">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
+        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/STRING"/>
+        <valueString>Wear rate increases non-linearly when temperature exceeds 60°C</valueString>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/ForecastAccuracy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ForecastAccuracy">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeQualityMeasure"/>
+        <description>Mean Absolute Error of the forecast</description>
+        <hasValue rdf:resource="https://w3id.org/semts/examples/grindingbeads/MAEValue"/>
+        <qualityMeasureConcept rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure#mean_absolute_error"/>
+        <title>Forecast Accuracy</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/ForecastEndInstant -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ForecastEndInstant">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-02-28T23:59:59Z</time:inXSDDateTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/ForecastInput -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ForecastInput">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationInput"/>
+        <description>Historical wear data for generating forecast</description>
+        <inputDataReference rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearTimeSeries"/>
+        <inputKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/AverageWearRate"/>
+        <inputKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearRateVariability"/>
+        <title>Input for Wear Forecast</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/ForecastInterval -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ForecastInterval">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+        <time:hasBeginning rdf:resource="https://w3id.org/semts/examples/grindingbeads/ForecastStartInstant"/>
+        <time:hasEnd rdf:resource="https://w3id.org/semts/examples/grindingbeads/ForecastEndInstant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/ForecastOutput -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ForecastOutput">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationOutput"/>
+        <description>Forecasted wear rates for the next period</description>
+        <outputKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearForecast"/>
+        <title>Wear Forecast Output</title>
+        <wasDerivedFrom rdf:resource="https://w3id.org/semts/examples/grindingbeads/ForecastInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/ForecastSegment -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ForecastSegment">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#ArtificialTimeSeriesSegment"/>
+        <description>Predicted wear values for February 2023</description>
+        <segmentDimension rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearRateDimension"/>
+        <segmentIndex rdf:resource="https://w3id.org/semts/examples/grindingbeads/ForecastInterval"/>
+        <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearForecast"/>
+        <title>Forecast Segment</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/ForecastStartInstant -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ForecastStartInstant">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-02-01T00:00:00Z</time:inXSDDateTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/MAEValue -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/MAEValue">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
+        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <hasUnit rdf:resource="http://qudt.org/vocab/unit/MilliM-PER-HR"/>
+        <valueString>0.005</valueString>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/RefillEndInstant -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/RefillEndInstant">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-15T14:00:00Z</time:inXSDDateTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/RefillEvent -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/RefillEvent">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#ScenarioKnowledge"/>
+        <description>Refill of 50kg new grinding beads</description>
+        <hasValue rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillEventValue"/>
+        <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#CategorizedEvent"/>
+        <title>January Refill</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/RefillEventSegment -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/RefillEventSegment">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
+        <description>Time of the refill</description>
+        <isPartOf rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearTimeSeries"/>
+        <segmentDimension rdf:resource="https://w3id.org/semts/examples/grindingbeads/TemperatureDimension"/>
+        <segmentDimension rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearRateDimension"/>
+        <segmentIndex rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillTime"/>
+        <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillEvent"/>
+        <title>Refill event</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/RefillEventValue -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/RefillEventValue">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
+        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <valueString>50</valueString>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/RefillStartInstant -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/RefillStartInstant">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-15T14:00:00Z</time:inXSDDateTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/StartInstant -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/StartInstant">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-01T00:00:00Z</time:inXSDDateTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/StatisticalAnalysis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/StatisticalAnalysis">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationMethod"/>
+        <description>Basic statistical analysis of grinding bead wear measurements</description>
+        <generated rdf:resource="https://w3id.org/semts/examples/grindingbeads/AnalysisOutput"/>
+        <knowledgeGenerationConcept>
+            <rdf:Description>
+                <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+                <skos:prefLabel>TSFresh</skos:prefLabel>
+            </rdf:Description>
+        </knowledgeGenerationConcept>
+        <title>Statistical Analysis of Wear Data</title>
+        <used rdf:resource="https://w3id.org/semts/examples/grindingbeads/AnalysisInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/TempWearCorrelation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/TempWearCorrelation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#SegmentRelation"/>
+        <description>Analysis of correlation between temperature and wear rate</description>
+        <hasValue rdf:resource="https://w3id.org/semts/examples/grindingbeads/CorrelationValue"/>
+        <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Correlation"/>
+        <knowledgeGenerationEntity rdf:resource="https://w3id.org/semts/examples/grindingbeads/CorrelationAnalysis"/>
+        <title>Temperature-Wear Correlation</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/TemperatureDimension -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/TemperatureDimension">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#DataDimension"/>
+        <description>Operating temperature of the mill in Celsius</description>
+        <dimensionPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</dimensionPosition>
+        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <hasUnit rdf:resource="http://qudt.org/vocab/unit/DEG_C"/>
+        <title>Temperature</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/TimeInterval -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/TimeInterval">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+        <time:hasBeginning rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillStartInstant"/>
+        <time:hasBeginning rdf:resource="https://w3id.org/semts/examples/grindingbeads/StartInstant"/>
+        <time:hasEnd rdf:resource="https://w3id.org/semts/examples/grindingbeads/EndInstant"/>
+        <time:hasEnd rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillEndInstant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/WearForecast -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/WearForecast">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#SegmentPrediction"/>
+        <description>Prediction of wear rate for February 2023</description>
+        <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Forecast"/>
+        <knowledgeGenerationEntity rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearForecastMethod"/>
+        <knowledgeQualityMeasure rdf:resource="https://w3id.org/semts/examples/grindingbeads/ForecastAccuracy"/>
+        <title>Wear Rate Forecast</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/WearForecastMethod -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/WearForecastMethod">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationMethod"/>
+        <description>Method for predicting future wear rates of grinding beads</description>
+        <generated rdf:resource="https://w3id.org/semts/examples/grindingbeads/ForecastOutput"/>
+        <knowledgeGenerationConcept rdf:resource="http://w3id.org/mlso/vocab/ml_algorithm#LSTM"/>
+        <title>Wear Rate Forecast Method</title>
+        <used rdf:resource="https://w3id.org/semts/examples/grindingbeads/ForecastInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/WearRateDimension -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/WearRateDimension">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#DataDimension"/>
+        <description>Measured wear rate of grinding beads in mm per hour</description>
+        <dimensionPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dimensionPosition>
+        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <hasUnit rdf:resource="http://qudt.org/vocab/unit/MilliM-PER-HR"/>
+        <title>Wear Rate</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/WearRateVariability -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/WearRateVariability">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#SegmentDataCharacteristic"/>
+        <description>Standard deviation of wear rate measurements</description>
+        <hasValue rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearRateVariabilityValue"/>
+        <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StandardDeviation"/>
+        <knowledgeGenerationEntity rdf:resource="https://w3id.org/semts/examples/grindingbeads/StatisticalAnalysis"/>
+        <title>Wear Rate Variability</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/WearRateVariabilityValue -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/WearRateVariabilityValue">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
+        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <hasUnit rdf:resource="http://qudt.org/vocab/unit/MilliM-PER-HR"/>
+        <valueString>0.008</valueString>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/WearTimeSeries -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/WearTimeSeries">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
+        <description>Hourly measurements of grinding bead wear in an industrial mill</description>
+        <segmentDimension rdf:resource="https://w3id.org/semts/examples/grindingbeads/TemperatureDimension"/>
+        <segmentDimension rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearRateDimension"/>
+        <segmentIndex rdf:resource="https://w3id.org/semts/examples/grindingbeads/TimeInterval"/>
+        <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/AverageWearRate"/>
+        <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/ExpertObservation"/>
+        <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/TempWearCorrelation"/>
+        <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearRateVariability"/>
+        <title>Grinding Bead Wear Data</title>
+    </owl:NamedIndividual>
+</rdf:RDF>
+

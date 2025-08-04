@@ -1,36 +1,41 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/semts/ontology#"
      xml:base="https://w3id.org/semts/ontology"
+     xmlns:mls="http://www.w3.org/ns/mls#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dcat="http://www.w3.org/ns/dcat#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:schema="https://schema.org/">
+     xmlns:schema="https://schema.org/"
+     xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/semts/ontology#">
-        <owl:versionIRI rdf:resource="https://w3id.org/semts/ontology/101#"/>
-        <terms:abstract xml:lang="en">SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information. The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation.</terms:abstract>
-        <terms:contributor xml:lang="en">Rohit A. Deshmukh</terms:contributor>
-        <terms:created xml:lang="en">December 13th, 2024</terms:created>
-        <terms:creator xml:lang="en">Alexander Graß</terms:creator>
-        <terms:description xml:lang="en">SemTS is an ontology designed to identify and describe segments within time series data, which are specific data points or intervals that can overlap. These segments encompass characteristic knowledge about the time interval they cover, including common time series features, structural anomalies, motifs, or information provided by domain experts. By classifying and semantically representing this knowledge, SemTS promotes organized reusability and efficient propagation, potentially reducing resource expenditure while enhancing future analyses. It employs established semantic approaches. Examples are DCAT to reference associated time series data, OWL-Time to define the index structure of time series data and segments or ML-Schema to expand the expressiveness regarding data analysis task information. SemTS&apos;s design involves categorizing time series knowledge and mapping it to specific intervals and dimensions of time series data. It introduces a class called TimeSeriesSegment to model these segments, extending the DCAT Dataset class to enable segments to be part of other segments. This structure allows for the association of knowledge, such as anomalies, with particular intervals or data points. TimeIndex specifications extend OWL-Time classes, while dimensional details are represented by DataDimension. The segment-wise consideration of knowledge indirectly serves as an index structure, linking meaningful time series data with categorized knowledge. At the highest level of abstraction, time series knowledge is divided into three categories: DataKnowledge, ScenarioKnowledge, and MethodKnowledge. DataKnowledge refers to insights extracted directly from the data or through analytical methods, such as class membership from time series clustering. ScenarioKnowledge describes verified contexts, including data annotations or domain-specific process knowledge, often equating to expert-provided a priori information and can also define facts derived from inferred knowledge. MethodKnowledge encompasses effective analytical method presets or mathematical/logical equivalents of established process information.</terms:description>
-        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <terms:modified>May 13th, 2025</terms:modified>
-        <terms:rights xml:lang="en">CC BY 4.0</terms:rights>
-        <terms:title>The Semantic Time Series Ontology</terms:title>
+        <owl:versionIRI rdf:resource="https://w3id.org/semts/ontology/110#"/>
+        <dcterms:abstract xml:lang="en">SemTS is an ontology to semantically structure insights gained from multivariate time series analyses combined with domain-specific information. The concept of SemTS constitutes a specification of informative data points or intervals within time series data, further referred to as segments. Any segment comprises characteristic knowledge associated with the covered time interval. Examples of such knowledge range from common time series features, and structural particularities such as anomalies or motifs, to apriori information provided by domain experts. A classification and semantic representation of this knowledge enables organized reusability and effective propagation.</dcterms:abstract>
+        <dcterms:contributor xml:lang="en">Rohit A. Deshmukh</dcterms:contributor>
+        <dcterms:created xml:lang="en">December 13th, 2024</dcterms:created>
+        <dcterms:creator xml:lang="en">Alexander Graß</dcterms:creator>
+        <dcterms:description xml:lang="en">SemTS is an ontology designed to identify and describe segments within time series data, which are specific data points or intervals that can overlap. These segments encompass characteristic knowledge about the time interval they cover, including common time series features, structural anomalies, motifs, or information provided by domain experts. By classifying and semantically representing this knowledge, SemTS promotes organized reusability and efficient propagation, potentially reducing resource expenditure while enhancing future analyses. It employs established semantic approaches. Examples are DCAT to reference associated time series data, OWL-Time to define the index structure of time series data and segments or ML-Schema to expand the expressiveness regarding data analysis task information. SemTS&apos;s design involves categorizing time series knowledge and mapping it to specific intervals and dimensions of time series data. It introduces a class called TimeSeriesSegment to model these segments, extending the DCAT Dataset class to enable segments to be part of other segments. This structure allows for the association of knowledge, such as anomalies, with particular intervals or data points. TimeIndex specifications extend OWL-Time classes, while dimensional details are represented by DataDimension. The segment-wise consideration of knowledge indirectly serves as an index structure, linking meaningful time series data with categorized knowledge. At the highest level of abstraction, time series knowledge is divided into three categories: DataKnowledge, ScenarioKnowledge, and MethodKnowledge. DataKnowledge refers to insights extracted directly from the data or through analytical methods, such as class membership from time series clustering. ScenarioKnowledge describes verified contexts, including data annotations or domain-specific process knowledge, often equating to expert-provided a priori information and can also define facts derived from inferred knowledge. MethodKnowledge encompasses effective analytical method presets or mathematical/logical equivalents of established process information.</dcterms:description>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <dcterms:modified>Aug 1st, 2025</dcterms:modified>
+        <dcterms:publisher>Alexander Graß</dcterms:publisher>
+        <dcterms:rights xml:lang="en">CC BY 4.0</dcterms:rights>
+        <dcterms:title>The Semantic Time Series Ontology</dcterms:title>
         <vann:preferredNamespacePrefix>semts</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://w3id.org/semts</vann:preferredNamespaceUri>
         <rdfs:label xml:lang="en">Semantic Time Series</rdfs:label>
-        <owl:priorVersion rdf:resource="https://w3id.org/semts/ontology/051#"/>
-        <owl:versionIRI>https://w3id.org/semts/ontology/101#</owl:versionIRI>
-        <owl:versionInfo>1.0.1</owl:versionInfo>
+        <owl:priorVersion rdf:resource="https://w3id.org/semts/ontology/101#"/>
+        <owl:versionIRI>https://w3id.org/semts/ontology/110#</owl:versionIRI>
+        <owl:versionInfo>1.1.0</owl:versionInfo>
         <foaf:depiction>https://raw.githubusercontent.com/semts-ontology/SemTS/refs/heads/main/assets/images/semts.svg</foaf:depiction>
         <foaf:logo>https://raw.githubusercontent.com/semts-ontology/SemTS/78047e27e691f5ac7878d93bec2f25ab514bd06d/assets/images/logo.png</foaf:logo>
         <foaf:maker>grass.alexan@gmail.com</foaf:maker>
         <schema:citation xml:lang="en">Alexander Graß, Rohit A. Deshmukh. The Semantic Time Series Ontology. https://github.com/semts-ontology/SemTS</schema:citation>
+        <widoco:introduction xml:lang="en">This is an introduction text</widoco:introduction>
     </owl:Ontology>
     
 
@@ -85,6 +90,12 @@
     <!-- http://purl.org/dc/terms/modified -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
     
 
 
@@ -166,6 +177,12 @@
     
 
 
+    <!-- https://w3id.org/widoco/vocab#introduction -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/widoco/vocab#introduction"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -177,36 +194,18 @@
     
 
 
+    <!-- http://purl.org/dc/terms/isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isPartOf"/>
+    
+
+
     <!-- http://www.w3.org/ns/dcat#distribution -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#distribution">
         <rdfs:domain rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
         <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
     </owl:ObjectProperty>
-	
-	
-	
-	<!-- https://w3id.org/semts/ontology#datasetRowIndex -->
-	
-    <rdf:Description rdf:about="https://w3id.org/semts/ontology#datasetRowIndex">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Specifies the row index of a time series segment within a data file or database, in case a source contains multiple time series</rdfs:comment>
-        <rdfs:label>row index</rdfs:label>
-    </rdf:Description>
-
-
-
-    <!-- https://w3id.org/semts/ontology#datasetColumnIndex -->
-	
-    <rdf:Description rdf:about="https://w3id.org/semts/ontology#datasetColumnIndex">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Specifies the column index of a time series segment within a data file or database, in case a source contains multiple time series</rdfs:comment>
-        <rdfs:label>column range</rdfs:label>
-    </rdf:Description>
     
 
 
@@ -351,7 +350,9 @@
     <!-- https://w3id.org/semts/ontology#isPartOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/semts/ontology#isPartOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/isPartOf"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
         <rdfs:range rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
         <rdfs:comment xml:lang="en">Defines a hierarchic relationship between time series segments. The intuition of this property is to differentiate between complete time series, in a sense that it includes the data from start to end and subsegments which are reduced in time or dimensionality and thus can be considered a slice of this original data.</rdfs:comment>
@@ -410,6 +411,18 @@
     
 
 
+    <!-- https://w3id.org/semts/ontology#multiSegmentKnowledge -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/semts/ontology#multiSegmentKnowledge">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
+        <rdfs:range rdf:resource="https://w3id.org/semts/ontology#Knowledge"/>
+        <rdfs:comment xml:lang="en">Relates any shared Knowledge available for a set of instances from the class Time Series Segment. One example is the generation of Knowledge that is not specific to a single, but to a group of time series segments.</rdfs:comment>
+        <rdfs:label xml:lang="en">multi segment knowledge</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/semts/ontology#outputKnowledge -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/semts/ontology#outputKnowledge">
@@ -443,18 +456,6 @@
         <rdfs:range rdf:resource="https://w3id.org/semts/ontology#DataDimension"/>
         <rdfs:comment xml:lang="en">Defines the dimensions associated with a Time Series Segment. Multiple dimensions indicate that the segment corresponds to a multivariate time series.</rdfs:comment>
         <rdfs:label xml:lang="en">segment dimension</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/semts/ontology#segmentGroupKnowledge -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/semts/ontology#segmentGroupKnowledge">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
-        <rdfs:range rdf:resource="https://w3id.org/semts/ontology#Knowledge"/>
-        <rdfs:comment xml:lang="en">Relates any shared Knowledge available for a set of instances from the class Time Series Segment. One example is the generation of Knowledge that is not specific to a single, but to a group of time series segments.</rdfs:comment>
-        <rdfs:label xml:lang="en">segment group knowledge</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -519,6 +520,28 @@
     
 
 
+    <!-- https://w3id.org/semts/ontology#datasetColumnIndex -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/semts/ontology#datasetColumnIndex">
+        <rdfs:domain rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the column index of a time series segment within a data file or database, in case a source contains multiple time series (e.g. nested dataframes)</rdfs:comment>
+        <rdfs:label>column index</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#datasetRowIndex -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/semts/ontology#datasetRowIndex">
+        <rdfs:domain rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the row index of a time series segment within a data file or database, in case a source contains multiple time series (e.g. nested dataframes)</rdfs:comment>
+        <rdfs:label>row index</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/semts/ontology#description -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/semts/ontology#description">
@@ -535,8 +558,9 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Inherits from dc:description and can be used to optionally add a description to an entity of the domain.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Can be used to optionally add a description to an entity of the domain.</rdfs:comment>
         <rdfs:label xml:lang="en">description</rdfs:label>
+        <rdfs:seeAlso>dcterms:description</rdfs:seeAlso>
     </owl:DatatypeProperty>
     
 
@@ -571,8 +595,9 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Inherits from dc:title and can be used to optionally add a title to an entity of the domain.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Can be used to optionally add a title to an entity of the domain.</rdfs:comment>
         <rdfs:label xml:lang="en">title</rdfs:label>
+        <rdfs:seeAlso>dcterms:title</rdfs:seeAlso>
     </owl:DatatypeProperty>
     
 

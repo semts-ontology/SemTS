@@ -1,0 +1,63 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix semts: <https://w3id.org/semts/ontology#> .
+@prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+
+# Ontology Evaluation
+
+:KnowledgeGroupShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass semts:KnowledgeGroup ;
+    sh:property [
+        sh:path semts:groupKnowledge ;
+        sh:minCount 1 ;
+    ] ;
+.
+
+:KnowledgeGenerationMethodShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass semts:KnowledgeGenerationMethod ;
+    sh:property [
+        sh:path semts:used ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path semts:generated ;
+        sh:minCount 1 ;
+    ] ;
+.
+
+:TimeSeriesSegmentShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass semts:TimeSeriesSegment ;
+    sh:property [
+        sh:path semts:segmentIndex ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path semts:segmentDimension ;
+        sh:minCount 1 ;
+    ] ;
+.
+
+
+# Vocabulary Evaluation
+
+:ClusteringShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass semts:KnowledgeGroup ;
+    sh:property [
+        sh:path semts:knowledgeConcept ;
+        sh:in (semts-dv:Clustering) ;
+    ] ;
+    sh:property [
+        sh:path semts:groupKnowledge ;
+        sh:minCount 1 ;
+        sh:node [
+            sh:property [
+                sh:path semts:knowledgeConcept ;
+                sh:hasValue semts-dv:Cluster ;
+            ] ;
+        ] ;
+    ] ;
+.
