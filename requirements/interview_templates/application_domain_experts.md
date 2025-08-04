@@ -1,4 +1,4 @@
-# Interview Template Version 2: Domain Experts
+# Interview Template Version 2: Application Domain Experts
 
 This version is adapted for domain experts to gather insights on their domain-specific knowledge, priorities, and expectations.
 
