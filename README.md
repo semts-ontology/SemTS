@@ -13,12 +13,12 @@
 </table>
 
 # Architecture
-**Deprecated (v0.5.1)** <br>
-A temporary visualization of the current version (v1.0.1) was added to the corresponding documentation ([Image](assets/images/semts.svg)). <br><br>
+An alternative visualization of the current ontology version (v1.1.0) from the documentation can be found [here](assets/images/semts.svg). <br><br>
 ![Architecture](assets/images/semts_visual_model.drawio.svg)
 
 # Prefix and Namespace
-semts: [https://w3id.org/semts](https://w3id.org/semts)
+Prefix: semts  <br>
+Namespace: [https://w3id.org/semts](https://w3id.org/semts)
 
 # Ontology
 - [Current Version](https://w3id.org/semts/ontology)
@@ -45,6 +45,7 @@ semts: [https://w3id.org/semts](https://w3id.org/semts)
 - 02/21/25: New version of ontology UML diagram added
 - 04/25/25: Updated version (0.5.1) of ontology and documentation. First version of vocabularies added
 - 05/13/25: Updated version (1.0.1). Detailed changes are tracked in the documentation
+- 04/08/25: Updated version (1.1.0). Detailed changes are tracked in the documentation
 
 # License
 Ontology files and documentation:  
