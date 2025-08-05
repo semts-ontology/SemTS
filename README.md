@@ -18,15 +18,16 @@ An alternative visualization of the current ontology version (v1.1.0) from the d
 
 # Prefix and Namespace
 Prefix: semts  <br>
-Namespace: [https://w3id.org/semts](https://w3id.org/semts)
+Namespace: [https://w3id.org/semts](https://w3id.org/semts) <br>
+Ontology IRI: [https://w3id.org/semts/ontology#](https://w3id.org/semts/ontology#)
 
-# Ontology
+# Ontology Versions
 - [Current Version](https://w3id.org/semts/ontology)
 - Previous Versions: `https://w3id.org/semts/ontology/{version}`
 
 # Vocabularies
-- [Data Knowledge Vocabulary](https://w3id.org/semts/vocabulary/data-knowledge/)
-- [Scenario Knowledge Vocabulary](https://w3id.org/semts/vocabulary/scenario-knowledge/)
+- [Data Knowledge Vocabulary (semts-dv)](https://w3id.org/semts/vocabulary/data-knowledge/)
+- [Scenario Knowledge Vocabulary (semts-sv)](https://w3id.org/semts/vocabulary/scenario-knowledge/)
 
 # Repository
 [Website](https://semts-ontology.github.io/SemTS/index.html)  
