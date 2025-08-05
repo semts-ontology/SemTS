@@ -42,11 +42,11 @@ Ontology IRI: [https://w3id.org/semts/ontology#](https://w3id.org/semts/ontology
 - Versioning: SemTS releases will follow the Semantic Versioning Specification 2.0.0 (SemVer - Major.Minor.Patch)
 
 # Changelog
-- 02/14/25: Initial version of the documentation added
-- 02/21/25: New version of ontology UML diagram added
-- 04/25/25: Updated version (0.5.1) of ontology and documentation. First version of vocabularies added
+- 08/04/25: Updated version (1.1.0). Detailed changes are tracked in the documentation
 - 05/13/25: Updated version (1.0.1). Detailed changes are tracked in the documentation
-- 04/08/25: Updated version (1.1.0). Detailed changes are tracked in the documentation
+- 04/25/25: Updated version (0.5.1) of ontology and documentation. First version of vocabularies added
+- 02/21/25: New version of ontology UML diagram added
+- 02/14/25: Initial version of the documentation added
 
 # License
 Ontology files and documentation:  
