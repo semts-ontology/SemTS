@@ -41,22 +41,6 @@ Ontology IRI: [https://w3id.org/semts/ontology#](https://w3id.org/semts/ontology
 - Prefixes: In SemTS Ontology, we use https://prefix.cc/ to abbreviate URIs
 - Versioning: SemTS releases will follow the Semantic Versioning Specification 2.0.0 (SemVer - Major.Minor.Patch)
 
-  
-## Citation
-
-Please cite SemTS as:
-
-```bibtex
-@inproceedings{grass2025towards,
-  title={Towards an Ontology for Representing Time Series Knowledge: Motivation, Requirements and Concept},
-  author={Gra{\ss}, Alexander and Deshmukh, Rohit A and Beecks, Christian and Decker, Stefan},
-  booktitle={International Conference on Advanced Information Systems Engineering},
-  pages={103--110},
-  year={2025},
-  organization={Springer}
-}
-```
-
 # Changelog
 - 08/04/25: Updated version (1.1.0). Detailed changes are tracked in the documentation
 - 05/13/25: Updated version (1.0.1). Detailed changes are tracked in the documentation
