@@ -1,63 +1,998 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix semts: <https://w3id.org/semts/ontology#> .
-@prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-# Ontology Evaluation
+#################################################################
 
-:KnowledgeGroupShape
-    rdf:type sh:NodeShape ;
-    sh:targetClass semts:KnowledgeGroup ;
-    sh:property [
-        sh:path semts:groupKnowledge ;
-        sh:minCount 1 ;
-    ] ;
-.
+# TimeSeriesSegment Shape
 
-:KnowledgeGenerationMethodShape
-    rdf:type sh:NodeShape ;
-    sh:targetClass semts:KnowledgeGenerationMethod ;
-    sh:property [
-        sh:path semts:used ;
-        sh:minCount 1 ;
-    ] ;
-    sh:property [
-        sh:path semts:generated ;
-        sh:minCount 1 ;
-    ] ;
-.
-
-:TimeSeriesSegmentShape
-    rdf:type sh:NodeShape ;
+#################################################################
+semts:TimeSeriesSegmentShape
+    a sh:NodeShape ;
     sh:targetClass semts:TimeSeriesSegment ;
+    sh:targetClass semts:ArtificialTimeSeriesSegment ;
     sh:property [
         sh:path semts:segmentIndex ;
+        sh:or (
+            [ sh:class time:TemporalEntity ]
+            [ sh:class time:Instant ]
+            [ sh:class time:Interval ]
+        ) ;
         sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "segment index" ;
+        sh:description "Each segment must have exactly one temporal index" ;
+        sh:message "Segment must have exactly one index of time:TemporalEntity or subclass (time:Instant or time:Interval)"
     ] ;
     sh:property [
         sh:path semts:segmentDimension ;
+        sh:class semts:DataDimension ;
         sh:minCount 1 ;
+        sh:name "segment dimension" ;
+        sh:description "Each segment must have at least one data dimension" ;
+        sh:message "Segment must have at least one semts:DataDimension"
     ] ;
-.
+    sh:property [
+        sh:path dcat:distribution ;
+        sh:class dcat:Distribution ;
+        sh:minCount 1 ;
+        sh:name "distribution" ;
+        sh:description "Each segment must have at least one distribution (as per requirement)" ;
+        sh:message "Segment must have at least one dcat:Distribution"
+    ] ;
+    sh:property [
+        sh:path semts:datasetColumnIndex ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:maxCount 1 ;
+        sh:name "column index" ;
+        sh:message "Dataset column index must be an integer ≥ 0"
+    ] ;
+    sh:property [
+        sh:path semts:datasetRowIndex ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:maxCount 1 ;
+        sh:name "row index" ;
+        sh:message "Dataset row index must be an integer ≥ 0"
+    ] ;
+    sh:property [
+        sh:path semts:isPartOf ;
+        sh:or (
+            [ sh:class semts:TimeSeriesSegment ]
+            [ sh:class semts:ArtificialTimeSeriesSegment ]
+        ) ;
+        sh:name "is part of" ;
+        sh:description "Part-of relationship must reference other segments" ;
+        sh:message "isPartOf must point to semts:TimeSeriesSegment or subclass (including semts:ArtificialTimeSeriesSegment)"
+    ] .
 
+#################################################################
 
-# Vocabulary Evaluation
+# DataDimension Shape
 
-:ClusteringShape
-    rdf:type sh:NodeShape ;
+#################################################################
+semts:DataDimensionShape
+    a sh:NodeShape ;
+    sh:targetClass semts:DataDimension ;
+    sh:property [
+        sh:path semts:dimensionPosition ;
+        sh:datatype xsd:int ;
+        sh:minInclusive 0 ;
+        sh:maxCount 1 ;
+        sh:name "dimension position" ;
+        sh:message "Dimension position must be an integer ≥ 0"
+    ] ;
+    sh:property [
+        sh:path semts:hasUnit ;
+        sh:class qudt:Unit ;
+        sh:maxCount 1 ;
+        sh:name "has unit" ;
+        sh:message "hasUnit must point to qudt:Unit (or its subclasses if inferencing is enabled)"
+    ] ;
+    sh:property [
+        sh:path semts:hasDatatype ;
+        sh:class qudt:Datatype ;
+        sh:maxCount 1 ;
+        sh:name "has datatype" ;
+        sh:message "hasDatatype must point to qudt:Datatype (or its subclasses if inferencing is enabled)"
+    ] ;
+    sh:property [
+        sh:path semts:title ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "title" ;
+        sh:message "title must be a single string"
+    ] ;
+    sh:property [
+        sh:path semts:description ;
+        sh:datatype xsd:string ;
+        sh:name "description" ;
+        sh:message "description must be a string"
+    ] .
+
+#################################################################
+
+# Knowledge Shape (includes subclasses)
+
+#################################################################
+semts:KnowledgeShape
+    a sh:NodeShape ;
+    sh:targetClass semts:Knowledge ;
+    sh:targetClass semts:DataKnowledge ;
+    sh:targetClass semts:ScenarioKnowledge ;
+    sh:targetClass semts:MethodKnowledge ;
     sh:targetClass semts:KnowledgeGroup ;
+    sh:targetClass semts:ModelInstance ;
+    sh:targetClass semts:SegmentDataCharacteristic ;
+    sh:targetClass semts:SegmentPrediction ;
+    sh:targetClass semts:SegmentRelation ;
+    sh:targetClass semts:Algorithm ;
+    sh:targetClass semts:Hyperparameter ;
     sh:property [
         sh:path semts:knowledgeConcept ;
-        sh:in (semts-dv:Clustering) ;
+        sh:class semts:KnowledgeConcept ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "knowledge concept" ;
+        sh:description "Each knowledge instance must have exactly one concept" ;
+        sh:message "knowledgeConcept must be exactly one semts:KnowledgeConcept"
     ] ;
     sh:property [
-        sh:path semts:groupKnowledge ;
-        sh:minCount 1 ;
-        sh:node [
-            sh:property [
-                sh:path semts:knowledgeConcept ;
-                sh:hasValue semts-dv:Cluster ;
-            ] ;
-        ] ;
+        sh:path semts:hasValue ;
+        sh:or (
+            [ sh:class semts:EmbeddedValue ]
+            [ sh:class semts:ReferencedValue ]
+        ) ;
+        sh:maxCount 1 ;
+        sh:name "has value" ;
+        sh:message "hasValue must be at most one semts:EmbeddedValue or semts:ReferencedValue"
     ] ;
-.
+    sh:property [
+        sh:path semts:knowledgeGenerationEntity ;
+        sh:or (
+            [ sh:class semts:KnowledgeGenerationEntity ]
+            [ sh:class semts:KnowledgeComparisonMeasure ]
+            [ sh:class semts:KnowledgeGenerationMethod ]
+            [ sh:class semts:KnowledgeReasoning ]
+        ) ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "knowledge generation entity" ;
+        sh:message "knowledgeGenerationEntity must have exactly one semts:KnowledgeGenerationEntity or subclass"
+    ] ;
+    sh:property [
+        sh:path semts:title ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "title" ;
+        sh:message "title must be a single string"
+    ] ;
+    sh:property [
+        sh:path semts:description ;
+        sh:datatype xsd:string ;
+        sh:name "description" ;
+        sh:message "description must be a string"
+    ] .
+
+#################################################################
+
+# DataKnowledge Shape (includes subclasses)
+
+#################################################################
+semts:DataKnowledgeShape
+    a sh:NodeShape ;
+    sh:targetClass semts:SegmentDataCharacteristic ;
+    sh:targetClass semts:SegmentRelation ;
+    sh:property [
+        sh:path semts:hasValue ;
+        sh:or (
+            [ sh:class semts:EmbeddedValue ]
+            [ sh:class semts:ReferencedValue ]
+        ) ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has value" ;
+        sh:description "Data knowledge must have exactly one value" ;
+        sh:message "DataKnowledge must have exactly one semts:EmbeddedValue or semts:ReferencedValue"
+    ] .
+
+#################################################################
+
+# MethodKnowledge Shape (includes subclasses)
+
+#################################################################
+semts:MethodKnowledgeShape
+    a sh:NodeShape ;
+    sh:targetClass semts:Hyperparameter ;
+    sh:property [
+        sh:path semts:hasValue ;
+        sh:or (
+            [ sh:class semts:EmbeddedValue ]
+            [ sh:class semts:ReferencedValue ]
+        ) ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has value" ;
+        sh:description "Method knowledge must have exactly one value" ;
+        sh:message "Hyperparameter must have exactly one semts:EmbeddedValue or semts:ReferencedValue"
+    ] .
+
+#################################################################
+
+# ScenarioKnowledge Shape
+
+#################################################################
+semts:ScenarioKnowledgeShape
+    a sh:NodeShape ;
+    sh:targetClass semts:ScenarioKnowledge ;
+    sh:property [
+        sh:path semts:hasValue ;
+        sh:or (
+            [ sh:class semts:Value ]
+            [ sh:class semts:EmbeddedValue ]
+            [ sh:class semts:ReferencedValue ]
+        ) ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has value" ;
+        sh:description "Scenario knowledge must have exactly one value" ;
+        sh:message "ScenarioKnowledge must have exactly one semts:Value or subclass"
+    ] .
+
+#################################################################
+
+# KnowledgeGroup Shape
+
+#################################################################
+semts:KnowledgeGroupShape
+    a sh:NodeShape ;
+    sh:targetClass semts:KnowledgeGroup ;
+    sh:property [
+        sh:path semts:groupKnowledge ;
+        sh:or (
+            [ sh:class semts:Knowledge ]
+            [ sh:class semts:DataKnowledge ]
+            [ sh:class semts:ScenarioKnowledge ]
+            [ sh:class semts:MethodKnowledge ]
+            [ sh:class semts:KnowledgeGroup ]
+            [ sh:class semts:ModelInstance ]
+            [ sh:class semts:SegmentDataCharacteristic ]
+            [ sh:class semts:SegmentPrediction ]
+            [ sh:class semts:SegmentRelation ]
+            [ sh:class semts:Algorithm ]
+            [ sh:class semts:Hyperparameter ]
+        ) ;
+        sh:minCount 1 ;
+        sh:name "group knowledge" ;
+        sh:description "Knowledge group must contain at least one knowledge item" ;
+        sh:message "groupKnowledge must include at least one semts:Knowledge or subclass"
+    ] .
+
+#################################################################
+
+# SegmentRelation Shape
+
+#################################################################
+semts:SegmentRelationShape
+    a sh:NodeShape ;
+    sh:targetClass semts:SegmentRelation ;
+    sh:sparql [
+        sh:message "SegmentRelation must be associated with at least 2 segments via semts:multiSegmentKnowledge" ;
+        sh:prefixes [
+            sh:declare [
+                sh:prefix "semts" ;
+                sh:namespace "https://w3id.org/semts/ontology#"^^xsd:anyURI
+            ]
+        ] ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              $this a semts:SegmentRelation .
+              OPTIONAL { ?segment semts:multiSegmentKnowledge $this . }
+            }
+            GROUP BY $this
+            HAVING (COUNT(DISTINCT ?segment) < 2)
+        """
+    ] .
+
+#################################################################
+
+# EmbeddedValue Shape
+
+#################################################################
+semts:EmbeddedValueShape
+    a sh:NodeShape ;
+    sh:targetClass semts:EmbeddedValue ;
+    sh:property [
+        sh:path semts:valueString ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "value string" ;
+        sh:description "Embedded value must have exactly one string representation" ;
+        sh:message "EmbeddedValue must have exactly one valueString (string)"
+    ] ;
+    sh:property [
+        sh:path semts:hasUnit ;
+        sh:class qudt:Unit ;
+        sh:maxCount 1 ;
+        sh:name "has unit" ;
+        sh:message "hasUnit must point to qudt:Unit (or its subclasses if inferencing is enabled)"
+    ] ;
+    sh:property [
+        sh:path semts:hasDatatype ;
+        sh:class qudt:Datatype ;
+        sh:maxCount 1 ;
+        sh:name "has datatype" ;
+        sh:message "hasDatatype must point to qudt:Datatype (or its subclasses if inferencing is enabled)"
+    ] .
+
+#################################################################
+
+# ReferencedValue Shape
+
+#################################################################
+semts:ReferencedValueShape
+    a sh:NodeShape ;
+    sh:targetClass semts:ReferencedValue ;
+    sh:property [
+        sh:path semts:hasUnit ;
+        sh:class qudt:Unit ;
+        sh:maxCount 1 ;
+        sh:name "has unit" ;
+        sh:message "hasUnit must point to qudt:Unit (or its subclasses if inferencing is enabled)"
+    ] ;
+    sh:property [
+        sh:path semts:hasDatatype ;
+        sh:class qudt:Datatype ;
+        sh:maxCount 1 ;
+        sh:name "has datatype" ;
+        sh:message "hasDatatype must point to qudt:Datatype (or its subclasses if inferencing is enabled)"
+    ] ;
+    sh:property [
+        sh:path dcat:distribution ;
+        sh:class dcat:Distribution ;
+        sh:minCount 1 ;
+        sh:name "distribution" ;
+        sh:message "ReferencedValue must have at least one dcat:Distribution"
+    ] .
+
+#################################################################
+
+# KnowledgeGenerationEntity Shape (and subclasses)
+
+#################################################################
+semts:KnowledgeGenerationEntityShape
+    a sh:NodeShape ;
+    sh:targetClass semts:KnowledgeGenerationEntity ;
+    sh:targetClass semts:KnowledgeComparisonMeasure ;
+    sh:targetClass semts:KnowledgeGenerationMethod ;
+    sh:targetClass semts:KnowledgeReasoning ;
+    sh:property [
+        sh:path semts:knowledgeGenerationConcept ;
+        sh:class semts:KnowledgeGenerationConcept ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "knowledge generation concept" ;
+        sh:message "KnowledgeGenerationEntity must have exactly one semts:KnowledgeGenerationConcept"
+    ] ;
+    sh:property [
+        sh:path semts:used ;
+        sh:class semts:KnowledgeGenerationInput ;
+        sh:minCount 1 ;
+        sh:name "used" ;
+        sh:description "Must use at least one input" ;
+        sh:message "KnowledgeGenerationEntity must use at least one semts:KnowledgeGenerationInput"
+    ] ;
+    sh:property [
+        sh:path semts:generated ;
+        sh:class semts:KnowledgeGenerationOutput ;
+        sh:minCount 1 ;
+        sh:name "generated" ;
+        sh:description "Must generate at least one output" ;
+        sh:message "KnowledgeGenerationEntity must generate at least one semts:KnowledgeGenerationOutput"
+    ] ;
+    sh:property [
+        sh:path semts:title ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "title" ;
+        sh:message "title must be a single string"
+    ] ;
+    sh:property [
+        sh:path semts:description ;
+        sh:datatype xsd:string ;
+        sh:name "description" ;
+        sh:message "description must be a string"
+    ] .
+
+#################################################################
+
+# KnowledgeGenerationInput Shape
+
+#################################################################
+semts:KnowledgeGenerationInputShape
+    a sh:NodeShape ;
+    sh:targetClass semts:KnowledgeGenerationInput ;
+    sh:property [
+        sh:path semts:inputDataReference ;
+        sh:or (
+            [ sh:class semts:TimeSeriesSegment ]
+            [ sh:class semts:ArtificialTimeSeriesSegment ]
+        ) ;
+        sh:maxCount 1 ;
+        sh:name "input data reference" ;
+        sh:message "inputDataReference must be a semts:TimeSeriesSegment or subclass (including semts:ArtificialTimeSeriesSegment)"
+    ] ;
+    sh:property [
+        sh:path semts:inputKnowledge ;
+        sh:or (
+            [ sh:class semts:Knowledge ]
+            [ sh:class semts:DataKnowledge ]
+            [ sh:class semts:ScenarioKnowledge ]
+            [ sh:class semts:MethodKnowledge ]
+            [ sh:class semts:KnowledgeGroup ]
+            [ sh:class semts:ModelInstance ]
+            [ sh:class semts:SegmentDataCharacteristic ]
+            [ sh:class semts:SegmentPrediction ]
+            [ sh:class semts:SegmentRelation ]
+            [ sh:class semts:Algorithm ]
+            [ sh:class semts:Hyperparameter ]
+        ) ;
+        sh:name "input knowledge" ;
+        sh:message "inputKnowledge must be semts:Knowledge or any of its subclasses"
+    ] ;
+    sh:property [
+        sh:path semts:title ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "title" ;
+        sh:message "title must be a single string"
+    ] ;
+    sh:property [
+        sh:path semts:description ;
+        sh:datatype xsd:string ;
+        sh:name "description" ;
+        sh:message "description must be a string"
+    ] .
+
+#################################################################
+
+# KnowledgeGenerationOutput Shape
+
+#################################################################
+semts:KnowledgeGenerationOutputShape
+    a sh:NodeShape ;
+    sh:targetClass semts:KnowledgeGenerationOutput ;
+    sh:property [
+        sh:path semts:outputKnowledge ;
+        sh:or (
+            [ sh:class semts:Knowledge ]
+            [ sh:class semts:DataKnowledge ]
+            [ sh:class semts:ScenarioKnowledge ]
+            [ sh:class semts:MethodKnowledge ]
+            [ sh:class semts:KnowledgeGroup ]
+            [ sh:class semts:ModelInstance ]
+            [ sh:class semts:SegmentDataCharacteristic ]
+            [ sh:class semts:SegmentPrediction ]
+            [ sh:class semts:SegmentRelation ]
+            [ sh:class semts:Algorithm ]
+            [ sh:class semts:Hyperparameter ]
+        ) ;
+        sh:minCount 1 ;
+        sh:name "output knowledge" ;
+        sh:description "Output must contain at least one knowledge item" ;
+        sh:message "outputKnowledge must include semts:Knowledge or any of its subclasses"
+    ] ;
+    sh:property [
+        sh:path semts:wasDerivedFrom ;
+        sh:class semts:KnowledgeGenerationInput ;
+        sh:minCount 1 ;
+        sh:name "was derived from" ;
+        sh:message "wasDerivedFrom must point to a semts:KnowledgeGenerationInput"
+    ] ;
+    sh:property [
+        sh:path semts:title ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "title" ;
+        sh:message "title must be a single string"
+    ] ;
+    sh:property [
+        sh:path semts:description ;
+        sh:datatype xsd:string ;
+        sh:name "description" ;
+        sh:message "description must be a string"
+    ] .
+
+#################################################################
+
+# KnowledgeQualityMeasure Shape
+
+#################################################################
+semts:KnowledgeQualityMeasureShape
+    a sh:NodeShape ;
+    sh:targetClass semts:KnowledgeQualityMeasure ;
+    sh:property [
+        sh:path semts:qualityMeasureConcept ;
+        sh:class semts:QualityMeasureConcept ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "quality measure concept" ;
+        sh:message "KnowledgeQualityMeasure must have exactly one semts:QualityMeasureConcept"
+    ] ;
+    sh:property [
+        sh:path semts:hasValue ;
+        sh:or (
+            [ sh:class semts:EmbeddedValue ]
+            [ sh:class semts:ReferencedValue ]
+        ) ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "has value" ;
+        sh:description "Quality measure must have exactly one value" ;
+        sh:message "KnowledgeQualityMeasure must have exactly one semts:EmbeddedValue or semts:ReferencedValue"
+    ] ;
+    sh:property [
+        sh:path semts:title ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "title" ;
+        sh:message "title must be a single string"
+    ] ;
+    sh:property [
+        sh:path semts:description ;
+        sh:datatype xsd:string ;
+        sh:name "description" ;
+        sh:message "description must be a string"
+    ] .
+
+#################################################################
+
+# ArtificialTimeSeriesSegment Shape
+
+#################################################################
+semts:ArtificialTimeSeriesSegmentShape
+    a sh:NodeShape ;
+    sh:targetClass semts:ArtificialTimeSeriesSegment ;
+    sh:property [
+        sh:path semts:isPartOf ;
+        sh:class semts:ArtificialTimeSeriesSegment ;
+        sh:name "is part of" ;
+        sh:description "Artificial segments can only be part of other artificial segments" ;
+        sh:message "ArtificialTimeSeriesSegment isPartOf must point only to semts:ArtificialTimeSeriesSegment"
+    ] .
+
+#################################################################
+
+# ModelInstance Shape
+
+#################################################################
+semts:ModelInstanceShape
+    a sh:NodeShape ;
+    sh:targetClass semts:ModelInstance ;
+    sh:property [
+        sh:path semts:knowledgeGenerationEntity ;
+        sh:class semts:KnowledgeGenerationMethod ;
+        sh:name "knowledge generation entity" ;
+        sh:description "Model instances should be generated by knowledge generation methods" ;
+        sh:message "ModelInstance knowledgeGenerationEntity must be a semts:KnowledgeGenerationMethod"
+    ] .
+
+#################################################################
+
+# Concept Shapes
+
+#################################################################
+semts:KnowledgeConceptShape
+    a sh:NodeShape ;
+    sh:targetClass semts:KnowledgeConcept .
+
+semts:KnowledgeGenerationConceptShape
+    a sh:NodeShape ;
+    sh:targetClass semts:KnowledgeGenerationConcept .
+
+semts:QualityMeasureConceptShape
+    a sh:NodeShape ;
+    sh:targetClass semts:QualityMeasureConcept .
+
+#################################################################
+
+# Prevent circular part-of relationships
+
+#################################################################
+semts:PreventCircularPartOfShape
+    a sh:NodeShape ;
+    sh:targetClass semts:TimeSeriesSegment ;
+    sh:targetClass semts:ArtificialTimeSeriesSegment ;
+    sh:sparql [
+        sh:message "Circular part-of relationships are not allowed" ;
+        sh:prefixes [
+            sh:declare [
+                sh:prefix "semts" ;
+                sh:namespace "https://w3id.org/semts/ontology#"^^xsd:anyURI
+            ]
+        ] ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                $this semts:isPartOf+ $this .
+            }
+        """
+    ] .
+
+#################################################################
+
+# Ensure Knowledge has correct multi-segment association
+
+#################################################################
+semts:KnowledgeMultiSegmentShape
+    a sh:NodeShape ;
+    sh:targetClass semts:Knowledge ;
+    sh:targetClass semts:DataKnowledge ;
+    sh:targetClass semts:ScenarioKnowledge ;
+    sh:targetClass semts:MethodKnowledge ;
+    sh:targetClass semts:KnowledgeGroup ;
+    sh:targetClass semts:ModelInstance ;
+    sh:targetClass semts:SegmentDataCharacteristic ;
+    sh:targetClass semts:SegmentPrediction ;
+    sh:targetClass semts:SegmentRelation ;
+    sh:targetClass semts:Algorithm ;
+    sh:targetClass semts:Hyperparameter ;
+    sh:sparql [
+        sh:message "Knowledge must be associated with 0 or 2+ segments via multiSegmentKnowledge" ;
+        sh:prefixes [
+            sh:declare [
+                sh:prefix "semts" ;
+                sh:namespace "https://w3id.org/semts/ontology#"^^xsd:anyURI
+            ]
+        ] ;
+        sh:select """
+            SELECT $this
+            WHERE {
+              OPTIONAL { ?segment semts:multiSegmentKnowledge $this . }
+            }
+            GROUP BY $this
+            HAVING (COUNT(DISTINCT ?segment) = 1)
+        """
+    ] .
+
+#################################################################
+
+# Disjoint classes validations
+
+#################################################################
+semts:DataKnowledgeDisjointShape
+    a sh:NodeShape ;
+    sh:targetClass semts:DataKnowledge ;
+    sh:targetClass semts:ModelInstance ;
+    sh:targetClass semts:SegmentDataCharacteristic ;
+    sh:targetClass semts:SegmentPrediction ;
+    sh:targetClass semts:SegmentRelation ;
+    sh:not [ sh:or (
+        [ sh:class semts:MethodKnowledge ]
+        [ sh:class semts:Algorithm ]
+        [ sh:class semts:Hyperparameter ]
+        [ sh:class semts:ScenarioKnowledge ]
+        [ sh:class semts:KnowledgeGroup ]
+        [ sh:class semts:TimeSeriesSegment ]
+        [ sh:class semts:ArtificialTimeSeriesSegment ]
+    ) ] ;
+    sh:message "DataKnowledge cannot also be an instance of MethodKnowledge (including Algorithm/Hyperparameter), ScenarioKnowledge, KnowledgeGroup, TimeSeriesSegment, or ArtificialTimeSeriesSegment." .
+
+semts:MethodKnowledgeDisjointShape
+    a sh:NodeShape ;
+    sh:targetClass semts:MethodKnowledge ;
+    sh:targetClass semts:Algorithm ;
+    sh:targetClass semts:Hyperparameter ;
+    sh:not [ sh:or (
+        [ sh:class semts:ScenarioKnowledge ]
+        [ sh:class semts:KnowledgeGroup ]
+        [ sh:class semts:TimeSeriesSegment ]
+        [ sh:class semts:ArtificialTimeSeriesSegment ]
+    ) ] ;
+    sh:message "MethodKnowledge (including Algorithm/Hyperparameter) cannot also be an instance of ScenarioKnowledge, KnowledgeGroup, TimeSeriesSegment, or ArtificialTimeSeriesSegment." .
+
+semts:ScenarioKnowledgeDisjointShape
+    a sh:NodeShape ;
+    sh:targetClass semts:ScenarioKnowledge ;
+    sh:not [ sh:or (
+        [ sh:class semts:KnowledgeGroup ]
+        [ sh:class semts:TimeSeriesSegment ]
+        [ sh:class semts:ArtificialTimeSeriesSegment ]
+    ) ] ;
+    sh:message "ScenarioKnowledge cannot also be an instance of KnowledgeGroup, TimeSeriesSegment, or ArtificialTimeSeriesSegment." .
+
+semts:EmbeddedValueDisjointShape
+    a sh:NodeShape ;
+    sh:targetClass semts:EmbeddedValue ;
+    sh:not [ sh:class semts:ReferencedValue ] ;
+    sh:message "EmbeddedValue cannot be an instance of ReferencedValue" .
+
+semts:KnowledgeGenerationInputDisjointShape
+    a sh:NodeShape ;
+    sh:targetClass semts:KnowledgeGenerationInput ;
+    sh:not [ sh:class semts:KnowledgeGenerationOutput ] ;
+    sh:message "KnowledgeGenerationInput cannot be an instance of KnowledgeGenerationOutput" .
+
+semts:AlgorithmDisjointShape
+    a sh:NodeShape ;
+    sh:targetClass semts:Algorithm ;
+    sh:not [ sh:class semts:Hyperparameter ] ;
+    sh:message "Algorithm cannot be an instance of Hyperparameter" .
+
+semts:ModelInstanceDisjointShape
+    a sh:NodeShape ;
+    sh:targetClass semts:ModelInstance ;
+    sh:not [ sh:or (
+        [ sh:class semts:SegmentDataCharacteristic ]
+        [ sh:class semts:SegmentPrediction ]
+        [ sh:class semts:SegmentRelation ]
+    ) ] ;
+    sh:message "ModelInstance cannot be an instance of SegmentDataCharacteristic, SegmentPrediction, or SegmentRelation" .
+
+semts:SegmentDataCharacteristicDisjointShape
+    a sh:NodeShape ;
+    sh:targetClass semts:SegmentDataCharacteristic ;
+    sh:not [ sh:or (
+        [ sh:class semts:SegmentPrediction ]
+        [ sh:class semts:SegmentRelation ]
+    ) ] ;
+    sh:message "SegmentDataCharacteristic cannot be an instance of SegmentPrediction or SegmentRelation" .
+
+semts:SegmentPredictionDisjointShape
+    a sh:NodeShape ;
+    sh:targetClass semts:SegmentPrediction ;
+    sh:not [ sh:class semts:SegmentRelation ] ;
+    sh:message "SegmentPrediction cannot be an instance of SegmentRelation" .
+
+semts:KnowledgeGenerationEntityDisjointShape
+    a sh:NodeShape ;
+    sh:targetClass semts:KnowledgeComparisonMeasure ;
+    sh:not [ sh:or (
+        [ sh:class semts:KnowledgeGenerationMethod ]
+        [ sh:class semts:KnowledgeReasoning ]
+    ) ] ;
+    sh:message "KnowledgeComparisonMeasure cannot be an instance of KnowledgeGenerationMethod or KnowledgeReasoning" .
+
+semts:KnowledgeGenerationMethodDisjointShape
+    a sh:NodeShape ;
+    sh:targetClass semts:KnowledgeGenerationMethod ;
+    sh:not [ sh:class semts:KnowledgeReasoning ] ;
+    sh:message "KnowledgeGenerationMethod cannot be an instance of KnowledgeReasoning" .
+
+#################################################################
+
+# isPartOf irreflexive check
+
+#################################################################
+semts:IsPartOfIrreflexiveShape
+    a sh:NodeShape ;
+    sh:targetClass semts:TimeSeriesSegment ;
+    sh:targetClass semts:ArtificialTimeSeriesSegment ;
+    sh:sparql [
+        sh:message "isPartOf is irreflexive: a segment cannot be part of itself" ;
+        sh:prefixes [
+            sh:declare [
+                sh:prefix "semts" ;
+                sh:namespace "https://w3id.org/semts/ontology#"^^xsd:anyURI
+            ]
+        ] ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                $this semts:isPartOf $this .
+            }
+        """
+    ] .
+
+#################################################################
+
+# Range/domain validations
+
+#################################################################
+semts:HasDatatypeRangeShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf semts:hasDatatype ;
+    sh:or (
+        [ sh:class semts:DataDimension ]
+        [ sh:class semts:EmbeddedValue ]
+        [ sh:class semts:ReferencedValue ]
+    ) ;
+    sh:message "hasDatatype can only be used with DataDimension, EmbeddedValue, or ReferencedValue" .
+
+semts:HasUnitRangeShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf semts:hasUnit ;
+    sh:or (
+        [ sh:class semts:DataDimension ]
+        [ sh:class semts:EmbeddedValue ]
+        [ sh:class semts:ReferencedValue ]
+    ) ;
+    sh:message "hasUnit can only be used with DataDimension, EmbeddedValue, or ReferencedValue" .
+
+semts:HasValueDomainShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf semts:hasValue ;
+    sh:or (
+        [ sh:class semts:KnowledgeQualityMeasure ]
+        [ sh:class semts:Knowledge ]
+        [ sh:class semts:DataKnowledge ]
+        [ sh:class semts:ScenarioKnowledge ]
+        [ sh:class semts:MethodKnowledge ]
+        [ sh:class semts:KnowledgeGroup ]
+        [ sh:class semts:ModelInstance ]
+        [ sh:class semts:SegmentDataCharacteristic ]
+        [ sh:class semts:SegmentPrediction ]
+        [ sh:class semts:SegmentRelation ]
+        [ sh:class semts:Algorithm ]
+        [ sh:class semts:Hyperparameter ]
+    ) ;
+    sh:message "hasValue can only be used with Knowledge/KnowledgeQualityMeasure or any listed subclasses of Knowledge" .
+
+#################################################################
+
+# Transitive property validation for artificial hierarchy
+
+#################################################################
+semts:TransitivePartOfValidationShape
+    a sh:NodeShape ;
+    sh:targetClass semts:TimeSeriesSegment ;
+    sh:sparql [
+        sh:message "ArtificialTimeSeriesSegment cannot be part of a non-artificial segment via transitive isPartOf" ;
+        sh:prefixes [
+            sh:declare [
+                sh:prefix "semts" ;
+                sh:namespace "https://w3id.org/semts/ontology#"^^xsd:anyURI
+            ]
+        ] ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                $this a semts:ArtificialTimeSeriesSegment .
+                $this semts:isPartOf+ ?parent .
+                ?parent a semts:TimeSeriesSegment .
+                FILTER NOT EXISTS { ?parent a semts:ArtificialTimeSeriesSegment }
+            }
+        """
+    ] .
+
+#################################################################
+
+# Integer constraint helper messages
+
+#################################################################
+semts:IntegerConstraintsShape
+    a sh:NodeShape ;
+    sh:targetClass semts:DataDimension ;
+    sh:property [
+        sh:path semts:dimensionPosition ;
+        sh:minInclusive 0 ;
+        sh:message "dimensionPosition must be ≥ 0"
+    ] .
+
+semts:DatasetIndexConstraintsShape
+    a sh:NodeShape ;
+    sh:targetClass semts:TimeSeriesSegment ;
+    sh:targetClass semts:ArtificialTimeSeriesSegment ;
+    sh:property [
+        sh:path semts:datasetColumnIndex ;
+        sh:minInclusive 0 ;
+        sh:message "datasetColumnIndex must be ≥ 0"
+    ] ;
+    sh:property [
+        sh:path semts:datasetRowIndex ;
+        sh:minInclusive 0 ;
+        sh:message "datasetRowIndex must be ≥ 0"
+    ] .
+
+semts:KnowledgeLinkedToSegmentShape
+    a sh:NodeShape ;
+    sh:targetClass semts:Knowledge ;
+    sh:targetClass semts:DataKnowledge ;
+    sh:targetClass semts:ScenarioKnowledge ;
+    sh:targetClass semts:MethodKnowledge ;
+    sh:targetClass semts:KnowledgeGroup ;
+    sh:targetClass semts:ModelInstance ;
+    sh:targetClass semts:SegmentDataCharacteristic ;
+    sh:targetClass semts:SegmentPrediction ;
+    sh:targetClass semts:SegmentRelation ;
+    sh:targetClass semts:Algorithm ;
+    sh:targetClass semts:Hyperparameter ;
+    sh:sparql [
+        sh:message "Each knowledge instance must be linked from at least one segment (TimeSeriesSegment or ArtificialTimeSeriesSegment) via semts:segmentKnowledge or semts:multiSegmentKnowledge." ;
+        sh:prefixes [
+        sh:declare [
+            sh:prefix "semts" ;
+            sh:namespace "https://w3id.org/semts/ontology#"^^xsd:anyURI
+        ] ;
+        sh:declare [
+            sh:prefix "xsd" ;
+            sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI
+        ] ;
+        ] ;
+        sh:select """
+            PREFIX semts: <https://w3id.org/semts/ontology#>
+            SELECT $this
+            WHERE {
+                OPTIONAL {
+                    ?segment (semts:segmentKnowledge|semts:multiSegmentKnowledge) $this .
+                    { ?segment a semts:TimeSeriesSegment } UNION { ?segment a semts:ArtificialTimeSeriesSegment }
+                }
+            }
+            GROUP BY $this
+            HAVING (COUNT(DISTINCT ?segment) = 0)
+        """
+    ] .
+
+semts:IntervalWithBoundsShape
+    a sh:NodeShape ;
+    sh:class time:Interval ;
+    sh:property [
+        sh:path time:hasBeginning ;
+        sh:class time:Instant ;
+        sh:minCount 1 ;
+        sh:maxCount 1
+    ] ;
+    sh:property [
+        sh:path time:hasEnd ;
+        sh:class time:Instant ;
+        sh:minCount 1 ;
+        sh:maxCount 1
+    ] ;
+    sh:or (
+        [
+        sh:property [
+            sh:path ( time:hasBeginning time:inXSDDateTime ) ;
+            sh:datatype xsd:dateTime ;
+            sh:minCount 1 ; sh:maxCount 1
+        ] ;
+        sh:property [
+            sh:path ( time:hasEnd time:inXSDDateTime ) ;
+            sh:datatype xsd:dateTime ;
+            sh:minCount 1 ; sh:maxCount 1
+        ]
+        ]
+        [
+        sh:property [
+            sh:path ( time:hasBeginning time:inTimePosition time:numericPosition ) ;
+            sh:datatype xsd:decimal ;
+            sh:minCount 1 ; sh:maxCount 1
+        ] ;
+        sh:property [
+            sh:path ( time:hasEnd time:inTimePosition time:numericPosition ) ;
+            sh:datatype xsd:decimal ;
+            sh:minCount 1 ; sh:maxCount 1
+        ]
+        ]
+    ) .
+
+semts:OutputKnowledgeMustHaveMethodGeneratorShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf semts:outputKnowledge ;
+    sh:property [
+        sh:path semts:knowledgeGenerationEntity ;
+        sh:class semts:KnowledgeGenerationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Knowledge referenced via semts:outputKnowledge must have exactly one semts:knowledgeGenerationEntity of type semts:KnowledgeGenerationMethod."
+    ] .
+
+semts:DistributionDomainRestrictionShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf dcat:distribution ;
+    sh:or (
+        [ sh:class semts:TimeSeriesSegment ]
+        [ sh:class semts:ArtificialTimeSeriesSegment ]
+        [ sh:class semts:ReferencedValue ]
+    ) ;
+    sh:message "dcat:distribution may only be used on semts:TimeSeriesSegment, semts:ArtificialTimeSeriesSegment, or semts:ReferencedValue." .
