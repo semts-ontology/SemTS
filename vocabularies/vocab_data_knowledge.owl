@@ -29,12 +29,6 @@
     
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#member -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#member"/>
-    
-
-
     <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
@@ -54,13 +48,36 @@
 
     <!-- http://www.w3.org/2004/02/skos/core#broader -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader"/>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader">
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#member -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#member">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#member"/>
+            <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#narrowerTransitive"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.w3.org/2004/02/skos/core#narrower -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower"/>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrowerTransitive"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrowerTransitive -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrowerTransitive">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
     
 
 
@@ -90,7 +107,14 @@
     <!-- https://w3id.org/semts/ontology#KnowledgeConcept -->
 
     <owl:Class rdf:about="https://w3id.org/semts/ontology#KnowledgeConcept">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Collection"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -106,13 +130,237 @@
     
 
 
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#ARCoefficient -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ARCoefficient">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.ar_coefficient"/>
+        <skos:definition xml:lang="en">Coefficients from unconditional MLE fit of an AR(k) process.</skos:definition>
+        <skos:prefLabel xml:lang="en">AR coefficient</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#AbsEnergy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#AbsEnergy">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.abs_energy"/>
+        <skos:definition xml:lang="en">Sum over squared values of the time series (absolute energy).</skos:definition>
+        <skos:prefLabel xml:lang="en">Absolute energy</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#AbsoluteMaximumValue -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#AbsoluteMaximumValue">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.absolute_maximum"/>
+        <skos:definition xml:lang="en">Highest absolute value of the time series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Absolute maximum value</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#AbsoluteSumOfChanges -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#AbsoluteSumOfChanges">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.absolute_sum_of_changes"/>
+        <skos:definition xml:lang="en">Sum of absolute consecutive changes in the series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Absolute sum of changes</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#AggAutocorrelation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#AggAutocorrelation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#:Correlation"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.agg_autocorrelation"/>
+        <skos:definition xml:lang="en">Descriptive statistics over the autocorrelation function of the time series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Aggregated autocorrelation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#AggLinearTrend -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#AggLinearTrend">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#TrendProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.agg_linear_trend"/>
+        <skos:definition xml:lang="en">Linear regression on chunk-aggregated values versus chunk index.</skos:definition>
+        <skos:prefLabel xml:lang="en">Aggregated linear trend</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#AnnotationLevelPrediction -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#AnnotationLevelPrediction">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentPrediction"/>
+        <skos:definition xml:lang="en">Knowledge that enriches existing records by attaching labels or classes about outcomes such as events and anomalies.</skos:definition>
+        <skos:prefLabel xml:lang="en">Annotation Level Prediction</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/semts/vocabulary/data-knowledge#Anomaly -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Anomaly">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#AnnotationLevelPrediction"/>
         <skos:definition xml:lang="en">Identification of data points that deviate significantly from established patterns.</skos:definition>
         <skos:prefLabel xml:lang="en">Anomaly</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#ApproximateEntropy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ApproximateEntropy">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.approximate_entropy"/>
+        <skos:definition xml:lang="en">Vectorized approximate entropy of the time series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Approximate entropy</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#AssociationRule -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#AssociationRule">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
+        <skos:definition xml:lang="en">Association rules identify conditional dependencies between patterns or events in time series data.</skos:definition>
+        <skos:prefLabel xml:lang="en">Association Rule</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#AugmentedDickeyFuller -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#AugmentedDickeyFuller">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.augmented_dickey_fuller"/>
+        <skos:definition xml:lang="en">Test statistic assessing presence of a unit root (stationarity test).</skos:definition>
+        <skos:prefLabel xml:lang="en">Augmented Dickey-Fuller</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Autocorrelation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Autocorrelation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Correlation"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.autocorrelation"/>
+        <skos:definition xml:lang="en">Autocorrelation at a specified lag.</skos:definition>
+        <skos:prefLabel xml:lang="en">Autocorrelation (lag)</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#BenfordCorrelation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#BenfordCorrelation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Correlation"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.benford-correlation"/>
+        <skos:definition xml:lang="en">Correlation with the first-digit distribution under Benford&apos;s law (useful for anomaly detection).</skos:definition>
+        <skos:prefLabel xml:lang="en">Benford correlation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#BinnedEntropy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#BinnedEntropy">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.binned_entropy"/>
+        <skos:definition xml:lang="en">Entropy after binning values into a fixed number of equidistant bins.</skos:definition>
+        <skos:prefLabel xml:lang="en">Binned entropy</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#C3Statistic -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#C3Statistic">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.c3"/>
+        <skos:definition xml:lang="en">Statistic to measure non-linearity in the time series.</skos:definition>
+        <skos:prefLabel xml:lang="en">C3 statistic</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#CIDComplexity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#CIDComplexity">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.cid_ce"/>
+        <skos:definition xml:lang="en">Complexity estimate (higher for time series with more peaks and valleys).</skos:definition>
+        <skos:prefLabel xml:lang="en">CID complexity</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#CWTCoefficients -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#CWTCoefficients">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.cwt_coefficients"/>
+        <skos:definition xml:lang="en">Continuous wavelet transform coefficients (Ricker/Mexican hat wavelet).</skos:definition>
+        <skos:prefLabel xml:lang="en">CWT coefficients</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#CausalGraph -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#CausalGraph">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Causality"/>
+        <skos:definition xml:lang="en">Network representation of causal relationships between time series variables.</skos:definition>
+        <skos:prefLabel xml:lang="en">Causal Graph</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Causality -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Causality">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
+        <skos:definition xml:lang="en">A statistical measure of the degree to which two variables are contextually related or dependent.</skos:definition>
+        <skos:prefLabel xml:lang="en">Causality</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#ChangeQuantiles -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ChangeQuantiles">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.change_quantiles"/>
+        <skos:definition xml:lang="en">Aggregated changes within a corridor defined by lower and upper quantiles.</skos:definition>
+        <skos:prefLabel xml:lang="en">Change quantiles</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -121,7 +369,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Changepoint">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#AnnotationLevelPrediction"/>
         <skos:definition xml:lang="en">Detection of shifts or changes in the underlying dynamics of data.</skos:definition>
         <skos:prefLabel xml:lang="en">Changepoint</skos:prefLabel>
     </owl:NamedIndividual>
@@ -131,10 +379,9 @@
     <!-- https://w3id.org/semts/vocabulary/data-knowledge#Classification -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Classification">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:definition xml:lang="en">The process of organizing data into categories or classes based on shared characteristics or criteria.</skos:definition>
         <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#InferredClassID"/>
+        <skos:definition xml:lang="en">The process of organizing data into categories or classes based on shared characteristics or criteria.</skos:definition>
         <skos:prefLabel xml:lang="en">Classification</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -143,11 +390,10 @@
     <!-- https://w3id.org/semts/vocabulary/data-knowledge#Cluster -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Cluster">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:definition xml:lang="en">A cluster represents one group from a clustering, characterized by shared properties.</skos:definition>
         <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#InferredClassID"/>
         <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroupRepresentative"/>
+        <skos:definition xml:lang="en">A cluster represents one group from a clustering, characterized by shared properties.</skos:definition>
         <skos:prefLabel xml:lang="en">Cluster</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -156,11 +402,43 @@
     <!-- https://w3id.org/semts/vocabulary/data-knowledge#Clustering -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Clustering">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:definition xml:lang="en">The result of a clustering process, where data points are grouped based on similarity.</skos:definition>
         <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Cluster"/>
+        <skos:definition xml:lang="en">The result of a clustering process, where data points are grouped based on similarity.</skos:definition>
         <skos:prefLabel xml:lang="en">Clustering</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Coherence -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Coherence">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Correlation"/>
+        <skos:definition xml:lang="en">Frequency-specific correlation measure between time series indicating synchronized behavior.</skos:definition>
+        <skos:prefLabel xml:lang="en">Coherence</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#ConceptDrift -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ConceptDrift">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#AnnotationLevelPrediction"/>
+        <skos:definition xml:lang="en">Change in the underlying data-generating process affecting model performance over time.</skos:definition>
+        <skos:prefLabel xml:lang="en">Concept Drift</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#ConfidenceInterval -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ConfidenceInterval">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#ProbabilisticForecast"/>
+        <skos:definition xml:lang="en">Statistical interval around point forecasts indicating parameter uncertainty.</skos:definition>
+        <skos:prefLabel xml:lang="en">Confidence Interval</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -172,6 +450,98 @@
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
         <skos:definition xml:lang="en">A statistical measure of the degree to which two variables are related.</skos:definition>
         <skos:prefLabel xml:lang="en">Correlation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#CountAboveMean -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#CountAboveMean">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.count_above_mean"/>
+        <skos:definition xml:lang="en">Number of values higher than the mean of the series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Count above mean</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#CountAboveThreshold -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#CountAboveThreshold">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.count_above"/>
+        <skos:definition xml:lang="en">Percentage of values higher than a given threshold.</skos:definition>
+        <skos:prefLabel xml:lang="en">Count above threshold</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#CountBelowMean -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#CountBelowMean">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.count_below_mean"/>
+        <skos:definition xml:lang="en">Number of values lower than the mean of the series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Count below mean</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#CountBelowThreshold -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#CountBelowThreshold">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.count_below"/>
+        <skos:definition xml:lang="en">Percentage of values lower than a given threshold.</skos:definition>
+        <skos:prefLabel xml:lang="en">Count below threshold</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#CounterfactualPrediction -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#CounterfactualPrediction">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataLevelPrediction"/>
+        <skos:definition xml:lang="en">Predicted outcomes under hypothetical scenarios that did not actually occur.</skos:definition>
+        <skos:prefLabel xml:lang="en">Counterfactual Prediction</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#CrossSpectralDensity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#CrossSpectralDensity">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentRelation"/>
+        <skos:definition xml:lang="en">Frequency domain representation of relationships between multiple time series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Cross-Spectral Density</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#CyclicalComponent -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#CyclicalComponent">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <skos:definition xml:lang="en">Longer-term cyclical patterns distinct from regular seasonality.</skos:definition>
+        <skos:prefLabel xml:lang="en">Cyclical Component</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#DTWDistance -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#DTWDistance">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Distance"/>
+        <skos:definition xml:lang="en">Dynamic Time Warping distance between sequences.</skos:definition>
+        <skos:prefLabel xml:lang="en">DTW Distance</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -197,13 +567,13 @@
     
 
 
-    <!-- https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction -->
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#DataLevelPrediction -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#DataLevelPrediction">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentPrediction"/>
-        <skos:definition xml:lang="en">Knowledge focusing on distinguishing between possible outcomes based on data.</skos:definition>
-        <skos:prefLabel xml:lang="en">Discriminative Prediction</skos:prefLabel>
+        <skos:definition xml:lang="en">Knowledge involving the generation of data inferred from existing data.</skos:definition>
+        <skos:prefLabel xml:lang="en">Data Level Prediction</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -230,6 +600,40 @@
     
 
 
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#DominantFrequency -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#DominantFrequency">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <skos:definition xml:lang="en">Primary frequency components that characterize the time series in the frequency domain.</skos:definition>
+        <skos:prefLabel xml:lang="en">Dominant Frequency</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#EnergyRatioByChunks -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#EnergyRatioByChunks">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.energy_ratio_by_chunks"/>
+        <skos:definition xml:lang="en">Sum of squares in a chunk as a ratio of total sum of squares over the series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Energy ratio by chunks</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#EventIntensityForecast -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#EventIntensityForecast">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataLevelPrediction"/>
+        <skos:definition xml:lang="en">Forecasted event intensity over time.</skos:definition>
+        <skos:prefLabel xml:lang="en">Event Intensity Forecast</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/semts/vocabulary/data-knowledge#FFTCentroid -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FFTCentroid">
@@ -237,6 +641,18 @@
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
         <skos:definition xml:lang="en">The centroid of the aggregated Fast Fourier Transform (FFT) of the data.</skos:definition>
         <skos:prefLabel xml:lang="en">FFT centroid</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#FFTCoefficient -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FFTCoefficient">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.fft_coefficient"/>
+        <skos:definition xml:lang="en">Discrete Fourier Transform coefficients for real-valued input.</skos:definition>
+        <skos:prefLabel xml:lang="en">FFT coefficient</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -274,24 +690,142 @@
     
 
 
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#FeatureImportance -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FeatureImportance">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#InferredAnnotation"/>
+        <skos:definition xml:lang="en">Attribution of a model’s prediction to input features or time steps.</skos:definition>
+        <skos:prefLabel xml:lang="en">Feature Importance</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#FirstLocationOfMaximum -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FirstLocationOfMaximum">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.first_location_of_maximum"/>
+        <skos:definition xml:lang="en">First index where the maximum value occurs.</skos:definition>
+        <skos:prefLabel xml:lang="en">First location of maximum</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#FirstLocationOfMinimum -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FirstLocationOfMinimum">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.first_location_of_minimum"/>
+        <skos:definition xml:lang="en">First index where the minimum value occurs.</skos:definition>
+        <skos:prefLabel xml:lang="en">First location of minimum</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/semts/vocabulary/data-knowledge#Forecast -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Forecast">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#GenerativePrediction"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataLevelPrediction"/>
         <skos:definition xml:lang="en">The process of predicting future values or trends based on historical data.</skos:definition>
         <skos:prefLabel xml:lang="en">Forecast</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/vocabulary/data-knowledge#GenerativePrediction -->
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#FourierEntropy -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#GenerativePrediction">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FourierEntropy">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentPrediction"/>
-        <skos:definition xml:lang="en">Knowledge involving the generation of potential future outcomes based on existing data.</skos:definition>
-        <skos:prefLabel xml:lang="en">Generative Prediction</skos:prefLabel>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.fourier_entropy"/>
+        <skos:definition xml:lang="en">Binned entropy of the power spectral density (Welch method).</skos:definition>
+        <skos:prefLabel xml:lang="en">Fourier entropy</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#FriedrichCoefficients -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#FriedrichCoefficients">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.friedrich_coefficients"/>
+        <skos:definition xml:lang="en">Coefficients of polynomial h(x) fitted to deterministic dynamics (Langevin model).</skos:definition>
+        <skos:prefLabel xml:lang="en">Friedrich coefficients</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#HasDuplicate -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#HasDuplicate">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.has_duplicate"/>
+        <skos:definition xml:lang="en">Boolean indicating if any value occurs more than once.</skos:definition>
+        <skos:prefLabel xml:lang="en">Has duplicate</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#HasDuplicateMax -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#HasDuplicateMax">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.has_duplicate_max"/>
+        <skos:definition xml:lang="en">Boolean indicating if the maximum value is observed more than once.</skos:definition>
+        <skos:prefLabel xml:lang="en">Has duplicate maximum</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#HasDuplicateMin -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#HasDuplicateMin">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.has_duplicate_min"/>
+        <skos:definition xml:lang="en">Boolean indicating if the minimum value is observed more than once.</skos:definition>
+        <skos:prefLabel xml:lang="en">Has duplicate minimum</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#HiddenStateSequence -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#HiddenStateSequence">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#InferredAnnotation"/>
+        <skos:definition xml:lang="en">Inferred latent states from Hidden Markov Models or similar probabilistic approaches.</skos:definition>
+        <skos:prefLabel xml:lang="en">Hidden State Sequence</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Imputation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Imputation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataLevelPrediction"/>
+        <skos:definition xml:lang="en">Filling missing values in time series with estimated values.</skos:definition>
+        <skos:prefLabel xml:lang="en">Imputation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#IndexMassQuantile -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#IndexMassQuantile">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.index_mass_quantile"/>
+        <skos:definition xml:lang="en">Relative index i where a given fraction q of mass lies to the left of i.</skos:definition>
+        <skos:prefLabel xml:lang="en">Index mass quantile</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -300,7 +834,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#InferredAnnotation">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DiscriminativePrediction"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#AnnotationLevelPrediction"/>
         <skos:definition xml:lang="en">Annotations derived from analysis that highlight inferred knowledge or insights.</skos:definition>
         <skos:prefLabel xml:lang="en">Inferred Annotation</skos:prefLabel>
     </owl:NamedIndividual>
@@ -318,6 +852,17 @@
     
 
 
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#InterventionEffect -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#InterventionEffect">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Causality"/>
+        <skos:definition xml:lang="en">Quantified impact of external interventions on time series behavior.</skos:definition>
+        <skos:prefLabel xml:lang="en">Intervention Effect</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/semts/vocabulary/data-knowledge#Kurtosis -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Kurtosis">
@@ -325,6 +870,54 @@
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
         <skos:definition xml:lang="en">A measure of the &apos;tailedness&apos; of the probability distribution.</skos:definition>
         <skos:prefLabel xml:lang="en">Kurtosis</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#LargeStandardDeviation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LargeStandardDeviation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.large-standard-deviation"/>
+        <skos:definition xml:lang="en">Boolean indicating if std(x) exceeds a given threshold r.</skos:definition>
+        <skos:prefLabel xml:lang="en">Large standard deviation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#LastLocationOfMaximum -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LastLocationOfMaximum">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.last-location-of-maximum"/>
+        <skos:definition xml:lang="en">Relative last index where the maximum value occurs.</skos:definition>
+        <skos:prefLabel xml:lang="en">Last location of maximum</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#LastLocationOfMinimum -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LastLocationOfMinimum">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.last-location-of-minimum"/>
+        <skos:definition xml:lang="en">Last index where the minimum value occurs.</skos:definition>
+        <skos:prefLabel xml:lang="en">Last location of minimum</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#LempelZivComplexity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LempelZivComplexity">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.lempel-ziv-complexity"/>
+        <skos:definition xml:lang="en">Complexity estimate based on Lempel-Ziv compression.</skos:definition>
+        <skos:prefLabel xml:lang="en">Lempel-Ziv complexity</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -351,6 +944,18 @@
     
 
 
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#LinearTrendTimewise -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LinearTrendTimewise">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#TrendProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.linear-trend-timewise"/>
+        <skos:definition xml:lang="en">Linear regression versus explicit time indices (timewise trend).</skos:definition>
+        <skos:prefLabel xml:lang="en">Linear trend (timewise)</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty">
@@ -362,6 +967,54 @@
     
 
 
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#LongestStrikeAboveMean -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LongestStrikeAboveMean">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.longest-strike-above-mean"/>
+        <skos:definition xml:lang="en">Length of the longest consecutive subsequence with values above the mean.</skos:definition>
+        <skos:prefLabel xml:lang="en">Longest strike above mean</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#LongestStrikeBelowMean -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#LongestStrikeBelowMean">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.longest-strike-below-mean"/>
+        <skos:definition xml:lang="en">Length of the longest consecutive subsequence with values below the mean.</skos:definition>
+        <skos:prefLabel xml:lang="en">Longest strike below mean</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MatrixProfileSummary -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MatrixProfileSummary">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Distance"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.matrix-profile"/>
+        <skos:definition xml:lang="en">Summary statistics (Tukey&apos;s five-number set and mean) of the 1-D Matrix Profile.</skos:definition>
+        <skos:prefLabel xml:lang="en">Matrix profile summary</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MaxLangevinFixedPoint -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MaxLangevinFixedPoint">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.max-langevin-fixed-point"/>
+        <skos:definition xml:lang="en">Largest fixed point of dynamics (argmax_x {h(x)=0}) from Langevin model polynomial fit.</skos:definition>
+        <skos:prefLabel xml:lang="en">Max Langevin fixed point</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/semts/vocabulary/data-knowledge#MaxValue -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MaxValue">
@@ -369,6 +1022,54 @@
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
         <skos:definition xml:lang="en">The highest value in the segment.</skos:definition>
         <skos:prefLabel xml:lang="en">Max value</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MeanAbsoluteChange -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MeanAbsoluteChange">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.mean-abs-change"/>
+        <skos:definition xml:lang="en">Average of absolute first differences.</skos:definition>
+        <skos:prefLabel xml:lang="en">Mean absolute change</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MeanChange -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MeanChange">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.mean-change"/>
+        <skos:definition xml:lang="en">Average of first differences (signed).</skos:definition>
+        <skos:prefLabel xml:lang="en">Mean change</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MeanNAbsoluteMax -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MeanNAbsoluteMax">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.mean-n-absolute-max"/>
+        <skos:definition xml:lang="en">Arithmetic mean of the n largest absolute values.</skos:definition>
+        <skos:prefLabel xml:lang="en">Mean of n absolute maxima</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MeanSecondDerivativeCentral -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MeanSecondDerivativeCentral">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.mean-second-derivative-central"/>
+        <skos:definition xml:lang="en">Mean of a central approximation of the second derivative.</skos:definition>
+        <skos:prefLabel xml:lang="en">Mean central second derivative</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -439,25 +1140,59 @@
     
 
 
-    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Motif -->
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#ModelUncertainty -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Motif">
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ModelUncertainty">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:definition xml:lang="en">A recurring pattern or subsequence in time series data that helps identify similar behaviors or events across different segments.</skos:definition>
-        <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Distance"/>
-        <skos:prefLabel xml:lang="en">Motif</skos:prefLabel>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#ProbabilisticForecast"/>
+        <skos:definition xml:lang="en">Epistemic uncertainty arising from incomplete knowledge of model parameters.</skos:definition>
+        <skos:prefLabel xml:lang="en">Model Uncertainty</skos:prefLabel>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MotifCollection -->
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Motif -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MotifCollection">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Motif">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:definition xml:lang="en">A collection of motifs within time series data, representing frequently occurring patterns that provide insights into underlying processes.</skos:definition>
-        <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Motif"/>
+        <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#MotifElement"/>
+        <skos:definition xml:lang="en">A collection of motifs instances within time series data, representing a frequently occurring pattern that provides insights into underlying processes.</skos:definition>
         <skos:prefLabel xml:lang="en">Motif Collection</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#MotifElement -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#MotifElement">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Pattern"/>
+        <skos:definition xml:lang="en">An element of a time series motif representing a subtype of a pattern.</skos:definition>
+        <skos:prefLabel xml:lang="en">Motif Element</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#NumberCWTPeaks -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#NumberCWTPeaks">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.number-cwt-peaks"/>
+        <skos:definition xml:lang="en">Count of distinct peaks detected via continuous wavelet transform.</skos:definition>
+        <skos:prefLabel xml:lang="en">Number of CWT peaks</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#NumberCrossingM -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#NumberCrossingM">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.number-crossing-m"/>
+        <skos:definition xml:lang="en">Number of times the series crosses a given level m.</skos:definition>
+        <skos:prefLabel xml:lang="en">Number of crossings at m</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -480,6 +1215,283 @@
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
         <skos:definition xml:lang="en">The total count of data entries or records in the segment.</skos:definition>
         <skos:prefLabel xml:lang="en">Number of instances</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#NumberPeaks -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#NumberPeaks">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.number-peaks"/>
+        <skos:definition xml:lang="en">Number of peaks of at least a given support in the series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Number of peaks</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#OutOfDistribution -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#OutOfDistribution">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#AnnotationLevelPrediction"/>
+        <skos:definition xml:lang="en">Detection of inputs outside the training distribution.</skos:definition>
+        <skos:prefLabel xml:lang="en">Out-of-Distribution (OOD) Detection</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#PartialAutocorrelation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#PartialAutocorrelation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.partial-autocorrelation"/>
+        <skos:definition xml:lang="en">Partial autocorrelation function value at a given lag.</skos:definition>
+        <skos:prefLabel xml:lang="en">Partial autocorrelation</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Pattern -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Pattern">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#PatternElement"/>
+        <skos:definition xml:lang="en">Group of repeating data segments with the same or similar behavior.</skos:definition>
+        <skos:prefLabel xml:lang="en">Pattern</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#PatternElement -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#PatternElement">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#AnnotationLevelPrediction"/>
+        <skos:definition xml:lang="en">Element in a group of repeating data segments with the same or similar behavior.</skos:definition>
+        <skos:prefLabel xml:lang="en">Pattern Element</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#PercentageOfReoccurringDatapointsToAllDatapoints -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#PercentageOfReoccurringDatapointsToAllDatapoints">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.percentage-of-reoccurring-datapoints-to-all-datapoints"/>
+        <skos:definition xml:lang="en">Percentage of non-unique data points in the series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Percentage of reoccurring datapoints</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#PercentageOfReoccurringValuesToAllValues -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#PercentageOfReoccurringValuesToAllValues">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.percentage-of-reoccurring-values-to-all-values"/>
+        <skos:definition xml:lang="en">Percentage of values that occur more than once.</skos:definition>
+        <skos:prefLabel xml:lang="en">Percentage of reoccurring values</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#PermutationEntropy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#PermutationEntropy">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.permutation-entropy"/>
+        <skos:definition xml:lang="en">Entropy based on permutation patterns of the time series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Permutation entropy</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#PredictedEvent -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#PredictedEvent">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#AnnotationLevelPrediction"/>
+        <skos:definition xml:lang="en">Prediction of an event or action.</skos:definition>
+        <skos:prefLabel xml:lang="en">Predicted Event</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#PredictionInterval -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#PredictionInterval">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#ProbabilisticForecast"/>
+        <skos:definition xml:lang="en">An interval quantifying forecast uncertainty at a given coverage level (e.g., 90%).</skos:definition>
+        <skos:prefLabel xml:lang="en">Prediction Interval</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#ProbabilisticForecast -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ProbabilisticForecast">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataLevelPrediction"/>
+        <skos:definition xml:lang="en">A forecast represented as a probability distribution over future values, including quantiles or prediction intervals.</skos:definition>
+        <skos:prefLabel xml:lang="en">Probabilistic Forecast</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#Quantile -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Quantile">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.quantile"/>
+        <skos:definition xml:lang="en">Quantile value of the time series at level q.</skos:definition>
+        <skos:prefLabel xml:lang="en">Quantile</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#QuantileForecast -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#QuantileForecast">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#ProbabilisticForecast"/>
+        <skos:definition xml:lang="en">Forecast expressed by one or more quantiles (e.g., 0.1, 0.5, 0.9).</skos:definition>
+        <skos:prefLabel xml:lang="en">Quantile Forecast</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#QuerySimilarityCount -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#QuerySimilarityCount">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Similarity"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.query-similarity-count"/>
+        <skos:definition xml:lang="en">Count of subsequences similar to a given query (under z-normalized Euclidean distance and threshold).</skos:definition>
+        <skos:prefLabel xml:lang="en">Query similarity count</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#RangeCount -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#RangeCount">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.range-count"/>
+        <skos:definition xml:lang="en">Count of observed values within a specified interval [min, max).</skos:definition>
+        <skos:prefLabel xml:lang="en">Range count</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#RatioBeyondRSigma -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#RatioBeyondRSigma">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.ratio-beyond-r-sigma"/>
+        <skos:definition xml:lang="en">Ratio of values further than r times the standard deviation from the mean.</skos:definition>
+        <skos:prefLabel xml:lang="en">Ratio beyond r·sigma</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#RatioValueNumberToTimeSeriesLength -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#RatioValueNumberToTimeSeriesLength">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.ratio-value-number-to-time-series-length"/>
+        <skos:definition xml:lang="en">Factor equal to 1 if all values are unique, below 1 otherwise.</skos:definition>
+        <skos:prefLabel xml:lang="en">Ratio unique values to length</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#RegimeChange -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#RegimeChange">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Changepoint"/>
+        <skos:definition xml:lang="en">Detection of transitions between different operational regimes in time series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Regime Change</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#RegimeDetection -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#RegimeDetection">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#AnnotationLevelPrediction"/>
+        <skos:definition xml:lang="en">Identification of different operational states or regimes within time series data.</skos:definition>
+        <skos:prefLabel xml:lang="en">Regime Detection</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#ResidualComponent -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ResidualComponent">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <skos:definition xml:lang="en">Remaining variation after trend and seasonal components are removed from decomposition.</skos:definition>
+        <skos:prefLabel xml:lang="en">Residual Component</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#RootMeanSquare -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#RootMeanSquare">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#LocationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.root-mean-square"/>
+        <skos:definition xml:lang="en">Root mean square (RMS) of the time series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Root mean square</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SPKTWelchDensity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SPKTWelchDensity">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.spkt-welch-density"/>
+        <skos:definition xml:lang="en">Estimate of the power spectral density at different frequencies (Welch method).</skos:definition>
+        <skos:prefLabel xml:lang="en">SPKT Welch density</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SampleEntropy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SampleEntropy">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.sample-entropy"/>
+        <skos:definition xml:lang="en">Sample entropy of the time series.</skos:definition>
+        <skos:prefLabel xml:lang="en">Sample entropy</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SeasonalComponent -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SeasonalComponent">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <skos:definition xml:lang="en">Extracted seasonal patterns from time series decomposition.</skos:definition>
+        <skos:prefLabel xml:lang="en">Seasonal Component</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -542,10 +1554,9 @@
     <!-- https://w3id.org/semts/vocabulary/data-knowledge#Segmentation -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#Segmentation">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
-        <skos:definition xml:lang="en">Dividing time series data into meaningful segments for detailed analysis, enabling focused insights.</skos:definition>
         <skos:member rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentGroupRepresentative"/>
+        <skos:definition xml:lang="en">Dividing time series data into meaningful segments for detailed analysis, enabling focused insights.</skos:definition>
         <skos:prefLabel xml:lang="en">Segmentation</skos:prefLabel>
     </owl:NamedIndividual>
     
@@ -584,6 +1595,17 @@
     
 
 
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SpectralPeak -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SpectralPeak">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <skos:definition xml:lang="en">Significant peaks in the frequency spectrum indicating dominant periodic components.</skos:definition>
+        <skos:prefLabel xml:lang="en">Spectral Peak</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/semts/vocabulary/data-knowledge#StandardDeviation -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#StandardDeviation">
@@ -606,6 +1628,88 @@
     
 
 
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SumOfReoccurringDataPoints -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SumOfReoccurringDataPoints">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.sum-of-reoccurring-data-points"/>
+        <skos:definition xml:lang="en">Sum of all data points that occur more than once.</skos:definition>
+        <skos:prefLabel xml:lang="en">Sum of reoccurring datapoints</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SumOfReoccurringValues -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SumOfReoccurringValues">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.sum-of-reoccurring-values"/>
+        <skos:definition xml:lang="en">Sum of all values that occur more than once.</skos:definition>
+        <skos:prefLabel xml:lang="en">Sum of reoccurring values</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SumValues -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SumValues">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.sum-values"/>
+        <skos:definition xml:lang="en">Sum over all time series values.</skos:definition>
+        <skos:prefLabel xml:lang="en">Sum of values</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#SymmetryLooking -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#SymmetryLooking">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.symmetry-looking"/>
+        <skos:definition xml:lang="en">Boolean indicating whether the distribution looks symmetric.</skos:definition>
+        <skos:prefLabel xml:lang="en">Symmetry looking</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#TemporalPointProcess -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#TemporalPointProcess">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#ModelInstance"/>
+        <skos:definition xml:lang="en">A stochastic process modeling discrete events in time via an intensity function.</skos:definition>
+        <skos:prefLabel xml:lang="en">Temporal Point Process</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#TimeReversalAsymmetryStatistic -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#TimeReversalAsymmetryStatistic">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#StructuralProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.time-reversal-asymmetry-statistic"/>
+        <skos:definition xml:lang="en">Statistic measuring asymmetry under time reversal at a given lag.</skos:definition>
+        <skos:prefLabel xml:lang="en">Time-reversal asymmetry statistic</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#TrendComponent -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#TrendComponent">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#TrendProperty"/>
+        <skos:definition xml:lang="en">Long-term directional movement extracted from time series decomposition.</skos:definition>
+        <skos:prefLabel xml:lang="en">Trend Component</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/semts/vocabulary/data-knowledge#TrendProperty -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#TrendProperty">
@@ -613,6 +1717,29 @@
         <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#SegmentDataCharacteristic"/>
         <skos:definition xml:lang="en">Indicators of directionality or movement within data segments over time.</skos:definition>
         <skos:prefLabel xml:lang="en">Trend Property</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#ValueCount -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ValueCount">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.value-count"/>
+        <skos:definition xml:lang="en">Count of occurrences of a specified value.</skos:definition>
+        <skos:prefLabel xml:lang="en">Value count</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#ValueMask -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#ValueMask">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DataInformationProperty"/>
+        <skos:definition xml:lang="en">Binary indicator marking positions that were maksed.</skos:definition>
+        <skos:prefLabel xml:lang="en">Value Mask</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -636,9 +1763,39 @@
         <skos:definition xml:lang="en">Variance of the attribute values.</skos:definition>
         <skos:prefLabel xml:lang="en">Variance</skos:prefLabel>
     </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#VarianceLargerThanStandardDeviation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#VarianceLargerThanStandardDeviation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.variance-larger-than-standard-deviation"/>
+        <skos:definition xml:lang="en">Boolean indicating whether variance(x) &gt; std(x).</skos:definition>
+        <skos:prefLabel xml:lang="en">Variance larger than std</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#VariationCoefficient -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#VariationCoefficient">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+        <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#DispersionProperty"/>
+        <rdfs:seeAlso rdf:resource="https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.variation-coefficient"/>
+        <skos:definition xml:lang="en">Relative variation: standard error divided by mean.</skos:definition>
+        <skos:prefLabel xml:lang="en">Variation coefficient</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/vocabulary/data-knowledge#:Correlation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/vocabulary/data-knowledge#:Correlation"/>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 

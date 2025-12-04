@@ -11,193 +11,780 @@
 #################################################################
 
 ###  http://www.w3.org/2004/02/skos/core#definition
+
 skos:definition rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/2004/02/skos/core#member
-skos:member rdf:type owl:AnnotationProperty .
+
+skos:member rdf:type owl:ObjectProperty .
 
 ###  http://www.w3.org/2004/02/skos/core#prefLabel
+
 skos:prefLabel rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/2004/02/skos/core#broader
+
 skos:broader rdf:type owl:ObjectProperty .
 
 ###  http://www.w3.org/2004/02/skos/core#narrower
+
 skos:narrower rdf:type owl:ObjectProperty .
 
+
 #################################################################
-#    Classes
+#    Classes & Reasoning
 #################################################################
 
 ###  http://www.w3.org/2004/02/skos/core#Collection
+
 skos:Collection rdf:type owl:Class .
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
+
 skos:Concept rdf:type owl:Class .
 
 ###  https://w3id.org/semts/ontology#KnowledgeConcept
-semts:KnowledgeConcept rdf:type owl:Class ; 
-  rdfs:subClassOf skos:Concept .
+
+semts:KnowledgeConcept rdf:type owl:Class ;
+  rdfs:subClassOf [
+    rdf:type owl:Class ;
+    owl:unionOf (skos:Concept skos:Collection)
+  ] .
+
+# Make broader/narrower usable for inference
+skos:broader owl:inverseOf skos:narrower .
+skos:narrower rdfs:subPropertyOf skos:narrowerTransitive .
+skos:narrowerTransitive a owl:TransitiveProperty .
+
+# Propagate collection membership down the hierarchy
+skos:member owl:propertyChainAxiom ( skos:member skos:narrowerTransitive ) .
+
 
 #################################################################
 #    Scenario Knowledge Concepts
 #################################################################
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioKnowledge
+
 :ScenarioKnowledge rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Scenario Knowledge" ;
-  skos:definition "Scenario Knowledge encompasses structured information and insights relevant to understanding and analyzing specific situations in time series data." .
+  skos:prefLabel "Scenario Knowledge"@en ;
+  skos:definition "Scenario Knowledge encompasses structured information and insights relevant to understanding and analyzing specific situations in time series data."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#Annotation
+
 :Annotation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Annotation" ;
+  skos:prefLabel "Annotation"@en ;
   skos:broader :ScenarioKnowledge ;
-  skos:definition "Annotations are notes or labels added to time series data to provide additional context or information for better understanding." .
+  skos:definition "Annotations are labels added to time series data to provide validated context or information for better understanding."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#Note
-:Note rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Note" ;
-  skos:broader :ScenarioKnowledge ;
-  skos:definition "Notes are brief pieces of information that are added to time series data to highlight important aspects or observations." .
 
-###  https://w3id.org/semts/vocabulary/scenario-knowledge#ContextualInformation
-:ContextualInformation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Contextual Information" ;
-  skos:broader :Note ;
-  skos:definition "Contextual Information provides background or situational details that enhance the understanding of time series data." .
+:Note rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Note"@en ;
+  skos:broader :ContextualDescription ;
+  skos:definition "Notes are brief pieces of information that are added to time series data to highlight important aspects or observations."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ContextualDescription
+
+:ContextualDescription rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Contextual Description"@en ;
+  skos:broader :ScenarioKnowledge ;
+  skos:definition "Contextual description provides background or situational details that enhance the understanding of time series data."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#FormalDescription
+
+:FormalDescription rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Formal Description"@en ;
+  skos:broader :ContextualDescription ;
+  skos:definition "Formal Description provides formally defined background or situational details that enhance the understanding of time series data."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Event
+
+:Event rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Event"@en ;
+  skos:broader :ScenarioKnowledge ;
+  skos:definition "A specific occurrence or incident."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#Fact
+
 :Fact rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Fact" ;
-  skos:broader :ContextualInformation ;
-  skos:definition "Evaluated statement that holds true and equals ground truth information." .
+  skos:prefLabel "Fact"@en ;
+  skos:broader :ContextualDescription ;
+  skos:definition "Evaluated statement that holds true and equals ground truth information."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#InformalComment
+
 :InformalComment rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Informal Comment" ;
+  skos:prefLabel "Informal Comment"@en ;
   skos:broader :Note ;
-  skos:definition "An informal note which can literally be any arbitrary message that is not covered by a predefined category." .
+  skos:definition "An informal note which can literally be any arbitrary message that is not covered by a predefined category."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#Rule
+
 :Rule rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Rule" ;
-  skos:broader :ContextualInformation ;
-  skos:definition "Information which can be regarded a guideline, restriction or instruction." .
+  skos:prefLabel "Rule"@en ;
+  skos:broader :ContextualDescription ;
+  skos:definition "Information which can be regarded a restriction or instruction."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#Observation
+
 :Observation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Observation" ;
-  skos:broader :Note ;
-  skos:definition "Observations are specific insights derived from time series data that are influenced by the surrounding context." .
+  skos:prefLabel "Observation"@en ;
+  skos:broader :UncategorizedEvent ;
+  skos:definition "Observations are specific perceptions made based on time series behaviors."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#Assumption
+
 :Assumption rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Assumption" ;
-  skos:broader :ContextualInformation ;
-  skos:definition "Assumptions are hypotheses or premises considered within the context of analyzing time series data." .
+  skos:prefLabel "Assumption"@en ;
+  skos:broader :ContextualDescription ;
+  skos:definition "Assumptions are hypotheses or premises considered within the context of analyzing time series data."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioParameter
+
 :ScenarioParameter rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Scenario Parameter" ;
+  skos:prefLabel "Scenario Parameter"@en ;
   skos:broader :ScenarioKnowledge ;
-  skos:definition "Scenario Parameters are variables related to specific scenarios." .
+  skos:definition "Scenario Parameters are variables related to specific scenarios."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#MathExpression
+
 :MathExpression rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Math Expression" ;
-  skos:broader :ScenarioKnowledge ;
-  skos:definition "Math Expressions are mathematical formulas or equations used to model or analyze time series data." .
+  skos:prefLabel "Math Expression"@en ;
+  skos:broader :FormalDescription ;
+  skos:definition "Math Expressions are mathematical formulas or equations used to model or analyze time series data."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#BooleanEquation
+
 :BooleanEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Boolean Equation" ;
+  skos:prefLabel "Boolean Equation"@en ;
   skos:broader :MathExpression ;
-  skos:definition "Boolean Equations involve logical operators and logical expressions." .
+  skos:definition "Boolean Equations involve logical operators and logical expressions."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#Condition
+
 :Condition rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Condition" ;
+  skos:prefLabel "Condition"@en ;
   skos:broader :BooleanEquation ;
-  skos:definition "Boolean expressions used to evaluate conditions within time series data." .
+  skos:definition "Boolean expressions used to evaluate conditions within time series data."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#AlgebraicEquation
+
 :AlgebraicEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Algebraic Equation" ;
+  skos:prefLabel "Algebraic Equation"@en ;
   skos:broader :MathExpression ;
-  skos:definition "Algebraic Equations are mathematical statements consisting of algebraic expressions used in the analysis of time series data." .
+  skos:definition "Algebraic Equations are mathematical statements consisting of algebraic expressions used in the analysis of time series data."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#DifferentialEquation
+
 :DifferentialEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Differential Equation" ;
+  skos:prefLabel "Differential Equation"@en ;
   skos:broader :MathExpression ;
-  skos:definition "Differential Equations involve derivatives and are used to model dynamic changes and trends in time series data." .
+  skos:definition "Differential Equations involve derivatives and are used to model dynamic changes and trends in time series data."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#PolynomialEquation
+
 :PolynomialEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Polynomial Equation" ;
+  skos:prefLabel "Polynomial Equation"@en ;
   skos:broader :MathExpression ;
-  skos:definition "Polynomial Equations consist of terms raised to powers, representing relationships and patterns within time series data." .
+  skos:definition "Polynomial Equations consist of terms raised to powers, representing relationships and patterns within time series data."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#ExponentialEquation
+
 :ExponentialEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Exponential Equation" ;
+  skos:prefLabel "Exponential Equation"@en ;
   skos:broader :MathExpression ;
-  skos:definition "Exponential Equations model growth or decay processes in time series data using exponential functions." .
+  skos:definition "Exponential Equations model growth or decay processes in time series data using exponential functions."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#LogarithmicEquation
+
 :LogarithmicEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Logarithmic Equation" ;
+  skos:prefLabel "Logarithmic Equation"@en ;
   skos:broader :MathExpression ;
-  skos:definition "Logarithmic Equations involve logarithms and are used to model multiplicative relationships in time series data." .
+  skos:definition "Logarithmic Equations involve logarithms and are used to model multiplicative relationships in time series data."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#TrigonometricEquation
+
 :TrigonometricEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Trigonometric Equation" ;
+  skos:prefLabel "Trigonometric Equation"@en ;
   skos:broader :MathExpression ;
-  skos:definition "Trigonometric Equations use trigonometric functions to represent periodic patterns and cycles in time series data." .
+  skos:definition "Trigonometric Equations use trigonometric functions to represent periodic patterns and cycles in time series data."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#IntegralEquation
+
 :IntegralEquation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Integral Equation" ;
+  skos:prefLabel "Integral Equation"@en ;
   skos:broader :MathExpression ;
-  skos:definition "Integral Equations involve integrals and are used to analyze cumulative effects and total values in time series data." .
+  skos:definition "Integral Equations involve integrals and are used to analyze cumulative effects and total values in time series data."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#Label
+
 :Label rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Label" ;
+  skos:prefLabel "Label"@en ;
   skos:broader :Annotation ;
-  skos:definition "Labels are identifiers or markers added to time series data to categorize or highlight specific elements or features." .
+  skos:definition "Labels are identifiers or markers added to time series data to categorize or highlight specific elements or features."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#Keyword
+
 :Keyword rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Keyword" ;
+  skos:prefLabel "Keyword"@en ;
   skos:broader :Annotation ;
-  skos:definition "Tags that are used for categorization, organization and indexing." .
+  skos:definition "Free-form tag used for categorization, organization and indexing."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Code
+
+:Code rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Code"@en ;
+  skos:broader :Annotation ;
+  skos:definition "Standardized code used for categorization, organization and indexing."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#CategorizedEvent
+
 :CategorizedEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Categorized Event" ;
-  skos:broader :Annotation ;
-  skos:definition "An event that is predefined and not an unexpected observation." .
+  skos:prefLabel "Categorized Event"@en ;
+  skos:broader :Event ;
+  skos:definition "An event that is predefined and not an unexpected observation."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#Action
+
 :Action rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Action" ;
+  skos:prefLabel "Action"@en ;
   skos:broader :CategorizedEvent ;
-  skos:definition "An action that equals a predefined event. Commonly performed to change or correct a certain process behavior." .
+  skos:definition "An action that equals a predefined event. Commonly performed to change or correct a certain process behavior."@en .
 
 ###  https://w3id.org/semts/vocabulary/scenario-knowledge#UncategorizedEvent
+
 :UncategorizedEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
-  skos:prefLabel "Uncategorized Event" ;
+  skos:prefLabel "Uncategorized Event"@en ;
+  skos:broader :Event ;
+  skos:definition "An event that is not predefined and thus an unexpected observation."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Status
+
+:Status rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Status"@en ;
+  skos:broader :ScenarioParameter ;
+  skos:definition "Categorical or ordinal state of an entity, device, process, service, or event at a point in time (e.g., active/inactive, open/closed, enabled/disabled, acknowledged/unacknowledged)."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Alert
+
+:Alert rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Alert"@en ;
+  skos:broader :CategorizedEvent ;
+  skos:definition "User-facing notification about conditions or events affecting service or entities."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#LifecycleEvent
+
+:LifecycleEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Lifecycle Event"@en ;
+  skos:broader :CategorizedEvent ;
+  skos:definition "Event marking activity lifecycle transitions such as start, complete, suspend, or resume."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Acknowledgment
+
+:Acknowledgment rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Acknowledgment"@en ;
+  skos:broader :Action ;
+  skos:definition "Acknowledgment of an event."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Confirmation
+
+:Confirmation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Confirmation"@en ;
+  skos:broader :Action ;
+  skos:definition "Confirmation of previously unvalidated information."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ResetOrClear
+
+:ResetOrClear rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Reset or Clear"@en ;
+  skos:broader :Action ;
+  skos:definition "Action to clear or reset a condition or alarm state."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ProcessStep
+
+:ProcessStep rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Process Step"@en ;
+  skos:broader :ContextualDescription ;
+  skos:definition "Process step context associated with an event (e.g., shipping, receiving) or transaction context (e.g., purchase orders, invoices)."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#CalibrationEvent
+
+:CalibrationEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Calibration Event"@en ;
+  skos:broader :CategorizedEvent ;
+  skos:definition "Event documenting calibration of devices or processes that affects measurements."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#MaintenanceEvent
+
+:MaintenanceEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Maintenance Event"@en ;
+  skos:broader :CategorizedEvent ;
+  skos:definition "Event documenting scheduled or unscheduled maintenance activities for assets or devices."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Error
+
+:Error rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Error"@en ;
+  skos:broader :CategorizedEvent ;
+  skos:definition "Identified malfunction."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#UncharacteristicObservation
+
+:UncharacteristicObservation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Uncharacteristic Observation"@en ;
   skos:broader :Observation ;
-  skos:definition "An event that is not predefined and thus an unexpected observation or action." .
+  skos:definition "Observed irregularity."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#CalendarEntry
+
+:CalendarEntry rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Calendar Entry"@en ;
+  skos:broader :Annotation ;
+  skos:definition "Calendar entries such as holidays, maintenance days."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Documentation
+
+:Documentation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Documentation"@en ;
+  skos:broader :ContextualDescription ;
+  skos:definition "Description of a procedure or process."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Guideline
+
+:Guideline rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Guideline"@en ;
+  skos:broader :Documentation ;
+  skos:definition "Recommendation that helps to make decisions and ensures correct, consistent application."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ParameterChange
+
+:ParameterChange rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Parameter Change"@en ;
+  skos:broader :Action ;
+  skos:definition "Action/event indicating modification of one or more Scenario Parameters."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#SetupChangeover
+
+:SetupChangeover rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Setup Changeover"@en ;
+  skos:broader :Action ;
+  skos:definition "Action to switch equipment or operating setup between products or configurations."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#BatchChangeover
+
+:BatchChangeover rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Batch Changeover"@en ;
+  skos:broader :SetupChangeover ;
+  skos:definition "Action to switch batches; a specialized form of setup changeover."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Reschedule
+
+:Reschedule rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Reschedule"@en ;
+  skos:broader :Action ;
+  skos:definition "Action altering planned timing or sequence of activities."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#DispatchInstruction
+
+:DispatchInstruction rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Dispatch Instruction"@en ;
+  skos:broader :Action ;
+  skos:definition "Instruction to assign or route work, orders, or tasks."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#InspectionEvent
+
+:InspectionEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Inspection Event"@en ;
+  skos:broader :Action ;
+  skos:definition "Inspection or quality check activity."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ComplianceCheck
+
+:ComplianceCheck rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Compliance Check"@en ;
+  skos:broader :Action ;
+  skos:definition "Action to verify compliance with rules or standards."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#SimulationRun
+
+:SimulationRun rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Simulation Run"@en ;
+  skos:broader :Action ;
+  skos:definition "Execution of a simulation."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#RecipeChangeEvent
+
+:RecipeChangeEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Recipe Change Event"@en ;
+  skos:broader :ParameterChange ;
+  skos:definition "Parameter change affecting the process recipe configuration."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#SetpointChange
+
+:SetpointChange rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Setpoint Change"@en ;
+  skos:broader :ParameterChange ;
+  skos:definition "Parameter change affecting a control setpoint value."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ThresholdChange
+
+:ThresholdChange rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Threshold Change"@en ;
+  skos:broader :ParameterChange ;
+  skos:definition "Parameter change adjusting a threshold used in control, alarms, or logic."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ProductionCycleStart
+
+:ProductionCycleStart rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Production Cycle Start"@en ;
+  skos:broader :LifecycleEvent ;
+  skos:definition "Start of a production cycle."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ProductionCycleComplete
+
+:ProductionCycleComplete rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Production Cycle Complete"@en ;
+  skos:broader :LifecycleEvent ;
+  skos:definition "Completion of a production cycle."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ShiftChange
+
+:ShiftChange rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Shift Change"@en ;
+  skos:broader :LifecycleEvent ;
+  skos:definition "Transition between staff shifts."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#PlannedDowntime
+
+:PlannedDowntime rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Planned Downtime"@en ;
+  skos:broader :MaintenanceEvent ;
+  skos:definition "Scheduled outage or maintenance period."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#UnplannedDowntime
+
+:UnplannedDowntime rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Unplanned Downtime"@en ;
+  skos:broader :MaintenanceEvent ;
+  skos:definition "Unscheduled outage or stop due to failure or other causes."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#PreventiveMaintenanceEvent
+
+:PreventiveMaintenanceEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Preventive Maintenance Event"@en ;
+  skos:broader :MaintenanceEvent ;
+  skos:definition "Planned maintenance performed to prevent failures."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#CorrectiveMaintenanceEvent
+
+:CorrectiveMaintenanceEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Corrective Maintenance Event"@en ;
+  skos:broader :MaintenanceEvent ;
+  skos:definition "Maintenance performed to correct detected issues or failures."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#PredictiveMaintenanceEvent
+
+:PredictiveMaintenanceEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Predictive Maintenance Event"@en ;
+  skos:broader :MaintenanceEvent ;
+  skos:definition "Maintenance initiated based on prediction or condition monitoring."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#CleaningEvent
+
+:CleaningEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Cleaning Event"@en ;
+  skos:broader :MaintenanceEvent ;
+  skos:definition "Cleaning activity that affects process or measurements."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#SensorReplacement
+
+:SensorReplacement rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Sensor Replacement"@en ;
+  skos:broader :MaintenanceEvent ;
+  skos:definition "Replacement of a sensor device."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#SoftwareUpdate
+
+:SoftwareUpdate rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Software Update"@en ;
+  skos:broader :MaintenanceEvent ;
+  skos:definition "Software update applied to a device or system."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#PowerOutage
+
+:PowerOutage rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Power Outage"@en ;
+  skos:broader :Error ;
+  skos:definition "Loss of power causing interruption."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#CommunicationLoss
+
+:CommunicationLoss rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Communication Loss"@en ;
+  skos:broader :Error ;
+  skos:definition "Loss of communications or connectivity."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#SensorFailure
+
+:SensorFailure rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Sensor Failure"@en ;
+  skos:broader :Error ;
+  skos:definition "Failure of a sensor device."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#NonConformance
+
+:NonConformance rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Non-Conformance"@en ;
+  skos:broader :Alert ;
+  skos:definition "Notification that a product or process does not meet specification."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#SafetyAlert
+
+:SafetyAlert rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Safety Alert"@en ;
+  skos:broader :Alert ;
+  skos:definition "Safety-related notification."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ThresholdBreach
+
+:ThresholdBreach rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Threshold Breach"@en ;
+  skos:broader :Alert ;
+  skos:definition "Alert raised when a defined threshold is exceeded or violated."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Deployment
+
+:Deployment rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Deployment"@en ;
+  skos:broader :CategorizedEvent ;
+  skos:definition "Deployment activity."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#SensorDeployment
+
+:SensorDeployment rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Sensor Deployment"@en ;
+  skos:broader :Deployment ;
+  skos:definition "Deployment or installation of a sensor."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#BusinessEvent
+
+:BusinessEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Business Event"@en ;
+  skos:broader :CategorizedEvent ;
+  skos:definition "Business-related event."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Milestone
+
+:Milestone rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Milestone"@en ;
+  skos:broader :CategorizedEvent ;
+  skos:definition "Marker event indicating attainment of a significant state."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#UserEvent
+
+:UserEvent rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "User Event"@en ;
+  skos:broader :CategorizedEvent ;
+  skos:definition "Event initiated by a user or operator."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#OperatingMode
+
+:OperatingMode rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Operating Mode"@en ;
+  skos:broader :Status ;
+  skos:definition "Status indicating mode (e.g., automatic, manual, idle)."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#CalibrationStatus
+
+:CalibrationStatus rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Calibration Status"@en ;
+  skos:broader :Status ;
+  skos:definition "Status reflecting calibration state."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ToolWearState
+
+:ToolWearState rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Tool Wear State"@en ;
+  skos:broader :Status ;
+  skos:definition "Status reflecting tool wear or condition."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Severity
+
+:Severity rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Severity"@en ;
+  skos:broader :Status ;
+  skos:definition "Level of impact or seriousness."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Urgency
+
+:Urgency rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Urgency"@en ;
+  skos:broader :Status ;
+  skos:definition "Time criticality of response."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Certainty
+
+:Certainty rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Certainty"@en ;
+  skos:broader :Status ;
+  skos:definition "Confidence or likelihood associated with an assessment."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Setpoint
+
+:Setpoint rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Setpoint"@en ;
+  skos:broader :ScenarioParameter ;
+  skos:definition "Control target value."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Threshold
+
+:Threshold rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Threshold"@en ;
+  skos:broader :ScenarioParameter ;
+  skos:definition "Boundary value used for conditions, alarms, or logic."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Recipe
+
+:Recipe rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Recipe"@en ;
+  skos:broader :ScenarioParameter ;
+  skos:definition "Named process configuration or recipe."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ProgramName
+
+:ProgramName rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Program Name"@en ;
+  skos:broader :ScenarioParameter ;
+  skos:definition "Identifier of a program, job, or control block."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#DowntimeCategory
+
+:DowntimeCategory rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Downtime Category"@en ;
+  skos:broader :ScenarioParameter ;
+  skos:definition "Parameter categorizing downtime reasons or types."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#DefectType
+
+:DefectType rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Defect Type"@en ;
+  skos:broader :ScenarioParameter ;
+  skos:definition "Parameter categorizing defect types."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#CauseCode
+
+:CauseCode rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Cause Code"@en ;
+  skos:broader :ScenarioParameter ;
+  skos:definition "Parameter encoding root or primary cause category."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#RUL
+
+:RUL rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "RUL"@en ;
+  skos:broader :ScenarioParameter ;
+  skos:definition "Remaining useful life value or estimate."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#CapabilityLimit
+
+:CapabilityLimit rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Capability Limit"@en ;
+  skos:broader :ScenarioParameter ;
+  skos:definition "Limit or capability threshold, such as control or specification limits."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#AffectedEntity
+
+:AffectedEntity rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Affected Entity"@en ;
+  skos:broader :ScenarioParameter ;
+  skos:definition "Entity or subject referenced by an event or annotation."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#WorkInstruction
+
+:WorkInstruction rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Work Instruction"@en ;
+  skos:broader :Documentation ;
+  skos:definition "Prescriptive step-by-step instructions."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#ControlPlan
+
+:ControlPlan rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Control Plan"@en ;
+  skos:broader :Documentation ;
+  skos:definition "Plan describing process controls and checks."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#MaintenancePlan
+
+:MaintenancePlan rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Maintenance Plan"@en ;
+  skos:broader :Documentation ;
+  skos:definition "Plan describing maintenance strategy and tasks."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#SafetyProcedure
+
+:SafetyProcedure rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Safety Procedure"@en ;
+  skos:broader :Documentation ;
+  skos:definition "Prescribed safety steps or protocols."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#AlarmRule
+
+:AlarmRule rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Alarm Rule"@en ;
+  skos:broader :Rule ;
+  skos:definition "Rule defining alarm conditions and logic."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#SchedulingPolicy
+
+:SchedulingPolicy rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Scheduling Policy"@en ;
+  skos:broader :Rule ;
+  skos:definition "Rule defining scheduling and dispatch policies."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#QualityAnnotation
+
+:QualityAnnotation rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Quality Annotation"@en ;
+  skos:broader :Annotation ;
+  skos:definition "Quality metadata associated with observations."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Involvement
+
+:Involvement rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Involvement"@en ;
+  skos:broader :Annotation ;
+  skos:definition "Annotation describing participation or role of an actor or entity."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Location
+
+:Location rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Location"@en ;
+  skos:broader :Annotation ;
+  skos:definition "Location associated with data, events, or entities."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Purpose
+
+:Purpose rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Purpose"@en ;
+  skos:broader :Annotation ;
+  skos:definition "Purpose or motivation of an annotation."@en .
+
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#CausalFactor
+
+:CausalFactor rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Causal Factor"@en ;
+  skos:broader :ContextualDescription ;
+  skos:definition "Description of a cause or influence relevant to a situation."@en .
+
 
 #################################################################
 #    Scenario Knowledge Collections
 #################################################################
 
-### https://w3id.org/semts/vocabulary/data-knowledge#Settings
-:Setting rdf:type owl:NamedIndividual, skos:Collection, semts:KnowledgeConcept ;
-    skos:prefLabel "Setting"@en ;
-    skos:definition "A collection of scenario parameters which together represent a setting."@en ;
-    skos:member :ScenarioParameter .
+###  https://w3id.org/semts/vocabulary/scenario-knowledge#Setting
+
+:Setting rdf:type owl:NamedIndividual, semts:KnowledgeConcept ;
+  skos:prefLabel "Setting"@en ;
+  skos:definition "A collection of scenario parameters which together represent a setting."@en ;
+  skos:member :ScenarioParameter .

@@ -1,57 +1,30 @@
 [ {
-  "@id" : "_:genid1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/semts/ontology#DataDimension"
-    }, {
-      "@id" : "https://w3id.org/semts/ontology#Value"
-    } ]
-  } ]
-}, {
   "@id" : "_:genid10",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/semts/ontology#DataDimension"
-    }, {
-      "@id" : "https://w3id.org/semts/ontology#Knowledge"
-    }, {
-      "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity"
-    }, {
-      "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationIO"
-    }, {
-      "@id" : "https://w3id.org/semts/ontology#KnowledgeQualityMeasure"
-    } ]
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
   } ]
 }, {
-  "@id" : "_:genid16",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/semts/ontology#DataDimension"
-    }, {
-      "@id" : "https://w3id.org/semts/ontology#Knowledge"
-    }, {
-      "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity"
-    }, {
-      "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationIO"
-    }, {
-      "@id" : "https://w3id.org/semts/ontology#KnowledgeQualityMeasure"
-    } ]
+  "@id" : "_:genid100",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/semts/ontology#used"
   } ]
 }, {
-  "@id" : "_:genid22",
+  "@id" : "_:genid101",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/semts/ontology#knowledgeConcept"
+    "@id" : "https://w3id.org/semts/ontology#knowledgeGenerationConcept"
   } ]
 }, {
-  "@id" : "_:genid23",
+  "@id" : "_:genid102",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#minCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -61,17 +34,101 @@
     "@id" : "https://w3id.org/semts/ontology#groupKnowledge"
   } ]
 }, {
-  "@id" : "_:genid24",
+  "@id" : "_:genid103",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "0"
+    "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/semts/ontology#hasValue"
   } ]
 }, {
-  "@id" : "_:genid25",
+  "@id" : "_:genid104",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/semts/ontology#qualityMeasureConcept"
+  } ]
+}, {
+  "@id" : "_:genid105",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/semts/ontology#hasValue"
+  } ]
+}, {
+  "@id" : "_:genid106",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationMethod"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/semts/ontology#knowledgeGenerationEntity"
+  } ]
+}, {
+  "@id" : "_:genid107",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/semts/ontology#hasValue"
+  } ]
+}, {
+  "@id" : "_:genid108",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid109"
+  } ]
+}, {
+  "@id" : "_:genid109",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#multiSegmentKnowledge"
+  } ]
+}, {
+  "@id" : "_:genid110",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#distribution"
+  } ]
+}, {
+  "@id" : "_:genid111",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentDimension"
+  } ]
+}, {
+  "@id" : "_:genid112",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid113",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -83,17 +140,56 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid4",
+  "@id" : "_:genid14",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid18",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid2",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid22",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid26",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid29",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
       "@id" : "https://w3id.org/semts/ontology#DataDimension"
     }, {
-      "@id" : "https://w3id.org/semts/ontology#Value"
+      "@id" : "https://w3id.org/semts/ontology#EmbeddedValue"
+    }, {
+      "@id" : "https://w3id.org/semts/ontology#ReferencedValue"
     } ]
   } ]
 }, {
-  "@id" : "_:genid7",
+  "@id" : "_:genid33",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#DataDimension"
+    }, {
+      "@id" : "https://w3id.org/semts/ontology#EmbeddedValue"
+    }, {
+      "@id" : "https://w3id.org/semts/ontology#ReferencedValue"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid37",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -101,6 +197,223 @@
     }, {
       "@id" : "https://w3id.org/semts/ontology#KnowledgeQualityMeasure"
     } ]
+  } ]
+}, {
+  "@id" : "_:genid41",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid45",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid49",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid53",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid57",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid6",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid61",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+  } ]
+}, {
+  "@id" : "_:genid64",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid66"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid66",
+  "http://www.w3.org/2001/XMLSchema#minInclusive" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ]
+}, {
+  "@id" : "_:genid67",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid69"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid69",
+  "http://www.w3.org/2001/XMLSchema#minInclusive" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "0"
+  } ]
+}, {
+  "@id" : "_:genid70",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#DataDimension"
+    }, {
+      "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    }, {
+      "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity"
+    }, {
+      "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationIO"
+    }, {
+      "@id" : "https://w3id.org/semts/ontology#KnowledgeQualityMeasure"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid76",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid78"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid78",
+  "http://www.w3.org/2001/XMLSchema#minInclusive" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#int",
+    "@value" : "0"
+  } ]
+}, {
+  "@id" : "_:genid79",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#DataDimension"
+    }, {
+      "@id" : "https://w3id.org/semts/ontology#Knowledge"
+    }, {
+      "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity"
+    }, {
+      "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationIO"
+    }, {
+      "@id" : "https://w3id.org/semts/ontology#KnowledgeQualityMeasure"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid85",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/semts/ontology#ArtificialTimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/semts/ontology#isPartOf"
+  } ]
+}, {
+  "@id" : "_:genid86",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/semts/ontology#hasValue"
+  } ]
+}, {
+  "@id" : "_:genid87",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/semts/ontology#valueString"
+  } ]
+}, {
+  "@id" : "_:genid88",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "_:genid93"
+    }, {
+      "@id" : "_:genid90"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid90",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "0"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid91"
+  } ]
+}, {
+  "@id" : "_:genid91",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#multiSegmentKnowledge"
+  } ]
+}, {
+  "@id" : "_:genid93",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid94"
+  } ]
+}, {
+  "@id" : "_:genid94",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#multiSegmentKnowledge"
+  } ]
+}, {
+  "@id" : "_:genid95",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/semts/ontology#knowledgeConcept"
+  } ]
+}, {
+  "@id" : "_:genid96",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.w3.org/2004/02/skos/core#Collection"
+    }, {
+      "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid99",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/semts/ontology#generated"
   } ]
 }, {
   "@id" : "http://purl.org/dc/terms/abstract",
@@ -143,10 +456,38 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://qudt.org/schema/qudt#Datatype",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A datatype in QUDT used to specify the data type of values (e.g., quantity values)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://qudt.org/schema/qudt#Datatype"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "QUDT Datatype"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "http://qudt.org/doc/DOC_SCHEMA-QUDT.html#Classes"
+  } ]
 }, {
   "@id" : "http://qudt.org/schema/qudt#Unit",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A unit of measure (e.g., meter, second) from the QUDT vocabulary."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://qudt.org/schema/qudt#Unit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "QUDT Unit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "http://qudt.org/doc/DOC_SCHEMA-QUDT.html#Classes"
+  } ]
 }, {
   "@id" : "http://www.w3.org/2002/07/owl#imports",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
@@ -158,75 +499,105 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#Concept",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.w3.org/2006/time#TemporalEntity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.w3.org/ns/dcat#Dataset",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An idea or notion used to support knowledge organization; the fundamental unit of SKOS."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "SKOS Concept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://www.w3.org/TR/skos-reference/#concepts"
+  } ]
 }, {
   "@id" : "http://www.w3.org/ns/mls#Algorithm",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An algorithm (method or procedure) described in the Machine Learning Schema."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/mls#Algorithm"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "MLS Algorithm"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://www.w3.org/TR/mls/#Algorithm"
+  } ]
 }, {
   "@id" : "http://www.w3.org/ns/mls#EvaluationMeasure",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A metric used to evaluate the performance or quality of an ML process or result."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/mls#EvaluationMeasure"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "MLS Evaluation Measure"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://www.w3.org/TR/mls/#EvaluationMeasure"
+  } ]
 }, {
   "@id" : "http://www.w3.org/ns/mls#Hyperparameter",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A configuration parameter not learned from data that influences the behavior of an algorithm."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/mls#Hyperparameter"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "MLS Hyperparameter"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://www.w3.org/TR/mls/#Hyperparameter"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/mls#Implementation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A specific implementation of an algorithm or method described in the Machine Learning Schema."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/mls#Implementation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "MLS Implementation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://www.w3.org/TR/mls/#Implementation"
+  } ]
 }, {
   "@id" : "http://www.w3.org/ns/mls#Model",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.w3.org/ns/prov#Activity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.w3.org/ns/prov#Entity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.w3.org/ns/prov#generated",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Explicit redefinition for a reuse in SemTS"
+    "@language" : "en",
+    "@value" : "A learned or specified model representing the result of training or configuration."
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.w3.org/ns/prov#Activity"
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/mls#Model"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "generated"
+    "@language" : "en",
+    "@value" : "MLS Model"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/ns/prov#Entity"
-  } ]
-}, {
-  "@id" : "http://www.w3.org/ns/prov#used",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Explicit redefinition for a reuse in SemTS"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.w3.org/ns/prov#Activity"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "used"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/ns/prov#Entity"
-  } ]
-}, {
-  "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Explicit redefinition for a reuse in SemTS"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.w3.org/ns/prov#Entity"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "was derived from"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/ns/prov#Entity"
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://www.w3.org/TR/mls/#Model"
   } ]
 }, {
   "@id" : "http://xmlns.com/foaf/0.1/depiction",
@@ -270,7 +641,7 @@
     "@id" : "https://creativecommons.org/licenses/by/4.0/"
   } ],
   "http://purl.org/dc/terms/modified" : [ {
-    "@value" : "Aug 1st, 2025"
+    "@value" : "December 4th, 2025"
   } ],
   "http://purl.org/dc/terms/publisher" : [ {
     "@value" : "Alexander Graß"
@@ -292,16 +663,21 @@
     "@language" : "en",
     "@value" : "Semantic Time Series"
   } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://www.w3.org/2006/time#"
+  }, {
+    "@id" : "http://www.w3.org/ns/dcat#"
+  }, {
+    "@id" : "http://www.w3.org/ns/prov#"
+  } ],
   "http://www.w3.org/2002/07/owl#priorVersion" : [ {
-    "@id" : "https://w3id.org/semts/ontology/101#"
+    "@id" : "https://w3id.org/semts/ontology/110#"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/semts/ontology/110#"
-  }, {
-    "@value" : "https://w3id.org/semts/ontology/110#"
+    "@id" : "https://w3id.org/semts/ontology/120#"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "1.1.0"
+    "@value" : "1.2.0"
   } ],
   "http://xmlns.com/foaf/0.1/depiction" : [ {
     "@value" : "https://raw.githubusercontent.com/semts-ontology/SemTS/refs/heads/main/assets/images/semts.svg"
@@ -315,10 +691,6 @@
   "https://schema.org/citation" : [ {
     "@language" : "en",
     "@value" : "Alexander Graß, Rohit A. Deshmukh. The Semantic Time Series Ontology. https://github.com/semts-ontology/SemTS"
-  } ],
-  "https://w3id.org/widoco/vocab#introduction" : [ {
-    "@language" : "en",
-    "@value" : "This is an introduction text"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#Algorithm",
@@ -352,6 +724,8 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  }, {
+    "@id" : "_:genid85"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#DataDimension",
@@ -377,6 +751,8 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/semts/ontology#Knowledge"
+  }, {
+    "@id" : "_:genid86"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/semts/ontology#KnowledgeGroup"
@@ -398,6 +774,11 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/semts/ontology#Value"
+  }, {
+    "@id" : "_:genid87"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/semts/ontology#ReferencedValue"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#Hyperparameter",
@@ -427,7 +808,9 @@
     "@value" : "Knowledge"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid22"
+    "@id" : "_:genid88"
+  }, {
+    "@id" : "_:genid95"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#KnowledgeComparisonMeasure",
@@ -455,7 +838,7 @@
     "@value" : "Knowledge Concept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+    "@id" : "_:genid96"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationConcept",
@@ -484,6 +867,12 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/prov#Activity"
+  }, {
+    "@id" : "_:genid99"
+  }, {
+    "@id" : "_:genid100"
+  }, {
+    "@id" : "_:genid101"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationIO",
@@ -521,14 +910,14 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Defines a knowledge generation entity, which corresponds to method-based solution. Compared to other knowledge generation entities this class is a subclass of Algorithm and thus can be linked to algorithmic details."
+    "@value" : "Defines a knowledge generation entity, which corresponds to method-based solution. Compared to other knowledge generation entities this class is a subclass of mls:Implementation and thus can be linked to algorithmic details."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Knowledge Generation Method"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/ns/mls#Algorithm"
+    "@id" : "http://www.w3.org/ns/mls#Implementation"
   }, {
     "@id" : "https://w3id.org/semts/ontology#KnowledgeGenerationEntity"
   } ]
@@ -560,7 +949,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/semts/ontology#Knowledge"
   }, {
-    "@id" : "_:genid23"
+    "@id" : "_:genid102"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/semts/ontology#MethodKnowledge"
@@ -580,6 +969,10 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/mls#EvaluationMeasure"
+  }, {
+    "@id" : "_:genid103"
+  }, {
+    "@id" : "_:genid104"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#KnowledgeReasoning",
@@ -608,6 +1001,8 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/semts/ontology#Knowledge"
+  }, {
+    "@id" : "_:genid105"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/semts/ontology#ScenarioKnowledge"
@@ -626,6 +1021,8 @@
     "@id" : "http://www.w3.org/ns/mls#Model"
   }, {
     "@id" : "https://w3id.org/semts/ontology#DataKnowledge"
+  }, {
+    "@id" : "_:genid106"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/semts/ontology#SegmentDataCharacteristic"
@@ -677,6 +1074,8 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/semts/ontology#Knowledge"
+  }, {
+    "@id" : "_:genid107"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#SegmentDataCharacteristic",
@@ -710,8 +1109,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/semts/ontology#DataKnowledge"
-  }, {
-    "@id" : "_:genid24"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/semts/ontology#SegmentRelation"
@@ -728,6 +1125,8 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/semts/ontology#DataKnowledge"
+  }, {
+    "@id" : "_:genid108"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment",
@@ -742,6 +1141,12 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/dcat#Dataset"
+  }, {
+    "@id" : "_:genid110"
+  }, {
+    "@id" : "_:genid111"
+  }, {
+    "@id" : "_:genid112"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#Value",
@@ -753,6 +1158,75 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Value"
+  } ]
+}, {
+  "@id" : "https://w3id.org/semts/ontology#after",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalAfter"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#before"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalAfter"
+    }, {
+      "@id" : "_:genid2"
+    } ]
+  } ]
+}, {
+  "@id" : "https://w3id.org/semts/ontology#before",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalBefore"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalBefore"
+    }, {
+      "@id" : "_:genid6"
+    } ]
+  } ]
+}, {
+  "@id" : "https://w3id.org/semts/ontology#contains",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalContains"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#during"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalContains"
+    }, {
+      "@id" : "_:genid10"
+    } ]
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#datasetColumnIndex",
@@ -767,7 +1241,7 @@
     "@value" : "column index"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid64"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#datasetRowIndex",
@@ -782,7 +1256,7 @@
     "@value" : "row index"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+    "@id" : "_:genid67"
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#description",
@@ -792,7 +1266,7 @@
     "@value" : "Can be used to optionally add a description to an entity of the domain."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid10"
+    "@id" : "_:genid70"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -822,10 +1296,97 @@
     "@value" : "dimension position"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+    "@id" : "_:genid76"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://w3id.org/semts/ontology#during",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalDuring"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalDuring"
+    }, {
+      "@id" : "_:genid14"
+    } ]
+  } ]
+}, {
+  "@id" : "https://w3id.org/semts/ontology#equals",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalEquals"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalEquals"
+    }, {
+      "@id" : "_:genid18"
+    } ]
+  } ]
+}, {
+  "@id" : "https://w3id.org/semts/ontology#finishedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalFinishedBy"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#finishes"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalFinishedBy"
+    }, {
+      "@id" : "_:genid22"
+    } ]
+  } ]
+}, {
+  "@id" : "https://w3id.org/semts/ontology#finishes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalFinishes"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalFinishes"
+    }, {
+      "@id" : "_:genid26"
+    } ]
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#generated",
@@ -873,7 +1434,7 @@
     "@value" : "Assigns a qudt:Datatype instance to an instance of a Value subclass or DataDimension"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid1"
+    "@id" : "_:genid29"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -890,7 +1451,7 @@
     "@value" : "dimensionUnit is the relation, which assigns a qudt:Unit instance to a DataDimension or a subclass of Value"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid4"
+    "@id" : "_:genid33"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -907,7 +1468,7 @@
     "@value" : "Relationship to the Value class and thus to allow for a reference to stored data."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid7"
+    "@id" : "_:genid37"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -961,7 +1522,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#isPartOf",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty", "http://www.w3.org/2002/07/owl#IrreflexiveProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Defines a hierarchic relationship between time series segments. The intuition of this property is to differentiate between complete time series, in a sense that it includes the data from start to end and subsegments which are reduced in time or dimensionality and thus can be considered a slice of this original data."
@@ -1057,11 +1618,56 @@
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
+  "@id" : "https://w3id.org/semts/ontology#meets",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalMeets"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#metBy"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalMeets"
+    }, {
+      "@id" : "_:genid41"
+    } ]
+  } ]
+}, {
+  "@id" : "https://w3id.org/semts/ontology#metBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalMetBy"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalMetBy"
+    }, {
+      "@id" : "_:genid45"
+    } ]
+  } ]
+}, {
   "@id" : "https://w3id.org/semts/ontology#multiSegmentKnowledge",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Relates any shared Knowledge available for a set of instances from the class Time Series Segment. One example is the generation of Knowledge that is not specific to a single, but to a group of time series segments."
+    "@value" : "Any knowledge that is not valid only for a single segment. For instance knowledge that was generated by using the data or knowledge from multiple segments."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1095,6 +1701,51 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "https://w3id.org/semts/ontology#overlappedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalOverlappedBy"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#overlaps"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalOverlappedBy"
+    }, {
+      "@id" : "_:genid49"
+    } ]
+  } ]
+}, {
+  "@id" : "https://w3id.org/semts/ontology#overlaps",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalOverlaps"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalOverlaps"
+    }, {
+      "@id" : "_:genid53"
+    } ]
   } ]
 }, {
   "@id" : "https://w3id.org/semts/ontology#qualityMeasureConcept",
@@ -1177,6 +1828,51 @@
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
+  "@id" : "https://w3id.org/semts/ontology#startedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalStartedBy"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/semts/ontology#starts"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalStartedBy"
+    }, {
+      "@id" : "_:genid57"
+    } ]
+  } ]
+}, {
+  "@id" : "https://w3id.org/semts/ontology#starts",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#intervalStarts"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/semts/ontology#segmentIndex"
+    }, {
+      "@id" : "http://www.w3.org/2006/time#intervalStarts"
+    }, {
+      "@id" : "_:genid61"
+    } ]
+  } ]
+}, {
   "@id" : "https://w3id.org/semts/ontology#title",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1184,7 +1880,7 @@
     "@value" : "Can be used to optionally add a title to an entity of the domain."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid16"
+    "@id" : "_:genid79"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
