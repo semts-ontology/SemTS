@@ -42,6 +42,7 @@ Ontology IRI: [https://w3id.org/semts/ontology#](https://w3id.org/semts/ontology
 - Versioning: SemTS releases will follow the Semantic Versioning Specification 2.0.0 (SemVer - Major.Minor.Patch)
 
 # Changelog
+- 12/04/25: Updated version (1.2.0). Detailed changes are tracked in the documentation + updated vocabularies
 - 08/04/25: Updated version (1.1.0). Detailed changes are tracked in the documentation
 - 05/13/25: Updated version (1.0.1). Detailed changes are tracked in the documentation
 - 04/25/25: Updated version (0.5.1) of ontology and documentation. First version of vocabularies added
