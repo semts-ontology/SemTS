@@ -1,0 +1,347 @@
+<div id="changelog">
+<h2 id="changes" class="list">Changes from last version</h2>
+<h3 id="changeClass" class="list">Classes</h3>
+<details><summary><u>Modified classes</u></summary>
+<ul><li><a href="#http://qudt.org/schema/qudt#Datatype">http://qudt.org/schema/qudt#Datatype</a>
+<ul>
+<li>Added: rdfs:comment "A datatype in QUDT used to specify the data type of values (e.g., quantity values)."@en</li>
+<li>Added: rdfs:seeAlso http://qudt.org/doc/DOC_SCHEMA-QUDT.html#Classes</li>
+<li>Added: rdfs:isDefinedBy http://qudt.org/schema/qudt#Datatype</li>
+<li>Added: rdfs:label "QUDT Datatype"@en</li>
+</ul>
+</li>
+<li><a href="#http://qudt.org/schema/qudt#Unit">http://qudt.org/schema/qudt#Unit</a>
+<ul>
+<li>Added: rdfs:seeAlso http://qudt.org/doc/DOC_SCHEMA-QUDT.html#Classes</li>
+<li>Added: rdfs:label "QUDT Unit"@en</li>
+<li>Added: rdfs:comment "A unit of measure (e.g., meter, second) from the QUDT vocabulary."@en</li>
+<li>Added: rdfs:isDefinedBy http://qudt.org/schema/qudt#Unit</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/2004/02/skos/core#Concept">http://www.w3.org/2004/02/skos/core#Concept</a>
+<ul>
+<li>Added: rdfs:comment "An idea or notion used to support knowledge organization; the fundamental unit of SKOS."@en</li>
+<li>Added: rdfs:isDefinedBy http://www.w3.org/2004/02/skos/core#Concept</li>
+<li>Added: rdfs:label "SKOS Concept"@en</li>
+<li>Added: rdfs:seeAlso https://www.w3.org/TR/skos-reference/#concepts</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/mls#Algorithm">http://www.w3.org/ns/mls#Algorithm</a>
+<ul>
+<li>Added: rdfs:seeAlso https://www.w3.org/TR/mls/#Algorithm</li>
+<li>Added: rdfs:label "MLS Algorithm"@en</li>
+<li>Added: rdfs:isDefinedBy http://www.w3.org/ns/mls#Algorithm</li>
+<li>Added: rdfs:comment "An algorithm (method or procedure) described in the Machine Learning Schema."@en</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/mls#EvaluationMeasure">http://www.w3.org/ns/mls#EvaluationMeasure</a>
+<ul>
+<li>Added: rdfs:isDefinedBy http://www.w3.org/ns/mls#EvaluationMeasure</li>
+<li>Added: rdfs:seeAlso https://www.w3.org/TR/mls/#EvaluationMeasure</li>
+<li>Added: rdfs:comment "A metric used to evaluate the performance or quality of an ML process or result."@en</li>
+<li>Added: rdfs:label "MLS Evaluation Measure"@en</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/mls#Hyperparameter">http://www.w3.org/ns/mls#Hyperparameter</a>
+<ul>
+<li>Added: rdfs:seeAlso https://www.w3.org/TR/mls/#Hyperparameter</li>
+<li>Added: rdfs:isDefinedBy http://www.w3.org/ns/mls#Hyperparameter</li>
+<li>Added: rdfs:label "MLS Hyperparameter"@en</li>
+<li>Added: rdfs:comment "A configuration parameter not learned from data that influences the behavior of an algorithm."@en</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/mls#Model">http://www.w3.org/ns/mls#Model</a>
+<ul>
+<li>Added: rdfs:label "MLS Model"@en</li>
+<li>Added: rdfs:isDefinedBy http://www.w3.org/ns/mls#Model</li>
+<li>Added: rdfs:comment "A learned or specified model representing the result of training or configuration."@en</li>
+<li>Added: rdfs:seeAlso https://www.w3.org/TR/mls/#Model</li>
+</ul>
+</li>
+<li><a href="#/ontology#ArtificialTimeSeriesSegment">https://w3id.org/semts/ontology#ArtificialTimeSeriesSegment</a>
+<ul>
+<li></ul>
+</li>
+<li><a href="#/ontology#DataKnowledge">https://w3id.org/semts/ontology#DataKnowledge</a>
+<ul>
+<li></ul>
+</li>
+<li><a href="#/ontology#EmbeddedValue">https://w3id.org/semts/ontology#EmbeddedValue</a>
+<ul>
+<li><li>Added: DisjointClasses DisjointClasses(&lt;https://w3id.org/semts/ontology#EmbeddedValue&gt; &lt;https://w3id.org/semts/ontology#ReferencedValue&gt;)</li>
+</ul>
+</li>
+<li><a href="#/ontology#Knowledge">https://w3id.org/semts/ontology#Knowledge</a>
+<ul>
+<li></ul>
+</li>
+<li><a href="#/ontology#KnowledgeConcept">https://w3id.org/semts/ontology#KnowledgeConcept</a>
+<ul>
+<li></ul>
+<ul>
+<li>Deleted: SubClass of http://www.w3.org/2004/02/skos/core#Concept</li>
+</ul>
+</li>
+<li><a href="#/ontology#KnowledgeGenerationEntity">https://w3id.org/semts/ontology#KnowledgeGenerationEntity</a>
+<ul>
+<li><li><li></ul>
+</li>
+<li><a href="#/ontology#KnowledgeGenerationMethod">https://w3id.org/semts/ontology#KnowledgeGenerationMethod</a>
+<ul>
+<li>Added: rdfs:comment "Defines a knowledge generation entity, which corresponds to method-based solution. Compared to other knowledge generation entities this class is a subclass of mls:Implementation and thus can be linked to algorithmic details."@en</li>
+<li>Added: SubClass of http://www.w3.org/ns/mls#Implementation</li>
+</ul>
+<ul>
+<li>Deleted: SubClass of http://www.w3.org/ns/mls#Algorithm</li>
+<li>Deleted: rdfs:comment "Defines a knowledge generation entity, which corresponds to method-based solution. Compared to other knowledge generation entities this class is a subclass of Algorithm and thus can be linked to algorithmic details."@en</li>
+</ul>
+</li>
+<li><a href="#/ontology#KnowledgeQualityMeasure">https://w3id.org/semts/ontology#KnowledgeQualityMeasure</a>
+<ul>
+<li><li></ul>
+</li>
+<li><a href="#/ontology#MethodKnowledge">https://w3id.org/semts/ontology#MethodKnowledge</a>
+<ul>
+<li></ul>
+</li>
+<li><a href="#/ontology#ModelInstance">https://w3id.org/semts/ontology#ModelInstance</a>
+<ul>
+<li></ul>
+</li>
+<li><a href="#/ontology#ReferencedValue">https://w3id.org/semts/ontology#ReferencedValue</a>
+<ul>
+<li>Added: DisjointClasses DisjointClasses(&lt;https://w3id.org/semts/ontology#EmbeddedValue&gt; &lt;https://w3id.org/semts/ontology#ReferencedValue&gt;)</li>
+</ul>
+</li>
+<li><a href="#/ontology#ScenarioKnowledge">https://w3id.org/semts/ontology#ScenarioKnowledge</a>
+<ul>
+<li></ul>
+</li>
+<li><a href="#/ontology#SegmentPrediction">https://w3id.org/semts/ontology#SegmentPrediction</a>
+<ul>
+<li></ul>
+</li>
+<li><a href="#/ontology#SegmentRelation">https://w3id.org/semts/ontology#SegmentRelation</a>
+<ul>
+<li></ul>
+</li>
+<li><a href="#/ontology#TimeSeriesSegment">https://w3id.org/semts/ontology#TimeSeriesSegment</a>
+<ul>
+<li><li><li></ul>
+</li>
+</ul></details><details><summary><u>Added classes</u></summary>
+<ul><li><a href="#http://www.w3.org/2004/02/skos/core#Collection">http://www.w3.org/2004/02/skos/core#Collection</a>
+</li>
+<li><a href="#http://www.w3.org/ns/mls#Implementation">http://www.w3.org/ns/mls#Implementation</a>
+</li>
+</ul></details><h3 id="changeProp" class="list">Object Properties</h3>
+<details><summary><u>Modified object properties</u></summary>
+<ul><li><a href="#http://www.w3.org/ns/prov#generated">http://www.w3.org/ns/prov#generated</a>
+<ul>
+<li>Deleted: domain http://www.w3.org/ns/prov#Activity</li>
+<li>Deleted: rdfs:label "generated"^^xsd:string</li>
+<li>Deleted: rdfs:comment "Explicit redefinition for a reuse in SemTS"^^xsd:string</li>
+<li>Deleted: Range http://www.w3.org/ns/prov#Entity</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/prov#used">http://www.w3.org/ns/prov#used</a>
+<ul>
+<li>Deleted: Range http://www.w3.org/ns/prov#Entity</li>
+<li>Deleted: rdfs:comment "Explicit redefinition for a reuse in SemTS"^^xsd:string</li>
+<li>Deleted: domain http://www.w3.org/ns/prov#Activity</li>
+<li>Deleted: rdfs:label "used"^^xsd:string</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/prov#wasDerivedFrom">http://www.w3.org/ns/prov#wasDerivedFrom</a>
+<ul>
+<li>Deleted: rdfs:comment "Explicit redefinition for a reuse in SemTS"^^xsd:string</li>
+<li>Deleted: domain http://www.w3.org/ns/prov#Entity</li>
+<li>Deleted: rdfs:label "was derived from"^^xsd:string</li>
+<li>Deleted: Range http://www.w3.org/ns/prov#Entity</li>
+</ul>
+</li>
+<li><a href="#/ontology#hasDatatype">https://w3id.org/semts/ontology#hasDatatype</a>
+<ul>
+<li>Added: domain Union of (https://w3id.org/semts/ontology#DataDimension, https://w3id.org/semts/ontology#EmbeddedValue, https://w3id.org/semts/ontology#ReferencedValue)</li>
+</ul>
+<ul>
+<li>Deleted: domain Union of (https://w3id.org/semts/ontology#DataDimension, https://w3id.org/semts/ontology#Value)</li>
+</ul>
+</li>
+<li><a href="#/ontology#hasUnit">https://w3id.org/semts/ontology#hasUnit</a>
+<ul>
+<li>Added: domain Union of (https://w3id.org/semts/ontology#DataDimension, https://w3id.org/semts/ontology#EmbeddedValue, https://w3id.org/semts/ontology#ReferencedValue)</li>
+</ul>
+<ul>
+<li>Deleted: domain Union of (https://w3id.org/semts/ontology#DataDimension, https://w3id.org/semts/ontology#Value)</li>
+</ul>
+</li>
+<li><a href="#/ontology#isPartOf">https://w3id.org/semts/ontology#isPartOf</a>
+<ul>
+<li>Added: IrrefexiveObjectProperty IrreflexiveObjectProperty(&lt;https://w3id.org/semts/ontology#isPartOf&gt;)</li>
+</ul>
+</li>
+<li><a href="#/ontology#multiSegmentKnowledge">https://w3id.org/semts/ontology#multiSegmentKnowledge</a>
+<ul>
+<li>Added: rdfs:comment "Any knowledge that is not valid only for a single segment. For instance knowledge that was generated by using the data or knowledge from multiple segments."@en</li>
+</ul>
+<ul>
+<li>Deleted: rdfs:comment "Relates any shared Knowledge available for a set of instances from the class Time Series Segment. One example is the generation of Knowledge that is not specific to a single, but to a group of time series segments."@en</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Added object properties</u></summary>
+<ul><li><a href="#http://www.w3.org/2006/time#intervalAfter">http://www.w3.org/2006/time#intervalAfter</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#intervalBefore">http://www.w3.org/2006/time#intervalBefore</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#intervalContains">http://www.w3.org/2006/time#intervalContains</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#intervalDuring">http://www.w3.org/2006/time#intervalDuring</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#intervalEquals">http://www.w3.org/2006/time#intervalEquals</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#intervalFinishedBy">http://www.w3.org/2006/time#intervalFinishedBy</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#intervalFinishes">http://www.w3.org/2006/time#intervalFinishes</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#intervalMeets">http://www.w3.org/2006/time#intervalMeets</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#intervalMetBy">http://www.w3.org/2006/time#intervalMetBy</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#intervalOverlappedBy">http://www.w3.org/2006/time#intervalOverlappedBy</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#intervalOverlaps">http://www.w3.org/2006/time#intervalOverlaps</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#intervalStartedBy">http://www.w3.org/2006/time#intervalStartedBy</a>
+</li>
+<li><a href="#http://www.w3.org/2006/time#intervalStarts">http://www.w3.org/2006/time#intervalStarts</a>
+</li>
+<li><a href="#http://www.w3.org/ns/dcat#distribution">http://www.w3.org/ns/dcat#distribution</a>
+</li>
+<li><a href="#/ontology#after">https://w3id.org/semts/ontology#after</a>
+<ul>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalAfter</li>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/semts/ontology#after&gt; &lt;https://w3id.org/semts/ontology#before&gt;)</li>
+</ul>
+</li>
+<li><a href="#/ontology#before">https://w3id.org/semts/ontology#before</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/semts/ontology#after&gt; &lt;https://w3id.org/semts/ontology#before&gt;)</li>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalBefore</li>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+</ul>
+</li>
+<li><a href="#/ontology#contains">https://w3id.org/semts/ontology#contains</a>
+<ul>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalContains</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/semts/ontology#contains&gt; &lt;https://w3id.org/semts/ontology#during&gt;)</li>
+</ul>
+</li>
+<li><a href="#/ontology#during">https://w3id.org/semts/ontology#during</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalDuring</li>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/semts/ontology#contains&gt; &lt;https://w3id.org/semts/ontology#during&gt;)</li>
+</ul>
+</li>
+<li><a href="#/ontology#equals">https://w3id.org/semts/ontology#equals</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalEquals</li>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+</ul>
+</li>
+<li><a href="#/ontology#finishedBy">https://w3id.org/semts/ontology#finishedBy</a>
+<ul>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/semts/ontology#finishedBy&gt; &lt;https://w3id.org/semts/ontology#finishes&gt;)</li>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalFinishedBy</li>
+</ul>
+</li>
+<li><a href="#/ontology#finishes">https://w3id.org/semts/ontology#finishes</a>
+<ul>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalFinishes</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/semts/ontology#finishedBy&gt; &lt;https://w3id.org/semts/ontology#finishes&gt;)</li>
+</ul>
+</li>
+<li><a href="#/ontology#meets">https://w3id.org/semts/ontology#meets</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalMeets</li>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/semts/ontology#meets&gt; &lt;https://w3id.org/semts/ontology#metBy&gt;)</li>
+</ul>
+</li>
+<li><a href="#/ontology#metBy">https://w3id.org/semts/ontology#metBy</a>
+<ul>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalMetBy</li>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/semts/ontology#meets&gt; &lt;https://w3id.org/semts/ontology#metBy&gt;)</li>
+</ul>
+</li>
+<li><a href="#/ontology#overlappedBy">https://w3id.org/semts/ontology#overlappedBy</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/semts/ontology#overlappedBy&gt; &lt;https://w3id.org/semts/ontology#overlaps&gt;)</li>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalOverlappedBy</li>
+</ul>
+</li>
+<li><a href="#/ontology#overlaps">https://w3id.org/semts/ontology#overlaps</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/semts/ontology#overlappedBy&gt; &lt;https://w3id.org/semts/ontology#overlaps&gt;)</li>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalOverlaps</li>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+</ul>
+</li>
+<li><a href="#/ontology#startedBy">https://w3id.org/semts/ontology#startedBy</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalStartedBy</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/semts/ontology#startedBy&gt; &lt;https://w3id.org/semts/ontology#starts&gt;)</li>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+</ul>
+</li>
+<li><a href="#/ontology#starts">https://w3id.org/semts/ontology#starts</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/semts/ontology#startedBy&gt; &lt;https://w3id.org/semts/ontology#starts&gt;)</li>
+<li>Added: SubProperty of http://www.w3.org/2006/time#intervalStarts</li>
+<li>Added: Range https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+<li>Added: domain https://w3id.org/semts/ontology#TimeSeriesSegment</li>
+</ul>
+</li>
+</ul></details><h3 id="changeDataProp" class="list">Data Properties</h3>
+<details><summary><u>Modified data properties</u></summary>
+<ul><li><a href="#/ontology#datasetColumnIndex">https://w3id.org/semts/ontology#datasetColumnIndex</a>
+<ul>
+<li></ul>
+<ul>
+<li>Deleted: Range http://www.w3.org/2001/XMLSchema#integer</li>
+</ul>
+</li>
+<li><a href="#/ontology#datasetRowIndex">https://w3id.org/semts/ontology#datasetRowIndex</a>
+<ul>
+<li></ul>
+<ul>
+<li>Deleted: Range http://www.w3.org/2001/XMLSchema#integer</li>
+</ul>
+</li>
+<li><a href="#/ontology#dimensionPosition">https://w3id.org/semts/ontology#dimensionPosition</a>
+<ul>
+<li></ul>
+<ul>
+<li>Deleted: Range http://www.w3.org/2001/XMLSchema#int</li>
+</ul>
+</li>
+</ul></details></div>
