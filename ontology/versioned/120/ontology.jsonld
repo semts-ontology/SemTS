@@ -1174,8 +1174,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#after",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'after' (OWL-Time time:intervalAfter). Inverse of :before. For TimeSeriesSegment individuals, this can be inferred from their :segmentIndex: A starts after B ends."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "after"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1198,8 +1206,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#before",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'before' (OWL-Time time:intervalBefore). For TimeSeriesSegment individuals, this can be inferred from their :segmentIndex temporal entities: A ends before B starts."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "before"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1219,8 +1235,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#contains",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'contains' (OWL-Time time:intervalContains). Inverse of :during. For TimeSeriesSegment individuals, inferable via :segmentIndex: A fully contains B."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "contains"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1316,8 +1340,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#during",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'during' (OWL-Time time:intervalDuring). For TimeSeriesSegment individuals, inferable via :segmentIndex: A occurs strictly within B (start and end inside B)."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "during"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1337,8 +1369,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#equals",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'equals' (OWL-Time time:intervalEquals). For TimeSeriesSegment individuals, inferable via :segmentIndex: A and B have identical start and end."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "equals"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1358,8 +1398,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#finishedBy",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'finishedBy' (OWL-Time time:intervalFinishedBy). Inverse of :finishes. For TimeSeriesSegment individuals, inferable via :segmentIndex: A is finished by B; same end, B starts before A."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "finished by"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1382,8 +1430,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#finishes",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'finishes' (OWL-Time time:intervalFinishes). For TimeSeriesSegment individuals, inferable via :segmentIndex: A and B share the same end; A starts after B."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "finishes"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1632,8 +1688,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#meets",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'meets' (OWL-Time time:intervalMeets). For TimeSeriesSegment individuals, inferable via :segmentIndex: A ends exactly when B starts, with no overlap."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "meets"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1656,8 +1720,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#metBy",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'metBy' (OWL-Time time:intervalMetBy). Inverse of :meets. For TimeSeriesSegment individuals, inferable via :segmentIndex: A starts exactly when B ends."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "met by"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1717,8 +1789,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#overlappedBy",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'overlappedBy' (OWL-Time time:intervalOverlappedBy). Inverse of :overlaps. For TimeSeriesSegment individuals, inferable via :segmentIndex: A is overlapped by B."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "overlapped by"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1741,8 +1821,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#overlaps",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'overlaps' (OWL-Time time:intervalOverlaps). For TimeSeriesSegment individuals, inferable via :segmentIndex: A starts before B and ends during B (partial overlap)."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "overlaps"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1842,8 +1930,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#startedBy",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'startedBy' (OWL-Time time:intervalStartedBy). Inverse of :starts. For TimeSeriesSegment individuals, inferable via :segmentIndex: A is started by B; same start, B finishes before A."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "started by"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
@@ -1866,8 +1962,16 @@
 }, {
   "@id" : "https://w3id.org/semts/ontology#starts",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Allen’s interval algebra relation 'starts' (OWL-Time time:intervalStarts). For TimeSeriesSegment individuals, inferable via :segmentIndex: A and B share the same start; A finishes before B."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "starts"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/semts/ontology#TimeSeriesSegment"

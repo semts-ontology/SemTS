@@ -247,6 +247,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;after&apos; (OWL-Time time:intervalAfter). Inverse of :before. For TimeSeriesSegment individuals, this can be inferred from their :segmentIndex: A starts after B ends.</rdfs:comment>
+        <rdfs:label xml:lang="en">after</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -265,6 +267,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;before&apos; (OWL-Time time:intervalBefore). For TimeSeriesSegment individuals, this can be inferred from their :segmentIndex temporal entities: A ends before B starts.</rdfs:comment>
+        <rdfs:label xml:lang="en">before</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -284,6 +288,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;contains&apos; (OWL-Time time:intervalContains). Inverse of :during. For TimeSeriesSegment individuals, inferable via :segmentIndex: A fully contains B.</rdfs:comment>
+        <rdfs:label xml:lang="en">contains</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -302,6 +308,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;during&apos; (OWL-Time time:intervalDuring). For TimeSeriesSegment individuals, inferable via :segmentIndex: A occurs strictly within B (start and end inside B).</rdfs:comment>
+        <rdfs:label xml:lang="en">during</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -320,6 +328,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;equals&apos; (OWL-Time time:intervalEquals). For TimeSeriesSegment individuals, inferable via :segmentIndex: A and B have identical start and end.</rdfs:comment>
+        <rdfs:label xml:lang="en">equals</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -339,6 +349,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;finishedBy&apos; (OWL-Time time:intervalFinishedBy). Inverse of :finishes. For TimeSeriesSegment individuals, inferable via :segmentIndex: A is finished by B; same end, B starts before A.</rdfs:comment>
+        <rdfs:label xml:lang="en">finished by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -357,6 +369,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;finishes&apos; (OWL-Time time:intervalFinishes). For TimeSeriesSegment individuals, inferable via :segmentIndex: A and B share the same end; A starts after B.</rdfs:comment>
+        <rdfs:label xml:lang="en">finishes</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -559,6 +573,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;meets&apos; (OWL-Time time:intervalMeets). For TimeSeriesSegment individuals, inferable via :segmentIndex: A ends exactly when B starts, with no overlap.</rdfs:comment>
+        <rdfs:label xml:lang="en">meets</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -577,6 +593,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;metBy&apos; (OWL-Time time:intervalMetBy). Inverse of :meets. For TimeSeriesSegment individuals, inferable via :segmentIndex: A starts exactly when B ends.</rdfs:comment>
+        <rdfs:label xml:lang="en">met by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -622,6 +640,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;overlappedBy&apos; (OWL-Time time:intervalOverlappedBy). Inverse of :overlaps. For TimeSeriesSegment individuals, inferable via :segmentIndex: A is overlapped by B.</rdfs:comment>
+        <rdfs:label xml:lang="en">overlapped by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -640,6 +660,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;overlaps&apos; (OWL-Time time:intervalOverlaps). For TimeSeriesSegment individuals, inferable via :segmentIndex: A starts before B and ends during B (partial overlap).</rdfs:comment>
+        <rdfs:label xml:lang="en">overlaps</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -713,6 +735,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;startedBy&apos; (OWL-Time time:intervalStartedBy). Inverse of :starts. For TimeSeriesSegment individuals, inferable via :segmentIndex: A is started by B; same start, B finishes before A.</rdfs:comment>
+        <rdfs:label xml:lang="en">started by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -731,6 +755,8 @@
                 <owl:inverseOf rdf:resource="https://w3id.org/semts/ontology#segmentIndex"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Allen’s interval algebra relation &apos;starts&apos; (OWL-Time time:intervalStarts). For TimeSeriesSegment individuals, inferable via :segmentIndex: A and B share the same start; A finishes before B.</rdfs:comment>
+        <rdfs:label xml:lang="en">starts</rdfs:label>
     </owl:ObjectProperty>
     
 

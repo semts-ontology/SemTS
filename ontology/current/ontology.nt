@@ -127,6 +127,8 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#after> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'after' (OWL-Time time:intervalAfter). Inverse of :before. For TimeSeriesSegment individuals, this can be inferred from their :segmentIndex: A starts after B ends."@en .
+<https://w3id.org/semts/ontology#after> <http://www.w3.org/2000/01/rdf-schema#label> "after"@en .
 # 
 # https://w3id.org/semts/ontology#before
 <https://w3id.org/semts/ontology#before> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -144,6 +146,8 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2
 _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#before> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'before' (OWL-Time time:intervalBefore). For TimeSeriesSegment individuals, this can be inferred from their :segmentIndex temporal entities: A ends before B starts."@en .
+<https://w3id.org/semts/ontology#before> <http://www.w3.org/2000/01/rdf-schema#label> "before"@en .
 # 
 # https://w3id.org/semts/ontology#contains
 <https://w3id.org/semts/ontology#contains> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -162,6 +166,8 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/
 _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#contains> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'contains' (OWL-Time time:intervalContains). Inverse of :during. For TimeSeriesSegment individuals, inferable via :segmentIndex: A fully contains B."@en .
+<https://w3id.org/semts/ontology#contains> <http://www.w3.org/2000/01/rdf-schema#label> "contains"@en .
 # 
 # https://w3id.org/semts/ontology#during
 <https://w3id.org/semts/ontology#during> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -179,6 +185,8 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/
 _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#during> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'during' (OWL-Time time:intervalDuring). For TimeSeriesSegment individuals, inferable via :segmentIndex: A occurs strictly within B (start and end inside B)."@en .
+<https://w3id.org/semts/ontology#during> <http://www.w3.org/2000/01/rdf-schema#label> "during"@en .
 # 
 # https://w3id.org/semts/ontology#equals
 <https://w3id.org/semts/ontology#equals> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -196,6 +204,8 @@ _:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/
 _:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#equals> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'equals' (OWL-Time time:intervalEquals). For TimeSeriesSegment individuals, inferable via :segmentIndex: A and B have identical start and end."@en .
+<https://w3id.org/semts/ontology#equals> <http://www.w3.org/2000/01/rdf-schema#label> "equals"@en .
 # 
 # https://w3id.org/semts/ontology#finishedBy
 <https://w3id.org/semts/ontology#finishedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -214,6 +224,8 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/
 _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#finishedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'finishedBy' (OWL-Time time:intervalFinishedBy). Inverse of :finishes. For TimeSeriesSegment individuals, inferable via :segmentIndex: A is finished by B; same end, B starts before A."@en .
+<https://w3id.org/semts/ontology#finishedBy> <http://www.w3.org/2000/01/rdf-schema#label> "finished by"@en .
 # 
 # https://w3id.org/semts/ontology#finishes
 <https://w3id.org/semts/ontology#finishes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -231,6 +243,8 @@ _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#finishes> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'finishes' (OWL-Time time:intervalFinishes). For TimeSeriesSegment individuals, inferable via :segmentIndex: A and B share the same end; A starts after B."@en .
+<https://w3id.org/semts/ontology#finishes> <http://www.w3.org/2000/01/rdf-schema#label> "finishes"@en .
 # 
 # https://w3id.org/semts/ontology#generated
 <https://w3id.org/semts/ontology#generated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -379,6 +393,8 @@ _:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/
 _:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#meets> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'meets' (OWL-Time time:intervalMeets). For TimeSeriesSegment individuals, inferable via :segmentIndex: A ends exactly when B starts, with no overlap."@en .
+<https://w3id.org/semts/ontology#meets> <http://www.w3.org/2000/01/rdf-schema#label> "meets"@en .
 # 
 # https://w3id.org/semts/ontology#metBy
 <https://w3id.org/semts/ontology#metBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -396,6 +412,8 @@ _:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/
 _:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#metBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'metBy' (OWL-Time time:intervalMetBy). Inverse of :meets. For TimeSeriesSegment individuals, inferable via :segmentIndex: A starts exactly when B ends."@en .
+<https://w3id.org/semts/ontology#metBy> <http://www.w3.org/2000/01/rdf-schema#label> "met by"@en .
 # 
 # https://w3id.org/semts/ontology#multiSegmentKnowledge
 <https://w3id.org/semts/ontology#multiSegmentKnowledge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -430,6 +448,8 @@ _:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/
 _:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#overlappedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'overlappedBy' (OWL-Time time:intervalOverlappedBy). Inverse of :overlaps. For TimeSeriesSegment individuals, inferable via :segmentIndex: A is overlapped by B."@en .
+<https://w3id.org/semts/ontology#overlappedBy> <http://www.w3.org/2000/01/rdf-schema#label> "overlapped by"@en .
 # 
 # https://w3id.org/semts/ontology#overlaps
 <https://w3id.org/semts/ontology#overlaps> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -447,6 +467,8 @@ _:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/
 _:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#overlaps> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'overlaps' (OWL-Time time:intervalOverlaps). For TimeSeriesSegment individuals, inferable via :segmentIndex: A starts before B and ends during B (partial overlap)."@en .
+<https://w3id.org/semts/ontology#overlaps> <http://www.w3.org/2000/01/rdf-schema#label> "overlaps"@en .
 # 
 # https://w3id.org/semts/ontology#qualityMeasureConcept
 <https://w3id.org/semts/ontology#qualityMeasureConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -499,6 +521,8 @@ _:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/
 _:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#startedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'startedBy' (OWL-Time time:intervalStartedBy). Inverse of :starts. For TimeSeriesSegment individuals, inferable via :segmentIndex: A is started by B; same start, B finishes before A."@en .
+<https://w3id.org/semts/ontology#startedBy> <http://www.w3.org/2000/01/rdf-schema#label> "started by"@en .
 # 
 # https://w3id.org/semts/ontology#starts
 <https://w3id.org/semts/ontology#starts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -516,6 +540,8 @@ _:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/
 _:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/semts/ontology#segmentIndex> .
 _:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/semts/ontology#starts> <http://www.w3.org/2000/01/rdf-schema#comment> "Allen’s interval algebra relation 'starts' (OWL-Time time:intervalStarts). For TimeSeriesSegment individuals, inferable via :segmentIndex: A and B share the same start; A finishes before B."@en .
+<https://w3id.org/semts/ontology#starts> <http://www.w3.org/2000/01/rdf-schema#label> "starts"@en .
 # 
 # https://w3id.org/semts/ontology#used
 <https://w3id.org/semts/ontology#used> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .

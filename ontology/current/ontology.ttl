@@ -141,7 +141,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                 <http://www.w3.org/2006/time#intervalAfter>
                                 [ owl:inverseOf :segmentIndex
                                 ]
-                              ) .
+                              ) ;
+       rdfs:comment "Allen’s interval algebra relation 'after' (OWL-Time time:intervalAfter). Inverse of :before. For TimeSeriesSegment individuals, this can be inferred from their :segmentIndex: A starts after B ends."@en ;
+       rdfs:label "after"@en .
 
 
 ###  https://w3id.org/semts/ontology#before
@@ -153,7 +155,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                  <http://www.w3.org/2006/time#intervalBefore>
                                  [ owl:inverseOf :segmentIndex
                                  ]
-                               ) .
+                               ) ;
+        rdfs:comment "Allen’s interval algebra relation 'before' (OWL-Time time:intervalBefore). For TimeSeriesSegment individuals, this can be inferred from their :segmentIndex temporal entities: A ends before B starts."@en ;
+        rdfs:label "before"@en .
 
 
 ###  https://w3id.org/semts/ontology#contains
@@ -166,7 +170,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                    <http://www.w3.org/2006/time#intervalContains>
                                    [ owl:inverseOf :segmentIndex
                                    ]
-                                 ) .
+                                 ) ;
+          rdfs:comment "Allen’s interval algebra relation 'contains' (OWL-Time time:intervalContains). Inverse of :during. For TimeSeriesSegment individuals, inferable via :segmentIndex: A fully contains B."@en ;
+          rdfs:label "contains"@en .
 
 
 ###  https://w3id.org/semts/ontology#during
@@ -178,7 +184,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                  <http://www.w3.org/2006/time#intervalDuring>
                                  [ owl:inverseOf :segmentIndex
                                  ]
-                               ) .
+                               ) ;
+        rdfs:comment "Allen’s interval algebra relation 'during' (OWL-Time time:intervalDuring). For TimeSeriesSegment individuals, inferable via :segmentIndex: A occurs strictly within B (start and end inside B)."@en ;
+        rdfs:label "during"@en .
 
 
 ###  https://w3id.org/semts/ontology#equals
@@ -190,7 +198,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                  <http://www.w3.org/2006/time#intervalEquals>
                                  [ owl:inverseOf :segmentIndex
                                  ]
-                               ) .
+                               ) ;
+        rdfs:comment "Allen’s interval algebra relation 'equals' (OWL-Time time:intervalEquals). For TimeSeriesSegment individuals, inferable via :segmentIndex: A and B have identical start and end."@en ;
+        rdfs:label "equals"@en .
 
 
 ###  https://w3id.org/semts/ontology#finishedBy
@@ -203,7 +213,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                      <http://www.w3.org/2006/time#intervalFinishedBy>
                                      [ owl:inverseOf :segmentIndex
                                      ]
-                                   ) .
+                                   ) ;
+            rdfs:comment "Allen’s interval algebra relation 'finishedBy' (OWL-Time time:intervalFinishedBy). Inverse of :finishes. For TimeSeriesSegment individuals, inferable via :segmentIndex: A is finished by B; same end, B starts before A."@en ;
+            rdfs:label "finished by"@en .
 
 
 ###  https://w3id.org/semts/ontology#finishes
@@ -215,7 +227,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                    <http://www.w3.org/2006/time#intervalFinishes>
                                    [ owl:inverseOf :segmentIndex
                                    ]
-                                 ) .
+                                 ) ;
+          rdfs:comment "Allen’s interval algebra relation 'finishes' (OWL-Time time:intervalFinishes). For TimeSeriesSegment individuals, inferable via :segmentIndex: A and B share the same end; A starts after B."@en ;
+          rdfs:label "finishes"@en .
 
 
 ###  https://w3id.org/semts/ontology#generated
@@ -354,7 +368,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                 <http://www.w3.org/2006/time#intervalMeets>
                                 [ owl:inverseOf :segmentIndex
                                 ]
-                              ) .
+                              ) ;
+       rdfs:comment "Allen’s interval algebra relation 'meets' (OWL-Time time:intervalMeets). For TimeSeriesSegment individuals, inferable via :segmentIndex: A ends exactly when B starts, with no overlap."@en ;
+       rdfs:label "meets"@en .
 
 
 ###  https://w3id.org/semts/ontology#metBy
@@ -366,7 +382,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                 <http://www.w3.org/2006/time#intervalMetBy>
                                 [ owl:inverseOf :segmentIndex
                                 ]
-                              ) .
+                              ) ;
+       rdfs:comment "Allen’s interval algebra relation 'metBy' (OWL-Time time:intervalMetBy). Inverse of :meets. For TimeSeriesSegment individuals, inferable via :segmentIndex: A starts exactly when B ends."@en ;
+       rdfs:label "met by"@en .
 
 
 ###  https://w3id.org/semts/ontology#multiSegmentKnowledge
@@ -397,7 +415,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                        <http://www.w3.org/2006/time#intervalOverlappedBy>
                                        [ owl:inverseOf :segmentIndex
                                        ]
-                                     ) .
+                                     ) ;
+              rdfs:comment "Allen’s interval algebra relation 'overlappedBy' (OWL-Time time:intervalOverlappedBy). Inverse of :overlaps. For TimeSeriesSegment individuals, inferable via :segmentIndex: A is overlapped by B."@en ;
+              rdfs:label "overlapped by"@en .
 
 
 ###  https://w3id.org/semts/ontology#overlaps
@@ -409,7 +429,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                    <http://www.w3.org/2006/time#intervalOverlaps>
                                    [ owl:inverseOf :segmentIndex
                                    ]
-                                 ) .
+                                 ) ;
+          rdfs:comment "Allen’s interval algebra relation 'overlaps' (OWL-Time time:intervalOverlaps). For TimeSeriesSegment individuals, inferable via :segmentIndex: A starts before B and ends during B (partial overlap)."@en ;
+          rdfs:label "overlaps"@en .
 
 
 ###  https://w3id.org/semts/ontology#qualityMeasureConcept
@@ -460,7 +482,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                     <http://www.w3.org/2006/time#intervalStartedBy>
                                     [ owl:inverseOf :segmentIndex
                                     ]
-                                  ) .
+                                  ) ;
+           rdfs:comment "Allen’s interval algebra relation 'startedBy' (OWL-Time time:intervalStartedBy). Inverse of :starts. For TimeSeriesSegment individuals, inferable via :segmentIndex: A is started by B; same start, B finishes before A."@en ;
+           rdfs:label "started by"@en .
 
 
 ###  https://w3id.org/semts/ontology#starts
@@ -472,7 +496,9 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                  <http://www.w3.org/2006/time#intervalStarts>
                                  [ owl:inverseOf :segmentIndex
                                  ]
-                               ) .
+                               ) ;
+        rdfs:comment "Allen’s interval algebra relation 'starts' (OWL-Time time:intervalStarts). For TimeSeriesSegment individuals, inferable via :segmentIndex: A and B share the same start; A finishes before B."@en ;
+        rdfs:label "starts"@en .
 
 
 ###  https://w3id.org/semts/ontology#used
