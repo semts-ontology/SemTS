@@ -6,9 +6,17 @@
 	 dc:title "The Semantic Time Series Ontology";
 	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo :agent1;
+	 prov:wasAttributedTo :agent2;
+	 prov:wasAttributedTo :agent3;
+	 prov:wasAttributedTo :agent4;
+	 prov:wasAttributedTo :agent5;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 	 prov:wasRevisionOf <https://w3id.org/semts/ontology/110#>;
 	 prov:wasGeneratedAt "December 13th, 2024";
 .
 :agent0 a prov:Agent; foaf:name "Alexander Graß".
-:agent1 a prov:Agent; foaf:name "Rohit A. Deshmukh".
+:agent1 a prov:Agent; foaf:name "Christian Beecks".
+:agent2 a prov:Agent; foaf:name "Christoph Lange-Bever".
+:agent3 a prov:Agent; foaf:name "Diego Collarana".
+:agent4 a prov:Agent; foaf:name "Rohit A. Deshmukh".
+:agent5 a prov:Agent; foaf:name "Stefan Decker".
