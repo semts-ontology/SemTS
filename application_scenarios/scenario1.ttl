@@ -16,7 +16,7 @@
 @prefix mlso-algo: <http://w3id.org/mlso/vocab/ml_algorithm#> .
 
 #################################################################
-# Knowledge Generation Entities für manuelle/Expert-Eingaben
+# Knowledge Generation Entities
 #################################################################
 
 bm:ExpertAnnotation a :KnowledgeReasoning ;
@@ -40,7 +40,7 @@ bm:ExpertAnnotationOutput a :KnowledgeGenerationOutput ;
     :outputKnowledge bm:TempSpikeCharacteristic .
 
 #################################################################
-# Time Series Segments (korrigiert: time:Interval statt time:DateTimeInterval)
+# Time Series Segments
 #################################################################
 
 bm:BlowMoldingTimeSeries a :TimeSeriesSegment ;
@@ -95,7 +95,7 @@ bm:DailySegment_20230115_Index a time:Interval ;
     ] .
 
 #################################################################
-# Data Dimensions (korrigiert: :hasUnit statt :hasqudtUnit)
+# Data Dimensions
 #################################################################
 
 bm:TemperatureDimension a :DataDimension ;
@@ -127,7 +127,7 @@ bm:VibrationDimension a :DataDimension ;
     :hasDatatype qudt:FLOAT .
 
 #################################################################
-# Scenario Knowledge (korrigiert: knowledgeGenerationEntity hinzugefügt)
+# Scenario Knowledge
 #################################################################
 
 bm:DefaultCycleTime a :ScenarioKnowledge ;
@@ -176,7 +176,7 @@ bm:AutoencoderOutput a :KnowledgeGenerationOutput ;
     :outputKnowledge bm:PressureAnomaly .
 
 #################################################################
-# Data Knowledge (korrigiert: hasValue hinzugefügt)
+# Data Knowledge
 #################################################################
 
 bm:AutoencoderModel a :ModelInstance ;
