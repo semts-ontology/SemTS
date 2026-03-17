@@ -14,11 +14,10 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:time="http://www.w3.org/2006/time#"
      xmlns:mlso-em="http://w3id.org/mlso/vocab/evaluation_measure#"
-     xmlns:qudtUnit="http://qudt.org/vocab/qudtUnit/"
+     xmlns:qudtUnit="http://qudt.org/vocab/unit/"
      xmlns:semts-dv="https://w3id.org/semts/vocabulary/data-knowledge#"
      xmlns:semts-sv="https://w3id.org/semts/vocabulary/scenario-knowledge#"
-     xmlns:mlso-algo="http://w3id.org/mlso/vocab/ml_algorithm#"
-     xmlns:qudtDtype="http://qudt.org/vocab/datatype/">
+     xmlns:mlso-algo="http://w3id.org/mlso/vocab/ml_algorithm#">
     <owl:Ontology/>
     
 
@@ -31,6 +30,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
     
 
 
@@ -70,12 +75,6 @@
     
 
 
-    <!-- http://www.w3.org/ns/mls#realizes -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/mls#realizes"/>
-    
-
-
     <!-- https://w3id.org/semts/ontology#description -->
 
     <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#description"/>
@@ -100,15 +99,15 @@
     
 
 
-    <!-- https://w3id.org/semts/ontology#hasValue -->
+    <!-- https://w3id.org/semts/ontology#hasUnit -->
 
-    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#hasValue"/>
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#hasUnit"/>
     
 
 
-    <!-- https://w3id.org/semts/ontology#hasqudtUnit -->
+    <!-- https://w3id.org/semts/ontology#hasValue -->
 
-    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#hasqudtUnit"/>
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#hasValue"/>
     
 
 
@@ -213,27 +212,21 @@
     
 
 
-    <!-- http://www.w3.org/2006/time#DateTimeInterval -->
-
-    <owl:Class rdf:about="http://www.w3.org/2006/time#DateTimeInterval"/>
-    
-
-
     <!-- http://www.w3.org/2006/time#Instant -->
 
     <owl:Class rdf:about="http://www.w3.org/2006/time#Instant"/>
     
 
 
-    <!-- http://www.w3.org/ns/dcat#Distribution -->
+    <!-- http://www.w3.org/2006/time#Interval -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Distribution"/>
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Interval"/>
     
 
 
-    <!-- http://www.w3.org/ns/mls#Run -->
+    <!-- http://www.w3.org/ns/dcat#Distribution -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/mls#Run"/>
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Distribution"/>
     
 
 
@@ -246,6 +239,12 @@
     <!-- https://w3id.org/semts/ontology#EmbeddedValue -->
 
     <owl:Class rdf:about="https://w3id.org/semts/ontology#EmbeddedValue"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#KnowledgeGenerationConcept -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
     
 
 
@@ -273,9 +272,21 @@
     
 
 
+    <!-- https://w3id.org/semts/ontology#KnowledgeReasoning -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#KnowledgeReasoning"/>
+    
+
+
     <!-- https://w3id.org/semts/ontology#ModelInstance -->
 
     <owl:Class rdf:about="https://w3id.org/semts/ontology#ModelInstance"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#ReferencedValue -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#ReferencedValue"/>
     
 
 
@@ -315,7 +326,7 @@
         <dcat:distribution>
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
-                <dcat:downloadURL>localhost/data/anomaly_20230115_0842.csv</dcat:downloadURL>
+                <dcat:downloadURL rdf:resource="file:/C:/Users/grass/Downloads/localhost/data/anomaly_20230115_0842.csv"/>
                 <dcat:mediaType>text/csv</dcat:mediaType>
             </rdf:Description>
         </dcat:distribution>
@@ -323,7 +334,7 @@
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/blowmolding/PressureDimension"/>
         <segmentIndex>
             <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+                <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
                 <time:hasBeginning>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
@@ -352,7 +363,7 @@
         <dcat:distribution>
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
-                <dcat:downloadURL>localhost/data/anomaly_20230115_1435.csv</dcat:downloadURL>
+                <dcat:downloadURL rdf:resource="file:/C:/Users/grass/Downloads/localhost/data/anomaly_20230115_1435.csv"/>
                 <dcat:mediaType>text/csv</dcat:mediaType>
             </rdf:Description>
         </dcat:distribution>
@@ -360,7 +371,7 @@
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/blowmolding/PressureDimension"/>
         <segmentIndex>
             <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+                <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
                 <time:hasBeginning>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
@@ -409,6 +420,19 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/blowmolding/AutoencoderModel">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#ModelInstance"/>
         <description>Trained autoencoder model for anomaly detection in blow molding process data</description>
+        <hasValue>
+            <rdf:Description>
+                <rdf:type rdf:resource="https://w3id.org/semts/ontology#ReferencedValue"/>
+                <dcat:distribution>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+                        <dcat:downloadURL rdf:resource="file:/C:/Users/grass/Downloads/localhost/models/autoencoder_blowmolding_v1.h5"/>
+                        <dcat:mediaType>application/x-hdf5</dcat:mediaType>
+                    </rdf:Description>
+                </dcat:distribution>
+                <hasDatatype rdf:resource="http://qudt.org/schema/qudt#BYTE"/>
+            </rdf:Description>
+        </hasValue>
         <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#ModelInstance"/>
         <knowledgeGenerationEntity rdf:resource="https://w3id.org/semts/examples/blowmolding/AutoencoderAnalysis"/>
         <title>Trained Autoencoder Model</title>
@@ -428,15 +452,6 @@
     
 
 
-    <!-- https://w3id.org/semts/examples/blowmolding/AutoencoderRun -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/blowmolding/AutoencoderRun">
-        <rdf:type rdf:resource="http://www.w3.org/ns/mls#Run"/>
-        <mls:realizes rdf:resource="https://w3id.org/semts/examples/blowmolding/AutoencoderAnalysis"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://w3id.org/semts/examples/blowmolding/BlowMoldingTimeSeries -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/blowmolding/BlowMoldingTimeSeries">
@@ -444,7 +459,7 @@
         <dcat:distribution>
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
-                <dcat:downloadURL>localhost/data/blow_molding_data_2023.csv</dcat:downloadURL>
+                <dcat:downloadURL rdf:resource="file:/C:/Users/grass/Downloads/localhost/data/blow_molding_data_2023.csv"/>
                 <dcat:mediaType>text/csv</dcat:mediaType>
             </rdf:Description>
         </dcat:distribution>
@@ -453,26 +468,31 @@
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/blowmolding/PressureDimension"/>
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/blowmolding/TemperatureDimension"/>
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/blowmolding/VibrationDimension"/>
-        <segmentIndex>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
-                <time:hasBeginning>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-                        <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-01T00:00:00Z</time:inXSDDateTime>
-                    </rdf:Description>
-                </time:hasBeginning>
-                <time:hasEnd>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-                        <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-30T23:59:59Z</time:inXSDDateTime>
-                    </rdf:Description>
-                </time:hasEnd>
-            </rdf:Description>
-        </segmentIndex>
+        <segmentIndex rdf:resource="https://w3id.org/semts/examples/blowmolding/BlowMoldingTimeSeriesIndex"/>
+        <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/blowmolding/AutoencoderModel"/>
         <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/blowmolding/DefaultCycleTime"/>
         <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/blowmolding/PressureAnomaly"/>
         <title>Complete Blow Molding Process Dataset</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/blowmolding/BlowMoldingTimeSeriesIndex -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/blowmolding/BlowMoldingTimeSeriesIndex">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <time:hasBeginning>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+                <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-01T00:00:00Z</time:inXSDDateTime>
+            </rdf:Description>
+        </time:hasBeginning>
+        <time:hasEnd>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+                <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-30T23:59:59Z</time:inXSDDateTime>
+            </rdf:Description>
+        </time:hasEnd>
     </owl:NamedIndividual>
     
 
@@ -483,8 +503,8 @@
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#DataDimension"/>
         <description>Duration of a blow molding cycle</description>
         <dimensionPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</dimensionPosition>
-        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#Float"/>
-        <hasqudtUnit rdf:resource="http://qudt.org/vocab/qudtUnit/SEC"/>
+        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#FLOAT"/>
+        <hasUnit rdf:resource="http://qudt.org/vocab/unit/SEC"/>
         <title>Cycle Duration</title>
     </owl:NamedIndividual>
     
@@ -497,7 +517,7 @@
         <dcat:distribution>
             <rdf:Description>
                 <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
-                <dcat:downloadURL>localhost/data/blow_molding_data_20230115.csv</dcat:downloadURL>
+                <dcat:downloadURL rdf:resource="file:/C:/Users/grass/Downloads/localhost/data/blow_molding_data_20230115.csv"/>
                 <dcat:mediaType>text/csv</dcat:mediaType>
             </rdf:Description>
         </dcat:distribution>
@@ -506,24 +526,28 @@
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/blowmolding/PressureDimension"/>
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/blowmolding/TemperatureDimension"/>
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/blowmolding/VibrationDimension"/>
-        <segmentIndex>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
-                <time:hasBeginning>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-                        <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-15T00:00:00Z</time:inXSDDateTime>
-                    </rdf:Description>
-                </time:hasBeginning>
-                <time:hasEnd>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-                        <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-15T23:59:59Z</time:inXSDDateTime>
-                    </rdf:Description>
-                </time:hasEnd>
-            </rdf:Description>
-        </segmentIndex>
+        <segmentIndex rdf:resource="https://w3id.org/semts/examples/blowmolding/DailySegment_20230115_Index"/>
         <title>Daily Segment from January 15, 2023</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/blowmolding/DailySegment_20230115_Index -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/blowmolding/DailySegment_20230115_Index">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <time:hasBeginning>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+                <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-15T00:00:00Z</time:inXSDDateTime>
+            </rdf:Description>
+        </time:hasBeginning>
+        <time:hasEnd>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+                <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-15T23:59:59Z</time:inXSDDateTime>
+            </rdf:Description>
+        </time:hasEnd>
     </owl:NamedIndividual>
     
 
@@ -536,13 +560,58 @@
         <hasValue>
             <rdf:Description>
                 <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
-                <hasDatatype rdf:resource="http://qudt.org/schema/qudt#Float"/>
-                <hasqudtUnit rdf:resource="http://qudt.org/vocab/qudtUnit/SEC"/>
+                <hasDatatype rdf:resource="http://qudt.org/schema/qudt#FLOAT"/>
+                <hasUnit rdf:resource="http://qudt.org/vocab/unit/SEC"/>
                 <valueString>42</valueString>
             </rdf:Description>
         </hasValue>
         <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioParameter"/>
+        <knowledgeGenerationEntity rdf:resource="https://w3id.org/semts/examples/blowmolding/ExpertAnnotation"/>
         <title>Default Cycle Time</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/blowmolding/ExpertAnnotation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/blowmolding/ExpertAnnotation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeReasoning"/>
+        <description>Manual annotation by domain expert</description>
+        <generated rdf:resource="https://w3id.org/semts/examples/blowmolding/ExpertAnnotationOutput"/>
+        <knowledgeGenerationConcept rdf:resource="https://w3id.org/semts/examples/blowmolding/ManualAnnotationConcept"/>
+        <title>Expert Domain Annotation</title>
+        <used rdf:resource="https://w3id.org/semts/examples/blowmolding/ExpertAnnotationInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/blowmolding/ExpertAnnotationInput -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/blowmolding/ExpertAnnotationInput">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationInput"/>
+        <inputDataReference rdf:resource="https://w3id.org/semts/examples/blowmolding/BlowMoldingTimeSeries"/>
+        <title>Expert Knowledge Input</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/blowmolding/ExpertAnnotationOutput -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/blowmolding/ExpertAnnotationOutput">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationOutput"/>
+        <outputKnowledge rdf:resource="https://w3id.org/semts/examples/blowmolding/DefaultCycleTime"/>
+        <outputKnowledge rdf:resource="https://w3id.org/semts/examples/blowmolding/TempSpikeCharacteristic"/>
+        <title>Expert Knowledge Output</title>
+        <wasDerivedFrom rdf:resource="https://w3id.org/semts/examples/blowmolding/ExpertAnnotationInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/blowmolding/ManualAnnotationConcept -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/blowmolding/ManualAnnotationConcept">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+        <skos:prefLabel xml:lang="en">Manual Expert Annotation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -552,6 +621,13 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/blowmolding/PressureAnomaly">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#SegmentPrediction"/>
         <description>Anomalies in the pressure dimension detected through high reconstruction error</description>
+        <hasValue>
+            <rdf:Description>
+                <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
+                <hasDatatype rdf:resource="http://qudt.org/schema/qudt#BOOLEAN"/>
+                <valueString>true</valueString>
+            </rdf:Description>
+        </hasValue>
         <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Anomaly"/>
         <knowledgeGenerationEntity rdf:resource="https://w3id.org/semts/examples/blowmolding/AutoencoderAnalysis"/>
         <knowledgeQualityMeasure rdf:resource="https://w3id.org/semts/examples/blowmolding/ReconstructionErrorMeasure"/>
@@ -566,8 +642,8 @@
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#DataDimension"/>
         <description>Pressure in the blow molding chamber</description>
         <dimensionPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</dimensionPosition>
-        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#Float"/>
-        <hasqudtUnit rdf:resource="http://qudt.org/vocab/qudtUnit/BAR"/>
+        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#FLOAT"/>
+        <hasUnit rdf:resource="http://qudt.org/vocab/unit/BAR"/>
         <title>Pressure</title>
     </owl:NamedIndividual>
     
@@ -581,11 +657,11 @@
         <hasValue>
             <rdf:Description>
                 <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
-                <hasDatatype rdf:resource="http://qudt.org/schema/qudt#Float"/>
+                <hasDatatype rdf:resource="http://qudt.org/schema/qudt#FLOAT"/>
                 <valueString>0.0342</valueString>
             </rdf:Description>
         </hasValue>
-        <qualityMeasureConcept rdf:resource="http://w3id.org/mlso/vocab/ml_algorithm#root_mean_squared_error"/>
+        <qualityMeasureConcept rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure#root_mean_squared_error"/>
         <title>Reconstruction Error</title>
     </owl:NamedIndividual>
     
@@ -599,12 +675,13 @@
         <hasValue>
             <rdf:Description>
                 <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
-                <hasDatatype rdf:resource="http://qudt.org/schema/qudt#Float"/>
-                <hasqudtUnit rdf:resource="http://qudt.org/vocab/qudtUnit/DEG_C"/>
+                <hasDatatype rdf:resource="http://qudt.org/schema/qudt#FLOAT"/>
+                <hasUnit rdf:resource="http://qudt.org/vocab/unit/DEG_C"/>
                 <valueString>24.7</valueString>
             </rdf:Description>
         </hasValue>
         <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Observation"/>
+        <knowledgeGenerationEntity rdf:resource="https://w3id.org/semts/examples/blowmolding/ExpertAnnotation"/>
         <title>Temperature Spike Characteristic</title>
     </owl:NamedIndividual>
     
@@ -616,8 +693,8 @@
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#DataDimension"/>
         <description>Temperature in the blow molding machine</description>
         <dimensionPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dimensionPosition>
-        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#Float"/>
-        <hasqudtUnit rdf:resource="http://qudt.org/vocab/qudtUnit/DEG_C"/>
+        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#FLOAT"/>
+        <hasUnit rdf:resource="http://qudt.org/vocab/unit/DEG_C"/>
         <title>Temperature</title>
     </owl:NamedIndividual>
     
@@ -629,9 +706,13 @@
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#DataDimension"/>
         <description>Vibration intensity in the machine</description>
         <dimensionPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</dimensionPosition>
-        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#Float"/>
-        <hasqudtUnit rdf:resource="http://qudt.org/vocab/qudtUnit/MM-PER-SEC"/>
+        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#FLOAT"/>
+        <hasUnit rdf:resource="http://qudt.org/vocab/unit/MilliM-PER-SEC"/>
         <title>Vibration</title>
     </owl:NamedIndividual>
 </rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 

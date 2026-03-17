@@ -6,6 +6,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dcat="http://www.w3.org/ns/dcat#"
      xmlns:qudt="http://qudt.org/schema/qudt#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
@@ -14,8 +15,7 @@
      xmlns:qudtUnit="http://qudt.org/vocab/unit/"
      xmlns:semts-dv="https://w3id.org/semts/vocabulary/data-knowledge#"
      xmlns:semts-sv="https://w3id.org/semts/vocabulary/scenario-knowledge#"
-     xmlns:mlso-algo="http://w3id.org/mlso/vocab/ml_algorithm#"
-     xmlns:qudtDtype="http://qudt.org/vocab/datatype/">
+     xmlns:mlso-algo="http://w3id.org/mlso/vocab/ml_algorithm#">
     <owl:Ontology/>
     
 
@@ -52,6 +52,24 @@
     <!-- http://www.w3.org/2006/time#inXSDDateTime -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2006/time#inXSDDateTime"/>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#distribution -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/dcat#distribution"/>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#downloadURL -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/dcat#downloadURL"/>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#mediaType -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/dcat#mediaType"/>
     
 
 
@@ -133,6 +151,12 @@
     
 
 
+    <!-- https://w3id.org/semts/ontology#multiSegmentKnowledge -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#multiSegmentKnowledge"/>
+    
+
+
     <!-- https://w3id.org/semts/ontology#outputKnowledge -->
 
     <owl:AnnotationProperty rdf:about="https://w3id.org/semts/ontology#outputKnowledge"/>
@@ -198,15 +222,21 @@
     
 
 
-    <!-- http://www.w3.org/2006/time#DateTimeInterval -->
-
-    <owl:Class rdf:about="http://www.w3.org/2006/time#DateTimeInterval"/>
-    
-
-
     <!-- http://www.w3.org/2006/time#Instant -->
 
     <owl:Class rdf:about="http://www.w3.org/2006/time#Instant"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Interval -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Interval"/>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Distribution -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Distribution"/>
     
 
 
@@ -255,6 +285,18 @@
     <!-- https://w3id.org/semts/ontology#KnowledgeQualityMeasure -->
 
     <owl:Class rdf:about="https://w3id.org/semts/ontology#KnowledgeQualityMeasure"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#KnowledgeReasoning -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#KnowledgeReasoning"/>
+    
+
+
+    <!-- https://w3id.org/semts/ontology#ReferencedValue -->
+
+    <owl:Class rdf:about="https://w3id.org/semts/ontology#ReferencedValue"/>
     
 
 
@@ -340,7 +382,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/AverageWearRateValue">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
-        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#RealDoublePrecisionType"/>
         <hasUnit rdf:resource="http://qudt.org/vocab/unit/MilliM-PER-HR"/>
         <valueString>0.042</valueString>
     </owl:NamedIndividual>
@@ -353,12 +395,7 @@
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationMethod"/>
         <description>Method for calculating correlation between time series dimensions</description>
         <generated rdf:resource="https://w3id.org/semts/examples/grindingbeads/CorrelationOutput"/>
-        <knowledgeGenerationConcept>
-            <rdf:Description>
-                <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
-                <skos:prefLabel>CorrelationAnalysis</skos:prefLabel>
-            </rdf:Description>
-        </knowledgeGenerationConcept>
+        <knowledgeGenerationConcept rdf:resource="https://w3id.org/semts/examples/grindingbeads/CorrelationConcept"/>
         <title>Correlation Analysis Method</title>
         <used rdf:resource="https://w3id.org/semts/examples/grindingbeads/CorrelationInput"/>
     </owl:NamedIndividual>
@@ -369,7 +406,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/CorrelationConcept">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
-        <skos:prefLabel>Correlation Analysis</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Correlation Analysis</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -401,7 +438,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/CorrelationValue">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
-        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#RealDoublePrecisionType"/>
         <valueString>0.72</valueString>
     </owl:NamedIndividual>
     
@@ -416,6 +453,41 @@
     
 
 
+    <!-- https://w3id.org/semts/examples/grindingbeads/ExpertAnnotation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ExpertAnnotation">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeReasoning"/>
+        <description>Manual annotation by domain expert</description>
+        <generated rdf:resource="https://w3id.org/semts/examples/grindingbeads/ExpertAnnotationOutput"/>
+        <knowledgeGenerationConcept rdf:resource="https://w3id.org/semts/examples/grindingbeads/ManualAnnotationConcept"/>
+        <title>Expert Domain Annotation</title>
+        <used rdf:resource="https://w3id.org/semts/examples/grindingbeads/ExpertAnnotationInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/ExpertAnnotationInput -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ExpertAnnotationInput">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationInput"/>
+        <inputDataReference rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearTimeSeries"/>
+        <title>Expert Knowledge Input</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/ExpertAnnotationOutput -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ExpertAnnotationOutput">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationOutput"/>
+        <outputKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/ExpertObservation"/>
+        <outputKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillEvent"/>
+        <title>Expert Knowledge Output</title>
+        <wasDerivedFrom rdf:resource="https://w3id.org/semts/examples/grindingbeads/ExpertAnnotationInput"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/semts/examples/grindingbeads/ExpertObservation -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ExpertObservation">
@@ -423,6 +495,7 @@
         <description>Observation from domain expert on grinding bead wear patterns</description>
         <hasValue rdf:resource="https://w3id.org/semts/examples/grindingbeads/ExpertObservationValue"/>
         <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Observation"/>
+        <knowledgeGenerationEntity rdf:resource="https://w3id.org/semts/examples/grindingbeads/ExpertAnnotation"/>
         <title>Expert Observation on Wear Patterns</title>
     </owl:NamedIndividual>
     
@@ -432,7 +505,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ExpertObservationValue">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
-        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/STRING"/>
+        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#StringType"/>
         <valueString>Wear rate increases non-linearly when temperature exceeds 60°C</valueString>
     </owl:NamedIndividual>
     
@@ -475,7 +548,7 @@
     <!-- https://w3id.org/semts/examples/grindingbeads/ForecastInterval -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ForecastInterval">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
         <time:hasBeginning rdf:resource="https://w3id.org/semts/examples/grindingbeads/ForecastStartInstant"/>
         <time:hasEnd rdf:resource="https://w3id.org/semts/examples/grindingbeads/ForecastEndInstant"/>
     </owl:NamedIndividual>
@@ -498,6 +571,13 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ForecastSegment">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#ArtificialTimeSeriesSegment"/>
+        <dcat:distribution>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+                <dcat:downloadURL rdf:resource="file:/C:/Users/grass/Downloads/localhost/data/wear_forecast_feb2023.csv"/>
+                <dcat:mediaType>text/csv</dcat:mediaType>
+            </rdf:Description>
+        </dcat:distribution>
         <description>Predicted wear values for February 2023</description>
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearRateDimension"/>
         <segmentIndex rdf:resource="https://w3id.org/semts/examples/grindingbeads/ForecastInterval"/>
@@ -520,9 +600,18 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/MAEValue">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
-        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#RealDoublePrecisionType"/>
         <hasUnit rdf:resource="http://qudt.org/vocab/unit/MilliM-PER-HR"/>
         <valueString>0.005</valueString>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/ManualAnnotationConcept -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/ManualAnnotationConcept">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+        <skos:prefLabel xml:lang="en">Manual Expert Annotation</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -543,6 +632,7 @@
         <description>Refill of 50kg new grinding beads</description>
         <hasValue rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillEventValue"/>
         <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#CategorizedEvent"/>
+        <knowledgeGenerationEntity rdf:resource="https://w3id.org/semts/examples/grindingbeads/ExpertAnnotation"/>
         <title>January Refill</title>
     </owl:NamedIndividual>
     
@@ -552,11 +642,18 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/RefillEventSegment">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
+        <dcat:distribution>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+                <dcat:downloadURL rdf:resource="file:/C:/Users/grass/Downloads/localhost/data/grinding_bead_wear_2023.csv"/>
+                <dcat:mediaType>text/csv</dcat:mediaType>
+            </rdf:Description>
+        </dcat:distribution>
         <description>Time of the refill</description>
         <isPartOf rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearTimeSeries"/>
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/grindingbeads/TemperatureDimension"/>
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearRateDimension"/>
-        <segmentIndex rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillTime"/>
+        <segmentIndex rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillTimeInterval"/>
         <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillEvent"/>
         <title>Refill event</title>
     </owl:NamedIndividual>
@@ -567,7 +664,8 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/RefillEventValue">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
-        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#RealDoublePrecisionType"/>
+        <hasUnit rdf:resource="http://qudt.org/vocab/unit/KiloGM"/>
         <valueString>50</valueString>
     </owl:NamedIndividual>
     
@@ -578,6 +676,16 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/RefillStartInstant">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
         <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-15T14:00:00Z</time:inXSDDateTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/RefillTimeInterval -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/RefillTimeInterval">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <time:hasBeginning rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillStartInstant"/>
+        <time:hasEnd rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillEndInstant"/>
     </owl:NamedIndividual>
     
 
@@ -597,14 +705,18 @@
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationMethod"/>
         <description>Basic statistical analysis of grinding bead wear measurements</description>
         <generated rdf:resource="https://w3id.org/semts/examples/grindingbeads/AnalysisOutput"/>
-        <knowledgeGenerationConcept>
-            <rdf:Description>
-                <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
-                <skos:prefLabel>TSFresh</skos:prefLabel>
-            </rdf:Description>
-        </knowledgeGenerationConcept>
+        <knowledgeGenerationConcept rdf:resource="https://w3id.org/semts/examples/grindingbeads/TSFreshConcept"/>
         <title>Statistical Analysis of Wear Data</title>
         <used rdf:resource="https://w3id.org/semts/examples/grindingbeads/AnalysisInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/TSFreshConcept -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/TSFreshConcept">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+        <skos:prefLabel xml:lang="en">TSFresh</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -628,9 +740,30 @@
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#DataDimension"/>
         <description>Operating temperature of the mill in Celsius</description>
         <dimensionPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</dimensionPosition>
-        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#RealDoublePrecisionType"/>
         <hasUnit rdf:resource="http://qudt.org/vocab/unit/DEG_C"/>
         <title>Temperature</title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/semts/examples/grindingbeads/TemperatureSegment -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/TemperatureSegment">
+        <rdf:type rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
+        <dcat:distribution>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+                <dcat:downloadURL rdf:resource="file:/C:/Users/grass/Downloads/localhost/data/grinding_bead_wear_2023.csv"/>
+                <dcat:mediaType>text/csv</dcat:mediaType>
+            </rdf:Description>
+        </dcat:distribution>
+        <description>Temperature measurements from the grinding mill</description>
+        <isPartOf rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearTimeSeries"/>
+        <multiSegmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/TempWearCorrelation"/>
+        <segmentDimension rdf:resource="https://w3id.org/semts/examples/grindingbeads/TemperatureDimension"/>
+        <segmentIndex rdf:resource="https://w3id.org/semts/examples/grindingbeads/TimeInterval"/>
+        <title>Temperature Data Segment</title>
     </owl:NamedIndividual>
     
 
@@ -638,11 +771,9 @@
     <!-- https://w3id.org/semts/examples/grindingbeads/TimeInterval -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/TimeInterval">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#DateTimeInterval"/>
-        <time:hasBeginning rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillStartInstant"/>
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
         <time:hasBeginning rdf:resource="https://w3id.org/semts/examples/grindingbeads/StartInstant"/>
         <time:hasEnd rdf:resource="https://w3id.org/semts/examples/grindingbeads/EndInstant"/>
-        <time:hasEnd rdf:resource="https://w3id.org/semts/examples/grindingbeads/RefillEndInstant"/>
     </owl:NamedIndividual>
     
 
@@ -652,6 +783,19 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/WearForecast">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#SegmentPrediction"/>
         <description>Prediction of wear rate for February 2023</description>
+        <hasValue>
+            <rdf:Description>
+                <rdf:type rdf:resource="https://w3id.org/semts/ontology#ReferencedValue"/>
+                <dcat:distribution>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+                        <dcat:downloadURL rdf:resource="file:/C:/Users/grass/Downloads/localhost/data/wear_forecast_feb2023.csv"/>
+                        <dcat:mediaType>text/csv</dcat:mediaType>
+                    </rdf:Description>
+                </dcat:distribution>
+                <hasDatatype rdf:resource="http://qudt.org/schema/qudt#TimeSeriesArray"/>
+            </rdf:Description>
+        </hasValue>
         <knowledgeConcept rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Forecast"/>
         <knowledgeGenerationEntity rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearForecastMethod"/>
         <knowledgeQualityMeasure rdf:resource="https://w3id.org/semts/examples/grindingbeads/ForecastAccuracy"/>
@@ -679,7 +823,7 @@
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#DataDimension"/>
         <description>Measured wear rate of grinding beads in mm per hour</description>
         <dimensionPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dimensionPosition>
-        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#RealDoublePrecisionType"/>
         <hasUnit rdf:resource="http://qudt.org/vocab/unit/MilliM-PER-HR"/>
         <title>Wear Rate</title>
     </owl:NamedIndividual>
@@ -703,7 +847,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/WearRateVariabilityValue">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#EmbeddedValue"/>
-        <hasDatatype rdf:resource="http://qudt.org/vocab/datatype/FLOAT"/>
+        <hasDatatype rdf:resource="http://qudt.org/schema/qudt#RealDoublePrecisionType"/>
         <hasUnit rdf:resource="http://qudt.org/vocab/unit/MilliM-PER-HR"/>
         <valueString>0.008</valueString>
     </owl:NamedIndividual>
@@ -714,15 +858,26 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/semts/examples/grindingbeads/WearTimeSeries">
         <rdf:type rdf:resource="https://w3id.org/semts/ontology#TimeSeriesSegment"/>
+        <dcat:distribution>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+                <dcat:downloadURL rdf:resource="file:/C:/Users/grass/Downloads/localhost/data/grinding_bead_wear_2023.csv"/>
+                <dcat:mediaType>text/csv</dcat:mediaType>
+            </rdf:Description>
+        </dcat:distribution>
         <description>Hourly measurements of grinding bead wear in an industrial mill</description>
+        <multiSegmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/TempWearCorrelation"/>
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/grindingbeads/TemperatureDimension"/>
         <segmentDimension rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearRateDimension"/>
         <segmentIndex rdf:resource="https://w3id.org/semts/examples/grindingbeads/TimeInterval"/>
         <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/AverageWearRate"/>
         <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/ExpertObservation"/>
-        <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/TempWearCorrelation"/>
         <segmentKnowledge rdf:resource="https://w3id.org/semts/examples/grindingbeads/WearRateVariability"/>
         <title>Grinding Bead Wear Data</title>
     </owl:NamedIndividual>
 </rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
