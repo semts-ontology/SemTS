@@ -40,6 +40,19 @@ Ontology IRI: [https://w3id.org/semts/ontology#](https://w3id.org/semts/ontology
 - [Concept Paper (CAiSE 2025)](https://link.springer.com/chapter/10.1007/978-3-031-94590-8_13)
 - [Resource Paper (ESWC 2026)](https://link.springer.com/chapter/10.1007/978-3-032-25159-6_10)
 
+Please cite as follows:
+
+```bibtex
+@inproceedings{grass2026semts,
+  title={SemTS: Ontology and Vocabularies for the Semantic Categorization of Time Series Knowledge},
+  author={Gra{\ss}, Alexander and Deshmukh, Rohit A and Lange, Christoph and Collarana, Diego and Beecks, Christian and Decker, Stefan},
+  booktitle={European Semantic Web Conference},
+  pages={172--190},
+  year={2026},
+  organization={Springer}
+}
+```
+
 # Naming Conventions
 - Directories and files: All small letters, separated by underscores (_). Example: `ontology.ttl`
 - Prefixes: In SemTS Ontology, we use https://prefix.cc/ to abbreviate URIs
