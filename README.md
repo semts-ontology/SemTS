@@ -13,8 +13,8 @@
 </table>
 
 # Architecture
-Diagram of version v1.1.0. An alternative visualization of the current ontology version from the documentation can be found [here](assets/images/semts.svg). <br><br>
-![Architecture](assets/images/semts_visual_model.drawio.svg)
+Diagram of version v1.2.0 <br><br>
+![Architecture](assets/images/semts.svg)
 
 # Prefix and Namespace
 Prefix: semts  <br>
