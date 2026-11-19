@@ -23,7 +23,7 @@ How to update data written for 1.2.0, the deprecated concepts and the term-by-te
 - Imports use the ontology IRIs of OWL-Time, DCAT and PROV-O.
 - `semts:title` and `semts:description` may also describe segments and values.
 - Labels: `hasUnit` "has unit", `hasDatatype` "has datatype". Language tags and comments added where missing. `rdfs:isDefinedBy` of reused classes points to the defining vocabulary.
-- Shapes: "exactly one value" also enforces at most one, and the SPARQL constraints for multi-segment knowledge and segment relations accept subclasses.
+- Shapes: "exactly one value" also enforces at most one, and the SPARQL constraints for multi-segment knowledge and segment relations accept subclasses. `hasUnit` and `hasDatatype` accept QUDT unit and datatype IRIs without the QUDT graph being loaded, or instances of `qudt:Unit` and `qudt:Datatype`.
 - Vocabulary concepts are `skos:Concept`s and `semts:KnowledgeConcept`s (were `owl:NamedIndividual`s). Each module declares the SKOS, Dublin Core, VANN and ADMS terms it uses, so that it is an OWL 2 DL document on its own, and carries the release version. Concrete data knowledge features moved to the feature extension with unchanged IRIs. Preferred labels of ten published concepts changed (see the migration guide).
 - Feature hierarchy: matrix profile summary and query similarity count are structural properties (were filed under distance and similarity, which are segment relations). Partial autocorrelation and AR coefficients are temporal dependence properties.
 - The documentation of the current version is part of the website, and `ontology/current/index.html` forwards to it.

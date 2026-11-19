@@ -89,15 +89,15 @@ semts:DataDimensionShape a sh:NodeShape ;
             sh:minInclusive 0 ;
             sh:name "dimension position" ;
             sh:path semts:dimensionPosition ],
-        [ sh:class qudt:Unit ;
-            sh:maxCount 1 ;
-            sh:message "hasUnit must point to qudt:Unit" ;
+        [ sh:maxCount 1 ;
+            sh:message "hasUnit must point to a QUDT unit: an IRI from http://qudt.org/vocab/unit/ or an instance of qudt:Unit" ;
             sh:name "has unit" ;
+            sh:or ( [ sh:class qudt:Unit ] [ sh:nodeKind sh:IRI ; sh:pattern "^http://qudt\\.org/vocab/unit/" ] ) ;
             sh:path semts:hasUnit ],
-        [ sh:class qudt:Datatype ;
-            sh:maxCount 1 ;
-            sh:message "hasDatatype must point to qudt:Datatype" ;
+        [ sh:maxCount 1 ;
+            sh:message "hasDatatype must point to a QUDT datatype: an IRI from http://qudt.org/vocab/datatype/ or an instance of qudt:Datatype" ;
             sh:name "has datatype" ;
+            sh:or ( [ sh:class qudt:Datatype ] [ sh:nodeKind sh:IRI ; sh:pattern "^http://qudt\\.org/vocab/datatype/" ] ) ;
             sh:path semts:hasDatatype ],
         [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
@@ -173,15 +173,15 @@ semts:EmbeddedValueShape a sh:NodeShape ;
             sh:minCount 1 ;
             sh:name "value string" ;
             sh:path semts:valueString ],
-        [ sh:class qudt:Unit ;
-            sh:maxCount 1 ;
-            sh:message "hasUnit must point to qudt:Unit" ;
+        [ sh:maxCount 1 ;
+            sh:message "hasUnit must point to a QUDT unit: an IRI from http://qudt.org/vocab/unit/ or an instance of qudt:Unit" ;
             sh:name "has unit" ;
+            sh:or ( [ sh:class qudt:Unit ] [ sh:nodeKind sh:IRI ; sh:pattern "^http://qudt\\.org/vocab/unit/" ] ) ;
             sh:path semts:hasUnit ],
-        [ sh:class qudt:Datatype ;
-            sh:maxCount 1 ;
-            sh:message "hasDatatype must point to qudt:Datatype" ;
+        [ sh:maxCount 1 ;
+            sh:message "hasDatatype must point to a QUDT datatype: an IRI from http://qudt.org/vocab/datatype/ or an instance of qudt:Datatype" ;
             sh:name "has datatype" ;
+            sh:or ( [ sh:class qudt:Datatype ] [ sh:nodeKind sh:IRI ; sh:pattern "^http://qudt\\.org/vocab/datatype/" ] ) ;
             sh:path semts:hasDatatype ] ;
     sh:targetClass semts:EmbeddedValue .
 
@@ -625,15 +625,15 @@ semts:QualityMeasureConceptShape a sh:NodeShape ;
 
 semts:ReferencedValueShape a sh:NodeShape ;
     sh:class dcat:Resource ;
-    sh:property [ sh:class qudt:Unit ;
-            sh:maxCount 1 ;
-            sh:message "hasUnit must point to qudt:Unit" ;
+    sh:property [ sh:maxCount 1 ;
+            sh:message "hasUnit must point to a QUDT unit: an IRI from http://qudt.org/vocab/unit/ or an instance of qudt:Unit" ;
             sh:name "has unit" ;
+            sh:or ( [ sh:class qudt:Unit ] [ sh:nodeKind sh:IRI ; sh:pattern "^http://qudt\\.org/vocab/unit/" ] ) ;
             sh:path semts:hasUnit ],
-        [ sh:class qudt:Datatype ;
-            sh:maxCount 1 ;
-            sh:message "hasDatatype must point to qudt:Datatype" ;
+        [ sh:maxCount 1 ;
+            sh:message "hasDatatype must point to a QUDT datatype: an IRI from http://qudt.org/vocab/datatype/ or an instance of qudt:Datatype" ;
             sh:name "has datatype" ;
+            sh:or ( [ sh:class qudt:Datatype ] [ sh:nodeKind sh:IRI ; sh:pattern "^http://qudt\\.org/vocab/datatype/" ] ) ;
             sh:path semts:hasDatatype ] ;
     sh:targetClass semts:ReferencedValue .
 
