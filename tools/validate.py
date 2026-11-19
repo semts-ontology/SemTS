@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Validate instance data against the SemTS SHACL shapes with pySHACL.
 
-The ontology and all vocabularies are added as the ontology graph, so that class
-hierarchies and concept types are visible to the validator.
+The ontology and all vocabularies are loaded into the data graph together with the
+files to validate, so that class hierarchies and concept types are visible to the validator.
 
 usage:
     python tools/validate.py my-data.ttl [more.ttl ...]   validate your own files (validated together)
@@ -36,9 +36,10 @@ def context_graph():
 
 def check(name, files, shapes, context):
     data = Graph()
+    data += context
     for f in files:
         data.parse(f)
-    conforms, _, text = validate(data, shacl_graph=shapes, ont_graph=context, advanced=True, allow_warnings=True)
+    conforms, _, text = validate(data, shacl_graph=shapes, advanced=True, allow_warnings=True)
     print(f"{'ok  ' if conforms else 'FAIL'} {name}")
     if not conforms:
         print(text)

@@ -295,13 +295,14 @@ from pyshacl import validate
 
 data = Graph().parse("my-segments.ttl")
 
-# ontology and all vocabularies, so that subclasses and concept types are known
-context = Graph().parse("ontology/current/ontology.ttl")
+# load the ontology and all vocabularies together with the data,
+# so that subclasses and concept types are known to the validator
+data.parse("ontology/current/ontology.ttl")
 for f in sorted(Path("vocabularies").glob("vocab_*.ttl")):
-    context.parse(f)
+    data.parse(f)
 
 shapes = Graph().parse("evaluation/instance_validation/shacl_shapes.ttl")
-conforms, _, report = validate(data, shacl_graph=shapes, ont_graph=context, advanced=True)
+conforms, _, report = validate(data, shacl_graph=shapes, advanced=True)
 print(report)
 
 # or, from the repository root:  python tools/validate.py my-segments.ttl`],
