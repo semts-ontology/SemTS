@@ -1,0 +1,38 @@
+@prefix semts:    <https://w3id.org/semts/ontology#> .
+@prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+@prefix semts-gv: <https://w3id.org/semts/vocabulary/knowledge-generation#> .
+@prefix ex:       <https://example.org/line2/> .
+
+# One knowledge item, linked to each segment individually:
+# the proposition "rising trend" holds for S1 and for S2 on its own.
+ex:S1 semts:segmentKnowledge ex:risingTrend .
+ex:S2 semts:segmentKnowledge ex:risingTrend .
+
+ex:risingTrend a semts:SegmentDataCharacteristic ;
+    semts:knowledgeConcept semts-dv:TrendProperty ;
+    semts:title "rising trend" ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "rising" ] ;
+    semts:knowledgeGenerationEntity ex:trendRun .
+
+# A second, more specific characteristic for S1 only
+ex:S1 semts:segmentKnowledge ex:slopeS1 .
+
+ex:slopeS1 a semts:SegmentDataCharacteristic ;
+    semts:knowledgeConcept semts-dv:LinearSlope ;      # from the feature extension
+    semts:title "slope in °C per minute" ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "0.42" ] ;
+    semts:knowledgeGenerationEntity ex:trendRun .
+
+#region provenance
+ex:trendRun a semts:KnowledgeGenerationMethod ;
+    semts:knowledgeGenerationConcept semts-gv:TemporalFeatureExtraction ;
+    semts:used ex:trendRun-inS1, ex:trendRun-inS2 ;
+    semts:generated ex:trendRun-out .
+
+ex:trendRun-inS1 a semts:KnowledgeGenerationInput ; semts:inputDataReference ex:S1 .
+ex:trendRun-inS2 a semts:KnowledgeGenerationInput ; semts:inputDataReference ex:S2 .
+
+ex:trendRun-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:risingTrend, ex:slopeS1 ;
+    semts:wasDerivedFrom ex:trendRun-inS1, ex:trendRun-inS2 .
+#endregion

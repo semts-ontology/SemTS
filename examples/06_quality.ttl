@@ -1,0 +1,82 @@
+@prefix semts:    <https://w3id.org/semts/ontology#> .
+@prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+@prefix semts-gv: <https://w3id.org/semts/vocabulary/knowledge-generation#> .
+@prefix semts-qv: <https://w3id.org/semts/vocabulary/quality-measure#> .
+@prefix dcat:     <http://www.w3.org/ns/dcat#> .
+@prefix mlso:     <http://w3id.org/mlso/> .
+@prefix mlso-alg: <http://w3id.org/mlso/vocab/ml_algorithm/> .
+@prefix ex:       <https://example.org/line2/> .
+
+# A prediction for S2 (from example 1), qualified by a confidence value
+ex:S2 semts:segmentKnowledge ex:wearClass .
+
+ex:wearClass a semts:SegmentPrediction ;
+    semts:knowledgeConcept semts-dv:Classification ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "bearing wear" ] ;
+    semts:knowledgeQualityMeasure ex:wearClass-conf ;
+    semts:knowledgeGenerationEntity ex:classify .
+
+ex:wearClass-conf a semts:KnowledgeQualityMeasure ;
+    semts:qualityMeasureConcept semts-qv:Confidence ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "0.92" ] .
+
+# The trained model is knowledge too, stored outside the graph
+ex:model a semts:ModelInstance ;
+    semts:knowledgeConcept semts-dv:ModelInstance ;
+    semts:title "Gradient-boosted bearing classifier v3" ;
+    semts:hasValue ex:model-file ;
+    semts:knowledgeQualityMeasure ex:model-f1 ;
+    semts:knowledgeGenerationEntity ex:training .
+
+# A referenced value is a DCAT resource, and the file itself is its distribution
+ex:model-file a semts:ReferencedValue, dcat:Dataset ;
+    dcat:distribution [ a dcat:Distribution ;
+        dcat:downloadURL <https://models.example.org/line2/bearing-v3.onnx> ] .
+
+ex:model-f1 a semts:KnowledgeQualityMeasure ;
+    semts:qualityMeasureConcept semts-qv:F1Score ;
+    semts:description "Macro F1 on the held-out runs 30 to 39" ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "0.88" ] .
+
+# What worked is method knowledge for the next analysis of similar segments
+ex:S2 semts:segmentKnowledge ex:useXGBoost .
+
+ex:useXGBoost a semts:Algorithm ;
+    semts:knowledgeConcept semts-gv:AlgorithmRecommendation ;
+    semts:title "Gradient boosting for bearing wear" ;
+    mlso:hasAlgorithmType mlso-alg:XGBoost ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "XGBoost, max depth 6, 300 trees" ] ;
+    semts:knowledgeGenerationEntity ex:selection .
+
+#region provenance
+ex:training a semts:KnowledgeGenerationMethod ;
+    semts:knowledgeGenerationConcept semts-gv:ModelTraining ;
+    semts:used ex:training-in ;
+    semts:generated ex:training-out .
+ex:training-in a semts:KnowledgeGenerationInput ; semts:inputDataReference ex:run42 .
+ex:training-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:model ;
+    semts:wasDerivedFrom ex:training-in .
+
+# The classification run reuses the model as input knowledge
+ex:classify a semts:KnowledgeGenerationMethod ;
+    semts:knowledgeGenerationConcept semts-gv:Classification ;
+    semts:used ex:classify-in ;
+    semts:generated ex:classify-out .
+ex:classify-in a semts:KnowledgeGenerationInput ;
+    semts:inputDataReference ex:S2 ;
+    semts:inputKnowledge ex:model .
+ex:classify-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:wearClass ;
+    semts:wasDerivedFrom ex:classify-in .
+
+# Model selection turns the evaluated model into a recommendation
+ex:selection a semts:KnowledgeGenerationMethod ;
+    semts:knowledgeGenerationConcept semts-gv:ModelSelection ;
+    semts:used ex:selection-in ;
+    semts:generated ex:selection-out .
+ex:selection-in a semts:KnowledgeGenerationInput ; semts:inputKnowledge ex:model .
+ex:selection-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:useXGBoost ;
+    semts:wasDerivedFrom ex:selection-in .
+#endregion

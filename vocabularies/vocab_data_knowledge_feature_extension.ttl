@@ -1,0 +1,1006 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix semts: <https://w3id.org/semts/ontology#> .
+@prefix semts-dfx: <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension#> .
+@prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# OWL declarations of the external terms used in this module, so that it is an OWL 2 DL document on its own.
+# The SKOS terms are declared as in the SKOS RDF schema.
+skos:Concept a owl:Class .
+skos:ConceptScheme a owl:Class .
+semts:KnowledgeConcept a owl:Class .
+skos:broader a owl:ObjectProperty .
+skos:hasTopConcept a owl:ObjectProperty .
+skos:inScheme a owl:ObjectProperty .
+skos:topConceptOf a owl:ObjectProperty .
+dct:conformsTo a owl:AnnotationProperty .
+dct:created a owl:AnnotationProperty .
+dct:description a owl:AnnotationProperty .
+dct:isPartOf a owl:AnnotationProperty .
+dct:license a owl:AnnotationProperty .
+dct:modified a owl:AnnotationProperty .
+dct:references a owl:AnnotationProperty .
+dct:title a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+skos:definition a owl:AnnotationProperty .
+skos:editorialNote a owl:AnnotationProperty .
+skos:prefLabel a owl:AnnotationProperty .
+skos:scopeNote a owl:AnnotationProperty .
+adms:status a owl:AnnotationProperty .
+
+semts-dv:ARCoefficient a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.ar_coefficient> ;
+    skos:broader semts-dv:TemporalDependenceProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Coefficients from unconditional MLE fit of an AR(k) process."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "AR coefficient"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:AbsEnergy a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.abs_energy> ;
+    skos:broader semts-dv:MagnitudeProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Sum over squared values of the time series (absolute energy)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Absolute energy"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:AbsoluteMaximumValue a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.absolute_maximum> ;
+    skos:broader semts-dv:ExtremumProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Highest absolute value of the time series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Absolute maximum value"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:AbsoluteSumOfChanges a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.absolute_sum_of_changes> ;
+    skos:broader semts-dv:ChangeProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Sum of absolute consecutive changes in the series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Absolute sum of changes"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:AggAutocorrelation a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.agg_autocorrelation> ;
+    skos:broader semts-dv:TemporalDependenceProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Descriptive statistics over the autocorrelation function of the time series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Aggregated autocorrelation"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:AggLinearTrend a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.agg_linear_trend> ;
+    skos:broader semts-dv:TrendProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Linear regression on chunk-aggregated values versus chunk index."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Aggregated linear trend"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:ApproximateEntropy a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.approximate_entropy> ;
+    skos:broader semts-dv:ComplexityProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Vectorized approximate entropy of the time series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Approximate entropy"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:AugmentedDickeyFuller a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.augmented_dickey_fuller> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Test statistic assessing presence of a unit root (stationarity test)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Augmented Dickey-Fuller"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:Autocorrelation a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.autocorrelation> ;
+    skos:broader semts-dv:TemporalDependenceProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Autocorrelation at a specified lag."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Autocorrelation (lag)"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:BenfordCorrelation a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.benford_correlation> ;
+    skos:broader semts-dv:DistributionShapeProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Correlation with the first-digit distribution under Benford's law (useful for anomaly detection)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Benford correlation"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:BinnedEntropy a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.binned_entropy> ;
+    skos:broader semts-dv:ComplexityProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Entropy after binning values into a fixed number of equidistant bins."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Binned entropy"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:C3Statistic a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.c3> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Statistic to measure non-linearity in the time series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "C3 statistic"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:CIDComplexity a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.cid_ce> ;
+    skos:broader semts-dv:ComplexityProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Complexity estimate (higher for time series with more peaks and valleys)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "CID complexity"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:CWTCoefficients a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.cwt_coefficients> ;
+    skos:broader semts-dv:TimeFrequencyProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Continuous wavelet transform coefficients (Ricker/Mexican hat wavelet)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "CWT coefficients"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:ChangeQuantiles a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.change_quantiles> ;
+    skos:broader semts-dv:ChangeProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Aggregated changes within a corridor defined by lower and upper quantiles."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Change quantiles"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:CountAboveMean a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.count_above_mean> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Number of values higher than the mean of the series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Count above mean"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:CountAboveThreshold a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.count_above> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Percentage of values higher than a given threshold."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Count above threshold"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:CountBelowMean a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.count_below_mean> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Number of values lower than the mean of the series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Count below mean"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:CountBelowThreshold a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.count_below> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Percentage of values lower than a given threshold."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Count below threshold"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:DominantFrequency a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:FrequencyDomainProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Primary frequency components that characterize the time series in the frequency domain."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Dominant Frequency"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:EnergyRatioByChunks a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.energy_ratio_by_chunks> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Sum of squares in a chunk as a ratio of total sum of squares over the series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Energy ratio by chunks"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:FFTCentroid a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:FrequencyDomainProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The centroid of the aggregated Fast Fourier Transform (FFT) of the data."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "FFT centroid"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:FFTCoefficient a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.fft_coefficient> ;
+    skos:broader semts-dv:FrequencyDomainProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Discrete Fourier Transform coefficients for real-valued input."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "FFT coefficient"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:FFTKurtosis a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:FrequencyDomainProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The kurtosis of the aggregated Fast Fourier Transform (FFT) of the data."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "FFT kurtosis"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:FFTSkew a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:FrequencyDomainProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The skewness of the aggregated Fast Fourier Transform (FFT) of the data."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "FFT skew"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:FFTVariance a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:FrequencyDomainProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The variance of the aggregated Fast Fourier Transform (FFT) of the data."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "FFT variance"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:FirstLocationOfMaximum a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.first_location_of_maximum> ;
+    skos:broader semts-dv:LocationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "First index where the maximum value occurs."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "First location of maximum"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:FirstLocationOfMinimum a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.first_location_of_minimum> ;
+    skos:broader semts-dv:LocationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "First index where the minimum value occurs."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "First location of minimum"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:FourierEntropy a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.fourier_entropy> ;
+    skos:broader semts-dv:FrequencyDomainProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Binned entropy of the power spectral density (Welch method)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Fourier entropy"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:FriedrichCoefficients a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.friedrich_coefficients> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Coefficients of polynomial h(x) fitted to deterministic dynamics (Langevin model)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Friedrich coefficients"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:HasDuplicate a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.has_duplicate> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Boolean indicating if any value occurs more than once."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Has duplicate"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:HasDuplicateMax a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.has_duplicate_max> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Boolean indicating if the maximum value is observed more than once."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Has duplicate maximum"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:HasDuplicateMin a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.has_duplicate_min> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Boolean indicating if the minimum value is observed more than once."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Has duplicate minimum"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:IndexMassQuantile a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.index_mass_quantile> ;
+    skos:broader semts-dv:LocationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Relative index i where a given fraction q of mass lies to the left of i."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Index mass quantile"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:Kurtosis a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:DistributionShapeProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "A measure of the 'tailedness' of the probability distribution."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Kurtosis"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:LargeStandardDeviation a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.large_standard_deviation> ;
+    skos:broader semts-dv:DispersionProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Boolean indicating if std(x) exceeds a given threshold r."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Large standard deviation"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:LastLocationOfMaximum a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.last_location_of_maximum> ;
+    skos:broader semts-dv:LocationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Relative last index where the maximum value occurs."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Last location of maximum"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:LastLocationOfMinimum a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.last_location_of_minimum> ;
+    skos:broader semts-dv:LocationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Last index where the minimum value occurs."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Last location of minimum"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:LempelZivComplexity a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.lempel_ziv_complexity> ;
+    skos:broader semts-dv:ComplexityProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Complexity estimate based on Lempel-Ziv compression."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Lempel-Ziv complexity"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:LinearIntercept a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:TrendProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The intercept of the linear regression line that best fits the data."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Linear intercept"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:LinearSlope a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:TrendProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The slope of the linear regression line that best fits the data."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Linear Slope"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:LinearTrendTimewise a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.linear_trend_timewise> ;
+    skos:broader semts-dv:TrendProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Linear regression versus explicit time indices (timewise trend)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Linear trend (timewise)"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:LongestStrikeAboveMean a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.longest_strike_above_mean> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Length of the longest consecutive subsequence with values above the mean."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Longest strike above mean"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:LongestStrikeBelowMean a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.longest_strike_below_mean> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Length of the longest consecutive subsequence with values below the mean."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Longest strike below mean"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:MatrixProfileSummary a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.matrix_profile> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Summary statistics (Tukey's five-number set and mean) of the 1-D Matrix Profile."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Matrix profile summary"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:MaxLangevinFixedPoint a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.max_langevin_fixed_point> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Largest fixed point of dynamics (argmax_x {h(x)=0}) from Langevin model polynomial fit."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Max Langevin fixed point"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:MaxValue a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:ExtremumProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The highest value in the segment."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Max value"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:MeanAbsoluteChange a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.mean_abs_change> ;
+    skos:broader semts-dv:ChangeProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Average of absolute first differences."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Mean absolute change"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:MeanChange a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.mean_change> ;
+    skos:broader semts-dv:ChangeProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Average of first differences (signed)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Mean change"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:MeanNAbsoluteMax a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.mean_n_absolute_max> ;
+    skos:broader semts-dv:ExtremumProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Arithmetic mean of the n largest absolute values."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Mean of n absolute maxima"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:MeanSecondDerivativeCentral a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.mean_second_derivative_central> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Mean of a central approximation of the second derivative."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Mean central second derivative"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:MeanValue a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:LocationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The average of all data points in the segment."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Mean value"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:MedianValue a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:LocationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The middle value of the segment when ordered."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Median value"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:MinValue a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:ExtremumProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The lowest value in the segment."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Min value"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:MissingValues a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Count of missing or null entries in the segment."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Missing values"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:Mode a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:LocationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The most frequently occurring value in the segment."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Mode"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:NumberCWTPeaks a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.number_cwt_peaks> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Count of distinct peaks detected via continuous wavelet transform."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Number of CWT peaks"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:NumberCrossingM a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.number_crossing_m> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Number of times the series crosses a given level m."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Number of crossings at m"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:NumberOfDistinctValues a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The count of unique values in the segment."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Number of distinct values"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:NumberOfInstances a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The total count of data entries or records in the segment."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Number of instances"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:NumberPeaks a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.number_peaks> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Number of peaks of at least a given support in the series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Number of peaks"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:PartialAutocorrelation a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.partial_autocorrelation> ;
+    skos:broader semts-dv:TemporalDependenceProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Partial autocorrelation function value at a given lag."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Partial autocorrelation"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:PercentageOfReoccurringDatapointsToAllDatapoints a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.percentage_of_reoccurring_datapoints_to_all_datapoints> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Percentage of non-unique data points in the series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Percentage of reoccurring datapoints"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:PercentageOfReoccurringValuesToAllValues a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.percentage_of_reoccurring_values_to_all_values> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Percentage of values that occur more than once."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Percentage of reoccurring values"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dfx:Periodicity a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:PeriodicityProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The presence or strength of repeating behavior at one or more periods."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Periodicity"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:PermutationEntropy a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.permutation_entropy> ;
+    skos:broader semts-dv:ComplexityProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Entropy based on permutation patterns of the time series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Permutation entropy"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:Quantile a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.quantile> ;
+    skos:broader semts-dv:LocationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Quantile value of the time series at level q."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Quantile"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:QuerySimilarityCount a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.query_similarity_count> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Count of subsequences similar to a given query (under z-normalized Euclidean distance and threshold)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Query similarity count"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:RangeCount a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.range_count> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Count of observed values within a specified interval [min, max)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Range count"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:RatioBeyondRSigma a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.ratio_beyond_r_sigma> ;
+    skos:broader semts-dv:DispersionProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Ratio of values further than r times the standard deviation from the mean."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Ratio beyond r·sigma"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:RatioValueNumberToTimeSeriesLength a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.ratio_value_number_to_time_series_length> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Factor equal to 1 if all values are unique, below 1 otherwise."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Ratio unique values to length"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:RootMeanSquare a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.root_mean_square> ;
+    skos:broader semts-dv:MagnitudeProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Root mean square (RMS) of the time series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Root mean square"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:SPKTWelchDensity a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.spkt_welch_density> ;
+    skos:broader semts-dv:FrequencyDomainProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Estimate of the power spectral density at different frequencies (Welch method)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "SPKT Welch density"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:SampleEntropy a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.sample_entropy> ;
+    skos:broader semts-dv:ComplexityProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Sample entropy of the time series."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Sample entropy"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dfx:Seasonality a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:PeriodicityProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Systematic periodic variation associated with a recurring calendar or operational cycle."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Seasonality"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:Skewness a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:DistributionShapeProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "A measure of the asymmetry of the probability distribution."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Skewness"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:SpectralPeak a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:FrequencyDomainProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Significant peaks in the frequency spectrum indicating dominant periodic components."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Spectral Peak"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:StandardDeviation a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:DispersionProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "A measure of the amount of variation in the segment."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Standard deviation"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:SumOfReoccurringDataPoints a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.sum_of_reoccurring_data_points> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Sum of all data points that occur more than once."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Sum of reoccurring datapoints"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:SumOfReoccurringValues a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.sum_of_reoccurring_values> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Sum of all values that occur more than once."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Sum of reoccurring values"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:SumValues a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.sum_values> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Sum over all time series values."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Sum of values"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:SymmetryLooking a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.symmetry_looking> ;
+    skos:broader semts-dv:DistributionShapeProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Boolean indicating whether the distribution looks symmetric."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Symmetry looking"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:TimeReversalAsymmetryStatistic a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.time_reversal_asymmetry_statistic> ;
+    skos:broader semts-dv:StructuralProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Statistic measuring asymmetry under time reversal at a given lag."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Time-reversal asymmetry statistic"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:ValueCount a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.value_count> ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Count of occurrences of a specified value."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Value count"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:ValueMask a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:DataInformationProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "A mask indicating positions whose values are missing, invalid, excluded, or imputed."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Value Mask"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:ValueRange a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:DispersionProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "The difference between the maximum and minimum values in the segment."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Value range"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:Variance a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:DispersionProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Variance of the attribute values."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Variance"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:VarianceLargerThanStandardDeviation a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.variance_larger_than_standard_deviation> ;
+    skos:broader semts-dv:DispersionProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Boolean indicating whether variance(x) > std(x)."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Variance larger than std"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dv:VariationCoefficient a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.variation_coefficient> ;
+    skos:broader semts-dv:DispersionProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "Relative variation: standard error divided by mean."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Variation coefficient"@en ;
+    skos:scopeNote "Concrete feature concept maintained only in the default-imported SemTS data-feature extension. Its semantic family is defined in the Data Knowledge core."@en .
+
+semts-dfx:LinearTrend a skos:Concept,
+        semts:KnowledgeConcept ;
+    rdfs:seeAlso <https://tsfresh.readthedocs.io/en/latest/api/tsfresh.feature_extraction.html#tsfresh.feature_extraction.feature_calculators.linear_trend> ;
+    skos:broader semts-dv:TrendProperty,
+        semts-dfx:DetailedTimeSeriesFeature ;
+    skos:definition "A statistic of the linear least-squares regression of the values against their position in the series: p-value, correlation coefficient r, intercept, slope, or standard error."@en ;
+    skos:editorialNote "Illustrative mapping to a tsfresh feature calculator. The SemTS concept is not restricted to that implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Linear trend statistic"@en ;
+    skos:scopeNote "Use semts-dv:LinearSlope and semts-dv:LinearIntercept for those two statistics. For the p-value, r value and standard error, use this concept and name the statistic in semts:title."@en .
+
+semts-dfx:DetailedTimeSeriesFeature a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-dv:SegmentDataCharacteristic ;
+    skos:definition "Organizing concept for concrete time-series characteristics and feature results maintained outside the stable Data Knowledge core."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> ;
+    skos:prefLabel "Detailed Time-Series Feature"@en ;
+    skos:scopeNote "This extension is imported by the Data Knowledge core. Concrete features occur only in this file, while their stable semantic families remain in the core."@en ;
+    skos:topConceptOf <https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> .
+
+<https://w3id.org/semts/vocabulary/data-knowledge/feature-extension> a owl:Ontology,
+        skos:ConceptScheme ;
+    dct:conformsTo <https://www.w3.org/TR/skos-reference/> ;
+    dct:created "2026-08-06"^^xsd:date ;
+    dct:description "Default-imported extension containing concrete time-series feature meanings, including general summary features and tsfresh-aligned feature calculators. Stable semantic families remain in the Data Knowledge core. The catalogue is an example of a feature extension, aligned with one feature library. It is neither complete nor normative, and further feature catalogues can extend the core in the same way."@en ;
+    dct:isPartOf <https://w3id.org/semts/vocabulary/data-knowledge> ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:modified "2026-11-18"^^xsd:date ;
+    dct:references <https://tsfresh.readthedocs.io/en/latest/>,
+        semts: ;
+    dct:title "SemTS Data Feature Catalogue Extension"@en ;
+    vann:preferredNamespacePrefix "semts-dfx" ;
+    vann:preferredNamespaceUri "https://w3id.org/semts/vocabulary/data-knowledge/feature-extension#" ;
+    owl:versionInfo "1.3.0" ;
+    skos:hasTopConcept semts-dfx:DetailedTimeSeriesFeature ;
+    skos:scopeNote "The extension is structurally separate but included by default through owl:imports from the Data Knowledge core. Feature concepts are not duplicated in the core file."@en ;
+    skos:editorialNote "Namespace policy: features published in version 1.2.0 of the Data Knowledge vocabulary keep their semts-dv IRIs so that existing data stays valid. Features added later use the semts-dfx namespace of this extension."@en ;
+    adms:status <http://purl.org/adms/status/Completed> .
+

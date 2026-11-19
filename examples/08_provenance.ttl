@@ -1,0 +1,66 @@
+@prefix semts:    <https://w3id.org/semts/ontology#> .
+@prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+@prefix semts-sv: <https://w3id.org/semts/vocabulary/scenario-knowledge#> .
+@prefix semts-gv: <https://w3id.org/semts/vocabulary/knowledge-generation#> .
+@prefix prov:     <http://www.w3.org/ns/prov#> .
+@prefix unit:     <http://qudt.org/vocab/unit/> .
+@prefix ex:       <https://example.org/line2/> .
+
+ex:S2 semts:segmentKnowledge ex:noisePeak, ex:bearingWear, ex:wearOut .
+
+# Step 1: feature extraction uses segment S2
+ex:noisePeak a semts:SegmentDataCharacteristic ;
+    semts:knowledgeConcept semts-dv:AbsoluteMaximumValue ;
+    semts:title "noise peak" ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "85" ; semts:hasUnit unit:DeciB ] ;
+    semts:knowledgeGenerationEntity ex:run1 .
+
+ex:run1 a semts:KnowledgeGenerationMethod ;
+    semts:knowledgeGenerationConcept semts-gv:StatisticalFeatureExtraction ;
+    semts:used ex:run1-in ;
+    semts:generated ex:run1-out .
+ex:run1-in a semts:KnowledgeGenerationInput ; semts:inputDataReference ex:S2 .
+ex:run1-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:noisePeak ;
+    semts:wasDerivedFrom ex:run1-in .
+
+# Step 2: classification uses the features of run 1
+ex:bearingWear a semts:SegmentPrediction ;
+    semts:knowledgeConcept semts-dv:Classification ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "bearing wear" ] ;
+    semts:knowledgeGenerationEntity ex:run2 .
+
+ex:run2 a semts:KnowledgeGenerationMethod ;
+    semts:knowledgeGenerationConcept semts-gv:Classification ;
+    semts:used ex:run2-in ;
+    semts:generated ex:run2-out .
+ex:run2-in a semts:KnowledgeGenerationInput ; semts:inputKnowledge ex:noisePeak .
+ex:run2-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:bearingWear ;
+    semts:wasDerivedFrom ex:run2-in .
+
+# Step 3: expert validation uses the class and the engineer's judgement
+ex:wearOut a semts:ScenarioKnowledge ;
+    semts:knowledgeConcept semts-sv:WearState ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "wear-out phase, confirmed" ] ;
+    semts:knowledgeGenerationEntity ex:run3 .
+
+ex:validates a semts:DirectedKnowledgeRelation ;
+    semts:knowledgeConcept semts-sv:Validates ;
+    semts:knowledgeRelationSource ex:wearOut ;
+    semts:knowledgeRelationTarget ex:bearingWear ;
+    semts:knowledgeGenerationEntity ex:run3 .
+
+ex:run3 a semts:KnowledgeReasoning ;
+    semts:knowledgeGenerationConcept semts-gv:ExpertValidation ;
+    prov:wasAssociatedWith ex:reliabilityEngineer ;
+    semts:used ex:run3-in ;
+    semts:generated ex:run3-out .
+ex:run3-in a semts:KnowledgeGenerationInput ;
+    semts:inputDataReference ex:S2 ;
+    semts:inputKnowledge ex:bearingWear .
+ex:run3-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:wearOut, ex:validates ;
+    semts:wasDerivedFrom ex:run3-in .
+
+ex:reliabilityEngineer a prov:Agent .

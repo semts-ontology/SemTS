@@ -1,0 +1,82 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix semts: <https://w3id.org/semts/ontology#> .
+@prefix semts-msv: <https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing#> .
+@prefix semts-sv: <https://w3id.org/semts/vocabulary/scenario-knowledge#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# OWL declarations of the external terms used in this module, so that it is an OWL 2 DL document on its own.
+# The SKOS terms are declared as in the SKOS RDF schema.
+skos:Concept a owl:Class .
+skos:ConceptScheme a owl:Class .
+semts:KnowledgeConcept a owl:Class .
+skos:broader a owl:ObjectProperty .
+skos:hasTopConcept a owl:ObjectProperty .
+skos:inScheme a owl:ObjectProperty .
+skos:topConceptOf a owl:ObjectProperty .
+dct:conformsTo a owl:AnnotationProperty .
+dct:created a owl:AnnotationProperty .
+dct:description a owl:AnnotationProperty .
+dct:isPartOf a owl:AnnotationProperty .
+dct:license a owl:AnnotationProperty .
+dct:modified a owl:AnnotationProperty .
+dct:references a owl:AnnotationProperty .
+dct:title a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+skos:definition a owl:AnnotationProperty .
+skos:editorialNote a owl:AnnotationProperty .
+skos:prefLabel a owl:AnnotationProperty .
+skos:scopeNote a owl:AnnotationProperty .
+adms:status a owl:AnnotationProperty .
+
+semts-msv:MachineDowntime a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-sv:DowntimeEvent,
+        semts-msv:ManufacturingScenarioKnowledge ;
+    skos:definition "Downtime of a machine or machine subsystem."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing> ;
+    skos:prefLabel "Machine Downtime"@en ;
+    skos:scopeNote "A genuine manufacturing specialization because it constrains the affected entity to a machine."@en .
+
+semts-msv:ManufacturingToolWearState a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-sv:WearState,
+        semts-msv:ManufacturingScenarioKnowledge ;
+    skos:definition "Wear state of a tool used in a manufacturing operation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing> ;
+    skos:prefLabel "Manufacturing Tool Wear State"@en ;
+    skos:scopeNote "A genuine manufacturing specialization because it constrains the worn entity and operational context."@en .
+
+semts-msv:ManufacturingScenarioKnowledge a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-sv:ScenarioKnowledge ;
+    skos:definition "Organizing concept for scenario-knowledge meanings that are genuinely specific to manufacturing."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing> ;
+    skos:prefLabel "Manufacturing Scenario Knowledge"@en ;
+    skos:scopeNote "This extension is intentionally small. It demonstrates how domain-specific concepts can specialize the scenario core without mechanically prefixing or suffixing generic terms."@en ;
+    skos:topConceptOf <https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing> .
+
+<https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing> a owl:Ontology,
+        skos:ConceptScheme ;
+    dct:conformsTo <https://www.w3.org/TR/skos-reference/> ;
+    dct:created "2026-08-06"^^xsd:date ;
+    dct:description "A minimal example extension of the SemTS Scenario Knowledge vocabulary for genuinely manufacturing-specific meanings. Generic operational concepts remain in the scenario core. The module illustrates how a domain extends a core vocabulary. It is not a complete manufacturing vocabulary, and other domains are expected to publish their own extensions in the same way."@en ;
+    dct:isPartOf <https://w3id.org/semts/vocabulary/scenario-knowledge> ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:modified "2026-11-18"^^xsd:date ;
+    dct:references semts: ;
+    dct:title "SemTS Manufacturing Scenario Knowledge Extension"@en ;
+    vann:preferredNamespacePrefix "semts-msv" ;
+    vann:preferredNamespaceUri "https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing#" ;
+    owl:imports <https://w3id.org/semts/vocabulary/scenario-knowledge> ;
+    owl:versionInfo "1.3.0" ;
+    skos:hasTopConcept semts-msv:ManufacturingScenarioKnowledge ;
+    skos:editorialNote "The deprecated scenario concepts Production Cycle Start, Production Cycle Complete and Tool Wear State are declared in the Scenario Knowledge core, because their IRIs belong to that namespace."@en ;
+    skos:scopeNote "The extension is not intended to be populated exhaustively. Terms are added only when a manufacturing-specific specialization contributes semantics beyond merely adding “manufacturing”, “production”, or a similar qualifier to a generic core concept."@en ;
+    adms:status <http://purl.org/adms/status/Completed> .
+

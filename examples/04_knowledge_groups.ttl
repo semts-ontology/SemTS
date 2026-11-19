@@ -1,0 +1,90 @@
+@prefix semts:    <https://w3id.org/semts/ontology#> .
+@prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+@prefix semts-gv: <https://w3id.org/semts/vocabulary/knowledge-generation#> .
+@prefix dcat:     <http://www.w3.org/ns/dcat#> .
+@prefix time:     <http://www.w3.org/2006/time#> .
+@prefix unit:     <http://qudt.org/vocab/unit/> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:       <https://example.org/building7/> .
+
+# A clustering is a group of clusters, and each cluster groups its members' knowledge
+ex:clustering a semts:KnowledgeGroup ;
+    semts:knowledgeConcept semts-dv:Clustering ;
+    semts:title "Daily load profiles, k = 2" ;
+    semts:groupKnowledge ex:clusterA, ex:clusterB ;
+    semts:knowledgeGenerationEntity ex:kmeans .
+
+ex:clusterA a semts:KnowledgeGroup ;
+    semts:knowledgeConcept semts-dv:Cluster ;
+    semts:title "weekday profile" ;
+    semts:groupKnowledge ex:classD1, ex:classD2, ex:medoidA ;
+    semts:knowledgeGenerationEntity ex:kmeans .
+
+ex:clusterB a semts:KnowledgeGroup ;
+    semts:knowledgeConcept semts-dv:Cluster ;
+    semts:title "weekend profile" ;
+    semts:groupKnowledge ex:classD3 ;
+    semts:knowledgeGenerationEntity ex:kmeans .
+
+# Membership holds per segment
+ex:classD1 a semts:SegmentPrediction ;
+    semts:knowledgeConcept semts-dv:InferredClassID ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "A" ] ;
+    semts:knowledgeGenerationEntity ex:kmeans .
+ex:classD2 a semts:SegmentPrediction ;
+    semts:knowledgeConcept semts-dv:InferredClassID ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "A" ] ;
+    semts:knowledgeGenerationEntity ex:kmeans .
+ex:classD3 a semts:SegmentPrediction ;
+    semts:knowledgeConcept semts-dv:InferredClassID ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "B" ] ;
+    semts:knowledgeGenerationEntity ex:kmeans .
+
+# The medoid only makes sense for the members together
+ex:medoidA a semts:SegmentRelation ;
+    semts:knowledgeConcept semts-dv:Medoid ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "https://example.org/building7/D1" ] ;
+    semts:knowledgeGenerationEntity ex:kmeans .
+
+ex:D1 semts:segmentKnowledge ex:classD1 ; semts:multiSegmentKnowledge ex:medoidA .
+ex:D2 semts:segmentKnowledge ex:classD2 ; semts:multiSegmentKnowledge ex:medoidA .
+ex:D3 semts:segmentKnowledge ex:classD3 .
+
+# Segments: one per day
+ex:D1 a semts:TimeSeriesSegment ;
+    semts:segmentIndex [ a time:Interval ;
+        time:hasBeginning [ a time:Instant ; time:inXSDDateTimeStamp "2026-02-02T00:00:00+01:00"^^xsd:dateTimeStamp ] ;
+        time:hasEnd       [ a time:Instant ; time:inXSDDateTimeStamp "2026-02-03T00:00:00+01:00"^^xsd:dateTimeStamp ] ] ;
+    semts:segmentDimension ex:activePower ;
+    dcat:distribution ex:meter-feb .
+ex:D2 a semts:TimeSeriesSegment ;
+    semts:segmentIndex [ a time:Interval ;
+        time:hasBeginning [ a time:Instant ; time:inXSDDateTimeStamp "2026-02-03T00:00:00+01:00"^^xsd:dateTimeStamp ] ;
+        time:hasEnd       [ a time:Instant ; time:inXSDDateTimeStamp "2026-02-04T00:00:00+01:00"^^xsd:dateTimeStamp ] ] ;
+    semts:segmentDimension ex:activePower ;
+    dcat:distribution ex:meter-feb .
+ex:D3 a semts:TimeSeriesSegment ;
+    semts:segmentIndex [ a time:Interval ;
+        time:hasBeginning [ a time:Instant ; time:inXSDDateTimeStamp "2026-02-07T00:00:00+01:00"^^xsd:dateTimeStamp ] ;
+        time:hasEnd       [ a time:Instant ; time:inXSDDateTimeStamp "2026-02-08T00:00:00+01:00"^^xsd:dateTimeStamp ] ] ;
+    semts:segmentDimension ex:activePower ;
+    dcat:distribution ex:meter-feb .
+
+ex:activePower a semts:DataDimension ; semts:title "Active power" ; semts:hasUnit unit:KiloW .
+ex:meter-feb a dcat:Distribution ; dcat:downloadURL <https://data.example.org/building7/2026-02.csv> .
+
+#region provenance
+ex:kmeans a semts:KnowledgeGenerationMethod ;
+    semts:knowledgeGenerationConcept semts-gv:Clustering ;
+    semts:used ex:km-inD1, ex:km-inD2, ex:km-inD3 ;
+    semts:generated ex:km-out .
+
+ex:km-inD1 a semts:KnowledgeGenerationInput ; semts:inputDataReference ex:D1 .
+ex:km-inD2 a semts:KnowledgeGenerationInput ; semts:inputDataReference ex:D2 .
+ex:km-inD3 a semts:KnowledgeGenerationInput ; semts:inputDataReference ex:D3 .
+
+ex:km-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:clustering, ex:clusterA, ex:clusterB,
+                          ex:classD1, ex:classD2, ex:classD3, ex:medoidA ;
+    semts:wasDerivedFrom ex:km-inD1, ex:km-inD2, ex:km-inD3 .
+#endregion

@@ -3,17 +3,20 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix qudt-dt: <http://qudt.org/vocab/datatype/> .
 @prefix qudtUnit: <http://qudt.org/vocab/unit/> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix mlso: <http://w3id.org/mlso/> .
+@prefix mlso-algo: <http://w3id.org/mlso/vocab/ml_algorithm/> .
 @prefix bm: <https://w3id.org/semts/examples/blowmolding/> .
 @prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
 @prefix semts-sv: <https://w3id.org/semts/vocabulary/scenario-knowledge#> .
-@prefix mlso-em: <http://w3id.org/mlso/vocab/evaluation_measure#> .
-@prefix mlso-algo: <http://w3id.org/mlso/vocab/ml_algorithm#> .
+@prefix semts-gv: <https://w3id.org/semts/vocabulary/knowledge-generation#> .
+@prefix semts-qv: <https://w3id.org/semts/vocabulary/quality-measure#> .
+
+# SemTS 1.3.0 version of application scenario S1 (unsupervised anomaly detection
+# for blow molding process data). All values are artificial.
 
 #################################################################
 # Knowledge Generation Entities
@@ -22,12 +25,9 @@
 bm:ExpertAnnotation a :KnowledgeReasoning ;
     :title "Expert Domain Annotation" ;
     :description "Manual annotation by domain expert" ;
-    :knowledgeGenerationConcept bm:ManualAnnotationConcept ;
+    :knowledgeGenerationConcept semts-gv:ExpertAnnotation ;
     :used bm:ExpertAnnotationInput ;
     :generated bm:ExpertAnnotationOutput .
-
-bm:ManualAnnotationConcept a :KnowledgeGenerationConcept ;
-    skos:prefLabel "Manual Expert Annotation"@en .
 
 bm:ExpertAnnotationInput a :KnowledgeGenerationInput ;
     :title "Expert Knowledge Input" ;
@@ -51,23 +51,23 @@ bm:BlowMoldingTimeSeries a :TimeSeriesSegment ;
     :segmentDimension bm:PressureDimension ;
     :segmentDimension bm:CycleDimension ;
     :segmentDimension bm:VibrationDimension ;
-    :segmentKnowledge bm:DefaultCycleTime ;
-    :segmentKnowledge bm:PressureAnomaly ;
+    :commonContextKnowledge bm:DefaultCycleTime ;
     :segmentKnowledge bm:AutoencoderModel ;
+    :segmentKnowledge bm:AutoencoderRecommendation ;
     dcat:distribution [
         a dcat:Distribution ;
-        dcat:downloadURL <localhost/data/blow_molding_data_2023.csv> ;
-        dcat:mediaType "text/csv"
+        dcat:downloadURL <https://data.example.org/blowmolding/blow_molding_data_2023.csv> ;
+        dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv>
     ] .
 
 bm:BlowMoldingTimeSeriesIndex a time:Interval ;
     time:hasBeginning [
         a time:Instant ;
-        time:inXSDDateTime "2023-01-01T00:00:00Z"^^xsd:dateTime
+        time:inXSDDateTimeStamp "2023-01-01T00:00:00Z"^^xsd:dateTimeStamp
     ] ;
     time:hasEnd [
         a time:Instant ;
-        time:inXSDDateTime "2023-01-30T23:59:59Z"^^xsd:dateTime
+        time:inXSDDateTimeStamp "2023-01-30T23:59:59Z"^^xsd:dateTimeStamp
     ] .
 
 bm:DailySegment_20230115 a :TimeSeriesSegment ;
@@ -80,18 +80,18 @@ bm:DailySegment_20230115 a :TimeSeriesSegment ;
     :segmentDimension bm:VibrationDimension ;
     dcat:distribution [
         a dcat:Distribution ;
-        dcat:downloadURL <localhost/data/blow_molding_data_20230115.csv> ;
-        dcat:mediaType "text/csv"
+        dcat:downloadURL <https://data.example.org/blowmolding/blow_molding_data_20230115.csv> ;
+        dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv>
     ] .
 
 bm:DailySegment_20230115_Index a time:Interval ;
     time:hasBeginning [
         a time:Instant ;
-        time:inXSDDateTime "2023-01-15T00:00:00Z"^^xsd:dateTime
+        time:inXSDDateTimeStamp "2023-01-15T00:00:00Z"^^xsd:dateTimeStamp
     ] ;
     time:hasEnd [
         a time:Instant ;
-        time:inXSDDateTime "2023-01-15T23:59:59Z"^^xsd:dateTime
+        time:inXSDDateTimeStamp "2023-01-15T23:59:59Z"^^xsd:dateTimeStamp
     ] .
 
 #################################################################
@@ -101,36 +101,38 @@ bm:DailySegment_20230115_Index a time:Interval ;
 bm:TemperatureDimension a :DataDimension ;
     :title "Temperature" ;
     :description "Temperature in the blow molding machine" ;
-    :dimensionPosition 0 ;
+    :dimensionPosition "0"^^xsd:int ;
     :hasUnit qudtUnit:DEG_C ;
-    :hasDatatype qudt:FLOAT .
+    :hasDatatype qudt-dt:FLOAT-DP .
 
 bm:PressureDimension a :DataDimension ;
     :title "Pressure" ;
     :description "Pressure in the blow molding chamber" ;
-    :dimensionPosition 1 ;
+    :dimensionPosition "1"^^xsd:int ;
     :hasUnit qudtUnit:BAR ;
-    :hasDatatype qudt:FLOAT .
+    :hasDatatype qudt-dt:FLOAT-DP .
 
 bm:CycleDimension a :DataDimension ;
     :title "Cycle Duration" ;
     :description "Duration of a blow molding cycle" ;
-    :dimensionPosition 2 ;
+    :dimensionPosition "2"^^xsd:int ;
     :hasUnit qudtUnit:SEC ;
-    :hasDatatype qudt:FLOAT .
+    :hasDatatype qudt-dt:FLOAT-DP .
 
 bm:VibrationDimension a :DataDimension ;
     :title "Vibration" ;
     :description "Vibration intensity in the machine" ;
-    :dimensionPosition 3 ;
+    :dimensionPosition "3"^^xsd:int ;
     :hasUnit qudtUnit:MilliM-PER-SEC ;
-    :hasDatatype qudt:FLOAT .
+    :hasDatatype qudt-dt:FLOAT-DP .
 
 #################################################################
 # Scenario Knowledge
 #################################################################
 
-bm:DefaultCycleTime a :ScenarioKnowledge ;
+# The default cycle time describes the machine, not a particular stretch of
+# data: it is common context knowledge, linked with commonContextKnowledge.
+bm:DefaultCycleTime a :ScenarioKnowledge, :CommonContextKnowledge ;
     :title "Default Cycle Time" ;
     :description "Standard production cycle time for the blow molding machine" ;
     :knowledgeConcept semts-sv:ScenarioParameter ;
@@ -139,7 +141,7 @@ bm:DefaultCycleTime a :ScenarioKnowledge ;
         a :EmbeddedValue ;
         :valueString "42" ;
         :hasUnit qudtUnit:SEC ;
-        :hasDatatype qudt:FLOAT
+        :hasDatatype qudt-dt:FLOAT-DP
     ] .
 
 bm:TempSpikeCharacteristic a :ScenarioKnowledge ;
@@ -151,19 +153,26 @@ bm:TempSpikeCharacteristic a :ScenarioKnowledge ;
         a :EmbeddedValue ;
         :valueString "24.7" ;
         :hasUnit qudtUnit:DEG_C ;
-        :hasDatatype qudt:FLOAT
+        :hasDatatype qudt-dt:FLOAT-DP
     ] .
 
 #################################################################
 # Knowledge Generation Method
 #################################################################
 
+# The task type comes from the SemTS knowledge generation vocabulary. The
+# algorithm is described with ML-Schema and classified with the MLSO taxonomy.
 bm:AutoencoderAnalysis a :KnowledgeGenerationMethod ;
     :title "Autoencoder for Anomaly Detection" ;
     :description "Unsupervised anomaly detection using autoencoder reconstruction error" ;
-    :knowledgeGenerationConcept mlso-algo:AutoEncoder ;
+    :knowledgeGenerationConcept semts-gv:AnomalyDetection ;
+    mls:implements bm:AutoencoderAlgorithm ;
     :used bm:AutoencoderInput ;
     :generated bm:AutoencoderOutput .
+
+bm:AutoencoderAlgorithm a mls:Algorithm ;
+    rdfs:label "Autoencoder" ;
+    mlso:hasAlgorithmType mlso-algo:AutoEncoder .
 
 bm:AutoencoderInput a :KnowledgeGenerationInput ;
     :title "Input Data for Autoencoder" ;
@@ -176,6 +185,39 @@ bm:AutoencoderOutput a :KnowledgeGenerationOutput ;
     :outputKnowledge bm:PressureAnomaly .
 
 #################################################################
+# Method Knowledge
+#################################################################
+
+# After reviewing the detected anomalies, the expert records which method
+# works for this machine: method knowledge that later analyses can reuse.
+bm:AutoencoderRecommendation a :Algorithm ;
+    :title "Recommended anomaly detector" ;
+    :description "An autoencoder over 30-second windows has proven effective for the pressure signal of this machine" ;
+    :knowledgeConcept semts-gv:AlgorithmRecommendation ;
+    mlso:hasAlgorithmType mlso-algo:AutoEncoder ;
+    :knowledgeGenerationEntity bm:ExpertAssessment ;
+    :hasValue [
+        a :EmbeddedValue ;
+        :valueString "autoencoder, window length 30 s" ;
+        :hasDatatype qudt-dt:STRING
+    ] .
+
+bm:ExpertAssessment a :KnowledgeReasoning ;
+    :title "Expert Assessment of the Anomaly Detector" ;
+    :knowledgeGenerationConcept semts-gv:ExpertAssessment ;
+    :used bm:ExpertAssessmentInput ;
+    :generated bm:ExpertAssessmentOutput .
+
+bm:ExpertAssessmentInput a :KnowledgeGenerationInput ;
+    :title "Detected Pressure Anomalies" ;
+    :inputKnowledge bm:PressureAnomaly .
+
+bm:ExpertAssessmentOutput a :KnowledgeGenerationOutput ;
+    :title "Method Recommendation" ;
+    :wasDerivedFrom bm:ExpertAssessmentInput ;
+    :outputKnowledge bm:AutoencoderRecommendation .
+
+#################################################################
 # Data Knowledge
 #################################################################
 
@@ -185,12 +227,11 @@ bm:AutoencoderModel a :ModelInstance ;
     :knowledgeConcept semts-dv:ModelInstance ;
     :knowledgeGenerationEntity bm:AutoencoderAnalysis ;
     :hasValue [
-        a :ReferencedValue ;
-        :hasDatatype qudt:BYTE ;
+        a :ReferencedValue, dcat:Dataset ;
         dcat:distribution [
             a dcat:Distribution ;
-            dcat:downloadURL <localhost/models/autoencoder_blowmolding_v1.h5> ;
-            dcat:mediaType "application/x-hdf5"
+            dcat:downloadURL <https://data.example.org/blowmolding/models/autoencoder_blowmolding_v1.h5> ;
+            dcat:mediaType <https://www.iana.org/assignments/media-types/application/octet-stream>
         ]
     ] .
 
@@ -203,7 +244,7 @@ bm:PressureAnomaly a :SegmentPrediction ;
     :hasValue [
         a :EmbeddedValue ;
         :valueString "true" ;
-        :hasDatatype qudt:BOOLEAN
+        :hasDatatype qudt-dt:BOOLEAN
     ] .
 
 #################################################################
@@ -213,11 +254,11 @@ bm:PressureAnomaly a :SegmentPrediction ;
 bm:ReconstructionErrorMeasure a :KnowledgeQualityMeasure ;
     :title "Reconstruction Error" ;
     :description "RMSE-based reconstruction error for the detected anomalies" ;
-    :qualityMeasureConcept mlso-em:root_mean_squared_error ;
+    :qualityMeasureConcept semts-qv:RootMeanSquaredError ;
     :hasValue [
         a :EmbeddedValue ;
         :valueString "0.0342" ;
-        :hasDatatype qudt:FLOAT
+        :hasDatatype qudt-dt:FLOAT-DP
     ] .
 
 #################################################################
@@ -231,20 +272,21 @@ bm:AnomalySegment_20230115_0842 a :TimeSeriesSegment ;
         a time:Interval ;
         time:hasBeginning [
             a time:Instant ;
-            time:inXSDDateTime "2023-01-15T08:42:00Z"^^xsd:dateTime
+            time:inXSDDateTimeStamp "2023-01-15T08:42:00Z"^^xsd:dateTimeStamp
         ] ;
         time:hasEnd [
             a time:Instant ;
-            time:inXSDDateTime "2023-01-15T08:47:30Z"^^xsd:dateTime
+            time:inXSDDateTimeStamp "2023-01-15T08:47:30Z"^^xsd:dateTimeStamp
         ]
     ] ;
     :segmentDimension bm:PressureDimension ;
+    :segmentDimension bm:TemperatureDimension ;
     :segmentKnowledge bm:PressureAnomaly ;
     :segmentKnowledge bm:TempSpikeCharacteristic ;
     dcat:distribution [
         a dcat:Distribution ;
-        dcat:downloadURL <localhost/data/anomaly_20230115_0842.csv> ;
-        dcat:mediaType "text/csv"
+        dcat:downloadURL <https://data.example.org/blowmolding/anomaly_20230115_0842.csv> ;
+        dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv>
     ] .
 
 bm:AnomalySegment_20230115_1435 a :TimeSeriesSegment ;
@@ -254,17 +296,17 @@ bm:AnomalySegment_20230115_1435 a :TimeSeriesSegment ;
         a time:Interval ;
         time:hasBeginning [
             a time:Instant ;
-            time:inXSDDateTime "2023-01-15T14:35:00Z"^^xsd:dateTime
+            time:inXSDDateTimeStamp "2023-01-15T14:35:00Z"^^xsd:dateTimeStamp
         ] ;
         time:hasEnd [
             a time:Instant ;
-            time:inXSDDateTime "2023-01-15T14:38:45Z"^^xsd:dateTime
+            time:inXSDDateTimeStamp "2023-01-15T14:38:45Z"^^xsd:dateTimeStamp
         ]
     ] ;
     :segmentDimension bm:PressureDimension ;
     :segmentKnowledge bm:PressureAnomaly ;
     dcat:distribution [
         a dcat:Distribution ;
-        dcat:downloadURL <localhost/data/anomaly_20230115_1435.csv> ;
-        dcat:mediaType "text/csv"
+        dcat:downloadURL <https://data.example.org/blowmolding/anomaly_20230115_1435.csv> ;
+        dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv>
     ] .

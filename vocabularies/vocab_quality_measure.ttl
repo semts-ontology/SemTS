@@ -1,0 +1,598 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix semts: <https://w3id.org/semts/ontology#> .
+@prefix semts-qv: <https://w3id.org/semts/vocabulary/quality-measure#> .
+@prefix semts-sv: <https://w3id.org/semts/vocabulary/scenario-knowledge#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# OWL declarations of the external terms used in this module, so that it is an OWL 2 DL document on its own.
+# The SKOS terms are declared as in the SKOS RDF schema.
+skos:Concept a owl:Class .
+skos:ConceptScheme a owl:Class .
+semts:QualityMeasureConcept a owl:Class .
+skos:broader a owl:ObjectProperty .
+skos:closeMatch a owl:ObjectProperty .
+skos:exactMatch a owl:ObjectProperty .
+skos:hasTopConcept a owl:ObjectProperty .
+skos:inScheme a owl:ObjectProperty .
+skos:relatedMatch a owl:ObjectProperty .
+skos:topConceptOf a owl:ObjectProperty .
+dct:conformsTo a owl:AnnotationProperty .
+dct:created a owl:AnnotationProperty .
+dct:description a owl:AnnotationProperty .
+dct:license a owl:AnnotationProperty .
+dct:modified a owl:AnnotationProperty .
+dct:references a owl:AnnotationProperty .
+dct:title a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+skos:altLabel a owl:AnnotationProperty .
+skos:definition a owl:AnnotationProperty .
+skos:prefLabel a owl:AnnotationProperty .
+skos:scopeNote a owl:AnnotationProperty .
+adms:status a owl:AnnotationProperty .
+
+semts-qv:Agreement a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:EpistemicQuality ;
+    skos:definition "Degree of concordance among sources, models, experts, annotations, or repeated measurements."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Agreement"@en .
+
+semts-qv:Applicability a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ContextualQuality ;
+    skos:definition "Degree to which knowledge can be applied under the conditions of a target segment or scenario."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Applicability"@en ;
+    skos:relatedMatch semts-sv:Condition .
+
+semts-qv:AreaUnderROCCurve a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:altLabel "AUROC"@en ;
+    skos:broader semts-qv:ClassificationPerformance ;
+    skos:closeMatch <http://w3id.org/mlso/vocab/evaluation_measure/area_under_curve> ;
+    skos:definition "Area under the receiver operating characteristic curve across decision thresholds."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Area Under the ROC Curve"@en .
+
+semts-qv:Calibration a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ProbabilisticPredictionPerformance ;
+    skos:definition "Degree to which predicted probabilities or intervals correspond to observed frequencies."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Calibration"@en .
+
+semts-qv:CausalStrength a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:RelationalMeasure ;
+    skos:definition "Magnitude or confidence of a causal influence or effect."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Causal Strength"@en ;
+    skos:relatedMatch semts-sv:Causes .
+
+semts-qv:Certainty a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:EpistemicQuality ;
+    skos:definition "Degree to which uncertainty about a knowledge assertion has been resolved."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Certainty"@en ;
+    skos:relatedMatch semts-sv:Certainty .
+
+semts-qv:ClassificationAccuracy a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ClassificationPerformance ;
+    skos:definition "Proportion of classified instances whose predicted class is correct."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/evaluation_measure/accuracy> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Classification Accuracy"@en .
+
+semts-qv:CoefficientOfDetermination a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:altLabel "R²"@en ;
+    skos:broader semts-qv:PointPredictionPerformance ;
+    skos:definition "Proportion of observed variance explained by point predictions."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Coefficient of Determination"@en .
+
+semts-qv:Completeness a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:IntrinsicQuality ;
+    skos:definition "Degree to which required content, coverage, relations, or contextual information is present."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Completeness"@en .
+
+semts-qv:ComputationalCost a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:OperationalQuality ;
+    skos:definition "Aggregate computational resources required by a knowledge process."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Computational Cost"@en .
+
+semts-qv:Confidence a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:EpistemicQuality ;
+    skos:definition "Quantified or qualified belief in the correctness or reliability of a knowledge assertion."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Confidence"@en ;
+    skos:relatedMatch <http://w3id.org/mlso/vocab/evaluation_measure/probability>,
+        semts-sv:Certainty .
+
+semts-qv:Consistency a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:IntrinsicQuality ;
+    skos:definition "Degree to which knowledge is free of internal conflict or contradiction with relevant knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Consistency"@en ;
+    skos:relatedMatch semts-sv:Contradiction .
+
+semts-qv:ContinuousRankedProbabilityScore a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:altLabel "CRPS"@en ;
+    skos:broader semts-qv:ProbabilisticPredictionPerformance ;
+    skos:definition "Proper score comparing a predictive cumulative distribution with an observed outcome."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Continuous Ranked Probability Score"@en .
+
+semts-qv:Correctness a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:IntrinsicQuality ;
+    skos:definition "Degree to which knowledge agrees with an accepted reference, fact, or validation outcome."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Correctness"@en .
+
+semts-qv:CosineSimilarity a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:Similarity ;
+    skos:definition "Similarity based on the cosine of the angle between vector representations."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Cosine Similarity"@en .
+
+semts-qv:Coverage a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ContextualQuality ;
+    skos:definition "Extent of the relevant temporal, dimensional, segment, class, or scenario space addressed by the knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Coverage"@en ;
+    skos:relatedMatch <http://w3id.org/mlso/vocab/evaluation_measure/coverage> .
+
+semts-qv:CrossCorrelation a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:Correlation ;
+    skos:definition "Correlation between sequences as a function of temporal lag."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Cross-Correlation"@en .
+
+semts-qv:Dissimilarity a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:RelationalMeasure ;
+    skos:definition "Degree of non-resemblance between compared entities."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Dissimilarity"@en .
+
+semts-qv:DynamicTimeWarpingDistance a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:altLabel "DTW distance"@en ;
+    skos:broader semts-qv:Distance ;
+    skos:definition "Alignment-based distance between sequences that permits nonlinear temporal warping."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Dynamic Time Warping Distance"@en .
+
+semts-qv:EuclideanDistance a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:Distance ;
+    skos:definition "Straight-line distance between two numeric vectors."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Euclidean Distance"@en .
+
+semts-qv:EvidenceStrength a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:EpistemicQuality ;
+    skos:definition "Strength and adequacy of evidence supporting or contradicting knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Evidence Strength"@en ;
+    skos:relatedMatch semts-sv:Evidence .
+
+semts-qv:Explainability a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ExplanationQuality ;
+    skos:definition "Degree to which reasons or mechanisms for a knowledge result can be communicated."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Explainability"@en .
+
+semts-qv:F1Score a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ClassificationPerformance ;
+    skos:definition "Harmonic mean of precision and recall."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/evaluation_measure/f_measure> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "F1 Score"@en .
+
+semts-qv:Fidelity a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ExplanationQuality ;
+    skos:definition "Degree to which an explanation reflects the behavior of the process or model it explains."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Fidelity"@en .
+
+semts-qv:Freshness a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ContextualQuality ;
+    skos:definition "Degree to which knowledge reflects the current state of its subject."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Freshness"@en .
+
+semts-qv:Interpretability a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ExplanationQuality ;
+    skos:definition "Degree to which a human can understand the meaning or behavior represented by knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Interpretability"@en .
+
+semts-qv:IntervalCoverage a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ProbabilisticPredictionPerformance ;
+    skos:definition "Fraction of reference outcomes contained in prediction or confidence intervals."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Interval Coverage"@en .
+
+semts-qv:IntervalWidth a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ProbabilisticPredictionPerformance ;
+    skos:definition "Width of an uncertainty interval, often interpreted together with interval coverage."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Interval Width"@en .
+
+semts-qv:JaccardSimilarity a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:Similarity ;
+    skos:definition "Similarity defined as the size of an intersection divided by the size of the corresponding union."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/evaluation_measure/jaccard> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Jaccard Similarity"@en .
+
+semts-qv:ManhattanDistance a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:Distance ;
+    skos:definition "Sum of absolute coordinate-wise differences between two numeric vectors."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Manhattan Distance"@en .
+
+semts-qv:MeanAbsoluteError a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:altLabel "MAE"@en ;
+    skos:broader semts-qv:PredictionError ;
+    skos:definition "Mean absolute difference between observed and predicted values."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/evaluation_measure/mean_absolute_error> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Mean Absolute Error"@en .
+
+semts-qv:MeanAbsolutePercentageError a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:altLabel "MAPE"@en ;
+    skos:broader semts-qv:PredictionError ;
+    skos:definition "Mean absolute prediction error relative to observed magnitude, expressed as a percentage."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Mean Absolute Percentage Error"@en .
+
+semts-qv:MeanAbsoluteScaledError a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:altLabel "MASE"@en ;
+    skos:broader semts-qv:PredictionError ;
+    skos:definition "Mean absolute prediction error scaled by a baseline forecast error."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Mean Absolute Scaled Error"@en .
+
+semts-qv:MeanSquaredError a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:altLabel "MSE"@en ;
+    skos:broader semts-qv:PredictionError ;
+    skos:definition "Mean squared difference between observed and predicted values."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Mean Squared Error"@en .
+
+semts-qv:MemoryUse a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:OperationalQuality ;
+    skos:definition "Memory required by a knowledge generation or evaluation process."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Memory Use"@en .
+
+semts-qv:PearsonCorrelation a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:Correlation ;
+    skos:definition "Linear correlation coefficient between paired numeric variables or sequences."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Pearson Correlation"@en .
+
+semts-qv:Precision a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ClassificationPerformance ;
+    skos:definition "Fraction of predicted positive cases that are relevant or correct."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/evaluation_measure/precision> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Precision"@en .
+
+semts-qv:PredictiveAccuracy a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:PointPredictionPerformance ;
+    skos:definition "Overall closeness of point predictions to observed values, without prescribing a particular error formula."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Point Prediction Accuracy"@en ;
+    skos:scopeNote "Not the classification accuracy of MLSO (evaluation_measure/accuracy), which counts correctly classified instances. That measure corresponds to Classification Accuracy."@en .
+
+semts-qv:Recall a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ClassificationPerformance ;
+    skos:definition "Fraction of relevant or positive cases that are successfully identified."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/evaluation_measure/recall> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Recall"@en .
+
+semts-qv:Relevance a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ContextualQuality ;
+    skos:definition "Degree to which knowledge is useful for the stated task, purpose, or decision context."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Relevance"@en ;
+    skos:relatedMatch semts-sv:Purpose .
+
+semts-qv:Reliability a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:EpistemicQuality ;
+    skos:definition "Degree to which knowledge or its generation process produces dependable results."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Reliability"@en .
+
+semts-qv:Representativeness a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ContextualQuality ;
+    skos:definition "Degree to which knowledge reflects the population, behavior, or context for which it is used."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Representativeness"@en .
+
+semts-qv:Reproducibility a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ProvenanceQuality ;
+    skos:definition "Degree to which the knowledge result can be regenerated under documented conditions."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Reproducibility"@en .
+
+semts-qv:Robustness a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:EpistemicQuality ;
+    skos:definition "Degree to which knowledge remains valid or stable under perturbations, alternative samples, or reasonable parameter changes."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Robustness"@en .
+
+semts-qv:RootMeanSquaredError a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:altLabel "RMSE"@en ;
+    skos:broader semts-qv:PredictionError ;
+    skos:definition "Square root of the mean squared prediction error."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/evaluation_measure/root_mean_squared_error> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Root Mean Squared Error"@en .
+
+semts-qv:Runtime a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:OperationalQuality ;
+    skos:definition "Elapsed or processor time required to generate, compare, validate, or reason over knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Runtime"@en .
+
+semts-qv:SilhouetteCoefficient a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ClusteringPerformance ;
+    skos:definition "Clustering quality based on within-cluster cohesion and separation from other clusters."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Silhouette Coefficient"@en .
+
+semts-qv:SpearmanCorrelation a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:Correlation ;
+    skos:definition "Rank-based monotonic correlation coefficient."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Spearman Rank Correlation"@en .
+
+semts-qv:Specificity a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:IntrinsicQuality ;
+    skos:definition "Degree to which knowledge is precise and narrowly characterized rather than vague or overly general."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Specificity"@en ;
+    skos:scopeNote "An intrinsic quality of knowledge. Not the classification measure that is also called specificity (true negative rate)."@en .
+
+semts-qv:Stability a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ExplanationQuality ;
+    skos:definition "Degree to which an explanation or knowledge result remains similar under small, non-material changes."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Stability"@en .
+
+semts-qv:SymmetricMeanAbsolutePercentageError a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:altLabel "sMAPE"@en ;
+    skos:broader semts-qv:PredictionError ;
+    skos:definition "Percentage error normalized symmetrically by observed and predicted magnitudes."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Symmetric Mean Absolute Percentage Error"@en .
+
+semts-qv:Timeliness a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ContextualQuality ;
+    skos:definition "Degree to which knowledge is available at an appropriate time for its intended use."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Timeliness"@en ;
+    skos:relatedMatch semts-sv:TemporalContext .
+
+semts-qv:Traceability a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:ProvenanceQuality ;
+    skos:definition "Degree to which knowledge can be traced to inputs, sources, methods, and decisions."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Traceability"@en .
+
+semts-qv:Uncertainty a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:EpistemicQuality ;
+    skos:definition "Degree or characterization of incomplete knowledge about a value, relation, event, or assertion."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Uncertainty"@en .
+
+semts-qv:Validity a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:IntrinsicQuality ;
+    skos:definition "Degree to which knowledge satisfies applicable rules, constraints, assumptions, or validation criteria."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Validity"@en ;
+    skos:relatedMatch semts-sv:ValidationOutcome .
+
+semts-qv:ClusteringPerformance a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:PredictivePerformance ;
+    skos:definition "Performance or quality of a clustering result."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Clustering Performance"@en .
+
+semts-qv:ProvenanceQuality a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:QualityMeasure ;
+    skos:definition "A measure of traceability and reproducibility of knowledge and its generation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Provenance Quality"@en .
+
+semts-qv:Similarity a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:RelationalMeasure ;
+    skos:definition "Degree of resemblance between compared entities under a specified representation or criterion."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Similarity"@en ;
+    skos:relatedMatch semts-sv:SimilarTo .
+
+semts-qv:Correlation a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:RelationalMeasure ;
+    skos:definition "Strength and direction of statistical association between compared entities."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Correlation"@en ;
+    skos:relatedMatch semts-sv:Correlation .
+
+semts-qv:Distance a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:RelationalMeasure ;
+    skos:definition "A metric or measure of separation between compared entities."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Distance"@en .
+
+semts-qv:OperationalQuality a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:QualityMeasure ;
+    skos:definition "A measure of computational or operational behavior associated with knowledge generation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Operational Quality"@en ;
+    skos:relatedMatch <http://w3id.org/mlso/vocab/evaluation_measure/Execution> .
+
+semts-qv:PointPredictionPerformance a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:PredictivePerformance ;
+    skos:definition "Performance of point-valued predictions or forecasts."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Point Prediction Performance"@en .
+
+semts-qv:ExplanationQuality a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:QualityMeasure ;
+    skos:definition "A measure of the usefulness or faithfulness of an explanation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Explanation Quality"@en .
+
+semts-qv:PredictivePerformance a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:QualityMeasure ;
+    skos:definition "A measure of the performance of predictive or inferential knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Predictive Performance"@en .
+
+semts-qv:ProbabilisticPredictionPerformance a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:PredictivePerformance ;
+    skos:definition "Performance of probabilistic forecasts or predictive distributions."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Probabilistic Prediction Performance"@en .
+
+semts-qv:ClassificationPerformance a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:PredictivePerformance ;
+    skos:definition "Performance of class or event-category predictions."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Classification Performance"@en .
+
+semts-qv:IntrinsicQuality a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:QualityMeasure ;
+    skos:definition "Quality assessed from the internal content or logical form of the knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Intrinsic Quality"@en .
+
+semts-qv:RelationalMeasure a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:QualityMeasure ;
+    skos:definition "A measure comparing two or more data, segment, or knowledge entities."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Relational Measure"@en .
+
+semts-qv:ContextualQuality a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:QualityMeasure ;
+    skos:definition "Quality assessed relative to a use case, segment context, task, or scenario."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Contextual Quality"@en .
+
+semts-qv:PredictionError a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:PointPredictionPerformance ;
+    skos:closeMatch <http://w3id.org/mlso/vocab/evaluation_measure/error> ;
+    skos:definition "Magnitude or rate of disagreement between predicted and observed values."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Prediction Error"@en .
+
+semts-qv:EpistemicQuality a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:broader semts-qv:QualityMeasure ;
+    skos:definition "Quality concerning belief strength, uncertainty, evidence, and trustworthiness."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Epistemic Quality"@en .
+
+semts-qv:QualityMeasure a skos:Concept,
+        semts:QualityMeasureConcept ;
+    skos:definition "A criterion or metric used to characterize the quality, fitness, confidence, or comparison of a SemTS knowledge item."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/quality-measure> ;
+    skos:prefLabel "Knowledge Quality Measure"@en ;
+    skos:relatedMatch <http://w3id.org/mlso/vocab/evaluation_measure/quality>,
+        semts-sv:QualityAnnotation ;
+    skos:topConceptOf <https://w3id.org/semts/vocabulary/quality-measure> .
+
+<https://w3id.org/semts/vocabulary/quality-measure> a owl:Ontology,
+        skos:ConceptScheme ;
+    dct:conformsTo <https://www.w3.org/TR/skos-reference/> ;
+    dct:created "2026-08-06"^^xsd:date ;
+    dct:description "A domain-neutral SKOS vocabulary for quality dimensions, relational measures, and a deliberately small set of widely used evaluation metrics relevant to time-series analysis."@en ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:modified "2026-11-18"^^xsd:date ;
+    dct:references <http://w3id.org/mlso/vocab/evaluation_measure>,
+        dqv:,
+        semts:,
+        <https://w3id.org/semts/vocabulary/scenario-knowledge> ;
+    dct:title "SemTS Knowledge Quality Measure Vocabulary"@en ;
+    vann:preferredNamespacePrefix "semts-qv" ;
+    vann:preferredNamespaceUri "https://w3id.org/semts/vocabulary/quality-measure#" ;
+    owl:versionInfo "1.3.0" ;
+    skos:hasTopConcept semts-qv:QualityMeasure ;
+    skos:scopeNote "Concrete metrics are limited to broadly established forecasting, classification, clustering, similarity, distance, and correlation measures. More specialized measures should be referenced from MLST or supplied through extensions."@en ;
+    adms:status <http://purl.org/adms/status/Completed> .
+

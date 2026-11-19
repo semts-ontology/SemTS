@@ -3,15 +3,20 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix qudt-dt: <http://qudt.org/vocab/datatype/> .
 @prefix qudtUnit: <http://qudt.org/vocab/unit/> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix mlso: <http://w3id.org/mlso/> .
+@prefix mlso-algo: <http://w3id.org/mlso/vocab/ml_algorithm/> .
 @prefix gb: <https://w3id.org/semts/examples/grindingbeads/> .
 @prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
 @prefix semts-sv: <https://w3id.org/semts/vocabulary/scenario-knowledge#> .
-@prefix mlso-em: <http://w3id.org/mlso/vocab/evaluation_measure#> .
-@prefix mlso-algo: <http://w3id.org/mlso/vocab/ml_algorithm#> .
+@prefix semts-gv: <https://w3id.org/semts/vocabulary/knowledge-generation#> .
+@prefix semts-qv: <https://w3id.org/semts/vocabulary/quality-measure#> .
+
+# SemTS 1.3.0 version of application scenario S2 (forecasting of grinding bead
+# wear). All values are artificial.
 
 #################################################################
 # Knowledge Generation Entity
@@ -20,12 +25,9 @@
 gb:ExpertAnnotation a :KnowledgeReasoning ;
     :title "Expert Domain Annotation" ;
     :description "Manual annotation by domain expert" ;
-    :knowledgeGenerationConcept gb:ManualAnnotationConcept ;
+    :knowledgeGenerationConcept semts-gv:ExpertAnnotation ;
     :used gb:ExpertAnnotationInput ;
     :generated gb:ExpertAnnotationOutput .
-
-gb:ManualAnnotationConcept a :KnowledgeGenerationConcept ;
-    skos:prefLabel "Manual Expert Annotation"@en .
 
 gb:ExpertAnnotationInput a :KnowledgeGenerationInput ;
     :title "Expert Knowledge Input" ;
@@ -44,16 +46,16 @@ gb:ExpertAnnotationOutput a :KnowledgeGenerationOutput ;
 gb:WearRateDimension a :DataDimension ;
     :title "Wear Rate" ;
     :description "Measured wear rate of grinding beads in mm per hour" ;
-    :dimensionPosition 0 ;
+    :dimensionPosition "0"^^xsd:int ;
     :hasUnit qudtUnit:MilliM-PER-HR ;
-    :hasDatatype qudt:RealDoublePrecisionType .
+    :hasDatatype qudt-dt:FLOAT-DP .
 
 gb:TemperatureDimension a :DataDimension ;
     :title "Temperature" ;
     :description "Operating temperature of the mill in Celsius" ;
-    :dimensionPosition 1 ;
+    :dimensionPosition "1"^^xsd:int ;
     :hasUnit qudtUnit:DEG_C ;
-    :hasDatatype qudt:RealDoublePrecisionType .
+    :hasDatatype qudt-dt:FLOAT-DP .
 
 #################################################################
 # Main Time Series Segment
@@ -65,29 +67,39 @@ gb:WearTimeSeries a :TimeSeriesSegment ;
     :segmentIndex gb:TimeInterval ;
     :segmentDimension gb:WearRateDimension ;
     :segmentDimension gb:TemperatureDimension ;
-    :segmentKnowledge gb:AverageWearRate ;
-    :segmentKnowledge gb:WearRateVariability ;
     :segmentKnowledge gb:ExpertObservation ;
-    :multiSegmentKnowledge gb:TempWearCorrelation ;
-    dcat:distribution [
-        a dcat:Distribution ;
-        dcat:downloadURL <localhost/data/grinding_bead_wear_2023.csv> ;
-        dcat:mediaType "text/csv"
-    ] .
+    dcat:distribution gb:WearData .
+
+gb:WearData a dcat:Distribution ;
+    dcat:downloadURL <https://data.example.org/grindingbeads/grinding_bead_wear_2023.csv> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> .
 
 gb:TimeInterval a time:Interval ;
     time:hasBeginning gb:StartInstant ;
     time:hasEnd gb:EndInstant .
 
 gb:StartInstant a time:Instant ;
-    time:inXSDDateTime "2023-01-01T00:00:00Z"^^xsd:dateTime .
+    time:inXSDDateTimeStamp "2023-01-01T00:00:00Z"^^xsd:dateTimeStamp .
 
 gb:EndInstant a time:Instant ;
-    time:inXSDDateTime "2023-01-31T23:59:59Z"^^xsd:dateTime .
+    time:inXSDDateTimeStamp "2023-01-31T23:59:59Z"^^xsd:dateTimeStamp .
 
 #################################################################
-# Temperature Segment
+# Dimension Segments
 #################################################################
+
+# One segment per dimension over the same interval. The correlation relates
+# the two segments, and the statistics describe the wear rate segment only.
+gb:WearRateSegment a :TimeSeriesSegment ;
+    :title "Wear Rate Data Segment" ;
+    :description "Wear rate measurements from the grinding mill" ;
+    :isPartOf gb:WearTimeSeries ;
+    :segmentIndex gb:TimeInterval ;
+    :segmentDimension gb:WearRateDimension ;
+    :segmentKnowledge gb:AverageWearRate ;
+    :segmentKnowledge gb:WearRateVariability ;
+    :multiSegmentKnowledge gb:TempWearCorrelation ;
+    dcat:distribution gb:WearData .
 
 gb:TemperatureSegment a :TimeSeriesSegment ;
     :title "Temperature Data Segment" ;
@@ -96,39 +108,26 @@ gb:TemperatureSegment a :TimeSeriesSegment ;
     :segmentIndex gb:TimeInterval ;
     :segmentDimension gb:TemperatureDimension ;
     :multiSegmentKnowledge gb:TempWearCorrelation ;
-    dcat:distribution [
-        a dcat:Distribution ;
-        dcat:downloadURL <localhost/data/grinding_bead_wear_2023.csv> ;
-        dcat:mediaType "text/csv"
-    ] .
+    dcat:distribution gb:WearData .
 
 #################################################################
 # Refill Event Segment
 #################################################################
 
+# A refill happens at one point in time, so the index is an instant
+# (an interval needs a beginning strictly before its end).
 gb:RefillEventSegment a :TimeSeriesSegment ;
     :title "Refill event" ;
     :description "Time of the refill" ;
-    :segmentIndex gb:RefillTimeInterval ;
+    :segmentIndex gb:RefillInstant ;
     :segmentDimension gb:WearRateDimension ;
     :segmentDimension gb:TemperatureDimension ;
     :segmentKnowledge gb:RefillEvent ;
     :isPartOf gb:WearTimeSeries ;
-    dcat:distribution [
-        a dcat:Distribution ;
-        dcat:downloadURL <localhost/data/grinding_bead_wear_2023.csv> ;
-        dcat:mediaType "text/csv"
-    ] .
+    dcat:distribution gb:WearData .
 
-gb:RefillTimeInterval a time:Interval ;
-    time:hasBeginning gb:RefillStartInstant ;
-    time:hasEnd gb:RefillEndInstant .
-
-gb:RefillStartInstant a time:Instant ;
-    time:inXSDDateTime "2023-01-15T14:00:00Z"^^xsd:dateTime .
-
-gb:RefillEndInstant a time:Instant ;
-    time:inXSDDateTime "2023-01-15T14:00:00Z"^^xsd:dateTime .
+gb:RefillInstant a time:Instant ;
+    time:inXSDDateTimeStamp "2023-01-15T14:00:00Z"^^xsd:dateTimeStamp .
 
 #################################################################
 # Scenario Knowledge
@@ -143,7 +142,7 @@ gb:RefillEvent a :ScenarioKnowledge ;
 
 gb:RefillEventValue a :EmbeddedValue ;
     :valueString "50" ;
-    :hasDatatype qudt:RealDoublePrecisionType ;
+    :hasDatatype qudt-dt:FLOAT-DP ;
     :hasUnit qudtUnit:KiloGM .
 
 gb:ExpertObservation a :ScenarioKnowledge ;
@@ -155,26 +154,23 @@ gb:ExpertObservation a :ScenarioKnowledge ;
 
 gb:ExpertObservationValue a :EmbeddedValue ;
     :valueString "Wear rate increases non-linearly when temperature exceeds 60°C" ;
-    :hasDatatype qudt:StringType .
+    :hasDatatype qudt-dt:STRING .
 
 #################################################################
 # Statistical Analysis Method
 #################################################################
 
-gb:TSFreshConcept a :KnowledgeGenerationConcept ;
-    skos:prefLabel "TSFresh"@en .
-
 gb:StatisticalAnalysis a :KnowledgeGenerationMethod ;
     :title "Statistical Analysis of Wear Data" ;
-    :description "Basic statistical analysis of grinding bead wear measurements" ;
-    :knowledgeGenerationConcept gb:TSFreshConcept ;
+    :description "Basic statistical analysis of grinding bead wear measurements with tsfresh" ;
+    :knowledgeGenerationConcept semts-gv:StatisticalFeatureExtraction ;
     :used gb:AnalysisInput ;
     :generated gb:AnalysisOutput .
 
 gb:AnalysisInput a :KnowledgeGenerationInput ;
     :title "Input for Statistical Analysis" ;
     :description "Raw wear rate data for statistical analysis" ;
-    :inputDataReference gb:WearTimeSeries .
+    :inputDataReference gb:WearRateSegment .
 
 gb:AnalysisOutput a :KnowledgeGenerationOutput ;
     :title "Statistical Analysis Results" ;
@@ -196,7 +192,7 @@ gb:AverageWearRate a :SegmentDataCharacteristic ;
 
 gb:AverageWearRateValue a :EmbeddedValue ;
     :valueString "0.042" ;
-    :hasDatatype qudt:RealDoublePrecisionType ;
+    :hasDatatype qudt-dt:FLOAT-DP ;
     :hasUnit qudtUnit:MilliM-PER-HR .
 
 gb:WearRateVariability a :SegmentDataCharacteristic ;
@@ -208,7 +204,7 @@ gb:WearRateVariability a :SegmentDataCharacteristic ;
 
 gb:WearRateVariabilityValue a :EmbeddedValue ;
     :valueString "0.008" ;
-    :hasDatatype qudt:RealDoublePrecisionType ;
+    :hasDatatype qudt-dt:FLOAT-DP ;
     :hasUnit qudtUnit:MilliM-PER-HR .
 
 #################################################################
@@ -218,14 +214,19 @@ gb:WearRateVariabilityValue a :EmbeddedValue ;
 gb:WearForecastMethod a :KnowledgeGenerationMethod ;
     :title "Wear Rate Forecast Method" ;
     :description "Method for predicting future wear rates of grinding beads" ;
-    :knowledgeGenerationConcept mlso-algo:LSTM ;
+    :knowledgeGenerationConcept semts-gv:Forecasting ;
+    mls:implements gb:LSTMAlgorithm ;
     :used gb:ForecastInput ;
     :generated gb:ForecastOutput .
+
+gb:LSTMAlgorithm a mls:Algorithm ;
+    rdfs:label "Long short-term memory network" ;
+    mlso:hasAlgorithmType mlso-algo:LSTM .
 
 gb:ForecastInput a :KnowledgeGenerationInput ;
     :title "Input for Wear Forecast" ;
     :description "Historical wear data for generating forecast" ;
-    :inputDataReference gb:WearTimeSeries ;
+    :inputDataReference gb:WearRateSegment ;
     :inputKnowledge gb:AverageWearRate ;
     :inputKnowledge gb:WearRateVariability .
 
@@ -242,14 +243,14 @@ gb:WearForecast a :SegmentPrediction ;
     :knowledgeGenerationEntity gb:WearForecastMethod ;
     :knowledgeQualityMeasure gb:ForecastAccuracy ;
     :hasValue [
-        a :ReferencedValue ;
-        :hasDatatype qudt:TimeSeriesArray ;
-        dcat:distribution [
-            a dcat:Distribution ;
-            dcat:downloadURL <localhost/data/wear_forecast_feb2023.csv> ;
-            dcat:mediaType "text/csv"
-        ]
+        a :ReferencedValue, dcat:Dataset ;
+        :hasUnit qudtUnit:MilliM-PER-HR ;
+        dcat:distribution gb:ForecastData
     ] .
+
+gb:ForecastData a dcat:Distribution ;
+    dcat:downloadURL <https://data.example.org/grindingbeads/wear_forecast_feb2023.csv> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> .
 
 #################################################################
 # Forecast Segment (Artificial)
@@ -261,21 +262,17 @@ gb:ForecastSegment a :ArtificialTimeSeriesSegment ;
     :segmentIndex gb:ForecastInterval ;
     :segmentDimension gb:WearRateDimension ;
     :segmentKnowledge gb:WearForecast ;
-    dcat:distribution [
-        a dcat:Distribution ;
-        dcat:downloadURL <localhost/data/wear_forecast_feb2023.csv> ;
-        dcat:mediaType "text/csv"
-    ] .
+    dcat:distribution gb:ForecastData .
 
 gb:ForecastInterval a time:Interval ;
     time:hasBeginning gb:ForecastStartInstant ;
     time:hasEnd gb:ForecastEndInstant .
 
 gb:ForecastStartInstant a time:Instant ;
-    time:inXSDDateTime "2023-02-01T00:00:00Z"^^xsd:dateTime .
+    time:inXSDDateTimeStamp "2023-02-01T00:00:00Z"^^xsd:dateTimeStamp .
 
 gb:ForecastEndInstant a time:Instant ;
-    time:inXSDDateTime "2023-02-28T23:59:59Z"^^xsd:dateTime .
+    time:inXSDDateTimeStamp "2023-02-28T23:59:59Z"^^xsd:dateTimeStamp .
 
 #################################################################
 # Quality Measure
@@ -284,38 +281,41 @@ gb:ForecastEndInstant a time:Instant ;
 gb:ForecastAccuracy a :KnowledgeQualityMeasure ;
     :title "Forecast Accuracy" ;
     :description "Mean Absolute Error of the forecast" ;
-    :qualityMeasureConcept mlso-em:mean_absolute_error ;
+    :qualityMeasureConcept semts-qv:MeanAbsoluteError ;
     :hasValue gb:MAEValue .
 
 gb:MAEValue a :EmbeddedValue ;
     :valueString "0.005" ;
-    :hasDatatype qudt:RealDoublePrecisionType ;
+    :hasDatatype qudt-dt:FLOAT-DP ;
     :hasUnit qudtUnit:MilliM-PER-HR .
 
 #################################################################
 # Correlation Analysis Method
 #################################################################
 
-gb:CorrelationConcept a :KnowledgeGenerationConcept ;
-    skos:prefLabel "Correlation Analysis"@en .
-
 gb:CorrelationAnalysis a :KnowledgeGenerationMethod ;
     :title "Correlation Analysis Method" ;
     :description "Method for calculating correlation between time series dimensions" ;
-    :knowledgeGenerationConcept gb:CorrelationConcept ;
-    :used gb:CorrelationInput ;
+    :knowledgeGenerationConcept semts-gv:CorrelationAnalysis ;
+    :used gb:CorrelationInputWear ;
+    :used gb:CorrelationInputTemperature ;
     :generated gb:CorrelationOutput .
 
-gb:CorrelationInput a :KnowledgeGenerationInput ;
-    :title "Input for Correlation Analysis" ;
-    :description "Temperature and wear rate data for correlation analysis" ;
-    :inputDataReference gb:WearTimeSeries .
+# inputDataReference is functional: one input per referenced segment
+gb:CorrelationInputWear a :KnowledgeGenerationInput ;
+    :title "Wear Rate Input for Correlation Analysis" ;
+    :inputDataReference gb:WearRateSegment .
+
+gb:CorrelationInputTemperature a :KnowledgeGenerationInput ;
+    :title "Temperature Input for Correlation Analysis" ;
+    :inputDataReference gb:TemperatureSegment .
 
 gb:CorrelationOutput a :KnowledgeGenerationOutput ;
     :title "Correlation Analysis Results" ;
     :description "Calculated correlation between temperature and wear rate" ;
     :outputKnowledge gb:TempWearCorrelation ;
-    :wasDerivedFrom gb:CorrelationInput .
+    :wasDerivedFrom gb:CorrelationInputWear ;
+    :wasDerivedFrom gb:CorrelationInputTemperature .
 
 #################################################################
 # Segment Relation
@@ -323,11 +323,11 @@ gb:CorrelationOutput a :KnowledgeGenerationOutput ;
 
 gb:TempWearCorrelation a :SegmentRelation ;
     :title "Temperature-Wear Correlation" ;
-    :description "Analysis of correlation between temperature and wear rate" ;
+    :description "Pearson correlation between temperature and wear rate" ;
     :knowledgeConcept semts-dv:Correlation ;
     :hasValue gb:CorrelationValue ;
     :knowledgeGenerationEntity gb:CorrelationAnalysis .
 
 gb:CorrelationValue a :EmbeddedValue ;
     :valueString "0.72" ;
-    :hasDatatype qudt:RealDoublePrecisionType .
+    :hasDatatype qudt-dt:FLOAT-DP .

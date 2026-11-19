@@ -1,0 +1,30 @@
+@prefix semts:    <https://w3id.org/semts/ontology#> .
+@prefix semts-sv: <https://w3id.org/semts/vocabulary/scenario-knowledge#> .
+@prefix semts-gv: <https://w3id.org/semts/vocabulary/knowledge-generation#> .
+@prefix unit:     <http://qudt.org/vocab/unit/> .
+@prefix ex:       <https://example.org/line2/> .
+
+# Context that is relevant to segments but not a statement about them
+ex:defaultTemp a semts:CommonContextKnowledge, semts:ScenarioKnowledge ;
+    semts:knowledgeConcept semts-sv:Baseline ;
+    semts:title "Default machine temperature" ;
+    semts:hasValue [ a semts:EmbeddedValue ;
+        semts:valueString "80" ;
+        semts:hasUnit unit:DEG_C ] ;
+    semts:knowledgeGenerationEntity ex:handbook .
+
+# Attached with commonContextKnowledge, never with segmentKnowledge
+ex:S1 semts:commonContextKnowledge ex:defaultTemp .
+ex:S2 semts:commonContextKnowledge ex:defaultTemp .
+
+#region provenance
+ex:handbook a semts:KnowledgeReasoning ;
+    semts:knowledgeGenerationConcept semts-gv:ExpertAnnotation ;
+    semts:description "Taken from the machine handbook by the line engineer" ;
+    semts:used ex:handbook-in ;
+    semts:generated ex:handbook-out .
+ex:handbook-in a semts:KnowledgeGenerationInput ; semts:inputDataReference ex:run42 .
+ex:handbook-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:defaultTemp ;
+    semts:wasDerivedFrom ex:handbook-in .
+#endregion

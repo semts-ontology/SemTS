@@ -1,0 +1,55 @@
+@prefix semts:    <https://w3id.org/semts/ontology#> .
+@prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+@prefix semts-gv: <https://w3id.org/semts/vocabulary/knowledge-generation#> .
+@prefix dcat:     <http://www.w3.org/ns/dcat#> .
+@prefix time:     <http://www.w3.org/2006/time#> .
+@prefix unit:     <http://qudt.org/vocab/unit/> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:       <https://example.org/ecg/> .
+
+# Two heartbeats of an ECG recording, indexed by sample number
+ex:S3 a semts:TimeSeriesSegment ;
+    semts:segmentIndex [ a time:Interval ;
+        time:hasBeginning [ a time:Instant ; time:inTimePosition [ a time:TimePosition ; time:hasTRS ex:sampleClock ; time:numericPosition 1200.0 ] ] ;
+        time:hasEnd       [ a time:Instant ; time:inTimePosition [ a time:TimePosition ; time:hasTRS ex:sampleClock ; time:numericPosition 1560.0 ] ] ] ;
+    semts:segmentDimension ex:leadII ;
+    dcat:distribution ex:record17 ;
+    semts:multiSegmentKnowledge ex:sim34 .
+
+ex:S4 a semts:TimeSeriesSegment ;
+    semts:segmentIndex [ a time:Interval ;
+        time:hasBeginning [ a time:Instant ; time:inTimePosition [ a time:TimePosition ; time:hasTRS ex:sampleClock ; time:numericPosition 4810.0 ] ] ;
+        time:hasEnd       [ a time:Instant ; time:inTimePosition [ a time:TimePosition ; time:hasTRS ex:sampleClock ; time:numericPosition 5170.0 ] ] ] ;
+    semts:segmentDimension ex:leadII ;
+    dcat:distribution ex:record17 ;
+    semts:multiSegmentKnowledge ex:sim34 .
+
+# Knowledge that is only meaningful for the pair, not for either beat alone
+ex:sim34 a semts:SegmentRelation ;
+    semts:knowledgeConcept semts-dv:Similarity ;
+    semts:title "DTW-based similarity" ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "0.87" ] ;
+    semts:knowledgeGenerationEntity ex:dtwCompare .
+
+ex:leadII a semts:DataDimension ;
+    semts:title "ECG lead II" ;
+    semts:hasUnit unit:MilliV .
+
+ex:sampleClock a time:TRS .   # sample index at 360 Hz
+
+ex:record17 a dcat:Distribution ;
+    dcat:downloadURL <https://data.example.org/ecg/record17.parquet> .
+
+#region provenance
+ex:dtwCompare a semts:KnowledgeComparisonMeasure ;
+    semts:knowledgeGenerationConcept semts-gv:SimilarityAnalysis ;
+    semts:used ex:dtw-inS3, ex:dtw-inS4 ;
+    semts:generated ex:dtw-out .
+
+ex:dtw-inS3 a semts:KnowledgeGenerationInput ; semts:inputDataReference ex:S3 .
+ex:dtw-inS4 a semts:KnowledgeGenerationInput ; semts:inputDataReference ex:S4 .
+
+ex:dtw-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:sim34 ;
+    semts:wasDerivedFrom ex:dtw-inS3, ex:dtw-inS4 .
+#endregion

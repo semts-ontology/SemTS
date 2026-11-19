@@ -1,0 +1,701 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix semts: <https://w3id.org/semts/ontology#> .
+@prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+@prefix semts-gv: <https://w3id.org/semts/vocabulary/knowledge-generation#> .
+@prefix semts-sv: <https://w3id.org/semts/vocabulary/scenario-knowledge#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# OWL declarations of the external terms used in this module, so that it is an OWL 2 DL document on its own.
+# The SKOS terms are declared as in the SKOS RDF schema.
+skos:Concept a owl:Class .
+skos:ConceptScheme a owl:Class .
+semts:KnowledgeConcept a owl:Class .
+semts:KnowledgeGenerationConcept a owl:Class .
+skos:broader a owl:ObjectProperty .
+skos:closeMatch a owl:ObjectProperty .
+skos:exactMatch a owl:ObjectProperty .
+skos:hasTopConcept a owl:ObjectProperty .
+skos:inScheme a owl:ObjectProperty .
+skos:related a owl:ObjectProperty .
+skos:relatedMatch a owl:ObjectProperty .
+skos:topConceptOf a owl:ObjectProperty .
+dct:conformsTo a owl:AnnotationProperty .
+dct:created a owl:AnnotationProperty .
+dct:description a owl:AnnotationProperty .
+dct:license a owl:AnnotationProperty .
+dct:modified a owl:AnnotationProperty .
+dct:references a owl:AnnotationProperty .
+dct:title a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+skos:altLabel a owl:AnnotationProperty .
+skos:definition a owl:AnnotationProperty .
+skos:editorialNote a owl:AnnotationProperty .
+skos:prefLabel a owl:AnnotationProperty .
+skos:scopeNote a owl:AnnotationProperty .
+adms:status a owl:AnnotationProperty .
+
+semts-gv:AbductiveReasoning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:AutomatedReasoning ;
+    skos:definition "Generation of plausible explanations for observations."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Abductive Reasoning"@en .
+
+semts-gv:Abstraction a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:KnowledgeSummarization ;
+    skos:definition "Generation of a higher-level representation that omits non-essential detail."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Abstraction"@en .
+
+semts-gv:Aggregation a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:KnowledgeSummarization ;
+    skos:definition "Combination of multiple values or knowledge items into a summary."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Aggregation"@en .
+
+semts-gv:AnomalyDetection a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PredictiveAnalysis ;
+    skos:definition "Identification of observations or segments that deviate from an expected reference."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/ml_task_type/AnomalyDetection> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Anomaly Detection"@en ;
+    skos:relatedMatch semts-dv:Anomaly .
+
+semts-gv:AssociationRuleMining a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PatternDiscovery ;
+    skos:definition "Discovery of conditional co-occurrence or dependency rules."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Association Rule Mining"@en .
+
+semts-gv:BaselineComparison a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ComparisonBasedGeneration ;
+    skos:definition "Comparison of an input with a baseline or reference."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Baseline Comparison"@en .
+
+semts-gv:CausalDiscovery a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:RelationAnalysis ;
+    skos:definition "Discovery of candidate causal structures or cause-effect relations."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/ml_task_type/CausalDiscovery> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Causal Discovery"@en ;
+    skos:relatedMatch semts-dv:Causality .
+
+semts-gv:CausalEffectEstimation a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:RelationAnalysis ;
+    skos:closeMatch <http://w3id.org/mlso/vocab/ml_task_type/CausalInference> ;
+    skos:definition "Estimation of the magnitude or distribution of causal effects."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Causal Effect Estimation"@en .
+
+semts-gv:CausalReasoning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:AutomatedReasoning ;
+    skos:definition "Reasoning over causes, effects, interventions, and counterfactuals."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Causal Reasoning"@en .
+
+semts-gv:ChangePointDetection a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PredictiveAnalysis ;
+    skos:definition "Identification of points or intervals where the data-generating behavior changes."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/ml_task_type/ChangePointDetection> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Change-Point Detection"@en ;
+    skos:relatedMatch semts-dv:Changepoint .
+
+semts-gv:Classification a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PredictiveAnalysis ;
+    skos:definition "Assignment of one or more predefined classes or labels."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/ml_task_type/Classification> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Classification"@en ;
+    skos:relatedMatch semts-dv:Classification .
+
+semts-gv:Clustering a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PatternDiscovery ;
+    skos:definition "Grouping of segments or knowledge items according to similarity or another relation."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/ml_task_type/Clustering> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Clustering"@en ;
+    skos:relatedMatch semts-dv:Clustering .
+
+semts-gv:ConflictResolution a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:EvidenceIntegration ;
+    skos:definition "Resolution or qualification of conflicting knowledge or evidence."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Conflict Resolution"@en .
+
+semts-gv:ConsensusBuilding a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:HumanKnowledgeAcquisition ;
+    skos:definition "Generation of an agreed knowledge assertion from multiple contributors."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Consensus Building"@en .
+
+semts-gv:ConsistencyChecking a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:AutomatedReasoning ;
+    skos:definition "Detection or resolution of logical or semantic conflicts."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Consistency Checking"@en .
+
+semts-gv:ConstraintChecking a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:AutomatedReasoning ;
+    skos:definition "Validation or derivation based on explicit constraints."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Constraint Checking"@en .
+
+semts-gv:CorrelationAnalysis a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:RelationAnalysis ;
+    skos:definition "Generation of correlation or statistical dependence knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Correlation Analysis"@en ;
+    skos:relatedMatch semts-dv:Correlation .
+
+semts-gv:CrossSpectralAnalysis a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:RelationAnalysis ;
+    skos:definition "Generation of frequency-domain relations between time series."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Cross-Spectral Analysis"@en .
+
+semts-gv:DeductiveReasoning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:AutomatedReasoning ;
+    skos:definition "Derivation of conclusions that follow from represented premises and rules."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Deductive Reasoning"@en .
+
+semts-gv:DependencyAnalysis a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:RelationAnalysis ;
+    skos:definition "Generation of dependency relations without necessarily asserting causation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Dependency Analysis"@en .
+
+semts-gv:DistanceComputation a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:RelationAnalysis ;
+    skos:definition "Generation of distance or dissimilarity values."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Distance Computation"@en .
+
+semts-gv:EventDetection a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PredictiveAnalysis ;
+    skos:definition "Identification of event occurrences from time-series data."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/ml_task_type/EventDetection> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Event Detection"@en .
+
+semts-gv:EvidenceAggregation a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:EvidenceIntegration ;
+    skos:definition "Combination of multiple evidence items into a summary or score."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Evidence Aggregation"@en .
+
+semts-gv:EvidenceSynthesis a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:EvidenceIntegration ;
+    skos:definition "Structured integration of evidence into a conclusion or explanation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Evidence Synthesis"@en .
+
+semts-gv:ExpertAnnotation a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:HumanKnowledgeAcquisition ;
+    skos:definition "Creation of labels, notes, events, relations, or other knowledge by an expert."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Expert Annotation"@en ;
+    skos:relatedMatch semts-sv:Annotation .
+
+semts-gv:ExpertAssessment a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:HumanKnowledgeAcquisition ;
+    skos:definition "Human evaluation of quality, relevance, cause, risk, or another property."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Expert Assessment"@en .
+
+semts-gv:ExpertValidation a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:HumanKnowledgeAcquisition ;
+    skos:definition "Human confirmation or rejection of generated or asserted knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Expert Validation"@en ;
+    skos:relatedMatch semts-sv:ValidationOutcome .
+
+semts-gv:ExplanationGeneration a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:KnowledgeSummarization ;
+    skos:definition "Generation of explanatory knowledge for an observation, prediction, relation, or decision."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Explanation Generation"@en .
+
+semts-gv:FeatureSelection a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:FeatureEngineering ;
+    skos:definition "Selection of a subset of available features according to relevance, redundancy, cost, or another criterion."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/ml_task_type/featureselection> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Feature Selection"@en .
+
+semts-gv:Forecasting a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PredictiveAnalysis ;
+    skos:closeMatch <http://w3id.org/mlso/vocab/ml_task_type/TimeSeriesForecasting> ;
+    skos:definition "Prediction of future values, events, or trajectories."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/ml_task_type/Forecasting> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Forecasting"@en ;
+    skos:relatedMatch semts-dv:Forecast .
+
+semts-gv:FrequencyDomainFeatureExtraction a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:FeatureExtraction ;
+    skos:definition "Extraction of spectral or frequency-domain characteristics."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Frequency-Domain Feature Extraction"@en .
+
+semts-gv:GroupComparison a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ComparisonBasedGeneration ;
+    skos:definition "Comparison involving sets or groups of inputs."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Group Comparison"@en .
+
+semts-gv:HyperparameterOptimization a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ModelDevelopment ;
+    skos:definition "Search or optimization over method hyperparameters."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/ml_task_type/HyperparameterOptimization> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Hyperparameter Optimization"@en .
+
+semts-gv:Imputation a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PredictiveAnalysis ;
+    skos:definition "Estimation of values for missing, invalid, or excluded observations."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/ml_task_type/Imputation> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Imputation"@en .
+
+semts-gv:InductiveReasoning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:AutomatedReasoning ;
+    skos:definition "Derivation of generalized conclusions from observations or examples."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Inductive Reasoning"@en .
+
+semts-gv:KnowledgeExtraction a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:MethodBasedGeneration ;
+    skos:definition "Generation of explicit characteristics, structures, labels, or relations from data or existing knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Knowledge Extraction"@en .
+
+semts-gv:Matching a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ComparisonBasedGeneration ;
+    skos:definition "Identification of compatible, corresponding, or nearest entities."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Matching"@en .
+
+semts-gv:ModelSelection a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ModelDevelopment ;
+    skos:definition "Selection among candidate models according to a criterion."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/ml_task_type/ModelSelection> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Model Selection"@en .
+
+semts-gv:ModelTraining a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ModelDevelopment ;
+    skos:definition "Fitting a model or its parameters using data or knowledge inputs."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Model Training"@en .
+
+semts-gv:MotifDiscovery a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PatternDiscovery ;
+    skos:definition "Discovery of repeated or similar subsequences."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Motif Discovery"@en .
+
+semts-gv:PairwiseComparison a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ComparisonBasedGeneration ;
+    skos:definition "Comparison of two compatible inputs."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Pairwise Comparison"@en .
+
+semts-gv:ProbabilisticReasoning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:AutomatedReasoning ;
+    skos:definition "Reasoning under uncertainty using probabilistic representations."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Probabilistic Reasoning"@en .
+
+semts-gv:ProfileComparison a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ComparisonBasedGeneration ;
+    skos:definition "Comparison of an observed profile with an expected or reference profile."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Profile Comparison"@en .
+
+semts-gv:Ranking a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ComparisonBasedGeneration ;
+    skos:definition "Ordering of entities according to one or more comparison criteria."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Ranking"@en .
+
+semts-gv:Regression a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PredictiveAnalysis ;
+    skos:definition "Estimation of continuous or ordered target values."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/ml_task_type/Regression> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Regression"@en .
+
+semts-gv:ReinforcementLearning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:LearningBasedGeneration ;
+    skos:definition "Learning behavior through interaction and reward signals."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/learning_method/Reinforcement_Learning_Algorithm> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Reinforcement Learning"@en .
+
+semts-gv:RemainingUsefulLifeEstimation a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PredictiveAnalysis ;
+    skos:closeMatch <http://w3id.org/mlso/vocab/ml_task_type/RemainingUsefulLifetimeEstimation> ;
+    skos:definition "Estimation of the remaining duration until a defined end-of-life condition."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Remaining Useful Life Estimation"@en .
+
+semts-gv:RepresentationLearning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:FeatureEngineering ;
+    skos:definition "Learning a representation, embedding, or latent feature space from data."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Representation Learning"@en .
+
+semts-gv:RuleBasedReasoning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:AutomatedReasoning ;
+    skos:definition "Application of explicit rules to derive or validate knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Rule-Based Reasoning"@en .
+
+semts-gv:Segmentation a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PatternDiscovery ;
+    skos:definition "Identification of meaningful boundaries or partitions in time-series data."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Segmentation"@en ;
+    skos:relatedMatch semts-dv:Segmentation .
+
+semts-gv:SelfSupervisedLearning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:LearningBasedGeneration ;
+    skos:definition "Learning from targets constructed from the input data itself."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/learning_method/SelfSupervisedLearning> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Self-supervised Learning"@en .
+
+semts-gv:SemiSupervisedLearning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:LearningBasedGeneration ;
+    skos:definition "Learning from a mixture of labeled and unlabeled examples."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/learning_method/Semi-supervised_Learning_Algorithm> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Semi-supervised Learning"@en .
+
+semts-gv:ShapeFeatureExtraction a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:FeatureExtraction ;
+    skos:definition "Extraction of characteristics describing local or global signal shape."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Shape Feature Extraction"@en .
+
+semts-gv:ShapeletDiscovery a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PatternDiscovery ;
+    skos:definition "Discovery of discriminative subsequences useful for classification or interpretation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Shapelet Discovery"@en .
+
+semts-gv:SimilarityAnalysis a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:RelationAnalysis ;
+    skos:closeMatch <http://w3id.org/mlso/vocab/ml_task_type/SimilarityMatching> ;
+    skos:definition "Generation of similarity relations or scores."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Similarity Analysis"@en ;
+    skos:relatedMatch semts-dv:Similarity .
+
+semts-gv:Simulation a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:MethodBasedGeneration ;
+    skos:definition "Generation of knowledge by executing a model of a process or system."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Simulation"@en .
+
+semts-gv:StateEstimation a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:PredictiveAnalysis ;
+    skos:definition "Estimation of latent or observable states associated with time-series behavior."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "State Estimation"@en .
+
+semts-gv:StatisticalFeatureExtraction a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:FeatureExtraction ;
+    skos:definition "Extraction of distributional, location, dispersion, or other statistical characteristics."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Statistical Feature Extraction"@en .
+
+semts-gv:SupervisedLearning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:LearningBasedGeneration ;
+    skos:definition "Learning from examples associated with target labels or values."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/learning_method/Supervised_Learning_Algorithm> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Supervised Learning"@en .
+
+semts-gv:TemporalFeatureExtraction a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:FeatureExtraction ;
+    skos:definition "Extraction of characteristics based on ordering, lag, duration, change, trend, or temporal structure."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Temporal Feature Extraction"@en .
+
+semts-gv:TemporalReasoning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:AutomatedReasoning ;
+    skos:definition "Reasoning over temporal order, intervals, duration, recurrence, or change."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Temporal Reasoning"@en .
+
+semts-gv:ThresholdComparison a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ComparisonBasedGeneration ;
+    skos:definition "Comparison of a value or knowledge item with a threshold or rule boundary."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Threshold Comparison"@en .
+
+semts-gv:TimeFrequencyFeatureExtraction a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:FeatureExtraction ;
+    skos:definition "Extraction of characteristics localized jointly in time and frequency."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Time-Frequency Feature Extraction"@en .
+
+semts-gv:UnsupervisedLearning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:LearningBasedGeneration ;
+    skos:definition "Learning structures or representations without target labels."@en ;
+    skos:exactMatch <http://w3id.org/mlso/vocab/learning_method/Unsupervised_Learning_Algorithm> ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Unsupervised Learning"@en .
+
+semts-gv:EvidenceIntegration a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ReasoningBasedGeneration ;
+    skos:definition "Generation of knowledge by combining supporting and contradicting evidence."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Evidence Integration"@en .
+
+semts-gv:FeatureEngineering a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:MethodBasedGeneration ;
+    skos:definition "Generation activity that constructs, extracts, transforms, or selects representations used for analysis."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Feature Engineering"@en .
+
+semts-gv:KnowledgeSummarization a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:MethodBasedGeneration ;
+    skos:definition "Generation of a reduced or abstract description from multiple data or knowledge inputs."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Knowledge Summarization"@en .
+
+semts-gv:ModelDevelopment a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:MethodBasedGeneration ;
+    skos:definition "Generation, selection, adaptation, or optimization of models used to produce knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Model Development"@en .
+
+semts-gv:ReasoningBasedGeneration a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    rdfs:seeAlso semts:KnowledgeReasoning ;
+    skos:broader semts-gv:KnowledgeGeneration ;
+    skos:definition "Knowledge generation based on logical, probabilistic, causal, temporal, human, or hybrid reasoning."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Reasoning-Based Generation"@en .
+
+semts-gv:HumanKnowledgeAcquisition a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ReasoningBasedGeneration ;
+    skos:definition "Generation or validation of knowledge through human input."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Human Knowledge Acquisition"@en .
+
+semts-gv:AlgorithmRecommendation a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-gv:MethodKnowledge ;
+    skos:definition "Knowledge that a particular algorithm is appropriate or optimal for analysing the associated segments for a given task."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Algorithm Recommendation"@en ;
+    skos:related semts-gv:ModelSelection ;
+    skos:scopeNote "Use as the concept of a semts:Algorithm instance. The instance is itself an mls:Algorithm, so the algorithm family can be stated with mlso:hasAlgorithmType (for example http://w3id.org/mlso/vocab/ml_algorithm/AutoEncoder). semts:hasValue carries the identifier or configuration of the recommended implementation."@en .
+
+semts-gv:AnalyticalEquivalent a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-gv:MethodKnowledge ;
+    skos:definition "A mathematical or logical expression that is equivalent to established process information and can be used in place of a learned or measured quantity when analysing the associated segments."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Analytical Equivalent"@en ;
+    skos:scopeNote "Use as the concept of a semts:MethodKnowledge instance whose value holds the expression, for example a formula that reproduces a controller set-point curve."@en .
+
+semts-gv:HyperparameterRecommendation a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-gv:MethodKnowledge ;
+    skos:definition "Knowledge that a particular hyperparameter setting is appropriate or optimal for analysing the associated segments for a given task."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Hyperparameter Recommendation"@en ;
+    skos:related semts-gv:HyperparameterOptimization ;
+    skos:scopeNote "Use as the concept of a semts:Hyperparameter instance. Name the hyperparameter in semts:title and give the recommended setting in semts:hasValue."@en .
+
+semts-gv:MethodConfiguration a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-gv:MethodKnowledge ;
+    skos:definition "A named, complete configuration of an analytical method, such as an algorithm together with its parameter settings and preprocessing steps, that has proven effective for the associated segments."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Method Configuration"@en ;
+    skos:altLabel "Method Preset"@en ;
+    skos:scopeNote "Use as the concept of a semts:MethodKnowledge instance, or of a semts:KnowledgeGroup that bundles the individual algorithm and hyperparameter recommendations."@en .
+
+semts-gv:MethodKnowledge a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:definition "Knowledge about an analytical method, or a setting of a method, that is appropriate or optimal when analysing the associated segments for a given task."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Method Knowledge"@en ;
+    skos:scopeNote "Unlike the concepts under Knowledge Generation, which classify how knowledge was produced, these concepts classify knowledge about methods: what worked, with which settings, for which data. They are semts:KnowledgeConcept and are used with semts:knowledgeConcept."@en ;
+    skos:topConceptOf <https://w3id.org/semts/vocabulary/knowledge-generation> .
+
+semts-gv:PreprocessingRecommendation a skos:Concept,
+        semts:KnowledgeConcept ;
+    skos:broader semts-gv:MethodKnowledge ;
+    skos:definition "Knowledge that a particular preprocessing step, such as resampling, normalisation, filtering or imputation, is appropriate before analysing the associated segments."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Preprocessing Recommendation"@en .
+
+semts-gv:KnowledgeGeneration a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:definition "A process that produces, compares, validates, derives, or otherwise generates SemTS knowledge."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Knowledge Generation"@en ;
+    skos:topConceptOf <https://w3id.org/semts/vocabulary/knowledge-generation> .
+
+semts-gv:FeatureExtraction a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:FeatureEngineering ;
+    skos:definition "Generation of descriptive features or characteristics from time-series data or representations."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Feature Extraction"@en .
+
+semts-gv:LearningBasedGeneration a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:MethodBasedGeneration ;
+    skos:definition "Method-based generation in which a model or representation is learned from examples or interaction."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Learning-Based Generation"@en .
+
+semts-gv:PatternDiscovery a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:MethodBasedGeneration ;
+    skos:definition "Discovery of repeated, characteristic, grouped, or sequential structures."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Pattern Discovery"@en .
+
+semts-gv:ComparisonBasedGeneration a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    rdfs:seeAlso semts:KnowledgeComparisonMeasure ;
+    skos:broader semts-gv:KnowledgeGeneration ;
+    skos:definition "Knowledge generation based primarily on comparing compatible data or knowledge inputs."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Comparison-Based Generation"@en .
+
+semts-gv:RelationAnalysis a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:MethodBasedGeneration ;
+    skos:definition "Generation of relations among segments, dimensions, events, values, or knowledge items."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Relation Analysis"@en .
+
+semts-gv:AutomatedReasoning a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:ReasoningBasedGeneration ;
+    skos:definition "Generation of knowledge by a reasoning system."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Automated Reasoning"@en .
+
+semts-gv:MethodBasedGeneration a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    rdfs:seeAlso semts:KnowledgeGenerationMethod ;
+    skos:broader semts-gv:KnowledgeGeneration ;
+    skos:definition "Knowledge generation performed by an analytical or computational implementation."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Method-Based Generation"@en .
+
+semts-gv:PredictiveAnalysis a skos:Concept,
+        semts:KnowledgeGenerationConcept ;
+    skos:broader semts-gv:MethodBasedGeneration ;
+    skos:definition "Generation of predictions, estimates, labels, states, or future values."@en ;
+    skos:inScheme <https://w3id.org/semts/vocabulary/knowledge-generation> ;
+    skos:prefLabel "Predictive Analysis"@en .
+
+<https://w3id.org/semts/vocabulary/knowledge-generation> a owl:Ontology,
+        skos:ConceptScheme ;
+    dct:conformsTo <https://www.w3.org/TR/skos-reference/> ;
+    dct:created "2026-08-06"^^xsd:date ;
+    dct:description "A domain-neutral SKOS vocabulary for classifying methods, comparisons, reasoning activities, and human processes that generate knowledge associated with time-series data, and for method knowledge: knowledge about which generation methods and settings work for which data. Detailed machine-learning concepts are referenced from the Machine Learning Sailor Taxonomies (MLST)."@en ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:modified "2026-11-18"^^xsd:date ;
+    dct:references <http://w3id.org/mlso/vocab/learning_method>,
+        <http://w3id.org/mlso/vocab/ml_algorithm>,
+        <http://w3id.org/mlso/vocab/ml_task_type>,
+        semts: ;
+    dct:title "SemTS Knowledge Generation Vocabulary"@en ;
+    vann:preferredNamespacePrefix "semts-gv" ;
+    vann:preferredNamespaceUri "https://w3id.org/semts/vocabulary/knowledge-generation#" ;
+    owl:versionInfo "1.3.0" ;
+    skos:hasTopConcept semts-gv:KnowledgeGeneration,
+        semts-gv:MethodKnowledge ;
+    skos:editorialNote "The scheme has two top concepts. Concepts under Knowledge Generation are semts:KnowledgeGenerationConcept and classify knowledge generation entities (semts:knowledgeGenerationConcept). Concepts under Method Knowledge are semts:KnowledgeConcept and classify semts:MethodKnowledge, semts:Algorithm and semts:Hyperparameter instances (semts:knowledgeConcept)."@en ;
+    skos:scopeNote "The hierarchy remains shallow and method-oriented. Feature extraction, feature selection, and representation learning are sibling feature-engineering activities. Concrete software algorithms remain external taxonomy concepts."@en ;
+    adms:status <http://purl.org/adms/status/Completed> .
+
