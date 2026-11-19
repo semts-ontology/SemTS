@@ -1,0 +1,877 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix semts: <https://w3id.org/semts/ontology#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/semts/shapes> a owl:Ontology ;
+    dct:title "SemTS SHACL shapes"@en ;
+    dct:description "SHACL Core and SHACL-SPARQL shapes for validating SemTS 1.3.0 instance data. Subclasses are listed explicitly in sh:or lists so that the shapes also work when the ontology is not loaded into the data graph. Load the SemTS ontology into the data graph (or validate with RDFS inference) to also catch instances typed only with external classes."@en ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:modified "2026-11-18"^^xsd:date ;
+    dct:references <https://w3id.org/semts/ontology/130#> ;
+    owl:versionIRI <https://w3id.org/semts/shapes/130> ;
+    owl:versionInfo "1.3.0" .
+
+semts:AfterIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "after must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:after ] ;
+    sh:sparql [ sh:message "An asserted semts:after relation must be supported by time:intervalAfter between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:after ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalAfter ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:after .
+
+semts:AlgorithmDisjointShape a sh:NodeShape ;
+    sh:message "Algorithm cannot be an instance of Hyperparameter" ;
+    sh:not [ sh:class semts:Hyperparameter ] ;
+    sh:targetClass semts:Algorithm .
+
+semts:ArtificialTimeSeriesSegmentShape a sh:NodeShape ;
+    sh:property [ sh:class semts:ArtificialTimeSeriesSegment ;
+            sh:description "Artificial segments can only be part of other artificial segments" ;
+            sh:message "ArtificialTimeSeriesSegment isPartOf must point only to semts:ArtificialTimeSeriesSegment" ;
+            sh:name "is part of" ;
+            sh:path semts:isPartOf ] ;
+    sh:targetClass semts:ArtificialTimeSeriesSegment .
+
+semts:BeforeIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "before must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:before ] ;
+    sh:sparql [ sh:message "An asserted semts:before relation must be supported by time:intervalBefore between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:before ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalBefore ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:before .
+
+semts:ContainsIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "contains must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:contains ] ;
+    sh:sparql [ sh:message "An asserted semts:contains relation must be supported by time:intervalContains between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:contains ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalContains ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:contains .
+
+semts:DataDimensionShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:int ;
+            sh:maxCount 1 ;
+            sh:message "Dimension position must be an integer ≥ 0" ;
+            sh:minInclusive 0 ;
+            sh:name "dimension position" ;
+            sh:path semts:dimensionPosition ],
+        [ sh:class qudt:Unit ;
+            sh:maxCount 1 ;
+            sh:message "hasUnit must point to qudt:Unit" ;
+            sh:name "has unit" ;
+            sh:path semts:hasUnit ],
+        [ sh:class qudt:Datatype ;
+            sh:maxCount 1 ;
+            sh:message "hasDatatype must point to qudt:Datatype" ;
+            sh:name "has datatype" ;
+            sh:path semts:hasDatatype ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "title must be a single string" ;
+            sh:name "title" ;
+            sh:path semts:title ],
+        [ sh:datatype xsd:string ;
+            sh:message "description must be a string" ;
+            sh:name "description" ;
+            sh:path semts:description ] ;
+    sh:targetClass semts:DataDimension .
+
+semts:DataKnowledgeDisjointShape a sh:NodeShape ;
+    sh:message "DataKnowledge cannot also be an instance of MethodKnowledge (including Algorithm/Hyperparameter), ScenarioKnowledge, KnowledgeGroup, TimeSeriesSegment, or ArtificialTimeSeriesSegment." ;
+    sh:not [ sh:or ( [ sh:class semts:MethodKnowledge ] [ sh:class semts:Algorithm ] [ sh:class semts:Hyperparameter ] [ sh:class semts:ScenarioKnowledge ] [ sh:class semts:KnowledgeGroup ] [ sh:class semts:TimeSeriesSegment ] [ sh:class semts:ArtificialTimeSeriesSegment ] ) ] ;
+    sh:targetClass semts:DataKnowledge,
+        semts:ModelInstance,
+        semts:SegmentDataCharacteristic,
+        semts:SegmentPrediction,
+        semts:SegmentRelation .
+
+semts:DataKnowledgeShape a sh:NodeShape ;
+    sh:property [ sh:description "Data knowledge must have exactly one value" ;
+            sh:maxCount 1 ;
+            sh:message "DataKnowledge must have exactly one semts:EmbeddedValue or semts:ReferencedValue" ;
+            sh:minCount 1 ;
+            sh:name "has value" ;
+            sh:or ( [ sh:class semts:EmbeddedValue ] [ sh:class semts:ReferencedValue ] ) ;
+            sh:path semts:hasValue ] ;
+    sh:targetClass semts:DataKnowledge .
+
+semts:DirectedKnowledgeRelationShape a sh:NodeShape ;
+    sh:property [ sh:class semts:Knowledge ;
+            sh:message "DirectedKnowledgeRelation must have at least one semts:Knowledge source" ;
+            sh:minCount 1 ;
+            sh:path semts:knowledgeRelationSource ],
+        [ sh:class semts:Knowledge ;
+            sh:message "DirectedKnowledgeRelation must have at least one semts:Knowledge target" ;
+            sh:minCount 1 ;
+            sh:path semts:knowledgeRelationTarget ],
+        [ sh:class semts:Knowledge ;
+            sh:message "Every knowledgeRelationParticipant must be semts:Knowledge or a subclass" ;
+            sh:path semts:knowledgeRelationParticipant ] ;
+    sh:targetClass semts:DirectedKnowledgeRelation .
+
+semts:DuringIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "during must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:during ] ;
+    sh:sparql [ sh:message "An asserted semts:during relation must be supported by time:intervalDuring between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:during ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalDuring ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:during .
+
+semts:EmbeddedValueDisjointShape a sh:NodeShape ;
+    sh:message "EmbeddedValue cannot be an instance of ReferencedValue" ;
+    sh:not [ sh:class semts:ReferencedValue ] ;
+    sh:targetClass semts:EmbeddedValue .
+
+semts:EmbeddedValueShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "Embedded value must have exactly one string representation" ;
+            sh:maxCount 1 ;
+            sh:message "EmbeddedValue must have exactly one valueString (string)" ;
+            sh:minCount 1 ;
+            sh:name "value string" ;
+            sh:path semts:valueString ],
+        [ sh:class qudt:Unit ;
+            sh:maxCount 1 ;
+            sh:message "hasUnit must point to qudt:Unit" ;
+            sh:name "has unit" ;
+            sh:path semts:hasUnit ],
+        [ sh:class qudt:Datatype ;
+            sh:maxCount 1 ;
+            sh:message "hasDatatype must point to qudt:Datatype" ;
+            sh:name "has datatype" ;
+            sh:path semts:hasDatatype ] ;
+    sh:targetClass semts:EmbeddedValue .
+
+semts:EqualsIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "equals must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:equals ] ;
+    sh:sparql [ sh:message "An asserted semts:equals relation must be supported by time:intervalEquals between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:equals ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalEquals ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:equals .
+
+semts:FinishedByIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "finishedBy must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:finishedBy ] ;
+    sh:sparql [ sh:message "An asserted semts:finishedBy relation must be supported by time:intervalFinishedBy between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:finishedBy ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalFinishedBy ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:finishedBy .
+
+semts:FinishesIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "finishes must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:finishes ] ;
+    sh:sparql [ sh:message "An asserted semts:finishes relation must be supported by time:intervalFinishes between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:finishes ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalFinishes ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:finishes .
+
+semts:HasDatatypeDomainShape a sh:NodeShape ;
+    sh:message "hasDatatype can only be used with DataDimension, EmbeddedValue, or ReferencedValue" ;
+    sh:or ( [ sh:class semts:DataDimension ] [ sh:class semts:EmbeddedValue ] [ sh:class semts:ReferencedValue ] ) ;
+    sh:targetSubjectsOf semts:hasDatatype .
+
+semts:HasUnitDomainShape a sh:NodeShape ;
+    sh:message "hasUnit can only be used with DataDimension, EmbeddedValue, or ReferencedValue" ;
+    sh:or ( [ sh:class semts:DataDimension ] [ sh:class semts:EmbeddedValue ] [ sh:class semts:ReferencedValue ] ) ;
+    sh:targetSubjectsOf semts:hasUnit .
+
+semts:HasValueDomainShape a sh:NodeShape ;
+    sh:message "hasValue can only be used with Knowledge/KnowledgeQualityMeasure or any listed subclasses of Knowledge" ;
+    sh:or ( [ sh:class semts:KnowledgeQualityMeasure ] [ sh:class semts:Knowledge ] [ sh:class semts:CommonContextKnowledge ] [ sh:class semts:KnowledgeRelation ] [ sh:class semts:DirectedKnowledgeRelation ] [ sh:class semts:UndirectedKnowledgeRelation ] [ sh:class semts:DataKnowledge ] [ sh:class semts:ScenarioKnowledge ] [ sh:class semts:MethodKnowledge ] [ sh:class semts:KnowledgeGroup ] [ sh:class semts:ModelInstance ] [ sh:class semts:SegmentDataCharacteristic ] [ sh:class semts:SegmentPrediction ] [ sh:class semts:SegmentRelation ] [ sh:class semts:Algorithm ] [ sh:class semts:Hyperparameter ] ) ;
+    sh:targetSubjectsOf semts:hasValue .
+
+semts:KnowledgeConceptShape a sh:NodeShape ;
+    sh:message "KnowledgeConcept must also be a skos:Concept or skos:Collection" ;
+    sh:or ( [ sh:class skos:Concept ] [ sh:class skos:Collection ] ) ;
+    sh:targetClass semts:KnowledgeConcept ;
+    sh:targetObjectsOf semts:knowledgeConcept .
+
+semts:KnowledgeGenerationConceptShape a sh:NodeShape ;
+    sh:class skos:Concept ;
+    sh:message "KnowledgeGenerationConcept must also be a skos:Concept" ;
+    sh:targetClass semts:KnowledgeGenerationConcept ;
+    sh:targetObjectsOf semts:knowledgeGenerationConcept .
+
+semts:KnowledgeGenerationEntityDisjointShape a sh:NodeShape ;
+    sh:message "KnowledgeComparisonMeasure cannot also be an instance of KnowledgeGenerationMethod or KnowledgeReasoning" ;
+    sh:not [ sh:or ( [ sh:class semts:KnowledgeGenerationMethod ] [ sh:class semts:KnowledgeReasoning ] ) ] ;
+    sh:targetClass semts:KnowledgeComparisonMeasure .
+
+semts:KnowledgeGenerationEntityShape a sh:NodeShape ;
+    sh:property [ sh:class semts:KnowledgeGenerationConcept ;
+            sh:maxCount 1 ;
+            sh:message "KnowledgeGenerationEntity must have exactly one semts:KnowledgeGenerationConcept" ;
+            sh:minCount 1 ;
+            sh:name "knowledge generation concept" ;
+            sh:path semts:knowledgeGenerationConcept ],
+        [ sh:class semts:KnowledgeGenerationInput ;
+            sh:description "Must use at least one input" ;
+            sh:message "KnowledgeGenerationEntity must use at least one semts:KnowledgeGenerationInput" ;
+            sh:minCount 1 ;
+            sh:name "used" ;
+            sh:path semts:used ],
+        [ sh:class semts:KnowledgeGenerationOutput ;
+            sh:description "Must generate at least one output" ;
+            sh:message "KnowledgeGenerationEntity must generate at least one semts:KnowledgeGenerationOutput" ;
+            sh:minCount 1 ;
+            sh:name "generated" ;
+            sh:path semts:generated ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "title must be a single string" ;
+            sh:name "title" ;
+            sh:path semts:title ],
+        [ sh:datatype xsd:string ;
+            sh:message "description must be a string" ;
+            sh:name "description" ;
+            sh:path semts:description ] ;
+    sh:targetClass semts:KnowledgeComparisonMeasure,
+        semts:KnowledgeGenerationEntity,
+        semts:KnowledgeGenerationMethod,
+        semts:KnowledgeReasoning .
+
+semts:KnowledgeGenerationInputDisjointShape a sh:NodeShape ;
+    sh:message "KnowledgeGenerationInput cannot be an instance of KnowledgeGenerationOutput" ;
+    sh:not [ sh:class semts:KnowledgeGenerationOutput ] ;
+    sh:targetClass semts:KnowledgeGenerationInput .
+
+semts:KnowledgeGenerationInputShape a sh:NodeShape ;
+    sh:or ( [ sh:property [ sh:minCount 1 ;
+                        sh:path semts:inputDataReference ] ] [ sh:property [ sh:minCount 1 ;
+                        sh:path semts:inputKnowledge ] ] ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:message "inputDataReference must be a semts:TimeSeriesSegment or subclass (including semts:ArtificialTimeSeriesSegment)" ;
+            sh:name "input data reference" ;
+            sh:or ( [ sh:class semts:TimeSeriesSegment ] [ sh:class semts:ArtificialTimeSeriesSegment ] ) ;
+            sh:path semts:inputDataReference ],
+        [ sh:message "inputKnowledge must be semts:Knowledge or any of its subclasses" ;
+            sh:name "input knowledge" ;
+            sh:or ( [ sh:class semts:Knowledge ] [ sh:class semts:CommonContextKnowledge ] [ sh:class semts:KnowledgeRelation ] [ sh:class semts:DirectedKnowledgeRelation ] [ sh:class semts:UndirectedKnowledgeRelation ] [ sh:class semts:DataKnowledge ] [ sh:class semts:ScenarioKnowledge ] [ sh:class semts:MethodKnowledge ] [ sh:class semts:KnowledgeGroup ] [ sh:class semts:ModelInstance ] [ sh:class semts:SegmentDataCharacteristic ] [ sh:class semts:SegmentPrediction ] [ sh:class semts:SegmentRelation ] [ sh:class semts:Algorithm ] [ sh:class semts:Hyperparameter ] ) ;
+            sh:path semts:inputKnowledge ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "title must be a single string" ;
+            sh:name "title" ;
+            sh:path semts:title ],
+        [ sh:datatype xsd:string ;
+            sh:message "description must be a string" ;
+            sh:name "description" ;
+            sh:path semts:description ] ;
+    sh:targetClass semts:KnowledgeGenerationInput .
+
+semts:KnowledgeGenerationMethodDisjointShape a sh:NodeShape ;
+    sh:message "KnowledgeGenerationMethod cannot be an instance of KnowledgeReasoning" ;
+    sh:not [ sh:class semts:KnowledgeReasoning ] ;
+    sh:targetClass semts:KnowledgeGenerationMethod .
+
+semts:KnowledgeGenerationOutputShape a sh:NodeShape ;
+    sh:property [ sh:description "Output must contain at least one knowledge item" ;
+            sh:message "outputKnowledge must include semts:Knowledge or any of its subclasses" ;
+            sh:minCount 1 ;
+            sh:name "output knowledge" ;
+            sh:or ( [ sh:class semts:Knowledge ] [ sh:class semts:CommonContextKnowledge ] [ sh:class semts:KnowledgeRelation ] [ sh:class semts:DirectedKnowledgeRelation ] [ sh:class semts:UndirectedKnowledgeRelation ] [ sh:class semts:DataKnowledge ] [ sh:class semts:ScenarioKnowledge ] [ sh:class semts:MethodKnowledge ] [ sh:class semts:KnowledgeGroup ] [ sh:class semts:ModelInstance ] [ sh:class semts:SegmentDataCharacteristic ] [ sh:class semts:SegmentPrediction ] [ sh:class semts:SegmentRelation ] [ sh:class semts:Algorithm ] [ sh:class semts:Hyperparameter ] ) ;
+            sh:path semts:outputKnowledge ],
+        [ sh:class semts:KnowledgeGenerationInput ;
+            sh:message "wasDerivedFrom must point to a semts:KnowledgeGenerationInput" ;
+            sh:minCount 1 ;
+            sh:name "was derived from" ;
+            sh:path semts:wasDerivedFrom ],
+        [ sh:class semts:KnowledgeGenerationEntity ;
+            sh:message "KnowledgeGenerationOutput must be generated by at least one semts:KnowledgeGenerationEntity" ;
+            sh:minCount 1 ;
+            sh:name "generating entity" ;
+            sh:path [ sh:inversePath semts:generated ] ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "title must be a single string" ;
+            sh:name "title" ;
+            sh:path semts:title ],
+        [ sh:datatype xsd:string ;
+            sh:message "description must be a string" ;
+            sh:name "description" ;
+            sh:path semts:description ] ;
+    sh:sparql [ sh:message "Every outputKnowledge item must identify an activity that generated this KnowledgeGenerationOutput" ;
+            sh:select """
+            PREFIX semts: <https://w3id.org/semts/ontology#>
+            SELECT $this ?knowledge ?generator
+            WHERE {
+                $this semts:outputKnowledge ?knowledge .
+                ?knowledge semts:knowledgeGenerationEntity ?generator .
+                FILTER NOT EXISTS { ?generator semts:generated $this . }
+            }
+        """ ],
+        [ sh:message "Every wasDerivedFrom input must be used by the declared generator of each outputKnowledge item" ;
+            sh:select """
+            PREFIX semts: <https://w3id.org/semts/ontology#>
+            SELECT $this ?knowledge ?generator ?input
+            WHERE {
+                $this semts:outputKnowledge ?knowledge ;
+                      semts:wasDerivedFrom ?input .
+                ?knowledge semts:knowledgeGenerationEntity ?generator .
+                FILTER NOT EXISTS { ?generator semts:used ?input . }
+            }
+        """ ] ;
+    sh:targetClass semts:KnowledgeGenerationOutput .
+
+semts:KnowledgeGroupShape a sh:NodeShape ;
+    sh:property [ sh:description "Knowledge group must contain at least one knowledge item" ;
+            sh:message "groupKnowledge must include at least one semts:Knowledge or subclass" ;
+            sh:minCount 1 ;
+            sh:name "group knowledge" ;
+            sh:or ( [ sh:class semts:Knowledge ] [ sh:class semts:CommonContextKnowledge ] [ sh:class semts:KnowledgeRelation ] [ sh:class semts:DirectedKnowledgeRelation ] [ sh:class semts:UndirectedKnowledgeRelation ] [ sh:class semts:DataKnowledge ] [ sh:class semts:ScenarioKnowledge ] [ sh:class semts:MethodKnowledge ] [ sh:class semts:KnowledgeGroup ] [ sh:class semts:ModelInstance ] [ sh:class semts:SegmentDataCharacteristic ] [ sh:class semts:SegmentPrediction ] [ sh:class semts:SegmentRelation ] [ sh:class semts:Algorithm ] [ sh:class semts:Hyperparameter ] ) ;
+            sh:path semts:groupKnowledge ] ;
+    sh:targetClass semts:KnowledgeGroup .
+
+semts:KnowledgeMultiSegmentShape a sh:NodeShape ;
+    sh:sparql [ sh:message "Knowledge must be associated with 0 or 2+ segments via multiSegmentKnowledge" ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+            SELECT $this
+            WHERE {
+              OPTIONAL { ?segment semts:multiSegmentKnowledge $this ; rdf:type/rdfs:subClassOf* semts:TimeSeriesSegment . }
+            }
+            GROUP BY $this
+            HAVING (COUNT(DISTINCT ?segment) = 1)
+        """ ] ;
+    sh:targetClass semts:Algorithm,
+        semts:CommonContextKnowledge,
+        semts:DataKnowledge,
+        semts:DirectedKnowledgeRelation,
+        semts:Hyperparameter,
+        semts:Knowledge,
+        semts:KnowledgeGroup,
+        semts:KnowledgeRelation,
+        semts:MethodKnowledge,
+        semts:ModelInstance,
+        semts:ScenarioKnowledge,
+        semts:SegmentDataCharacteristic,
+        semts:SegmentPrediction,
+        semts:UndirectedKnowledgeRelation .
+
+semts:KnowledgeQualityMeasureShape a sh:NodeShape ;
+    sh:property [ sh:class semts:QualityMeasureConcept ;
+            sh:maxCount 1 ;
+            sh:message "KnowledgeQualityMeasure must have exactly one semts:QualityMeasureConcept" ;
+            sh:minCount 1 ;
+            sh:name "quality measure concept" ;
+            sh:path semts:qualityMeasureConcept ],
+        [ sh:description "Quality measure must have exactly one value" ;
+            sh:maxCount 1 ;
+            sh:message "KnowledgeQualityMeasure must have exactly one semts:EmbeddedValue or semts:ReferencedValue" ;
+            sh:minCount 1 ;
+            sh:name "has value" ;
+            sh:or ( [ sh:class semts:EmbeddedValue ] [ sh:class semts:ReferencedValue ] ) ;
+            sh:path semts:hasValue ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "title must be a single string" ;
+            sh:name "title" ;
+            sh:path semts:title ],
+        [ sh:datatype xsd:string ;
+            sh:message "description must be a string" ;
+            sh:name "description" ;
+            sh:path semts:description ] ;
+    sh:targetClass semts:KnowledgeQualityMeasure .
+
+semts:KnowledgeRelationShape a sh:NodeShape ;
+    sh:message "KnowledgeRelation is abstract: every relation must conform to exactly one of DirectedKnowledgeRelation or UndirectedKnowledgeRelation" ;
+    sh:property [ sh:class semts:Knowledge ;
+            sh:message "Every knowledgeRelationParticipant must be semts:Knowledge or a subclass" ;
+            sh:path semts:knowledgeRelationParticipant ] ;
+    sh:targetClass semts:KnowledgeRelation ;
+    sh:xone ( [ sh:class semts:DirectedKnowledgeRelation ] [ sh:class semts:UndirectedKnowledgeRelation ] ) .
+
+semts:KnowledgeShape a sh:NodeShape ;
+    sh:property [ sh:class semts:KnowledgeConcept ;
+            sh:description "Each knowledge instance must have exactly one concept" ;
+            sh:maxCount 1 ;
+            sh:message "knowledgeConcept must be exactly one semts:KnowledgeConcept" ;
+            sh:minCount 1 ;
+            sh:name "knowledge concept" ;
+            sh:path semts:knowledgeConcept ],
+        [ sh:maxCount 1 ;
+            sh:message "hasValue must be at most one semts:EmbeddedValue or semts:ReferencedValue" ;
+            sh:name "has value" ;
+            sh:or ( [ sh:class semts:EmbeddedValue ] [ sh:class semts:ReferencedValue ] ) ;
+            sh:path semts:hasValue ],
+        [ sh:class semts:KnowledgeQualityMeasure ;
+            sh:message "knowledgeQualityMeasure must point to a semts:KnowledgeQualityMeasure" ;
+            sh:name "knowledge quality measure" ;
+            sh:path semts:knowledgeQualityMeasure ],
+        [ sh:maxCount 1 ;
+            sh:message "knowledgeGenerationEntity must identify exactly one semts:KnowledgeGenerationEntity or supported subclass" ;
+            sh:minCount 1 ;
+            sh:name "knowledge generation entity" ;
+            sh:or ( [ sh:class semts:KnowledgeGenerationEntity ] [ sh:class semts:KnowledgeComparisonMeasure ] [ sh:class semts:KnowledgeGenerationMethod ] [ sh:class semts:KnowledgeReasoning ] ) ;
+            sh:path semts:knowledgeGenerationEntity ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "title must be a single string" ;
+            sh:name "title" ;
+            sh:path semts:title ],
+        [ sh:datatype xsd:string ;
+            sh:message "description must be a string" ;
+            sh:name "description" ;
+            sh:path semts:description ] ;
+    sh:targetClass semts:Algorithm,
+        semts:CommonContextKnowledge,
+        semts:DataKnowledge,
+        semts:DirectedKnowledgeRelation,
+        semts:Hyperparameter,
+        semts:Knowledge,
+        semts:KnowledgeGroup,
+        semts:KnowledgeRelation,
+        semts:MethodKnowledge,
+        semts:ModelInstance,
+        semts:ScenarioKnowledge,
+        semts:SegmentDataCharacteristic,
+        semts:SegmentPrediction,
+        semts:SegmentRelation,
+        semts:UndirectedKnowledgeRelation .
+
+semts:MeetsIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "meets must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:meets ] ;
+    sh:sparql [ sh:message "An asserted semts:meets relation must be supported by time:intervalMeets between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:meets ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalMeets ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:meets .
+
+semts:MetByIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "metBy must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:metBy ] ;
+    sh:sparql [ sh:message "An asserted semts:metBy relation must be supported by time:intervalMetBy between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:metBy ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalMetBy ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:metBy .
+
+semts:MethodKnowledgeDisjointShape a sh:NodeShape ;
+    sh:message "MethodKnowledge (including Algorithm/Hyperparameter) cannot also be an instance of ScenarioKnowledge, KnowledgeGroup, TimeSeriesSegment, or ArtificialTimeSeriesSegment." ;
+    sh:not [ sh:or ( [ sh:class semts:ScenarioKnowledge ] [ sh:class semts:KnowledgeGroup ] [ sh:class semts:TimeSeriesSegment ] [ sh:class semts:ArtificialTimeSeriesSegment ] ) ] ;
+    sh:targetClass semts:Algorithm,
+        semts:Hyperparameter,
+        semts:MethodKnowledge .
+
+semts:MethodKnowledgeShape a sh:NodeShape ;
+    sh:property [ sh:description "Method knowledge must have exactly one value" ;
+            sh:maxCount 1 ;
+            sh:message "MethodKnowledge must have exactly one semts:EmbeddedValue or semts:ReferencedValue" ;
+            sh:minCount 1 ;
+            sh:name "has value" ;
+            sh:or ( [ sh:class semts:EmbeddedValue ] [ sh:class semts:ReferencedValue ] ) ;
+            sh:path semts:hasValue ] ;
+    sh:targetClass semts:MethodKnowledge .
+
+semts:ModelInstanceDisjointShape a sh:NodeShape ;
+    sh:message "ModelInstance cannot be an instance of SegmentDataCharacteristic, SegmentPrediction, or SegmentRelation" ;
+    sh:not [ sh:or ( [ sh:class semts:SegmentDataCharacteristic ] [ sh:class semts:SegmentPrediction ] [ sh:class semts:SegmentRelation ] ) ] ;
+    sh:targetClass semts:ModelInstance .
+
+semts:ModelInstanceShape a sh:NodeShape ;
+    sh:property [ sh:class semts:KnowledgeGenerationMethod ;
+            sh:description "Model instances should be generated by knowledge generation methods" ;
+            sh:message "ModelInstance knowledgeGenerationEntity must be a semts:KnowledgeGenerationMethod" ;
+            sh:name "knowledge generation entity" ;
+            sh:path semts:knowledgeGenerationEntity ] ;
+    sh:targetClass semts:ModelInstance .
+
+semts:MultiSegmentKnowledgeSubjectShape a sh:NodeShape ;
+    sh:message "Only segment instances may use multiSegmentKnowledge" ;
+    sh:node semts:SegmentNodeShape ;
+    sh:targetSubjectsOf semts:multiSegmentKnowledge .
+
+semts:OverlappedByIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "overlappedBy must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:overlappedBy ] ;
+    sh:sparql [ sh:message "An asserted semts:overlappedBy relation must be supported by time:intervalOverlappedBy between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:overlappedBy ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalOverlappedBy ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:overlappedBy .
+
+semts:OverlapsIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "overlaps must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:overlaps ] ;
+    sh:sparql [ sh:message "An asserted semts:overlaps relation must be supported by time:intervalOverlaps between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:overlaps ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalOverlaps ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:overlaps .
+
+semts:PreventCircularPartOfShape a sh:NodeShape ;
+    sh:sparql [ sh:message "Circular part-of relationships are not allowed" ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+
+            SELECT $this
+            WHERE {
+                $this semts:isPartOf+ $this .
+            }
+        """ ] ;
+    sh:targetClass semts:ArtificialTimeSeriesSegment,
+        semts:TimeSeriesSegment .
+
+semts:QualityMeasureConceptShape a sh:NodeShape ;
+    sh:class skos:Concept ;
+    sh:message "QualityMeasureConcept must also be a skos:Concept" ;
+    sh:targetClass semts:QualityMeasureConcept ;
+    sh:targetObjectsOf semts:qualityMeasureConcept .
+
+semts:ReferencedValueShape a sh:NodeShape ;
+    sh:class dcat:Resource ;
+    sh:property [ sh:class qudt:Unit ;
+            sh:maxCount 1 ;
+            sh:message "hasUnit must point to qudt:Unit" ;
+            sh:name "has unit" ;
+            sh:path semts:hasUnit ],
+        [ sh:class qudt:Datatype ;
+            sh:maxCount 1 ;
+            sh:message "hasDatatype must point to qudt:Datatype" ;
+            sh:name "has datatype" ;
+            sh:path semts:hasDatatype ] ;
+    sh:targetClass semts:ReferencedValue .
+
+semts:ScenarioKnowledgeDisjointShape a sh:NodeShape ;
+    sh:message "ScenarioKnowledge cannot also be an instance of KnowledgeGroup, TimeSeriesSegment, or ArtificialTimeSeriesSegment." ;
+    sh:not [ sh:or ( [ sh:class semts:KnowledgeGroup ] [ sh:class semts:TimeSeriesSegment ] [ sh:class semts:ArtificialTimeSeriesSegment ] ) ] ;
+    sh:targetClass semts:ScenarioKnowledge .
+
+semts:ScenarioKnowledgeShape a sh:NodeShape ;
+    sh:property [ sh:description "Scenario knowledge must have exactly one value" ;
+            sh:maxCount 1 ;
+            sh:message "ScenarioKnowledge must have exactly one semts:EmbeddedValue or semts:ReferencedValue" ;
+            sh:minCount 1 ;
+            sh:name "has value" ;
+            sh:or ( [ sh:class semts:EmbeddedValue ] [ sh:class semts:ReferencedValue ] ) ;
+            sh:path semts:hasValue ] ;
+    sh:targetClass semts:ScenarioKnowledge .
+
+semts:SegmentDataCharacteristicDisjointShape a sh:NodeShape ;
+    sh:message "SegmentDataCharacteristic cannot be an instance of SegmentPrediction or SegmentRelation" ;
+    sh:not [ sh:or ( [ sh:class semts:SegmentPrediction ] [ sh:class semts:SegmentRelation ] ) ] ;
+    sh:targetClass semts:SegmentDataCharacteristic .
+
+semts:SegmentPredictionDisjointShape a sh:NodeShape ;
+    sh:message "SegmentPrediction cannot be an instance of SegmentRelation" ;
+    sh:not [ sh:class semts:SegmentRelation ] ;
+    sh:targetClass semts:SegmentPrediction .
+
+semts:SegmentRelationShape a sh:NodeShape ;
+    sh:sparql [ sh:message "SegmentRelation must be associated with at least 2 segments via semts:multiSegmentKnowledge" ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+            SELECT $this
+            WHERE {
+              $this rdf:type/rdfs:subClassOf* semts:SegmentRelation .
+              OPTIONAL { ?segment semts:multiSegmentKnowledge $this ; rdf:type/rdfs:subClassOf* semts:TimeSeriesSegment . }
+            }
+            GROUP BY $this
+            HAVING (COUNT(DISTINCT ?segment) < 2)
+        """ ] ;
+    sh:targetClass semts:SegmentRelation .
+
+semts:StartedByIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "startedBy must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:startedBy ] ;
+    sh:sparql [ sh:message "An asserted semts:startedBy relation must be supported by time:intervalStartedBy between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:startedBy ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalStartedBy ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:startedBy .
+
+semts:StartsIndexConsistencyShape a sh:NodeShape ;
+    sh:node semts:SegmentNodeShape ;
+    sh:property [ sh:message "starts must point to a segment instance" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:starts ] ;
+    sh:sparql [ sh:message "An asserted semts:starts relation must be supported by time:intervalStarts between the corresponding segment indexes." ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?other ?sourceIndex ?targetIndex
+WHERE {
+  $this semts:starts ?other ;
+        semts:segmentIndex ?sourceIndex .
+  ?other semts:segmentIndex ?targetIndex .
+  FILTER NOT EXISTS { ?sourceIndex time:intervalStarts ?targetIndex . }
+}""" ] ;
+    sh:targetSubjectsOf semts:starts .
+
+semts:TimeSeriesSegmentShape a sh:NodeShape ;
+    sh:property [ sh:description "Each segment has exactly one temporal index, represented either as an instant or as an interval with strictly ordered bounds." ;
+            sh:maxCount 1 ;
+            sh:message "segmentIndex must contain exactly one time:Instant or a valid bounded time:Interval" ;
+            sh:minCount 1 ;
+            sh:name "segment index" ;
+            sh:or ( [ sh:class time:Instant ] [ sh:node semts:IntervalWithBoundsShape ] ) ;
+            sh:path semts:segmentIndex ],
+        [ sh:class semts:CommonContextKnowledge ;
+            sh:message "commonContextKnowledge must point to a valid semts:CommonContextKnowledge instance" ;
+            sh:name "common context knowledge" ;
+            sh:node semts:CommonContextKnowledgeShape ;
+            sh:path semts:commonContextKnowledge ],
+        [ sh:class semts:DataDimension ;
+            sh:message "segmentDimension must point to a semts:DataDimension" ;
+            sh:name "segment dimension" ;
+            sh:path semts:segmentDimension ],
+        [ sh:class dcat:Distribution ;
+            sh:description "Each segment must have at least one distribution (as per requirement)" ;
+            sh:message "Segment must have at least one dcat:Distribution" ;
+            sh:minCount 1 ;
+            sh:name "distribution" ;
+            sh:path dcat:distribution ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:message "Dataset column index must be an integer ≥ 0" ;
+            sh:minInclusive 0 ;
+            sh:name "column index" ;
+            sh:path semts:datasetColumnIndex ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:message "Dataset row index must be an integer ≥ 0" ;
+            sh:minInclusive 0 ;
+            sh:name "row index" ;
+            sh:path semts:datasetRowIndex ],
+        [ sh:message "segmentKnowledge must point to semts:Knowledge or one of its subclasses" ;
+            sh:name "segment knowledge" ;
+            sh:or ( [ sh:class semts:Knowledge ] [ sh:class semts:KnowledgeRelation ] [ sh:class semts:DirectedKnowledgeRelation ] [ sh:class semts:UndirectedKnowledgeRelation ] [ sh:class semts:DataKnowledge ] [ sh:class semts:ScenarioKnowledge ] [ sh:class semts:MethodKnowledge ] [ sh:class semts:KnowledgeGroup ] [ sh:class semts:ModelInstance ] [ sh:class semts:SegmentDataCharacteristic ] [ sh:class semts:SegmentPrediction ] [ sh:class semts:SegmentRelation ] [ sh:class semts:Algorithm ] [ sh:class semts:Hyperparameter ] ) ;
+            sh:path semts:segmentKnowledge ],
+        [ sh:message "multiSegmentKnowledge must point to semts:Knowledge or one of its subclasses" ;
+            sh:name "multi-segment knowledge" ;
+            sh:or ( [ sh:class semts:Knowledge ] [ sh:class semts:KnowledgeRelation ] [ sh:class semts:DirectedKnowledgeRelation ] [ sh:class semts:UndirectedKnowledgeRelation ] [ sh:class semts:DataKnowledge ] [ sh:class semts:ScenarioKnowledge ] [ sh:class semts:MethodKnowledge ] [ sh:class semts:KnowledgeGroup ] [ sh:class semts:ModelInstance ] [ sh:class semts:SegmentDataCharacteristic ] [ sh:class semts:SegmentPrediction ] [ sh:class semts:SegmentRelation ] [ sh:class semts:Algorithm ] [ sh:class semts:Hyperparameter ] ) ;
+            sh:path semts:multiSegmentKnowledge ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "title must be a single string" ;
+            sh:name "title" ;
+            sh:path semts:title ],
+        [ sh:datatype xsd:string ;
+            sh:message "description must be a string" ;
+            sh:name "description" ;
+            sh:path semts:description ],
+        [ sh:description "Part-of relationship must reference other segments" ;
+            sh:message "isPartOf must point to a segment instance" ;
+            sh:name "is part of" ;
+            sh:node semts:SegmentNodeShape ;
+            sh:path semts:isPartOf ] ;
+    sh:sparql [ sh:message "A segment with segment-scoped DataKnowledge must have at least one semts:DataDimension" ;
+            sh:select """PREFIX semts: <https://w3id.org/semts/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT $this
+WHERE {
+  FILTER NOT EXISTS { $this semts:segmentDimension ?dimension . }
+  { $this semts:segmentKnowledge ?root . }
+  UNION
+  { $this semts:multiSegmentKnowledge ?root . }
+  ?root semts:groupKnowledge* ?knowledge .
+  ?knowledge rdf:type ?knowledgeClass .
+  FILTER (
+    ?knowledgeClass IN (
+      semts:DataKnowledge,
+      semts:ModelInstance,
+      semts:SegmentDataCharacteristic,
+      semts:SegmentPrediction,
+      semts:SegmentRelation
+    )
+    || EXISTS { ?knowledgeClass rdfs:subClassOf+ semts:DataKnowledge . }
+  )
+}""" ] ;
+    sh:targetClass semts:ArtificialTimeSeriesSegment,
+        semts:TimeSeriesSegment .
+
+semts:TransitiveArtificialPartOfShape a sh:NodeShape ;
+    sh:property [ sh:class semts:ArtificialTimeSeriesSegment ;
+            sh:message "Every direct or indirect parent of an ArtificialTimeSeriesSegment must also be artificial." ;
+            sh:path [ sh:oneOrMorePath semts:isPartOf ] ] ;
+    sh:targetClass semts:ArtificialTimeSeriesSegment .
+
+semts:UndirectedKnowledgeRelationShape a sh:NodeShape ;
+    sh:property [ sh:class semts:Knowledge ;
+            sh:message "UndirectedKnowledgeRelation must have at least two distinct semts:Knowledge participants" ;
+            sh:minCount 2 ;
+            sh:path semts:knowledgeRelationParticipant ],
+        [ sh:maxCount 0 ;
+            sh:message "UndirectedKnowledgeRelation must not use knowledgeRelationSource" ;
+            sh:path semts:knowledgeRelationSource ],
+        [ sh:maxCount 0 ;
+            sh:message "UndirectedKnowledgeRelation must not use knowledgeRelationTarget" ;
+            sh:path semts:knowledgeRelationTarget ] ;
+    sh:targetClass semts:UndirectedKnowledgeRelation .
+
+semts:CommonContextKnowledgeShape a sh:NodeShape ;
+    sh:property [ sh:maxCount 1 ;
+            sh:message "CommonContextKnowledge must have exactly one semts:EmbeddedValue or semts:ReferencedValue" ;
+            sh:minCount 1 ;
+            sh:or ( [ sh:class semts:EmbeddedValue ] [ sh:class semts:ReferencedValue ] ) ;
+            sh:path semts:hasValue ],
+        [ sh:maxCount 0 ;
+            sh:message "CommonContextKnowledge must not be the object of semts:segmentKnowledge" ;
+            sh:path [ sh:inversePath semts:segmentKnowledge ] ],
+        [ sh:maxCount 0 ;
+            sh:message "CommonContextKnowledge must not be the object of semts:multiSegmentKnowledge" ;
+            sh:path [ sh:inversePath semts:multiSegmentKnowledge ] ] ;
+    sh:targetClass semts:CommonContextKnowledge .
+
+semts:IntervalWithBoundsShape a sh:NodeShape ;
+    sh:class time:Interval ;
+    sh:description "A SemTS interval index uses exactly one beginning and end. Both bounds use either xsd:dateTimeStamp or decimal numeric positions, and the beginning strictly precedes the end." ;
+    sh:or ( [ sh:property [ sh:datatype xsd:dateTimeStamp ;
+                        sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path ( time:hasBeginning time:inXSDDateTimeStamp ) ],
+                    [ sh:datatype xsd:dateTimeStamp ;
+                        sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path ( time:hasEnd time:inXSDDateTimeStamp ) ] ] [ sh:property [ sh:datatype xsd:decimal ;
+                        sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path ( time:hasBeginning time:inTimePosition time:numericPosition ) ],
+                    [ sh:datatype xsd:decimal ;
+                        sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path ( time:hasEnd time:inTimePosition time:numericPosition ) ] ] ) ;
+    sh:property [ sh:class time:Instant ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path time:hasBeginning ],
+        [ sh:class time:Instant ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path time:hasEnd ] ;
+    sh:sparql [ sh:message "The interval beginning numeric position must be smaller than the interval end numeric position." ;
+            sh:select """PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?begin ?end
+WHERE {
+  $this time:hasBeginning/time:inTimePosition/time:numericPosition ?begin ;
+        time:hasEnd/time:inTimePosition/time:numericPosition ?end .
+  FILTER (?begin >= ?end)
+}""" ],
+        [ sh:message "The interval beginning must be earlier than the interval end." ;
+            sh:select """PREFIX time: <http://www.w3.org/2006/time#>
+SELECT $this ?begin ?end
+WHERE {
+  $this time:hasBeginning/time:inXSDDateTimeStamp ?begin ;
+        time:hasEnd/time:inXSDDateTimeStamp ?end .
+  FILTER (?begin >= ?end)
+}""" ] .
+
+semts:SegmentNodeShape a sh:NodeShape ;
+    sh:message "The node must be a semts:TimeSeriesSegment or semts:ArtificialTimeSeriesSegment" ;
+    sh:or ( [ sh:class semts:TimeSeriesSegment ] [ sh:class semts:ArtificialTimeSeriesSegment ] ) .
+

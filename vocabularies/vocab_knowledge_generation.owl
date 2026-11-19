@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from vocab_knowledge_generation.ttl by tools/build.py; do not edit. -->
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:adms="http://www.w3.org/ns/adms#"
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:semts="https://w3id.org/semts/ontology#"
+   xmlns:semts-dv="https://w3id.org/semts/vocabulary/data-knowledge#"
+   xmlns:semts-gv="https://w3id.org/semts/vocabulary/knowledge-generation#"
+   xmlns:semts-sv="https://w3id.org/semts/vocabulary/scenario-knowledge#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdf:Description rdf:about="http://purl.org/dc/terms/conformsTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/references">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#broader">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#definition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#editorialNote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#hasTopConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#related">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#relatedMatch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#topConceptOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/adms#status">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/ontology#KnowledgeConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/ontology#KnowledgeGenerationConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation">
+    <dct:conformsTo rdf:resource="https://www.w3.org/TR/skos-reference/"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-06</dct:created>
+    <dct:description xml:lang="en">A domain-neutral SKOS vocabulary for classifying methods, comparisons, reasoning activities, and human processes that generate knowledge associated with time-series data, and for method knowledge: knowledge about which generation methods and settings work for which data. Detailed machine-learning concepts are referenced from the Machine Learning Sailor Taxonomies (MLST).</dct:description>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-18</dct:modified>
+    <dct:references rdf:resource="http://w3id.org/mlso/vocab/learning_method"/>
+    <dct:references rdf:resource="http://w3id.org/mlso/vocab/ml_algorithm"/>
+    <dct:references rdf:resource="http://w3id.org/mlso/vocab/ml_task_type"/>
+    <dct:references rdf:resource="https://w3id.org/semts/ontology#"/>
+    <dct:title xml:lang="en">SemTS Knowledge Generation Vocabulary</dct:title>
+    <vann:preferredNamespacePrefix>semts-gv</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>https://w3id.org/semts/vocabulary/knowledge-generation#</vann:preferredNamespaceUri>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <owl:versionInfo>1.3.0</owl:versionInfo>
+    <skos:editorialNote xml:lang="en">The scheme has two top concepts. Concepts under Knowledge Generation are semts:KnowledgeGenerationConcept and classify knowledge generation entities (semts:knowledgeGenerationConcept). Concepts under Method Knowledge are semts:KnowledgeConcept and classify semts:MethodKnowledge, semts:Algorithm and semts:Hyperparameter instances (semts:knowledgeConcept).</skos:editorialNote>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#KnowledgeGeneration"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodKnowledge"/>
+    <skos:scopeNote xml:lang="en">The hierarchy remains shallow and method-oriented. Feature extraction, feature selection, and representation learning are sibling feature-engineering activities. Concrete software algorithms remain external taxonomy concepts.</skos:scopeNote>
+    <adms:status rdf:resource="http://purl.org/adms/status/Completed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#AbductiveReasoning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#AutomatedReasoning"/>
+    <skos:definition xml:lang="en">Generation of plausible explanations for observations.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Abductive Reasoning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#Abstraction">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#KnowledgeSummarization"/>
+    <skos:definition xml:lang="en">Generation of a higher-level representation that omits non-essential detail.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Abstraction</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#Aggregation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#KnowledgeSummarization"/>
+    <skos:definition xml:lang="en">Combination of multiple values or knowledge items into a summary.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Aggregation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#AlgorithmRecommendation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodKnowledge"/>
+    <skos:definition xml:lang="en">Knowledge that a particular algorithm is appropriate or optimal for analysing the associated segments for a given task.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Algorithm Recommendation</skos:prefLabel>
+    <skos:related rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ModelSelection"/>
+    <skos:scopeNote xml:lang="en">Use as the concept of a semts:Algorithm instance. The instance is itself an mls:Algorithm, so the algorithm family can be stated with mlso:hasAlgorithmType (for example http://w3id.org/mlso/vocab/ml_algorithm/AutoEncoder). semts:hasValue carries the identifier or configuration of the recommended implementation.</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#AnalyticalEquivalent">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodKnowledge"/>
+    <skos:definition xml:lang="en">A mathematical or logical expression that is equivalent to established process information and can be used in place of a learned or measured quantity when analysing the associated segments.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Analytical Equivalent</skos:prefLabel>
+    <skos:scopeNote xml:lang="en">Use as the concept of a semts:MethodKnowledge instance whose value holds the expression, for example a formula that reproduces a controller set-point curve.</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#AnomalyDetection">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PredictiveAnalysis"/>
+    <skos:definition xml:lang="en">Identification of observations or segments that deviate from an expected reference.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/AnomalyDetection"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Anomaly Detection</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Anomaly"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#AssociationRuleMining">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PatternDiscovery"/>
+    <skos:definition xml:lang="en">Discovery of conditional co-occurrence or dependency rules.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Association Rule Mining</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#AutomatedReasoning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ReasoningBasedGeneration"/>
+    <skos:definition xml:lang="en">Generation of knowledge by a reasoning system.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Automated Reasoning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#BaselineComparison">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ComparisonBasedGeneration"/>
+    <skos:definition xml:lang="en">Comparison of an input with a baseline or reference.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Baseline Comparison</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#CausalDiscovery">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#RelationAnalysis"/>
+    <skos:definition xml:lang="en">Discovery of candidate causal structures or cause-effect relations.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/CausalDiscovery"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Causal Discovery</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Causality"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#CausalEffectEstimation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#RelationAnalysis"/>
+    <skos:closeMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/CausalInference"/>
+    <skos:definition xml:lang="en">Estimation of the magnitude or distribution of causal effects.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Causal Effect Estimation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#CausalReasoning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#AutomatedReasoning"/>
+    <skos:definition xml:lang="en">Reasoning over causes, effects, interventions, and counterfactuals.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Causal Reasoning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ChangePointDetection">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PredictiveAnalysis"/>
+    <skos:definition xml:lang="en">Identification of points or intervals where the data-generating behavior changes.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/ChangePointDetection"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Change-Point Detection</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Changepoint"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#Classification">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PredictiveAnalysis"/>
+    <skos:definition xml:lang="en">Assignment of one or more predefined classes or labels.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/Classification"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Classification</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Classification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#Clustering">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PatternDiscovery"/>
+    <skos:definition xml:lang="en">Grouping of segments or knowledge items according to similarity or another relation.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/Clustering"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Clustering</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Clustering"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ComparisonBasedGeneration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <rdfs:seeAlso rdf:resource="https://w3id.org/semts/ontology#KnowledgeComparisonMeasure"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#KnowledgeGeneration"/>
+    <skos:definition xml:lang="en">Knowledge generation based primarily on comparing compatible data or knowledge inputs.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Comparison-Based Generation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ConflictResolution">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#EvidenceIntegration"/>
+    <skos:definition xml:lang="en">Resolution or qualification of conflicting knowledge or evidence.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Conflict Resolution</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ConsensusBuilding">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#HumanKnowledgeAcquisition"/>
+    <skos:definition xml:lang="en">Generation of an agreed knowledge assertion from multiple contributors.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Consensus Building</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ConsistencyChecking">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#AutomatedReasoning"/>
+    <skos:definition xml:lang="en">Detection or resolution of logical or semantic conflicts.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Consistency Checking</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ConstraintChecking">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#AutomatedReasoning"/>
+    <skos:definition xml:lang="en">Validation or derivation based on explicit constraints.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Constraint Checking</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#CorrelationAnalysis">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#RelationAnalysis"/>
+    <skos:definition xml:lang="en">Generation of correlation or statistical dependence knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Correlation Analysis</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Correlation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#CrossSpectralAnalysis">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#RelationAnalysis"/>
+    <skos:definition xml:lang="en">Generation of frequency-domain relations between time series.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Cross-Spectral Analysis</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#DeductiveReasoning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#AutomatedReasoning"/>
+    <skos:definition xml:lang="en">Derivation of conclusions that follow from represented premises and rules.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Deductive Reasoning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#DependencyAnalysis">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#RelationAnalysis"/>
+    <skos:definition xml:lang="en">Generation of dependency relations without necessarily asserting causation.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Dependency Analysis</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#DistanceComputation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#RelationAnalysis"/>
+    <skos:definition xml:lang="en">Generation of distance or dissimilarity values.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Distance Computation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#EventDetection">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PredictiveAnalysis"/>
+    <skos:definition xml:lang="en">Identification of event occurrences from time-series data.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/EventDetection"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Event Detection</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#EvidenceAggregation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#EvidenceIntegration"/>
+    <skos:definition xml:lang="en">Combination of multiple evidence items into a summary or score.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Evidence Aggregation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#EvidenceIntegration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ReasoningBasedGeneration"/>
+    <skos:definition xml:lang="en">Generation of knowledge by combining supporting and contradicting evidence.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Evidence Integration</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#EvidenceSynthesis">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#EvidenceIntegration"/>
+    <skos:definition xml:lang="en">Structured integration of evidence into a conclusion or explanation.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Evidence Synthesis</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ExpertAnnotation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#HumanKnowledgeAcquisition"/>
+    <skos:definition xml:lang="en">Creation of labels, notes, events, relations, or other knowledge by an expert.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Expert Annotation</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Annotation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ExpertAssessment">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#HumanKnowledgeAcquisition"/>
+    <skos:definition xml:lang="en">Human evaluation of quality, relevance, cause, risk, or another property.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Expert Assessment</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ExpertValidation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#HumanKnowledgeAcquisition"/>
+    <skos:definition xml:lang="en">Human confirmation or rejection of generated or asserted knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Expert Validation</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#ValidationOutcome"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ExplanationGeneration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#KnowledgeSummarization"/>
+    <skos:definition xml:lang="en">Generation of explanatory knowledge for an observation, prediction, relation, or decision.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Explanation Generation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#FeatureEngineering">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodBasedGeneration"/>
+    <skos:definition xml:lang="en">Generation activity that constructs, extracts, transforms, or selects representations used for analysis.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Feature Engineering</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#FeatureExtraction">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#FeatureEngineering"/>
+    <skos:definition xml:lang="en">Generation of descriptive features or characteristics from time-series data or representations.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Feature Extraction</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#FeatureSelection">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#FeatureEngineering"/>
+    <skos:definition xml:lang="en">Selection of a subset of available features according to relevance, redundancy, cost, or another criterion.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/featureselection"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Feature Selection</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#Forecasting">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PredictiveAnalysis"/>
+    <skos:closeMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/TimeSeriesForecasting"/>
+    <skos:definition xml:lang="en">Prediction of future values, events, or trajectories.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/Forecasting"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Forecasting</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Forecast"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#FrequencyDomainFeatureExtraction">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#FeatureExtraction"/>
+    <skos:definition xml:lang="en">Extraction of spectral or frequency-domain characteristics.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Frequency-Domain Feature Extraction</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#GroupComparison">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ComparisonBasedGeneration"/>
+    <skos:definition xml:lang="en">Comparison involving sets or groups of inputs.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Group Comparison</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#HumanKnowledgeAcquisition">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ReasoningBasedGeneration"/>
+    <skos:definition xml:lang="en">Generation or validation of knowledge through human input.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Human Knowledge Acquisition</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#HyperparameterOptimization">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ModelDevelopment"/>
+    <skos:definition xml:lang="en">Search or optimization over method hyperparameters.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/HyperparameterOptimization"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Hyperparameter Optimization</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#HyperparameterRecommendation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodKnowledge"/>
+    <skos:definition xml:lang="en">Knowledge that a particular hyperparameter setting is appropriate or optimal for analysing the associated segments for a given task.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Hyperparameter Recommendation</skos:prefLabel>
+    <skos:related rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#HyperparameterOptimization"/>
+    <skos:scopeNote xml:lang="en">Use as the concept of a semts:Hyperparameter instance. Name the hyperparameter in semts:title and give the recommended setting in semts:hasValue.</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#Imputation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PredictiveAnalysis"/>
+    <skos:definition xml:lang="en">Estimation of values for missing, invalid, or excluded observations.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/Imputation"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Imputation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#InductiveReasoning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#AutomatedReasoning"/>
+    <skos:definition xml:lang="en">Derivation of generalized conclusions from observations or examples.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Inductive Reasoning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#KnowledgeExtraction">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodBasedGeneration"/>
+    <skos:definition xml:lang="en">Generation of explicit characteristics, structures, labels, or relations from data or existing knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Knowledge Extraction</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#KnowledgeGeneration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:definition xml:lang="en">A process that produces, compares, validates, derives, or otherwise generates SemTS knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Knowledge Generation</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#KnowledgeSummarization">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodBasedGeneration"/>
+    <skos:definition xml:lang="en">Generation of a reduced or abstract description from multiple data or knowledge inputs.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Knowledge Summarization</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#LearningBasedGeneration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodBasedGeneration"/>
+    <skos:definition xml:lang="en">Method-based generation in which a model or representation is learned from examples or interaction.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Learning-Based Generation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#Matching">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ComparisonBasedGeneration"/>
+    <skos:definition xml:lang="en">Identification of compatible, corresponding, or nearest entities.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Matching</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#MethodBasedGeneration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <rdfs:seeAlso rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationMethod"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#KnowledgeGeneration"/>
+    <skos:definition xml:lang="en">Knowledge generation performed by an analytical or computational implementation.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Method-Based Generation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#MethodConfiguration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+    <skos:altLabel xml:lang="en">Method Preset</skos:altLabel>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodKnowledge"/>
+    <skos:definition xml:lang="en">A named, complete configuration of an analytical method, such as an algorithm together with its parameter settings and preprocessing steps, that has proven effective for the associated segments.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Method Configuration</skos:prefLabel>
+    <skos:scopeNote xml:lang="en">Use as the concept of a semts:MethodKnowledge instance, or of a semts:KnowledgeGroup that bundles the individual algorithm and hyperparameter recommendations.</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#MethodKnowledge">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+    <skos:definition xml:lang="en">Knowledge about an analytical method, or a setting of a method, that is appropriate or optimal when analysing the associated segments for a given task.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Method Knowledge</skos:prefLabel>
+    <skos:scopeNote xml:lang="en">Unlike the concepts under Knowledge Generation, which classify how knowledge was produced, these concepts classify knowledge about methods: what worked, with which settings, for which data. They are semts:KnowledgeConcept and are used with semts:knowledgeConcept.</skos:scopeNote>
+    <skos:topConceptOf rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ModelDevelopment">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodBasedGeneration"/>
+    <skos:definition xml:lang="en">Generation, selection, adaptation, or optimization of models used to produce knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Model Development</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ModelSelection">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ModelDevelopment"/>
+    <skos:definition xml:lang="en">Selection among candidate models according to a criterion.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/ModelSelection"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Model Selection</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ModelTraining">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ModelDevelopment"/>
+    <skos:definition xml:lang="en">Fitting a model or its parameters using data or knowledge inputs.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Model Training</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#MotifDiscovery">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PatternDiscovery"/>
+    <skos:definition xml:lang="en">Discovery of repeated or similar subsequences.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Motif Discovery</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#PairwiseComparison">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ComparisonBasedGeneration"/>
+    <skos:definition xml:lang="en">Comparison of two compatible inputs.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Pairwise Comparison</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#PatternDiscovery">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodBasedGeneration"/>
+    <skos:definition xml:lang="en">Discovery of repeated, characteristic, grouped, or sequential structures.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Pattern Discovery</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#PredictiveAnalysis">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodBasedGeneration"/>
+    <skos:definition xml:lang="en">Generation of predictions, estimates, labels, states, or future values.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Predictive Analysis</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#PreprocessingRecommendation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodKnowledge"/>
+    <skos:definition xml:lang="en">Knowledge that a particular preprocessing step, such as resampling, normalisation, filtering or imputation, is appropriate before analysing the associated segments.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Preprocessing Recommendation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ProbabilisticReasoning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#AutomatedReasoning"/>
+    <skos:definition xml:lang="en">Reasoning under uncertainty using probabilistic representations.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Probabilistic Reasoning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ProfileComparison">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ComparisonBasedGeneration"/>
+    <skos:definition xml:lang="en">Comparison of an observed profile with an expected or reference profile.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Profile Comparison</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#Ranking">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ComparisonBasedGeneration"/>
+    <skos:definition xml:lang="en">Ordering of entities according to one or more comparison criteria.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Ranking</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ReasoningBasedGeneration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <rdfs:seeAlso rdf:resource="https://w3id.org/semts/ontology#KnowledgeReasoning"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#KnowledgeGeneration"/>
+    <skos:definition xml:lang="en">Knowledge generation based on logical, probabilistic, causal, temporal, human, or hybrid reasoning.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Reasoning-Based Generation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#Regression">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PredictiveAnalysis"/>
+    <skos:definition xml:lang="en">Estimation of continuous or ordered target values.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/Regression"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Regression</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ReinforcementLearning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#LearningBasedGeneration"/>
+    <skos:definition xml:lang="en">Learning behavior through interaction and reward signals.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/learning_method/Reinforcement_Learning_Algorithm"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Reinforcement Learning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#RelationAnalysis">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodBasedGeneration"/>
+    <skos:definition xml:lang="en">Generation of relations among segments, dimensions, events, values, or knowledge items.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Relation Analysis</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#RemainingUsefulLifeEstimation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PredictiveAnalysis"/>
+    <skos:closeMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/RemainingUsefulLifetimeEstimation"/>
+    <skos:definition xml:lang="en">Estimation of the remaining duration until a defined end-of-life condition.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Remaining Useful Life Estimation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#RepresentationLearning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#FeatureEngineering"/>
+    <skos:definition xml:lang="en">Learning a representation, embedding, or latent feature space from data.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Representation Learning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#RuleBasedReasoning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#AutomatedReasoning"/>
+    <skos:definition xml:lang="en">Application of explicit rules to derive or validate knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Rule-Based Reasoning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#Segmentation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PatternDiscovery"/>
+    <skos:definition xml:lang="en">Identification of meaningful boundaries or partitions in time-series data.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Segmentation</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Segmentation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#SelfSupervisedLearning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#LearningBasedGeneration"/>
+    <skos:definition xml:lang="en">Learning from targets constructed from the input data itself.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/learning_method/SelfSupervisedLearning"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Self-supervised Learning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#SemiSupervisedLearning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#LearningBasedGeneration"/>
+    <skos:definition xml:lang="en">Learning from a mixture of labeled and unlabeled examples.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/learning_method/Semi-supervised_Learning_Algorithm"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Semi-supervised Learning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ShapeFeatureExtraction">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#FeatureExtraction"/>
+    <skos:definition xml:lang="en">Extraction of characteristics describing local or global signal shape.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Shape Feature Extraction</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ShapeletDiscovery">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PatternDiscovery"/>
+    <skos:definition xml:lang="en">Discovery of discriminative subsequences useful for classification or interpretation.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Shapelet Discovery</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#SimilarityAnalysis">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#RelationAnalysis"/>
+    <skos:closeMatch rdf:resource="http://w3id.org/mlso/vocab/ml_task_type/SimilarityMatching"/>
+    <skos:definition xml:lang="en">Generation of similarity relations or scores.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Similarity Analysis</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/data-knowledge#Similarity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#Simulation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#MethodBasedGeneration"/>
+    <skos:definition xml:lang="en">Generation of knowledge by executing a model of a process or system.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Simulation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#StateEstimation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#PredictiveAnalysis"/>
+    <skos:definition xml:lang="en">Estimation of latent or observable states associated with time-series behavior.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">State Estimation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#StatisticalFeatureExtraction">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#FeatureExtraction"/>
+    <skos:definition xml:lang="en">Extraction of distributional, location, dispersion, or other statistical characteristics.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Statistical Feature Extraction</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#SupervisedLearning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#LearningBasedGeneration"/>
+    <skos:definition xml:lang="en">Learning from examples associated with target labels or values.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/learning_method/Supervised_Learning_Algorithm"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Supervised Learning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#TemporalFeatureExtraction">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#FeatureExtraction"/>
+    <skos:definition xml:lang="en">Extraction of characteristics based on ordering, lag, duration, change, trend, or temporal structure.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Temporal Feature Extraction</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#TemporalReasoning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#AutomatedReasoning"/>
+    <skos:definition xml:lang="en">Reasoning over temporal order, intervals, duration, recurrence, or change.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Temporal Reasoning</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#ThresholdComparison">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#ComparisonBasedGeneration"/>
+    <skos:definition xml:lang="en">Comparison of a value or knowledge item with a threshold or rule boundary.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Threshold Comparison</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#TimeFrequencyFeatureExtraction">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#FeatureExtraction"/>
+    <skos:definition xml:lang="en">Extraction of characteristics localized jointly in time and frequency.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Time-Frequency Feature Extraction</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/knowledge-generation#UnsupervisedLearning">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeGenerationConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation#LearningBasedGeneration"/>
+    <skos:definition xml:lang="en">Learning structures or representations without target labels.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/learning_method/Unsupervised_Learning_Algorithm"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/knowledge-generation"/>
+    <skos:prefLabel xml:lang="en">Unsupervised Learning</skos:prefLabel>
+  </rdf:Description>
+</rdf:RDF>

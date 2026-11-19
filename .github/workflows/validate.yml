@@ -1,0 +1,27 @@
+name: Validate and check the build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -r tools/requirements.txt
+      - name: Check the Turtle sources (syntax, OWL declarations, SKOS integrity)
+        run: python tools/check_sources.py
+      - name: Validate examples, scenarios and sample data with the SHACL shapes
+        run: python tools/validate.py --repository
+      - name: Run the competency questions
+        run: python evaluation/competency_questions/evaluation_runner.py --all --require-results
+      - name: Rebuild the website and serialisations and fail if they are out of date
+        run: |
+          python tools/build.py
+          git diff --exit-code || { echo "Generated files are out of date: run python tools/build.py and commit the result."; exit 1; }

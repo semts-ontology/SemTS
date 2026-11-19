@@ -1,0 +1,584 @@
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="SemTS home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 5H3v22h4M25 5h4v22h-4" fill="none" stroke="#14233D" stroke-width="2.4"/><path d="M7.5 21l3.8-5.2 3.6 2.8 4.2-8.6 5 6.4" fill="none" stroke="#2B7855" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="19.2" cy="8.2" r="2.7" fill="#1F5BAF"/></svg>
+      SemTS
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Main"></nav>
+    <div class="head-right">
+      <span class="version">Ontology 1.3.0</span>
+      <a class="gh" href="https://github.com/semts-ontology/SemTS"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a>
+      <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ================================================================ HOME -->
+<section class="page" data-page="home" aria-label="Home">
+  <div class="wrap">
+    <div class="hero">
+      <h1>Everything derived from a time series or known about it, in one graph.</h1>
+      <p class="lede">SemTS is an OWL ontology with modular SKOS vocabularies. It links features, predictions, relations and expert knowledge to the intervals, points and dimensions of your data, and records how each piece of knowledge was produced.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#ontology">SemTS Ontology</a>
+        <a class="btn btn-secondary" href="#examples">See the examples</a>
+        <a class="btn btn-secondary" href="#vocabularies">Browse the vocabularies</a>
+      </div>
+      <ul class="facts">
+        <li>Version 1.3.0</li>
+        <li>OWL 2 ontology with SHACL shapes</li>
+        <li data-concept-count>SKOS vocabularies in 6 modules</li>
+        <li>CC BY 4.0</li>
+      </ul>
+      <figure class="hero-figure">
+        <div class="hero-scroll" id="hero-svg"></div>
+        <figcaption class="hero-cap" id="hero-cap" aria-live="polite">
+          <span class="hint">Two sensor channels of one machining run, with knowledge from analyses and from an expert. After the anomaly at P7 the temperature rises and the vibration grows, which the expert confirms as a wear-out phase. Select an annotation to see the triples behind it.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="section">
+     <div class="agents">
+      <div class="agents-text">
+        <h2>Knowledge for AI agents, and from them</h2>
+        <p>An agent that analyses time series needs context: which segments exist, what is already known about them, which assumptions an expert made and which methods worked before. SemTS gives it that context as one queryable graph.</p>
+        <p>What the agent finds goes back into the same graph as knowledge with its provenance, checked by the SHACL shapes. The next analysis, the next agent and the expert who reviews the result all start from there.</p>
+        <a class="btn btn-secondary btn-small" href="#applications">Applications for agents</a>
+      </div>
+      <figure class="agents-pic" id="home-pic-agents"></figure>
+     </div>
+     <div class="agents">
+      <div class="agents-text">
+        <h2>Data reports in plain language</h2>
+        <p>With everything known about a time series in one graph, a language model can write the report: what was measured, which trends, anomalies and relations were found, what experts know about the process, and how reliable each statement is. Charts of the segments concerned come from the same graph.</p>
+        <p>Every knowledge item in the graph names the activity that produced it and can carry quality measures, so every sentence of the report can point to the knowledge it is based on. When new knowledge arrives, the report is written again from the current graph.</p>
+        <a class="btn btn-secondary btn-small" href="#applications">Applications for reports</a>
+      </div>
+      <figure class="agents-pic" id="home-pic-report"></figure>
+     </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <div>
+          <h2>Two sources of knowledge, used together</h2>
+          <p>Results computed from the data are only half of what is known about a time series. SemTS keeps the two sources apart, so you always know where a statement came from, and represents them in the same way, so they can be used together.</p>
+        </div>
+      </div>
+      <div class="sources2">
+        <div class="layer-col" style="--c: var(--cls)">
+          <h3>Derived from the data</h3>
+          <p>Features, trends, anomalies, classifications, forecasts, relations between segments and trained models, each with the method run that produced it and how far it can be trusted.</p>
+          <ul class="termlist" data-terms="semts:DataKnowledge semts:SegmentDataCharacteristic semts:SegmentPrediction semts:SegmentRelation semts:ModelInstance" style="--c: var(--cls); --t: var(--cls-t)"></ul>
+        </div>
+        <div class="layer-col" style="--c: var(--cls)">
+          <h3>Known beforehand, mostly from experts</h3>
+          <p>Initial assumptions, known facts, operating limits, set points, maintenance events, observations and confirmed labels. They are recorded as scenario or common context knowledge, with the expert annotation or assessment as their source, and are available to analyses from the start.</p>
+          <ul class="termlist" data-terms="semts:ScenarioKnowledge semts:CommonContextKnowledge semts:KnowledgeReasoning semts-sv:Annotation semts-gv:ExpertAnnotation" style="--c: var(--cls); --t: var(--cls-t)"></ul>
+        </div>
+      </div>
+      <div class="synergy">
+        <h3>Combined, each makes the other more useful</h3>
+        <ul>
+          <li>An operating limit stated by an expert becomes the threshold of an anomaly detector, and the detector's result points back to the limit it used as input knowledge.</li>
+          <li>A detected anomaly is confirmed or rejected by an expert. The confirmation is knowledge in its own right, with the anomaly as its input.</li>
+          <li>Relations connect a computed result to the assumption it supports or contradicts, so outdated assumptions surface instead of being silently overwritten.</li>
+          <li>Both kinds share the same segments, concepts and provenance model: one query returns everything known about an interval, whatever its source.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <div>
+          <h2>How the ontology is organised</h2>
+          <p>Three layers, one graph. The colours stay the same across this site: green for data, blue for knowledge, red for how knowledge is generated.</p>
+        </div>
+        <a class="btn btn-secondary btn-small" href="#ontology">Open the interactive diagram</a>
+      </div>
+      <div class="layers3">
+        <div class="layer-col" style="--c: var(--dat)">
+          <h3>Data management</h3>
+          <p>Segments describe whole series, sub-intervals or single points, restricted to selected dimensions. Indexes use OWL-Time, the raw data stays where it is behind DCAT distributions, and units come from QUDT.</p>
+          <ul class="termlist" data-terms="semts:TimeSeriesSegment semts:ArtificialTimeSeriesSegment semts:DataDimension semts:EmbeddedValue semts:ReferencedValue" style="--c: var(--dat); --t: var(--dat-t)"></ul>
+        </div>
+        <div class="layer-col" style="--c: var(--cls)">
+          <h3>Knowledge classification</h3>
+          <p>Knowledge is a node of its own. Its class says what kind of knowledge it is, and a concept from a vocabulary says exactly what it means. Knowledge can be grouped, related, scored and attached as context.</p>
+          <ul class="termlist" data-terms="semts:DataKnowledge semts:ScenarioKnowledge semts:MethodKnowledge semts:KnowledgeGroup semts:KnowledgeRelation semts:KnowledgeQualityMeasure" style="--c: var(--cls); --t: var(--cls-t)"></ul>
+        </div>
+        <div class="layer-col" style="--c: var(--gen)">
+          <h3>Knowledge generation</h3>
+          <p>Every knowledge item names the activity that produced it, with that activity's inputs and outputs, so results can be traced and fed into later analyses. Built on PROV-O and ML-Schema.</p>
+          <ul class="termlist" data-terms="semts:KnowledgeGenerationEntity semts:KnowledgeGenerationMethod semts:KnowledgeComparisonMeasure semts:KnowledgeReasoning" style="--c: var(--gen); --t: var(--gen-t)"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <div>
+          <h2>What you can represent</h2>
+          <p>A selection of what the model covers, drawn from the requirements SemTS was designed against. Each item maps to a small set of terms and at least one worked example. The specification lists everything the ontology can express.</p>
+        </div>
+      </div>
+      <div class="caps" id="caps"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <div>
+          <h2>Follow one result through three analyses</h2>
+          <p>A feature becomes a class, and an engineer confirms it. Each step uses the output of the one before, and the graph keeps the whole chain.</p>
+        </div>
+        <a class="btn btn-secondary btn-small" href="#ex-provenance">Read the full example</a>
+      </div>
+      <figure class="pic" id="home-pic-provenance"></figure>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <div>
+          <h2>Vocabularies with a stable core</h2>
+          <p>Each knowledge area has one core vocabulary. Concrete features and domain terms live in modules that build on it, so the core can stay small and domains can grow independently.</p>
+        </div>
+        <a class="btn btn-secondary btn-small" href="#vocabularies">Browse all concepts</a>
+      </div>
+      <div class="vmap" data-vmap></div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <div>
+          <h2>Where SemTS fits</h2>
+          <p>A few of the ways SemTS can be used, each linked to the terms and examples it uses. They are examples, not the limits of the model.</p>
+        </div>
+        <a class="btn btn-secondary btn-small" href="#applications">More applications</a>
+      </div>
+      <div class="apps" data-apps="4"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <div>
+          <h2>Cite SemTS</h2>
+        </div>
+        <a class="btn btn-secondary btn-small" href="#cite">All publications</a>
+      </div>
+      <div class="prose" data-cite="short"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ ONTOLOGY -->
+<section class="page" data-page="ontology" aria-label="Ontology">
+  <div class="wrap">
+    <div class="page-head">
+      <h1>Ontology architecture</h1>
+      <p class="lede">SemTS 1.3.0 has <span data-count="classes"></span> classes and <span data-count="props"></span> properties in three layers. Select a class or a property to see its definition, axioms and the SHACL rules that apply to it. The complete graph, drawn with WebVOWL, is part of the <a href="#spec-vowl-h">specification</a>.</p>
+    </div>
+    <div class="arch-tools">
+      <button class="btn btn-secondary btn-small" id="arch-new" aria-pressed="false">Highlight what is new in 1.3.0</button>
+      <button class="btn btn-secondary btn-small" id="arch-reset">Clear selection</button>
+      <button class="btn btn-secondary btn-small" id="arch-copy">Copy diagram as SVG</button>
+    </div>
+    <div class="arch-wrap">
+      <div class="arch-canvas" id="arch"></div>
+      <div class="arch-summary" id="arch-summary"></div>
+      <aside class="detail" id="arch-detail" aria-live="polite" hidden></aside>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><div><h2>Three ways to scope knowledge</h2><p>The property that links a segment to knowledge says how the knowledge applies.</p></div></div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Property</th><th>Meaning</th><th>Rule</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td><code>semts:segmentKnowledge</code></td><td>The knowledge holds for each linked segment on its own.</td><td>Any number of segments.</td><td><a href="#ex-segment-knowledge">Rising trend on S1 and S2</a></td></tr>
+            <tr><td><code>semts:multiSegmentKnowledge</code></td><td>The knowledge is only meaningful for the set of segments together.</td><td>None or at least two segments. A segment relation needs two.</td><td><a href="#ex-multi-segment">Similarity of two heartbeats</a></td></tr>
+            <tr><td><code>semts:commonContextKnowledge</code><span class="badge-new">new</span></td><td>Context that is relevant under the segment's conditions but is not a statement about the segment.</td><td>Common context knowledge may not be linked with the other two properties.</td><td><a href="#ex-common-context">Default machine temperature</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><div><h2>Highlights of version 1.3.0</h2></div></div>
+      <ul class="changes prose" style="max-width: 80ch">
+        <li><strong>Knowledge relations</strong> <span class="badge-new">new</span><br><span class="muted">An abstract <code>KnowledgeRelation</code> that is either directed (source and target) or undirected (two or more participants). The meaning comes from a concept, for example <code>semts-sv:Causes</code> or <code>semts-dv:Correlation</code>.</span></li>
+        <li><strong>Common context knowledge</strong> <span class="badge-new">new</span><br><span class="muted">Knowledge that is attached to segments as context without being scoped to them, linked through <code>commonContextKnowledge</code>.</span></li>
+        <li><strong>Allen's interval relations</strong><br><span class="muted">Thirteen relations between segments, each defined by a property chain over the segment index and the matching OWL-Time relation. The shapes check that an asserted relation is backed by the indexes.</span></li>
+        <li><strong>Stricter temporal indexes</strong><br><span class="muted">A segment has exactly one index: an instant, or an interval with one beginning and one end, both as timestamps or both as numeric positions, with the beginning strictly first.</span></li>
+        <li><strong>Modular vocabularies</strong><br><span class="muted">Data and scenario knowledge are split into stable cores and extension modules. The knowledge generation and quality measure vocabularies are aligned with MLST.</span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><div><h2>Standards SemTS builds on</h2><p>SemTS imports OWL-Time, DCAT and PROV-O and reuses classes from QUDT, ML-Schema and SKOS instead of redefining them.</p></div></div>
+      <div class="reuse">
+        <div><h4>DCAT 3</h4><p>Segments are <code>dcat:Dataset</code>s with distributions that point to the raw data. Referenced values are <code>dcat:Resource</code>s.</p></div>
+        <div><h4>OWL-Time</h4><p>Segment indexes are temporal entities. Allen relations between segments follow from the relations between their indexes.</p></div>
+        <div><h4>PROV-O</h4><p>Generation entities are activities, inputs and outputs are entities, and <code>used</code>, <code>generated</code> and <code>wasDerivedFrom</code> specialise PROV.</p></div>
+        <div><h4>QUDT</h4><p>Units and datatypes of dimensions and values.</p></div>
+        <div><h4>ML-Schema</h4><p>Algorithms, hyperparameters, models, implementations and evaluation measures.</p></div>
+        <div><h4>SKOS</h4><p>All vocabularies are SKOS concept schemes. Ontology classes point to concepts through three hook properties.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ VOCABULARIES -->
+<section class="page" data-page="vocabularies" aria-label="Vocabularies">
+  <div class="wrap">
+    <div class="page-head">
+      <h1>Vocabularies</h1>
+      <p class="lede">The ontology says what kind of knowledge something is. The vocabularies say what it means. Each knowledge area has a small core vocabulary. Concrete features and domain terms live in modules that build on it.</p>
+    </div>
+    <div class="vmap" data-vmap></div>
+    <p class="vnote"><strong>The extension modules are examples.</strong> The feature catalogue follows one feature library and the manufacturing module covers a handful of domain terms. They show how a core vocabulary is extended and are not meant to be complete. Publish your own catalogue or domain module the same way: new concepts in your own namespace, linked to a core concept with <code>skos:broader</code>.</p>
+
+    <div class="section">
+      <div class="section-head"><div><h2>Which vocabulary goes with which class</h2><p>Three properties connect the ontology to the vocabularies. Concepts are found by following <code>skos:broader</code> from any module back to its core.</p></div></div>
+      <div class="tbl-wrap">
+        <table class="tbl" id="vpaths">
+          <thead><tr><th>Ontology class</th><th>Hook property</th><th>Core vocabulary</th><th>Extensions and alignments</th></tr></thead>
+          <tbody>
+            <tr><td><code>semts:DataKnowledge</code> and its subclasses</td><td><code>knowledgeConcept</code></td><td><button class="term" data-mod="dv">semts-dv</button></td><td><button class="term" data-mod="dfx">semts-dfx</button> example feature catalogue, included by default</td></tr>
+            <tr><td><code>semts:ScenarioKnowledge</code></td><td><code>knowledgeConcept</code></td><td><button class="term" data-mod="sv">semts-sv</button></td><td><button class="term" data-mod="msv">semts-msv</button> example manufacturing module, opt-in</td></tr>
+            <tr><td><code>semts:KnowledgeRelation</code></td><td><code>knowledgeConcept</code></td><td>Relation concepts in <button class="term" data-mod="dv">semts-dv</button> and <button class="term" data-mod="sv">semts-sv</button></td><td>Scope notes say whether a concept is meant for directed or undirected use</td></tr>
+            <tr><td><code>semts:KnowledgeGroup</code></td><td><code>knowledgeConcept</code></td><td>Any, typically <button class="term" data-concept="semts-dv:Clustering">semts-dv:Clustering</button> or <button class="term" data-concept="semts-dv:Cluster">semts-dv:Cluster</button></td><td></td></tr>
+            <tr><td><code>semts:MethodKnowledge</code>, <code>semts:Algorithm</code>, <code>semts:Hyperparameter</code></td><td><code>knowledgeConcept</code></td><td><button class="term" data-mod="gv">semts-gv</button>, branch Method Knowledge</td><td>The recommended algorithm itself is classified with <code>mlso:hasAlgorithmType</code></td></tr>
+            <tr><td><code>semts:KnowledgeGenerationEntity</code></td><td><code>knowledgeGenerationConcept</code></td><td><button class="term" data-mod="gv">semts-gv</button></td><td>Mapped to MLST task types and learning methods</td></tr>
+            <tr><td><code>semts:KnowledgeQualityMeasure</code></td><td><code>qualityMeasureConcept</code></td><td><button class="term" data-mod="qv">semts-qv</button></td><td>Mapped to MLST evaluation measures</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section" id="browser">
+      <div class="section-head"><div><h2>Concept browser</h2><p>Every concept of the vocabulary modules, with definitions, hierarchy, mappings and a ready-to-use Turtle snippet.</p></div></div>
+      <div class="vb" id="vb"><p class="muted">Loading the vocabularies…</p></div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><div><h2>Add a domain extension</h2><p>The manufacturing module shows the pattern. It stays small on purpose.</p></div></div>
+      <div class="notes-grid">
+        <div class="prose">
+          <p><strong>Add a term only when it narrows the meaning.</strong> “Machine downtime” earns a place because it restricts the affected entity to a machine. “Production cycle start” was deprecated because the generic <em>Cycle Start</em> already says the same. The manufacturing context belongs in associated knowledge.</p>
+          <p><strong>Point to the core with <code>skos:broader</code>.</strong> Every extension concept has a broader concept in the core, so queries over the core concept also find the extension terms.</p>
+          <p><strong>Import the core, declare the module part of it.</strong> The extension imports the core vocabulary and states <code>dct:isPartOf</code>. The browser and the module map on this site are generated from exactly these statements, so a new module appears here without changes to the site.</p>
+        </div>
+        <div data-code="extension-template"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><div><h2>Deprecated terms</h2></div></div>
+      <div class="tbl-wrap"><table class="tbl" id="deprecated"><thead><tr><th>Term</th><th>Replaced by</th><th>Reason</th></tr></thead><tbody></tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ EXAMPLES -->
+<section class="page" data-page="examples" aria-label="Examples">
+  <div class="wrap">
+    <div class="page-head">
+      <h1>Examples</h1>
+      <p class="lede">Nine small graphs, each with a picture and the Turtle behind it. All of them conform to the SemTS 1.3.0 shapes, including the provenance the shapes require, which is folded away until you open it. Terms in the code link to their definitions.</p>
+    </div>
+    <div class="ex-layout">
+      <nav class="ex-index" aria-label="Examples"><ol id="ex-index"></ol></nav>
+      <div id="ex-list"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ APPLICATIONS -->
+<section class="page" data-page="applications" aria-label="Applications">
+  <div class="wrap">
+    <div class="page-head">
+      <h1>Applications</h1>
+      <p class="lede">SemTS is domain-neutral: the examples on this site come from machining, cardiology and building energy. The patterns below are a selection of where the model helps, not a complete list. Each links to the terms and examples it uses.</p>
+      <p class="prose">Three uses stand out. SemTS structures knowledge for AI agents and from them: agents take their context from the graph and return what they find, with its provenance, for people and other agents to check. It gives language models the material for data reports in plain language, with charts and a source for every statement. And it gives the knowledge that exists before any analysis, the assumptions, facts and observations of domain experts, the same standing as computed results.</p>
+    </div>
+    <div class="apps" data-apps="all"></div>
+  </div>
+</section>
+
+<!-- ================================================================ DOCS: GET STARTED -->
+<section class="page" data-page="get-started" aria-label="Get started">
+  <div class="wrap docs">
+    <nav class="docs-nav" data-docs-nav aria-label="Documentation"></nav>
+    <div class="docs-body">
+      <div class="page-head">
+        <h1>Get started</h1>
+        <p class="lede">Describe a segment, attach knowledge, record where it came from, then validate and query the graph.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Declare the namespaces</h3>
+          <p class="muted">The ontology and each vocabulary module have a permanent w3id IRI.</p>
+          <div class="tbl-wrap"><table class="tbl" id="ns-table"><thead><tr><th>Prefix</th><th>Namespace</th><th>Module</th><th>Version</th></tr></thead><tbody></tbody></table></div>
+        </li>
+        <li>
+          <h3>Describe a segment</h3>
+          <p class="muted">A segment needs one temporal index and at least one distribution that points to the data. Add dimensions when you attach data knowledge.</p>
+          <div data-code="gs-segment"></div>
+        </li>
+        <li>
+          <h3>Attach knowledge with a concept</h3>
+          <p class="muted">Pick the class for the kind of knowledge and a concept for its meaning. Data, scenario and method knowledge carry exactly one value.</p>
+          <div data-code="gs-knowledge"></div>
+        </li>
+        <li>
+          <h3>Record how it was produced</h3>
+          <p class="muted">Every knowledge item names one generation entity. The entity uses inputs and generates outputs that list the knowledge.</p>
+          <div data-code="gs-provenance"></div>
+        </li>
+        <li>
+          <h3>Validate with the SHACL shapes</h3>
+          <p class="muted">Load the ontology and the vocabularies next to your data so that class hierarchies and concept types are visible to the validator. The example uses <a href="https://github.com/RDFLib/rdflib">RDFLib</a> and <a href="https://github.com/RDFLib/pySHACL">pySHACL</a>. Any SHACL processor that supports SHACL-SPARQL works. The paths are those of the repository.</p>
+          <div data-code="gs-validate"></div>
+        </li>
+        <li>
+          <h3>Query across the hierarchy</h3>
+          <p class="muted">Because feature concepts point to their core family, a query for the family also finds every concrete feature.</p>
+          <div data-code="gs-query"></div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ DOCS: SPECIFICATION -->
+<section class="page" data-page="reference" aria-label="Specification">
+  <div class="wrap docs">
+    <nav class="docs-nav" data-docs-nav aria-label="Documentation"></nav>
+    <div class="docs-body">
+      <div class="page-head">
+        <h1>Ontology specification</h1>
+        <p class="lede">Everything the ontology file states: its metadata, and every class and property with its axioms. From version 1.3.0 this page is generated from the Turtle file and replaces the WIDOCO documentation. The WIDOCO pages of earlier versions stay online unchanged.</p>
+      </div>
+      <dl class="spec-meta" id="spec-meta"></dl>
+
+      <h2 class="spec-h" id="spec-abstract-h">Abstract</h2>
+      <p class="prose" id="spec-abstract"></p>
+
+      <h2 class="spec-h">Description</h2>
+      <div class="prose" id="spec-description"></div>
+      <p class="small"><a href="#ontology">Explore the architecture diagram</a>: select a class or property to see its definition, shapes and examples.</p>
+
+      <h2 class="spec-h" id="spec-vowl-h">Visualisation</h2>
+      <p class="prose">The complete graph of classes and properties, drawn with <a href="https://github.com/VisualDataWeb/WebVOWL">WebVOWL</a>. Drag nodes to rearrange them, select one for its details, and use the filter menu to show more or fewer elements. Classes of imported ontologies are dark blue and marked as external.</p>
+      <div class="vowl-frame"><iframe id="spec-vowl" title="WebVOWL graph of the SemTS ontology" loading="lazy"></iframe></div>
+      <p class="small"><a id="spec-vowl-open" href="#">Open the graph in a full window</a></p>
+
+      <h2 class="spec-h">Namespace declarations</h2>
+      <div class="tbl-wrap"><table class="tbl" id="spec-ns"><thead><tr><th style="width:18%">Prefix</th><th>Namespace</th></tr></thead><tbody></tbody></table></div>
+
+      <h2 class="spec-h">Overview</h2>
+      <div class="spec-overview" id="spec-overview"></div>
+
+      <h2 class="spec-h">Cross-reference</h2>
+      <p class="muted small">Kinds: <span class="kind kind-c">c</span> class, <span class="kind kind-op">op</span> object property, <span class="kind kind-dp">dp</span> data property, <span class="kind kind-ap">ap</span> annotation property, <span class="kind kind-ni">ni</span> named individual. Class expressions use Manchester syntax.</p>
+      <div class="ref-bar">
+        <input type="search" id="ref-filter" placeholder="Filter classes and properties" aria-label="Filter classes and properties">
+        <span class="muted small" id="ref-count"></span>
+      </div>
+      <div id="spec-xref"></div>
+
+      <h2 class="spec-h">References</h2>
+      <ul class="prose" id="spec-refs"></ul>
+
+      <h2 class="spec-h">Changes from the last version</h2>
+      <p class="prose">The term-by-term comparison with version 1.2.0 and the migration notes are on <a href="#changes">Changes in 1.3.0</a>.</p>
+
+      <h2 class="spec-h">Acknowledgements</h2>
+      <p class="prose">Versions up to 1.2.0 were documented with <a href="https://github.com/dgarijo/Widoco">WIDOCO</a> by Daniel Garijo, whose cross-reference section builds on <a href="https://essepuntato.it/lode/">LODE</a> by Silvio Peroni. This page follows their structure.</p>
+
+      <h2 class="spec-h" id="spec-software">Software and resources used</h2>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th style="width:26%">Name</th><th>Used for</th><th style="width:18%">Licence</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://github.com/VisualDataWeb/WebVOWL">WebVOWL</a> 1.1.7 (Lohmann et al., <a href="https://doi.org/10.3233/SW-150200">Semantic Web 7(4), 2016</a>)</td><td>The interactive graph above. Its input file follows the JSON format of <a href="https://github.com/VisualDataWeb/OWL2VOWL">OWL2VOWL</a></td><td>MIT</td></tr>
+          <tr><td><a href="https://d3js.org/">D3.js</a> 3.5.17</td><td>Graph layout and rendering inside WebVOWL, bundled with it</td><td>BSD-3-Clause</td></tr>
+          <tr><td><a href="https://github.com/RDFLib/rdflib">RDFLib</a></td><td>Loading graphs and running the competency questions in the repository</td><td>BSD-3-Clause</td></tr>
+          <tr><td><a href="https://github.com/RDFLib/pySHACL">pySHACL</a></td><td>Validating data against the SHACL shapes in the repository and its CI workflow</td><td>Apache-2.0</td></tr>
+          <tr><td><a href="https://pyyaml.org/">PyYAML</a></td><td>Reading the competency questions</td><td>MIT</td></tr>
+          <tr><td><a href="https://www.python.org/">Python</a> standard library</td><td><code>tools/build.py</code> and <code>tools/check_sources.py</code>, which generate this website and the serialisations and check the sources without further packages</td><td>PSF</td></tr>
+          <tr><td><a href="https://tsfresh.readthedocs.io/">tsfresh</a> (Christ et al., <a href="https://doi.org/10.1016/j.neucom.2018.03.067">Neurocomputing 307, 2018</a>)</td><td>Alignment of the example feature catalogue, features of the sample data</td><td>MIT</td></tr>
+          <tr><td><a href="https://github.com/dtai-kg/MLSO">MLSO and its taxonomies (MLST)</a></td><td>Mappings of the knowledge generation and quality measure vocabularies, algorithm types</td><td>Apache-2.0</td></tr>
+          <tr><td><a href="https://www.cs.ucr.edu/~eamonn/time_series_data_2018/">UCR Time Series Classification Archive</a> (Dau et al., 2019)</td><td>Time series of the sample data of the competency questions</td><td>see source</td></tr>
+          <tr><td><a href="https://fonts.google.com/specimen/Instrument+Sans">Instrument Sans</a> and <a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a></td><td>Typefaces of this website, served by Google Fonts</td><td>SIL OFL 1.1</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small muted">Reused vocabularies (OWL-Time, DCAT, PROV-O, QUDT, ML-Schema, SKOS, FOAF, Dublin Core, VANN and Schema.org) are listed under namespace declarations and imported ontologies. The vocabulary modules also use ADMS for their status.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ DOCS: VALIDATION -->
+<section class="page" data-page="validation" aria-label="Validation">
+  <div class="wrap docs">
+    <nav class="docs-nav" data-docs-nav aria-label="Documentation"></nav>
+    <div class="docs-body">
+      <div class="page-head">
+        <h1>Validation</h1>
+        <p class="lede">The SHACL shapes turn the ontology's intent into checks: cardinalities, value types, disjointness, consistent indexes and complete provenance. They are grouped here by what they protect.</p>
+      </div>
+      <p class="prose">Run them with any processor for <a href="https://www.w3.org/TR/shacl/">SHACL</a> Core and SHACL-SPARQL. The repository uses <a href="https://github.com/RDFLib/pySHACL">pySHACL</a> on <a href="https://github.com/RDFLib/rdflib">RDFLib</a>: <code>python tools/validate.py my-data.ttl</code> loads the shapes, the ontology and all vocabularies, and checks the examples, scenarios and sample data with <code>--repository</code>.</p>
+      <div id="shape-groups"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ DOCS: CITE -->
+<section class="page" data-page="cite" aria-label="Publications">
+  <div class="wrap docs">
+    <nav class="docs-nav" data-docs-nav aria-label="Documentation"></nav>
+    <div class="docs-body">
+      <div class="page-head">
+        <h1>Publications</h1>
+        <p class="lede">Please cite the ESWC 2026 paper when you use SemTS.</p>
+      </div>
+      <div class="prose" data-cite="main"></div>
+      <ul class="pubs" style="margin-top: 26px">
+        <li><span class="t">SemTS: Ontology and Vocabularies for the Semantic Categorization of Time Series Knowledge</span>Alexander Graß, Rohit A. Deshmukh, Christoph Lange, Diego Collarana, Christian Beecks, Stefan Decker<br><span class="venue">The Semantic Web, ESWC 2026, Proceedings Part II. LNCS 16550, pages 172-190, Springer.</span> <a href="https://doi.org/10.1007/978-3-032-25159-6_10">doi:10.1007/978-3-032-25159-6_10</a></li>
+        <li><span class="t">Towards an Ontology for Representing Time Series Knowledge: Motivation, Requirements and Concept</span>Alexander Graß, Rohit A. Deshmukh, Christian Beecks, Stefan Decker<br><span class="venue">Intelligent Information Systems, CAiSE 2025 Forum and Doctoral Consortium. LNBIP 557, pages 103-110, Springer.</span> <a href="https://doi.org/10.1007/978-3-031-94590-8_13">doi:10.1007/978-3-031-94590-8_13</a></li>
+        <li><span class="t">Semantic Time Series Analytics Leveraging Incremental Knowledge Graph Enrichment</span>Alexander Graß<br><span class="venue">PhD thesis, RWTH Aachen University.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ CONTACT -->
+<section class="page" data-page="contact" aria-label="Contact">
+  <div class="wrap">
+    <div class="page-head">
+      <h1>Contact</h1>
+      <p class="lede">Questions about SemTS, ideas for the vocabularies, or a project where time-series knowledge should be reusable: we would like to hear from you.</p>
+    </div>
+    <div class="contact-topics">
+      <div class="layer-col" style="--c: var(--dat)">
+        <h3>Community</h3>
+        <p>Report a problem, propose a concept or a change to the model, or contribute a vocabulary module for your domain. Public questions and proposals are best opened as an issue on GitHub, where others can follow them.</p>
+        <p><a href="https://github.com/semts-ontology/SemTS/issues">Open an issue on GitHub</a></p>
+      </div>
+      <div class="layer-col" style="--c: var(--cls)">
+        <h3>Research</h3>
+        <p>Joint work on time-series knowledge graphs, knowledge-based analytics or agentic AI on time series, student theses, and evaluations of SemTS on new data sets.</p>
+      </div>
+      <div class="layer-col" style="--c: var(--gen)">
+        <h3>Industry projects</h3>
+        <p>Using SemTS for condition monitoring, quality or energy data, connecting it to existing data platforms, or modelling the expert knowledge of a domain as a vocabulary extension.</p>
+      </div>
+    </div>
+
+    <div class="contact-grid">
+      <form class="contact-form" id="contact-form" novalidate>
+        <h2>Write to us</h2>
+        <label>Topic
+          <select name="topic">
+            <option>Community and contributions</option>
+            <option>Research collaboration</option>
+            <option>Industry project</option>
+            <option>Vocabulary extension for a domain</option>
+            <option>Other request</option>
+          </select>
+        </label>
+        <label>Your name <input name="name" autocomplete="name"></label>
+        <label><span>Organisation <span class="muted small" style="font-weight:400">optional</span></span> <input name="org" autocomplete="organization"></label>
+        <label>Message <textarea name="message" rows="6" required></textarea></label>
+        <button class="btn btn-primary" type="submit">Compose the email</button>
+        <p class="small muted" id="contact-status" role="status">This opens your email program with the message filled in. Nothing is sent or stored by this page.</p>
+      </form>
+      <div class="contact-direct">
+        <h2>Directly</h2>
+        <dl class="kv">
+          <dt>Email</dt><dd><a data-mail href="#">email</a></dd>
+          <dt>GitHub</dt><dd><a href="https://github.com/semts-ontology/SemTS">semts-ontology/SemTS</a></dd>
+          <dt>Citing SemTS</dt><dd><a href="#cite">Publications and BibTeX</a></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ DOCS: CHANGES -->
+<section class="page" data-page="changes" aria-label="Changes in 1.3.0">
+  <div class="wrap docs">
+    <nav class="docs-nav" data-docs-nav aria-label="Documentation"></nav>
+    <div class="docs-body">
+      <div class="page-head">
+        <h1>Changes in 1.3.0</h1>
+        <p class="lede">What is new, what was corrected, and what data written for 1.2.0 needs before it validates.</p>
+      </div>
+
+      <h2 class="spec-h">New in the model</h2>
+      <ul class="changes prose">
+        <li><strong>Knowledge relations.</strong> <code>KnowledgeRelation</code> with a directed and an undirected subclass relates knowledge items, for example a cause and its effect. The meaning comes from a relation concept.</li>
+        <li><strong>Common context knowledge.</strong> Knowledge that holds for a machine, a process or a site rather than for a stretch of data is linked with <code>commonContextKnowledge</code> instead of <code>segmentKnowledge</code>.</li>
+        <li><strong>Modular vocabularies.</strong> Each knowledge area has a core vocabulary, with extension modules for concrete features (<code>semts-dfx</code>) and domains (<code>semts-msv</code>). New in this release: knowledge generation (<code>semts-gv</code>, which also holds the concepts for method knowledge) and quality measures (<code>semts-qv</code>).</li>
+        <li><strong>Documentation from the source.</strong> This website, the specification and all serialisations are generated from the Turtle files by <code>tools/build.py</code>. WIDOCO is no longer needed.</li>
+      </ul>
+
+      <h2 class="spec-h">Corrections that affect existing data</h2>
+      <ul class="changes prose">
+        <li><strong>Timestamps carry a time zone.</strong> Instants use <code>time:inXSDDateTimeStamp</code> with an <code>xsd:dateTimeStamp</code> value instead of <code>time:inXSDDateTime</code>.</li>
+        <li><strong>QUDT 2 and 3 identifiers.</strong> The QUDT schema namespace is <code>http://qudt.org/schema/qudt/</code>. Datatypes come from <code>http://qudt.org/vocab/datatype/</code>, for example <code>FLOAT-DP</code>, <code>BOOLEAN</code> or <code>STRING</code>.</li>
+        <li><strong>Generation and quality concepts come from the SemTS vocabularies.</strong> An algorithm is not a knowledge generation concept: the task goes in <code>knowledgeGenerationConcept</code> (for example <code>semts-gv:AnomalyDetection</code>) and the algorithm is linked with <code>mls:implements</code>. Quality measures use <code>semts-qv</code> concepts, which map to MLSO.</li>
+        <li><strong>Every knowledge item names its generation entity</strong>, including expert annotations and labels shipped with a dataset.</li>
+        <li><strong>Allen relations are no longer sub-properties of the OWL-Time relations.</strong> The property chains still infer them from the segment indexes, and <code>correspondingOwlTimeRelation</code> records the matching OWL-Time relation. <code>isPartOf</code> is transitive but no longer irreflexive, which OWL 2 DL does not allow together.</li>
+        <li><strong>Referenced values are DCAT resources.</strong> Point to the file through a <code>dcat:Distribution</code> and type the value as <code>dcat:Dataset</code> when it is a dataset.</li>
+      </ul>
+
+      <details class="chg"><summary>All updates for data written for 1.2.0</summary>
+      <div class="tbl-wrap"><table class="tbl tbl-mig"><thead><tr><th>In 1.2.0 data</th><th>In 1.3.0</th><th>Why</th></tr></thead><tbody><tr><td><code>time:inXSDDateTime "2024-01-15T21:00:00"^^xsd:dateTime</code></td><td><code>time:inXSDDateTimeStamp "2024-01-15T21:00:00Z"^^xsd:dateTimeStamp</code></td><td>The shapes require a time zone so that timestamps can be ordered and Allen relations checked</td></tr><tr><td><code>time:DateTimeInterval</code> as segment index</td><td><code>time:Interval</code> (or <code>time:ProperInterval</code>) with <code>time:hasBeginning</code> and <code>time:hasEnd</code></td><td><code>DateTimeInterval</code> is defined by a date-time description, which SemTS indexes do not have</td></tr><tr><td>an interval whose beginning equals its end</td><td>a <code>time:Instant</code></td><td>Interval bounds must be strictly ordered</td></tr><tr><td><code>semts:dimensionPosition 0</code> (an <code>xsd:integer</code>)</td><td><code>semts:dimensionPosition "0"^^xsd:int</code></td><td>The range is <code>xsd:int</code> with minimum 0</td></tr><tr><td><code>http://qudt.org/schema/qudt#…</code>, <code>qudt:FLOAT</code>, <code>qudt:RealDoublePrecisionType</code>, <code>qudt:StringType</code>, <code>qudt:BYTE</code>, <code>http://qudt.org/3.1.1/schema/qudt#FloatingPointEncodingType</code></td><td>QUDT 2/3 identifiers: schema <code>http://qudt.org/schema/qudt/</code>, datatypes from <code>http://qudt.org/vocab/datatype/</code>, for example <code>FLOAT-DP</code>, <code>FLOAT-SP</code>, <code>BOOLEAN</code>, <code>STRING</code>, <code>INTEGER</code></td><td>The hash namespace is the retired QUDT 1 schema. Datatypes are instances of the datatype vocabulary, not schema classes</td></tr><tr><td><code>qudt:TimeSeriesArray</code> on a referenced value</td><td>leave <code>hasDatatype</code> out, or describe the file with <code>dcat:mediaType</code></td><td>There is no such QUDT datatype</td></tr><tr><td><code>semts:knowledgeGenerationConcept mlso-algo:AutoEncoder</code> (an algorithm)</td><td><code>semts:knowledgeGenerationConcept semts-gv:AnomalyDetection</code>, plus <code>mls:implements ex:alg</code> on the method and <code>ex:alg a mls:Algorithm</code> with <code>mlso:hasAlgorithmType &lt;http://w3id.org/mlso/vocab/ml_algorithm/AutoEncoder&gt;</code></td><td>The generation concept names the task. The algorithm is an <code>mls:Algorithm</code> implemented by the method (a <code>mls:Implementation</code>)</td></tr><tr><td>custom generation concepts (<code>ManualAnnotationConcept</code>, <code>TSFreshConcept</code>, <code>CorrelationConcept</code>)</td><td><code>semts-gv:ExpertAnnotation</code>, <code>semts-gv:StatisticalFeatureExtraction</code> or <code>semts-gv:FeatureExtraction</code>, <code>semts-gv:CorrelationAnalysis</code></td><td>A shared vocabulary makes generation processes comparable across graphs</td></tr><tr><td><code>semts:qualityMeasureConcept mlso-em:root_mean_squared_error</code></td><td><code>semts:qualityMeasureConcept semts-qv:RootMeanSquaredError</code> (mapped to MLSO with <code>skos:exactMatch</code>)</td><td>Quality measure concepts must be <code>semts:QualityMeasureConcept</code>s. The MLSO prefix <code>…/evaluation_measure#</code> also did not exist (MLSO uses <code>…/evaluation_measure/</code>)</td></tr><tr><td>knowledge without <code>semts:knowledgeGenerationEntity</code> (for example dataset labels)</td><td>add a generation entity, for example a <code>semts:KnowledgeReasoning</code> with <code>semts-gv:ExpertAnnotation</code></td><td>Every knowledge item names exactly one generation entity</td></tr><tr><td>segment data characteristics without <code>knowledgeConcept</code></td><td>a concept, for example <code>semts-dfx:LinearTrend</code> for the p-value, r value or standard error of tsfresh <code>linear_trend</code></td><td>Every knowledge item has exactly one concept</td></tr><tr><td>a segment-independent fact (for example a default cycle time) attached with <code>segmentKnowledge</code></td><td>type it also as <code>semts:CommonContextKnowledge</code> and attach it with <code>semts:commonContextKnowledge</code></td><td>The proposition is not about that stretch of data</td></tr><tr><td>a semts:ReferencedValue with <code>dcat:downloadURL</code></td><td>type the value <code>semts:ReferencedValue</code> and <code>dcat:Dataset</code>, and link it with <code>dcat:distribution</code> to a <code>dcat:Distribution</code> that has the <code>dcat:downloadURL</code></td><td><code>ReferencedValue</code> is now a <code>dcat:Resource</code>, and <code>dcat:downloadURL</code> belongs to distributions</td></tr><tr><td><code>semts:distribution</code>, <code>dcat:mediaType "text/csv"</code></td><td><code>dcat:distribution</code>, <code>dcat:mediaType &lt;https://www.iana.org/assignments/media-types/text/csv&gt;</code></td><td><code>semts:distribution</code> was never defined, and DCAT media types are IANA resources</td></tr><tr><td>relative IRIs such as <code>&lt;localhost/data/x.csv&gt;</code></td><td>absolute IRIs</td><td>Relative IRIs resolve against the file location and are not portable</td></tr><tr><td>one <code>KnowledgeGenerationInput</code> with two <code>inputDataReference</code>s</td><td>one input per referenced segment</td><td><code>inputDataReference</code> is functional</td></tr><tr><td>a knowledge item that holds for two segments jointly attached to a segment that only covers part of the data (for example a correlation between temperature and wear attached to the complete series)</td><td>one segment per dimension, both linked with <code>multiSegmentKnowledge</code></td><td>Segment relations relate the segments they are about</td></tr><tr><td><code>rdfs:subPropertyOf time:intervalBefore</code> inferred for <code>semts:before</code> (and the other Allen relations)</td><td>query <code>time:intervalBefore</code> between the segment indexes, or use <code>semts:before</code></td><td>The sub-property axioms were removed (see below). The property chains are unchanged</td></tr></tbody></table></div>
+      </details>
+
+      <h2 class="spec-h">Deprecated vocabulary concepts</h2>
+      <p class="muted">The IRIs stay resolvable and are marked <code>owl:deprecated</code>. Use the replacement in new data.</p>
+      <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Concept</th><th>Replaced by</th><th>Reason</th></tr></thead><tbody id="chg-deprecated"></tbody></table></div>
+      <p class="muted">No concept IRI published in 1.2.0 was dropped. The concrete features of the data knowledge vocabulary moved to the feature extension file and keep their <code>semts-dv</code> IRIs, so existing data stays valid. These preferred labels changed:</p>
+      <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Concept</th><th>1.2.0</th><th>1.3.0</th></tr></thead><tbody><tr><td><code>semts-dv:Causality</code></td><td>Causality</td><td>Causal Relation (alternative label: Causality)</td></tr><tr><td><code>semts-dv:Classification</code></td><td>Classification</td><td>Classification Result</td></tr><tr><td><code>semts-dv:Clustering</code></td><td>Clustering</td><td>Clustering Result</td></tr><tr><td><code>semts-dv:Segmentation</code></td><td>Segmentation</td><td>Segmentation Result</td></tr><tr><td><code>semts-dv:Motif</code></td><td>Motif Collection</td><td>Motif Group</td></tr><tr><td><code>semts-dv:Pattern</code></td><td>Pattern</td><td>Pattern Group</td></tr><tr><td><code>semts-sv:Forecast</code></td><td>Forecast</td><td>Scenario Forecast</td></tr><tr><td><code>semts-sv:RUL</code></td><td>RUL</td><td>Remaining Useful Life</td></tr><tr><td><code>semts-sv:Correlation</code></td><td>Correlation</td><td>correlated with</td></tr><tr><td><code>semts-sv:Dependency</code></td><td>Dependency</td><td>depends on</td></tr></tbody></table></div>
+
+      <h2 class="spec-h">Earlier versions</h2>
+      <p class="muted">For versions 1.0.1 to 1.2.0, the changes are listed under “Changes from last version” in the WIDOCO documentation of that version. 0.5.1 was the first published version. <a href="https://github.com/semts-ontology/SemTS/blob/main/CHANGELOG.md">CHANGELOG.md</a> summarises all releases.</p>
+      <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Version</th><th>Released</th><th>Changes</th><th>Documentation</th><th>Files and IRI</th></tr></thead><tbody id="chg-earlier"></tbody></table></div>
+
+      <h2 class="spec-h">Ontology terms compared with <span id="chg-prior"></span></h2>
+      <p class="muted" id="chg-counts"></p>
+      <div class="chg-cols">
+        <div><h3>Added</h3><ul class="chg-list" id="chg-added"></ul></div>
+        <div><h3>Removed</h3><ul class="chg-list" id="chg-removed"></ul></div>
+      </div>
+      <h3 style="margin-top:24px">Changed</h3>
+      <div id="chg-modified"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="#home" style="margin-bottom:10px"><svg viewBox="0 0 32 32" aria-hidden="true" style="width:26px;height:26px"><path d="M7 5H3v22h4M25 5h4v22h-4" fill="none" stroke="#14233D" stroke-width="2.4"/><path d="M7.5 21l3.8-5.2 3.6 2.8 4.2-8.6 5 6.4" fill="none" stroke="#2B7855" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="19.2" cy="8.2" r="2.7" fill="#1F5BAF"/></svg>SemTS</a>
+      <p>The Semantic Time Series Ontology. Ontology and vocabularies are published under CC BY 4.0.</p>
+    </div>
+    <div><h4>Model</h4><ul><li><a href="#ontology">Ontology</a></li><li><a href="#vocabularies">Vocabularies</a></li><li><a href="#examples">Examples</a></li><li><a href="#applications">Applications</a></li></ul></div>
+    <div><h4>Docs</h4><ul><li><a href="#get-started">Get started</a></li><li><a href="#reference">Specification</a></li><li><a href="#validation">Validation</a></li><li><a href="#cite">Publications</a></li><li><a href="#spec-software">Software used</a></li></ul></div>
+    <div><h4>Project</h4><ul><li><a href="https://github.com/semts-ontology/SemTS">GitHub repository</a></li><li><a href="https://w3id.org/semts/ontology#">Ontology IRI</a></li><li><a href="#changes">Changes in 1.3.0</a></li><li><a href="#contact">Contact</a></li></ul></div>
+  </div>
+  <div class="wrap foot-note">
+    <p>The documentation on this site was generated with the help of AI.</p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>

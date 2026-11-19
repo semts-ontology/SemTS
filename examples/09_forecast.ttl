@@ -1,0 +1,73 @@
+@prefix semts:    <https://w3id.org/semts/ontology#> .
+@prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+@prefix semts-gv: <https://w3id.org/semts/vocabulary/knowledge-generation#> .
+@prefix semts-qv: <https://w3id.org/semts/vocabulary/quality-measure#> .
+@prefix dcat:     <http://www.w3.org/ns/dcat#> .
+@prefix time:     <http://www.w3.org/2006/time#> .
+@prefix unit:     <http://qudt.org/vocab/unit/> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:       <https://example.org/building7/> .
+
+# Observed load of the last day (dimension and data from example 4)
+ex:D7 a semts:TimeSeriesSegment ;
+    semts:segmentIndex ex:D7-idx ;
+    semts:segmentDimension ex:activePower ;
+    dcat:distribution ex:meter-feb ;
+    semts:meets ex:F1 .
+
+ex:D7-idx a time:Interval ;
+    time:hasBeginning [ a time:Instant ; time:inXSDDateTimeStamp "2026-02-12T00:00:00+01:00"^^xsd:dateTimeStamp ] ;
+    time:hasEnd       ex:midnight ;
+    time:intervalMeets ex:F1-idx .
+
+ex:midnight a time:Instant ; time:inXSDDateTimeStamp "2026-02-13T00:00:00+01:00"^^xsd:dateTimeStamp .
+
+# The forecast horizon has no ground-truth data yet: an artificial segment
+ex:F1 a semts:ArtificialTimeSeriesSegment ;
+    semts:segmentIndex ex:F1-idx ;
+    semts:segmentDimension ex:activePower ;
+    dcat:distribution ex:forecast-file ;
+    semts:segmentKnowledge ex:loadForecast, ex:pi90 .
+
+ex:F1-idx a time:Interval ;
+    time:hasBeginning ex:midnight ;
+    time:hasEnd [ a time:Instant ; time:inXSDDateTimeStamp "2026-02-14T00:00:00+01:00"^^xsd:dateTimeStamp ] .
+
+ex:loadForecast a semts:SegmentPrediction ;
+    semts:knowledgeConcept semts-dv:Forecast ;
+    semts:hasValue ex:forecast-values ;
+    semts:knowledgeQualityMeasure ex:mase ;
+    semts:knowledgeGenerationEntity ex:forecastRun .
+
+ex:pi90 a semts:SegmentPrediction ;
+    semts:knowledgeConcept semts-dv:PredictionInterval ;
+    semts:title "90 % prediction interval" ;
+    semts:hasValue ex:interval-values ;
+    semts:knowledgeGenerationEntity ex:forecastRun .
+
+# The forecast values and the artificial segment share one file
+ex:forecast-values a semts:ReferencedValue, dcat:Dataset ;
+    semts:hasUnit unit:KiloW ;
+    dcat:distribution ex:forecast-file .
+ex:interval-values a semts:ReferencedValue, dcat:Dataset ;
+    semts:hasUnit unit:KiloW ;
+    dcat:distribution [ a dcat:Distribution ;
+        dcat:downloadURL <https://data.example.org/building7/forecast-0213-pi90.parquet> ] .
+ex:forecast-file a dcat:Distribution ;
+    dcat:downloadURL <https://data.example.org/building7/forecast-0213.parquet> .
+
+ex:mase a semts:KnowledgeQualityMeasure ;
+    semts:qualityMeasureConcept semts-qv:MeanAbsoluteScaledError ;
+    semts:description "Backtest over the previous four weeks" ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "0.74" ] .
+
+#region provenance
+ex:forecastRun a semts:KnowledgeGenerationMethod ;
+    semts:knowledgeGenerationConcept semts-gv:Forecasting ;
+    semts:used ex:fc-in ;
+    semts:generated ex:fc-out .
+ex:fc-in a semts:KnowledgeGenerationInput ; semts:inputDataReference ex:D7 .
+ex:fc-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:loadForecast, ex:pi90 ;
+    semts:wasDerivedFrom ex:fc-in .
+#endregion

@@ -1,0 +1,63 @@
+@prefix semts: <https://w3id.org/semts/ontology#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix time:  <http://www.w3.org/2006/time#> .
+@prefix unit:  <http://qudt.org/vocab/unit/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:    <https://example.org/line2/> .
+
+# The complete recording of one machining run (multivariate)
+ex:run42 a semts:TimeSeriesSegment ;
+    semts:title "Run 42, milling line 2" ;
+    semts:segmentIndex ex:run42-idx ;
+    semts:segmentDimension ex:spindleTemp, ex:vibration ;
+    dcat:distribution ex:run42-csv .
+
+ex:run42-idx a time:Interval ;
+    time:hasBeginning [ a time:Instant ; time:inXSDDateTimeStamp "2026-03-02T08:00:00Z"^^xsd:dateTimeStamp ] ;
+    time:hasEnd       [ a time:Instant ; time:inXSDDateTimeStamp "2026-03-02T10:00:00Z"^^xsd:dateTimeStamp ] .
+
+# Two sub-intervals of the run, restricted to one dimension
+ex:S1 a semts:TimeSeriesSegment ;
+    semts:segmentIndex ex:S1-idx ;
+    semts:segmentDimension ex:spindleTemp ;
+    semts:isPartOf ex:run42 ;
+    semts:before ex:S2 ;
+    dcat:distribution ex:run42-csv .
+
+ex:S2 a semts:TimeSeriesSegment ;
+    semts:segmentIndex ex:S2-idx ;
+    semts:segmentDimension ex:spindleTemp ;
+    semts:isPartOf ex:run42 ;
+    dcat:distribution ex:run42-csv .
+
+ex:S1-idx a time:Interval ;
+    time:hasBeginning [ a time:Instant ; time:inXSDDateTimeStamp "2026-03-02T08:10:00Z"^^xsd:dateTimeStamp ] ;
+    time:hasEnd       [ a time:Instant ; time:inXSDDateTimeStamp "2026-03-02T08:30:00Z"^^xsd:dateTimeStamp ] ;
+    time:intervalBefore ex:S2-idx .   # backs the asserted semts:before
+
+ex:S2-idx a time:Interval ;
+    time:hasBeginning [ a time:Instant ; time:inXSDDateTimeStamp "2026-03-02T09:00:00Z"^^xsd:dateTimeStamp ] ;
+    time:hasEnd       [ a time:Instant ; time:inXSDDateTimeStamp "2026-03-02T09:20:00Z"^^xsd:dateTimeStamp ] .
+
+# A single data point is a segment with an instant as its index
+ex:P1 a semts:TimeSeriesSegment ;
+    semts:segmentIndex [ a time:Instant ; time:inXSDDateTimeStamp "2026-03-02T09:12:30Z"^^xsd:dateTimeStamp ] ;
+    semts:segmentDimension ex:vibration ;
+    semts:isPartOf ex:run42 ;
+    dcat:distribution ex:run42-csv .
+
+# Dimensions carry units (QUDT) and their column position
+ex:spindleTemp a semts:DataDimension ;
+    semts:title "Spindle temperature" ;
+    semts:dimensionPosition "1"^^xsd:int ;
+    semts:hasUnit unit:DEG_C .
+
+ex:vibration a semts:DataDimension ;
+    semts:title "Vibration velocity (RMS)" ;
+    semts:dimensionPosition "2"^^xsd:int ;
+    semts:hasUnit unit:MilliM-PER-SEC .
+
+# The raw data stays where it is, and SemTS points to it with DCAT
+ex:run42-csv a dcat:Distribution ;
+    dcat:downloadURL <https://data.example.org/line2/run42.csv> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> .

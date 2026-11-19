@@ -1,0 +1,79 @@
+@prefix semts:    <https://w3id.org/semts/ontology#> .
+@prefix semts-dv: <https://w3id.org/semts/vocabulary/data-knowledge#> .
+@prefix semts-sv: <https://w3id.org/semts/vocabulary/scenario-knowledge#> .
+@prefix semts-gv: <https://w3id.org/semts/vocabulary/knowledge-generation#> .
+@prefix ex:       <https://example.org/line2/> .
+
+# Three knowledge items about segment S2 (from example 1) ...
+ex:S2 semts:segmentKnowledge ex:tempRise, ex:vibAnomaly, ex:stop, ex:shiftChange .
+
+ex:tempRise a semts:SegmentDataCharacteristic ;
+    semts:knowledgeConcept semts-dv:TrendProperty ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "rising" ] ;
+    semts:knowledgeGenerationEntity ex:analysis .
+
+ex:vibAnomaly a semts:SegmentPrediction ;
+    semts:knowledgeConcept semts-dv:Anomaly ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "anomalous vibration" ] ;
+    semts:knowledgeGenerationEntity ex:analysis .
+
+ex:stop a semts:ScenarioKnowledge ;
+    semts:knowledgeConcept semts-sv:UnplannedDowntime ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "line stopped for 41 minutes" ] ;
+    semts:knowledgeGenerationEntity ex:shiftLog .
+
+ex:shiftChange a semts:ScenarioKnowledge ;
+    semts:knowledgeConcept semts-sv:ShiftChange ;
+    semts:hasValue [ a semts:EmbeddedValue ; semts:valueString "early to late shift" ] ;
+    semts:knowledgeGenerationEntity ex:shiftLog .
+
+# ... chained by directed relations (source → target) ...
+ex:r1 a semts:DirectedKnowledgeRelation ;
+    semts:knowledgeConcept semts-dv:CausalInfluence ;
+    semts:knowledgeRelationSource ex:tempRise ;
+    semts:knowledgeRelationTarget ex:vibAnomaly ;
+    semts:knowledgeGenerationEntity ex:causalRun .
+
+ex:r2 a semts:DirectedKnowledgeRelation ;
+    semts:knowledgeConcept semts-sv:Causes ;
+    semts:knowledgeRelationSource ex:vibAnomaly ;
+    semts:knowledgeRelationTarget ex:stop ;
+    semts:knowledgeGenerationEntity ex:shiftLog .
+
+# ... and an undirected relation without source or target roles
+ex:r3 a semts:UndirectedKnowledgeRelation ;
+    semts:knowledgeConcept semts-sv:CoOccursWith ;
+    semts:knowledgeRelationParticipant ex:stop, ex:shiftChange ;
+    semts:knowledgeGenerationEntity ex:shiftLog .
+
+#region provenance
+ex:analysis a semts:KnowledgeGenerationMethod ;
+    semts:knowledgeGenerationConcept semts-gv:AnomalyDetection ;
+    semts:used ex:analysis-in ;
+    semts:generated ex:analysis-out .
+ex:analysis-in a semts:KnowledgeGenerationInput ; semts:inputDataReference ex:S2 .
+ex:analysis-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:tempRise, ex:vibAnomaly ;
+    semts:wasDerivedFrom ex:analysis-in .
+
+ex:causalRun a semts:KnowledgeGenerationMethod ;
+    semts:knowledgeGenerationConcept semts-gv:CausalDiscovery ;
+    semts:used ex:causal-in ;
+    semts:generated ex:causal-out .
+ex:causal-in a semts:KnowledgeGenerationInput ;
+    semts:inputKnowledge ex:tempRise, ex:vibAnomaly .
+ex:causal-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:r1 ;
+    semts:wasDerivedFrom ex:causal-in .
+
+ex:shiftLog a semts:KnowledgeReasoning ;
+    semts:knowledgeGenerationConcept semts-gv:ExpertAnnotation ;
+    semts:used ex:shiftLog-in ;
+    semts:generated ex:shiftLog-out .
+ex:shiftLog-in a semts:KnowledgeGenerationInput ;
+    semts:inputDataReference ex:S2 ;
+    semts:inputKnowledge ex:vibAnomaly .
+ex:shiftLog-out a semts:KnowledgeGenerationOutput ;
+    semts:outputKnowledge ex:stop, ex:shiftChange, ex:r2, ex:r3 ;
+    semts:wasDerivedFrom ex:shiftLog-in .
+#endregion

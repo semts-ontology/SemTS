@@ -1,45 +1,41 @@
 # Competency Questions Runner
 
-This evaluation provides a Python script to evaluate competency questions defined in a YAML file against an RDF graph. The script uses `PyYAML` for parsing YAML files and `rdflib` for handling RDF data and executing SPARQL queries. Despite being used for the evaluation of SemTS with sensitive project data, it can be applied to different datasets provided in this repository.
-A selection of these datasets is facilitated through a command-line argument (see section Usage).
+`evaluation_runner.py` runs the competency questions of `competency_questions.yaml` as SPARQL queries against instance graphs of this repository. It uses `PyYAML` to read the questions and `rdflib` to load the data and run the queries. It was used to evaluate SemTS with project data and works with any dataset in this repository.
 
----
-
-## Features
-
-- Parses competency questions from a YAML file.  
-- Loads an RDF graph from a file.  
-- Executes SPARQL queries defined in the competency questions YAML file.  
-- Prints the query results for evaluation.  
+The runner loads the SemTS ontology (`ontology/current/ontology.ttl`) and all vocabularies (`vocabularies/vocab_*.ttl`) together with the instance graph, so that queries can follow `rdfs:subClassOf` and `skos:broader`.
 
 ---
 
 ## Prerequisites
 
-- Python 3.7 or newer installed on your system.
-
----
+- Python 3.9 or newer.
 
 ## Installation
 
-1. **Set up a virtual environment**:  
-python -m venv venv source venv/bin/activate # On Windows: venv\Scripts\activate
-
-2. **Install dependencies**:  
-Use the provided `requirements.txt` file to install the necessary libraries: pip install -r requirements.txt
----
+```bash
+python -m venv venv
+source venv/bin/activate          # on Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
 
 ## Usage
 
-1. **Run the Script with an RDF Instance**:  
-   The script supports dynamic selection of RDF instance graphs based on a console argument.
-   Use the `instance_index` argument to specify which RDF instance to evaluate.  
-   Right now, the script supports one general, synthetic dataset and two modified samples of datasets from the application scenarios folder.
-   Valid values for `instance_index` are:  
-   - `0`: `evaluation/competency_questions/sample_instances.rdf`  
-   - `1`: `application_scenarios/scenario1.rdf`  
-   - `2`: `application_scenarios/scenario2.rdf`<br>
-     Example usage: python evaluation_runner.py 0
+Select an instance graph by index:
 
-2. **Output**:  
-The script will print the competency questions and their corresponding SPARQL query results to the console.
+| Index | Graph |
+|---|---|
+| `0` | `evaluation/competency_questions/sample_instances.rdf` (tsfresh features of UCR time series) |
+| `1` | `application_scenarios/scenario1.ttl` (anomaly detection in blow moulding) |
+| `2` | `application_scenarios/scenario2.ttl` (forecasting grinding bead wear) |
+
+```bash
+python evaluation_runner.py 0               # print questions and results for one graph
+python evaluation_runner.py --all           # count the results of every question in every graph
+python evaluation_runner.py --all --require-results   # exit with an error if a question has no answer in any graph
+```
+
+The script can be started from any directory. Paths are resolved relative to the repository.
+
+## Output
+
+For a single graph, the script prints each question, its example and up to 20 result rows. With `--all` it prints a table of row counts per question and graph.

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from vocab_scenario_knowledge_manufacturing.ttl by tools/build.py; do not edit. -->
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:adms="http://www.w3.org/ns/adms#"
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:semts="https://w3id.org/semts/ontology#"
+   xmlns:semts-msv="https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing#"
+   xmlns:semts-sv="https://w3id.org/semts/vocabulary/scenario-knowledge#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdf:Description rdf:about="http://purl.org/dc/terms/conformsTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/isPartOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/references">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#broader">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#definition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#editorialNote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#hasTopConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#topConceptOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/adms#status">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/ontology#KnowledgeConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing">
+    <dct:conformsTo rdf:resource="https://www.w3.org/TR/skos-reference/"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-06</dct:created>
+    <dct:description xml:lang="en">A minimal example extension of the SemTS Scenario Knowledge vocabulary for genuinely manufacturing-specific meanings. Generic operational concepts remain in the scenario core. The module illustrates how a domain extends a core vocabulary. It is not a complete manufacturing vocabulary, and other domains are expected to publish their own extensions in the same way.</dct:description>
+    <dct:isPartOf rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge"/>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-18</dct:modified>
+    <dct:references rdf:resource="https://w3id.org/semts/ontology#"/>
+    <dct:title xml:lang="en">SemTS Manufacturing Scenario Knowledge Extension</dct:title>
+    <vann:preferredNamespacePrefix>semts-msv</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing#</vann:preferredNamespaceUri>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <owl:imports rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge"/>
+    <owl:versionInfo>1.3.0</owl:versionInfo>
+    <skos:editorialNote xml:lang="en">The deprecated scenario concepts Production Cycle Start, Production Cycle Complete and Tool Wear State are declared in the Scenario Knowledge core, because their IRIs belong to that namespace.</skos:editorialNote>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing#ManufacturingScenarioKnowledge"/>
+    <skos:scopeNote xml:lang="en">The extension is not intended to be populated exhaustively. Terms are added only when a manufacturing-specific specialization contributes semantics beyond merely adding “manufacturing”, “production”, or a similar qualifier to a generic core concept.</skos:scopeNote>
+    <adms:status rdf:resource="http://purl.org/adms/status/Completed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing#MachineDowntime">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#DowntimeEvent"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing#ManufacturingScenarioKnowledge"/>
+    <skos:definition xml:lang="en">Downtime of a machine or machine subsystem.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing"/>
+    <skos:prefLabel xml:lang="en">Machine Downtime</skos:prefLabel>
+    <skos:scopeNote xml:lang="en">A genuine manufacturing specialization because it constrains the affected entity to a machine.</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing#ManufacturingScenarioKnowledge">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#ScenarioKnowledge"/>
+    <skos:definition xml:lang="en">Organizing concept for scenario-knowledge meanings that are genuinely specific to manufacturing.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing"/>
+    <skos:prefLabel xml:lang="en">Manufacturing Scenario Knowledge</skos:prefLabel>
+    <skos:scopeNote xml:lang="en">This extension is intentionally small. It demonstrates how domain-specific concepts can specialize the scenario core without mechanically prefixing or suffixing generic terms.</skos:scopeNote>
+    <skos:topConceptOf rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing#ManufacturingToolWearState">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#KnowledgeConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#WearState"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing#ManufacturingScenarioKnowledge"/>
+    <skos:definition xml:lang="en">Wear state of a tool used in a manufacturing operation.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge/manufacturing"/>
+    <skos:prefLabel xml:lang="en">Manufacturing Tool Wear State</skos:prefLabel>
+    <skos:scopeNote xml:lang="en">A genuine manufacturing specialization because it constrains the worn entity and operational context.</skos:scopeNote>
+  </rdf:Description>
+</rdf:RDF>

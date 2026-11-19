@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from vocab_quality_measure.ttl by tools/build.py; do not edit. -->
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:adms="http://www.w3.org/ns/adms#"
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:dqv="http://www.w3.org/ns/dqv#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:semts="https://w3id.org/semts/ontology#"
+   xmlns:semts-qv="https://w3id.org/semts/vocabulary/quality-measure#"
+   xmlns:semts-sv="https://w3id.org/semts/vocabulary/scenario-knowledge#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdf:Description rdf:about="http://purl.org/dc/terms/conformsTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/references">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#broader">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#definition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#hasTopConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#relatedMatch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#topConceptOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/adms#status">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/ontology#QualityMeasureConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure">
+    <dct:conformsTo rdf:resource="https://www.w3.org/TR/skos-reference/"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-06</dct:created>
+    <dct:description xml:lang="en">A domain-neutral SKOS vocabulary for quality dimensions, relational measures, and a deliberately small set of widely used evaluation metrics relevant to time-series analysis.</dct:description>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-18</dct:modified>
+    <dct:references rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure"/>
+    <dct:references rdf:resource="http://www.w3.org/ns/dqv#"/>
+    <dct:references rdf:resource="https://w3id.org/semts/ontology#"/>
+    <dct:references rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge"/>
+    <dct:title xml:lang="en">SemTS Knowledge Quality Measure Vocabulary</dct:title>
+    <vann:preferredNamespacePrefix>semts-qv</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>https://w3id.org/semts/vocabulary/quality-measure#</vann:preferredNamespaceUri>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <owl:versionInfo>1.3.0</owl:versionInfo>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#QualityMeasure"/>
+    <skos:scopeNote xml:lang="en">Concrete metrics are limited to broadly established forecasting, classification, clustering, similarity, distance, and correlation measures. More specialized measures should be referenced from MLST or supplied through extensions.</skos:scopeNote>
+    <adms:status rdf:resource="http://purl.org/adms/status/Completed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Agreement">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#EpistemicQuality"/>
+    <skos:definition xml:lang="en">Degree of concordance among sources, models, experts, annotations, or repeated measurements.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Agreement</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Applicability">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ContextualQuality"/>
+    <skos:definition xml:lang="en">Degree to which knowledge can be applied under the conditions of a target segment or scenario.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Applicability</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#AreaUnderROCCurve">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:altLabel xml:lang="en">AUROC</skos:altLabel>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ClassificationPerformance"/>
+    <skos:closeMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/area_under_curve"/>
+    <skos:definition xml:lang="en">Area under the receiver operating characteristic curve across decision thresholds.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Area Under the ROC Curve</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Calibration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ProbabilisticPredictionPerformance"/>
+    <skos:definition xml:lang="en">Degree to which predicted probabilities or intervals correspond to observed frequencies.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Calibration</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#CausalStrength">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#RelationalMeasure"/>
+    <skos:definition xml:lang="en">Magnitude or confidence of a causal influence or effect.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Causal Strength</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Causes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Certainty">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#EpistemicQuality"/>
+    <skos:definition xml:lang="en">Degree to which uncertainty about a knowledge assertion has been resolved.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Certainty</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Certainty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#ClassificationAccuracy">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ClassificationPerformance"/>
+    <skos:definition xml:lang="en">Proportion of classified instances whose predicted class is correct.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/accuracy"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Classification Accuracy</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#ClassificationPerformance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PredictivePerformance"/>
+    <skos:definition xml:lang="en">Performance of class or event-category predictions.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Classification Performance</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#ClusteringPerformance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PredictivePerformance"/>
+    <skos:definition xml:lang="en">Performance or quality of a clustering result.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Clustering Performance</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#CoefficientOfDetermination">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:altLabel xml:lang="en">R²</skos:altLabel>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PointPredictionPerformance"/>
+    <skos:definition xml:lang="en">Proportion of observed variance explained by point predictions.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Coefficient of Determination</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Completeness">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#IntrinsicQuality"/>
+    <skos:definition xml:lang="en">Degree to which required content, coverage, relations, or contextual information is present.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Completeness</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#ComputationalCost">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#OperationalQuality"/>
+    <skos:definition xml:lang="en">Aggregate computational resources required by a knowledge process.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Computational Cost</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Confidence">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#EpistemicQuality"/>
+    <skos:definition xml:lang="en">Quantified or qualified belief in the correctness or reliability of a knowledge assertion.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Confidence</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/probability"/>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Certainty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Consistency">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#IntrinsicQuality"/>
+    <skos:definition xml:lang="en">Degree to which knowledge is free of internal conflict or contradiction with relevant knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Consistency</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Contradiction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#ContextualQuality">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#QualityMeasure"/>
+    <skos:definition xml:lang="en">Quality assessed relative to a use case, segment context, task, or scenario.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Contextual Quality</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#ContinuousRankedProbabilityScore">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:altLabel xml:lang="en">CRPS</skos:altLabel>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ProbabilisticPredictionPerformance"/>
+    <skos:definition xml:lang="en">Proper score comparing a predictive cumulative distribution with an observed outcome.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Continuous Ranked Probability Score</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Correctness">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#IntrinsicQuality"/>
+    <skos:definition xml:lang="en">Degree to which knowledge agrees with an accepted reference, fact, or validation outcome.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Correctness</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Correlation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#RelationalMeasure"/>
+    <skos:definition xml:lang="en">Strength and direction of statistical association between compared entities.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Correlation</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Correlation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#CosineSimilarity">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#Similarity"/>
+    <skos:definition xml:lang="en">Similarity based on the cosine of the angle between vector representations.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Cosine Similarity</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Coverage">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ContextualQuality"/>
+    <skos:definition xml:lang="en">Extent of the relevant temporal, dimensional, segment, class, or scenario space addressed by the knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Coverage</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/coverage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#CrossCorrelation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#Correlation"/>
+    <skos:definition xml:lang="en">Correlation between sequences as a function of temporal lag.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Cross-Correlation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Dissimilarity">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#RelationalMeasure"/>
+    <skos:definition xml:lang="en">Degree of non-resemblance between compared entities.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Dissimilarity</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Distance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#RelationalMeasure"/>
+    <skos:definition xml:lang="en">A metric or measure of separation between compared entities.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Distance</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#DynamicTimeWarpingDistance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:altLabel xml:lang="en">DTW distance</skos:altLabel>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#Distance"/>
+    <skos:definition xml:lang="en">Alignment-based distance between sequences that permits nonlinear temporal warping.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Dynamic Time Warping Distance</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#EpistemicQuality">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#QualityMeasure"/>
+    <skos:definition xml:lang="en">Quality concerning belief strength, uncertainty, evidence, and trustworthiness.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Epistemic Quality</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#EuclideanDistance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#Distance"/>
+    <skos:definition xml:lang="en">Straight-line distance between two numeric vectors.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Euclidean Distance</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#EvidenceStrength">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#EpistemicQuality"/>
+    <skos:definition xml:lang="en">Strength and adequacy of evidence supporting or contradicting knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Evidence Strength</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Evidence"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Explainability">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ExplanationQuality"/>
+    <skos:definition xml:lang="en">Degree to which reasons or mechanisms for a knowledge result can be communicated.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Explainability</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#ExplanationQuality">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#QualityMeasure"/>
+    <skos:definition xml:lang="en">A measure of the usefulness or faithfulness of an explanation.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Explanation Quality</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#F1Score">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ClassificationPerformance"/>
+    <skos:definition xml:lang="en">Harmonic mean of precision and recall.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/f_measure"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">F1 Score</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Fidelity">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ExplanationQuality"/>
+    <skos:definition xml:lang="en">Degree to which an explanation reflects the behavior of the process or model it explains.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Fidelity</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Freshness">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ContextualQuality"/>
+    <skos:definition xml:lang="en">Degree to which knowledge reflects the current state of its subject.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Freshness</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Interpretability">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ExplanationQuality"/>
+    <skos:definition xml:lang="en">Degree to which a human can understand the meaning or behavior represented by knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Interpretability</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#IntervalCoverage">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ProbabilisticPredictionPerformance"/>
+    <skos:definition xml:lang="en">Fraction of reference outcomes contained in prediction or confidence intervals.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Interval Coverage</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#IntervalWidth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ProbabilisticPredictionPerformance"/>
+    <skos:definition xml:lang="en">Width of an uncertainty interval, often interpreted together with interval coverage.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Interval Width</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#IntrinsicQuality">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#QualityMeasure"/>
+    <skos:definition xml:lang="en">Quality assessed from the internal content or logical form of the knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Intrinsic Quality</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#JaccardSimilarity">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#Similarity"/>
+    <skos:definition xml:lang="en">Similarity defined as the size of an intersection divided by the size of the corresponding union.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/jaccard"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Jaccard Similarity</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#ManhattanDistance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#Distance"/>
+    <skos:definition xml:lang="en">Sum of absolute coordinate-wise differences between two numeric vectors.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Manhattan Distance</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#MeanAbsoluteError">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:altLabel xml:lang="en">MAE</skos:altLabel>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PredictionError"/>
+    <skos:definition xml:lang="en">Mean absolute difference between observed and predicted values.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/mean_absolute_error"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Mean Absolute Error</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#MeanAbsolutePercentageError">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:altLabel xml:lang="en">MAPE</skos:altLabel>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PredictionError"/>
+    <skos:definition xml:lang="en">Mean absolute prediction error relative to observed magnitude, expressed as a percentage.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Mean Absolute Percentage Error</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#MeanAbsoluteScaledError">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:altLabel xml:lang="en">MASE</skos:altLabel>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PredictionError"/>
+    <skos:definition xml:lang="en">Mean absolute prediction error scaled by a baseline forecast error.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Mean Absolute Scaled Error</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#MeanSquaredError">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:altLabel xml:lang="en">MSE</skos:altLabel>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PredictionError"/>
+    <skos:definition xml:lang="en">Mean squared difference between observed and predicted values.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Mean Squared Error</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#MemoryUse">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#OperationalQuality"/>
+    <skos:definition xml:lang="en">Memory required by a knowledge generation or evaluation process.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Memory Use</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#OperationalQuality">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#QualityMeasure"/>
+    <skos:definition xml:lang="en">A measure of computational or operational behavior associated with knowledge generation.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Operational Quality</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/Execution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#PearsonCorrelation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#Correlation"/>
+    <skos:definition xml:lang="en">Linear correlation coefficient between paired numeric variables or sequences.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Pearson Correlation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#PointPredictionPerformance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PredictivePerformance"/>
+    <skos:definition xml:lang="en">Performance of point-valued predictions or forecasts.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Point Prediction Performance</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Precision">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ClassificationPerformance"/>
+    <skos:definition xml:lang="en">Fraction of predicted positive cases that are relevant or correct.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/precision"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Precision</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#PredictionError">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PointPredictionPerformance"/>
+    <skos:closeMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/error"/>
+    <skos:definition xml:lang="en">Magnitude or rate of disagreement between predicted and observed values.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Prediction Error</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#PredictiveAccuracy">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PointPredictionPerformance"/>
+    <skos:definition xml:lang="en">Overall closeness of point predictions to observed values, without prescribing a particular error formula.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Point Prediction Accuracy</skos:prefLabel>
+    <skos:scopeNote xml:lang="en">Not the classification accuracy of MLSO (evaluation_measure/accuracy), which counts correctly classified instances. That measure corresponds to Classification Accuracy.</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#PredictivePerformance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#QualityMeasure"/>
+    <skos:definition xml:lang="en">A measure of the performance of predictive or inferential knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Predictive Performance</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#ProbabilisticPredictionPerformance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PredictivePerformance"/>
+    <skos:definition xml:lang="en">Performance of probabilistic forecasts or predictive distributions.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Probabilistic Prediction Performance</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#ProvenanceQuality">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#QualityMeasure"/>
+    <skos:definition xml:lang="en">A measure of traceability and reproducibility of knowledge and its generation.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Provenance Quality</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#QualityMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:definition xml:lang="en">A criterion or metric used to characterize the quality, fitness, confidence, or comparison of a SemTS knowledge item.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Knowledge Quality Measure</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/quality"/>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#QualityAnnotation"/>
+    <skos:topConceptOf rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Recall">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ClassificationPerformance"/>
+    <skos:definition xml:lang="en">Fraction of relevant or positive cases that are successfully identified.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/recall"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Recall</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#RelationalMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#QualityMeasure"/>
+    <skos:definition xml:lang="en">A measure comparing two or more data, segment, or knowledge entities.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Relational Measure</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Relevance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ContextualQuality"/>
+    <skos:definition xml:lang="en">Degree to which knowledge is useful for the stated task, purpose, or decision context.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Relevance</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#Purpose"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Reliability">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#EpistemicQuality"/>
+    <skos:definition xml:lang="en">Degree to which knowledge or its generation process produces dependable results.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Reliability</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Representativeness">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ContextualQuality"/>
+    <skos:definition xml:lang="en">Degree to which knowledge reflects the population, behavior, or context for which it is used.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Representativeness</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Reproducibility">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ProvenanceQuality"/>
+    <skos:definition xml:lang="en">Degree to which the knowledge result can be regenerated under documented conditions.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Reproducibility</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Robustness">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#EpistemicQuality"/>
+    <skos:definition xml:lang="en">Degree to which knowledge remains valid or stable under perturbations, alternative samples, or reasonable parameter changes.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Robustness</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#RootMeanSquaredError">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:altLabel xml:lang="en">RMSE</skos:altLabel>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PredictionError"/>
+    <skos:definition xml:lang="en">Square root of the mean squared prediction error.</skos:definition>
+    <skos:exactMatch rdf:resource="http://w3id.org/mlso/vocab/evaluation_measure/root_mean_squared_error"/>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Root Mean Squared Error</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Runtime">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#OperationalQuality"/>
+    <skos:definition xml:lang="en">Elapsed or processor time required to generate, compare, validate, or reason over knowledge.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Runtime</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#SilhouetteCoefficient">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ClusteringPerformance"/>
+    <skos:definition xml:lang="en">Clustering quality based on within-cluster cohesion and separation from other clusters.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Silhouette Coefficient</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Similarity">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#RelationalMeasure"/>
+    <skos:definition xml:lang="en">Degree of resemblance between compared entities under a specified representation or criterion.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Similarity</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#SimilarTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#SpearmanCorrelation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#Correlation"/>
+    <skos:definition xml:lang="en">Rank-based monotonic correlation coefficient.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Spearman Rank Correlation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Specificity">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#IntrinsicQuality"/>
+    <skos:definition xml:lang="en">Degree to which knowledge is precise and narrowly characterized rather than vague or overly general.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Specificity</skos:prefLabel>
+    <skos:scopeNote xml:lang="en">An intrinsic quality of knowledge. Not the classification measure that is also called specificity (true negative rate).</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Stability">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ExplanationQuality"/>
+    <skos:definition xml:lang="en">Degree to which an explanation or knowledge result remains similar under small, non-material changes.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Stability</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#SymmetricMeanAbsolutePercentageError">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:altLabel xml:lang="en">sMAPE</skos:altLabel>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#PredictionError"/>
+    <skos:definition xml:lang="en">Percentage error normalized symmetrically by observed and predicted magnitudes.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Symmetric Mean Absolute Percentage Error</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Timeliness">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ContextualQuality"/>
+    <skos:definition xml:lang="en">Degree to which knowledge is available at an appropriate time for its intended use.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Timeliness</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#TemporalContext"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Traceability">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#ProvenanceQuality"/>
+    <skos:definition xml:lang="en">Degree to which knowledge can be traced to inputs, sources, methods, and decisions.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Traceability</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Uncertainty">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#EpistemicQuality"/>
+    <skos:definition xml:lang="en">Degree or characterization of incomplete knowledge about a value, relation, event, or assertion.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Uncertainty</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/semts/vocabulary/quality-measure#Validity">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="https://w3id.org/semts/ontology#QualityMeasureConcept"/>
+    <skos:broader rdf:resource="https://w3id.org/semts/vocabulary/quality-measure#IntrinsicQuality"/>
+    <skos:definition xml:lang="en">Degree to which knowledge satisfies applicable rules, constraints, assumptions, or validation criteria.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/semts/vocabulary/quality-measure"/>
+    <skos:prefLabel xml:lang="en">Validity</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://w3id.org/semts/vocabulary/scenario-knowledge#ValidationOutcome"/>
+  </rdf:Description>
+</rdf:RDF>
